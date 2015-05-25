@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InventoryQuest.Statistics.StatValue">
+    <Position X="2.5" Y="1" Width="1.5" />
+    <Members>
+      <Field Name="_Base" Hidden="true" />
+      <Field Name="_Current" Hidden="true" />
+      <Field Name="_Maximum" Hidden="true" />
+      <Field Name="_Minimun" Hidden="true" />
+      <Field Name="_Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gBACAAAQAAAAFAAUAQCIAAAAAAAAAAAAQSAAAAABRAA=</HashCode>
+      <FileName>Statistics\StatValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.BaseStats" Collapsed="true">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAiAAAgAAEAUAAAgAABkAABACAAAAEEACAABCCA=</HashCode>
+      <FileName>Statistics\BaseStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Stats" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAhBAAQEgAACQAAgAMAAAAAAAAAgIAAAAACAAAJAA=</HashCode>
+      <FileName>Statistics\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Stats" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAaAAAAAAhERQgAMEAAAAgAAQAIAAEAAIhAAABA=</HashCode>
+      <FileName>Statistics\Items\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="InventoryQuest.Statistics.EnumTypeStat">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKIDAiAAAAAAAUAQAAIEAAAAABAQAIAAAEAKhAAADA=</HashCode>
+      <FileName>Statistics\Type.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

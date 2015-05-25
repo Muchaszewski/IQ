@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InventoryQuest.Entities.Entity" Collapsed="true">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEEAQAAAAAAAAAAAAAAIASAAIAAAAABAQAAAGAARAE=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Entities.Player">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="_Equipment" Hidden="true" />
+      <Field Name="_Experience" Hidden="true" />
+      <Field Name="_Inventory" Hidden="true" />
+      <Field Name="_PasiveSkills" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAEEAAAAAAiAAAGAAAAAAARAAICAgAAAAAAAAgAQQAA=</HashCode>
+      <FileName>Entities\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Inventory.Equipment">
+    <Position X="3.5" Y="4" Width="1.75" />
+    <Members>
+      <Field Name="_Amulets" Hidden="true" />
+      <Field Name="_Armor" Hidden="true" />
+      <Field Name="_Ring" Hidden="true" />
+      <Field Name="_Shield" Hidden="true" />
+      <Field Name="_Weapon" Hidden="true" />
+      <Field Name="player" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAACQAIQABEQAEQAAAAAAAAAAAAAAAghEAAAAIAEAAA=</HashCode>
+      <FileName>Inventory\Equipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Inventory.Inventory">
+    <Position X="5.75" Y="5.5" Width="2.25" />
+    <Members>
+      <Field Name="_Items" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAABAACAAAAAAAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Inventory\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Player.PasiveSkills">
+    <Position X="1.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAiAAAAACAAIAABAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Statistics\Player\PasiveSkills.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.BaseStats">
+    <Position X="8" Y="0.75" Width="1.75" />
+    <Members>
+      <Field Name="_Dexterity" Hidden="true" />
+      <Field Name="_Telligence" Hidden="true" />
+      <Field Name="_Perception" Hidden="true" />
+      <Field Name="_Strength" Hidden="true" />
+      <Field Name="_Vitality" Hidden="true" />
+      <Field Name="_Wisdom" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAAiAAAgAAEAUAAAgAABkAABACAAAAEEACAABCCA=</HashCode>
+      <FileName>Statistics\BaseStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Stats">
+    <Position X="10.5" Y="0.75" Width="2" />
+    <Members>
+      <Field Name="_Accuracy" Hidden="true" />
+      <Field Name="_AttackSpeed" Hidden="true" />
+      <Field Name="_CriticalChance" Hidden="true" />
+      <Field Name="_CriticalDamage" Hidden="true" />
+      <Field Name="_Evasion" Hidden="true" />
+      <Field Name="_HealthPoTs" Hidden="true" />
+      <Field Name="_ManaPoTs" Hidden="true" />
+      <Field Name="_Stamina" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAhBAAQEgAACQAAgAMAAAAAAAAAgIAAAAACAAAJAA=</HashCode>
+      <FileName>Statistics\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

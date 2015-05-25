@@ -1,0 +1,19 @@
+﻿<Window x:Class="Creator.ListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ListWindow" Height="384" Width="960">
+    <Grid>
+        <DataGrid x:Name="DataGridPreview" Margin="10,35,357,10" SelectionMode="Single" IsReadOnly="True" PreviewMouseDoubleClick="DataGridPreview_PreviewMouseDoubleClick"/>
+        <Button x:Name="ButtonOk" Content="Ok" Margin="0,0,10,10" IsDefault="True" Click="ButtonOk_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" Margin="0,0,10,37" IsCancel="True" Click="ButtonCancel_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <ComboBox x:Name="ComboBoxList" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" Width="175" SelectionChanged="ComboBoxList_SelectionChanged"/>
+        <Button x:Name="ButtonListAdd" Content="Add" HorizontalAlignment="Left" Margin="223,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonListAdd_Click"/>
+        <Label Content="List" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.053,0.423"/>
+        <ComboBox x:Name="ComboBoxType" HorizontalAlignment="Left" Margin="367,11,0,0" VerticalAlignment="Top" Width="144" IsEnabled="False" SelectionChanged="ComboBoxType_SelectionChanged"/>
+        <Label Content="ItemType" HorizontalAlignment="Left" Margin="303,9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.053,0.423"/>
+        <Label Content="List Type To Choose" Margin="0,8,102,0" HorizontalAlignment="Right" Width="250" Height="26" VerticalAlignment="Top"/>
+        <ListBox x:Name="ListBoxResult" Margin="0,39,102,10" HorizontalAlignment="Right" Width="250"/>
+        <Button x:Name="ButtonRemove" Content="Remove" Margin="0,39,10,0" HorizontalAlignment="Right" Width="75" Height="22" VerticalAlignment="Top" Click="ButtonRemove_Click"/>
+
+    </Grid>
+</Window>

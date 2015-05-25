@@ -1,0 +1,16 @@
+﻿<Window x:Class="Creator.StatAllowedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StatAllowedWindow" Height="358" Width="260">
+    <Grid>
+        <DataGrid x:Name="DataGridStats" Margin="10,10,90,10" PreviewMouseDoubleClick="DataGrid_PreviewMouseDoubleClick" SelectedIndex="1">
+            <DataGrid.Columns>
+                <DataGridComboBoxColumn x:Name="BaseStatsAllowed" ClipboardContentBinding="{x:Null}" Header="BaseStatsAllowed" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Ok" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" IsDefault="True" Click="Button_Click"/>
+        <Button Content="Cancel" Margin="0,0,10,37" IsCancel="True" Click="Button_Click_1" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="ButtonAdd" Content="Add" Margin="0,0,10,296" VerticalAlignment="Bottom" Click="ButtonAdd_Click" HorizontalAlignment="Right" Width="75"/>
+
+    </Grid>
+</Window>

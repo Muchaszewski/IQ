@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InventoryQuest.Items.Item">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="_Name" Hidden="true" />
+      <Field Name="_RequiredHands" Hidden="true" />
+      <Field Name="_Skill" Hidden="true" />
+      <Field Name="_Stats" Hidden="true" />
+      <Field Name="_Type" Hidden="true" />
+      <Field Name="_ValidSlot" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAAIAAACAEAAAAMAQAAAAAAACAAQAAACQABAA=</HashCode>
+      <FileName>Items\Generic\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Items.RandomItemFactory">
+    <Position X="11.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ADBAAAAAEIAAAlAAAAAAAAAECAAAGIAYACAABAAAAAg=</HashCode>
+      <FileName>Items\RandomItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Stats">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <Members>
+      <Field Name="_Accuracy" Hidden="true" />
+      <Field Name="_ArmorPenetration" Hidden="true" />
+      <Field Name="_AttackSpeed" Hidden="true" />
+      <Field Name="_BlockAmount" Hidden="true" />
+      <Field Name="_BlockChance" Hidden="true" />
+      <Field Name="_Damage" Hidden="true" />
+      <Field Name="_Defence" Hidden="true" />
+      <Field Name="_Durability" Hidden="true" />
+      <Field Name="_ItemLevel" Hidden="true" />
+      <Field Name="_ParryChance" Hidden="true" />
+      <Field Name="_Rarity" Hidden="true" />
+      <Field Name="_Sell" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIIAAaAAAAAAhERQgAMEAAAAgAAQAIAAEAAIhAAABA=</HashCode>
+      <FileName>Statistics\Items\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="InventoryQuest.Items.Slot">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQIAAAEAAgEAQIAAEAAAAAAAAAAAgAgAQAAAAAAEABA=</HashCode>
+      <FileName>Items\Generic\Slot.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="InventoryQuest.Items.EnumRareType">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAIAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\EnumRareType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="InventoryQuest.Items.Generic.EnumItemType">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAQAQEQQAQAAAABAAAgISIIBIAAgQAAAAKEQAI=</HashCode>
+      <FileName>Items\Generic\EnumItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="InventoryQuest.Items.Generic.EnumMainSkill">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEhAAAQAAEQAgQAAAAAAgAAICIIBAAAgQAAAAIEAAA=</HashCode>
+      <FileName>Items\Generic\EnumMainSkill.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

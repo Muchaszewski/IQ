@@ -1,0 +1,19 @@
+﻿<Application x:Class="Creator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ControlTemplate x:Key="ButtonArrowLeft" TargetType="{x:Type Button}">
+            <Button Width="Auto" Height="Auto">
+                <Path Fill="Black" Data="M 6 0 L 6 12 L 0 6 Z"/>
+            </Button>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonArrowRight" TargetType="{x:Type Button}">
+            <Button Width="Auto" Height="Auto">
+                <Path Fill="Black" Data="M 0 0 L 6 6 L 0 12 Z"/>
+            </Button>
+        </ControlTemplate>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InventoryQuest.Entities.Entity">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_Level" Hidden="true" />
+      <Field Name="_Name" Hidden="true" />
+      <Field Name="_NextTurn" Hidden="true" />
+      <Field Name="_Stats" Hidden="true" />
+      <Field Name="_Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABEEAQAAAAAAAAAAAAAAIASAAIAAAAABAQAAAGAARAE=</HashCode>
+      <FileName>Component\Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Entities.Player" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAEEAAAAAAiAAAGAAAAAAARAAICAgAAAAAAAAgAQQAA=</HashCode>
+      <FileName>Component\Entities\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Entities.RandomEnemyFactory">
+    <Position X="11.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAEAAAEAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Component\Entities\Generation\RandomEnemyFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Entities.SpotList">
+    <Position X="11.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAABAACAAAIAQAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Component\Entities\Generation\SpotList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="InventoryQuest.Entities.Types.EntityType">
+    <Position X="13.5" Y="3" Width="1.5" />
+    <Members>
+      <Field Name="_Accuracy" Hidden="true" />
+      <Field Name="_AttackSpeed" Hidden="true" />
+      <Field Name="_Damage" Hidden="true" />
+      <Field Name="_HealthPoTs" Hidden="true" />
+      <Field Name="_Name" Hidden="true" />
+      <Field Name="_Stamina" Hidden="true" />
+      <Field Name="_Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAABCAQAAAAAQAAgAMIAQAAAAAAgIAAUAAAAAABAA=</HashCode>
+      <FileName>Component\Entities\Generation\EntityType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Entities.Types.EnemyTypeList" Collapsed="true">
+    <Position X="15.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Component\Entities\Generation\EnemyTypeList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.BaseStats">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <Members>
+      <Field Name="_Dexterity" Hidden="true" />
+      <Field Name="_Telligence" Hidden="true" />
+      <Field Name="_Perception" Hidden="true" />
+      <Field Name="_Strength" Hidden="true" />
+      <Field Name="_Vitality" Hidden="true" />
+      <Field Name="_Wisdom" Hidden="true" />
+      <Field Name="allBaseStats" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAAiAAAgAAEAUAAAgAABkAABACAAAAEEACAABCCA=</HashCode>
+      <FileName>Component\Stats\BaseStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryQuest.Statistics.Stats">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <Members>
+      <Field Name="_Accuracy" Hidden="true" />
+      <Field Name="_AttackSpeed" Hidden="true" />
+      <Field Name="_CriticalChance" Hidden="true" />
+      <Field Name="_CriticalDamage" Hidden="true" />
+      <Field Name="_Evasion" Hidden="true" />
+      <Field Name="_HealthPoTs" Hidden="true" />
+      <Field Name="_ManaPoTs" Hidden="true" />
+      <Field Name="_Stamina" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAhBAAQEgAACQAAgAMAAAAAAAAAgIAAAAACAAAJAA=</HashCode>
+      <FileName>Component\Entities\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="InventoryQuest.Entities.EnumEntityType">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgQgBAQABIAAQAEAgAQCIAAAACAACgCAAAAAQASABA=</HashCode>
+      <FileName>Component\Entities\EnumEntityType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

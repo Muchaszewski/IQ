@@ -1,0 +1,23 @@
+﻿<Window x:Class="Creator.SoundsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SoundsWindow" Height="511.678" Width="711.415">
+    <Grid>
+        <Label Content="All Sounds List" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="343" HorizontalContentAlignment="Center"/>
+        <DataGrid HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Height="364" Width="343" SelectionMode="Single" CanUserDeleteRows="False" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Play">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonPlaySound" Content="Button" Width="30" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30" Click="ButtonPlaySound_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Name}" Header="File Name"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Item info" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="ListBoxIDs" HorizontalAlignment="Right" Height="325" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="303"/>
+        <ListBox Height="132" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="303"/>
+    </Grid>
+</Window>
