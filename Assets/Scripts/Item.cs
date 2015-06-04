@@ -36,14 +36,9 @@ public class Item : MonoBehaviour
     void SetIcon()
     {
         var u = ImagesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
+        //TODO Take code from work :P
         var sprite = Resources.Load<Sprite>(FileUtility.AssetsRelativePath(u));
         transform.GetChild(0).GetComponent<Image>().sprite = sprite;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Drag()
