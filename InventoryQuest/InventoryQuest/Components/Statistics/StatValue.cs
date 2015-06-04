@@ -163,9 +163,9 @@ namespace InventoryQuest.Components.Statistics
         ///     Return Current procent
         /// </summary>
         /// <returns></returns>
-        public double GetPercent()
+        public float GetPercent()
         {
-            return (Current/(double) Extend)*100d;
+            return (Current / (float)Extend) * 100f;
         }
 
         /// <summary>
