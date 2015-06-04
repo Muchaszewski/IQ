@@ -1,40 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 
-public class StatisticsManagerEditor : Editor {
+[CustomEditor(typeof(StatisticsManager))]
+public class StatisticsManagerEditor : Editor
+{
 
-    private ToolTipManager script;
+    private StatisticsManager script;
     void OnEnable()
     {
-        script = (ToolTipManager)target;
+        script = (StatisticsManager)target;
     }
 
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-//        if (GUILayout.Button("Set preview values"))
-//        {
-//            var spot = CurrentGame.Instance.Spot;
-//            ClearTooltipEditor();
-//#pragma warning disable 618
-//            script.CreateLabels(RandomItemFactory.CreateItem(1, spot));
-//#pragma warning restore 618
-//        }
-//        if (GUILayout.Button("Clear tooltip"))
-//        {
-//            ClearTooltipEditor();
-//        }
+        if (GUILayout.Button("Set preview values"))
+        {
+            ClearTooltipEditor();
+#pragma warning disable 618
+            script.CreateLabels();
+#pragma warning restore 618
+        }
     }
-
 
     void ClearTooltipEditor()
     {
-        //script.SetWindowSize(381);
-        //foreach (var o in script.TootipObjects)
-        //{
-        //    DestroyImmediate(o);
-        //}
-        //script.TootipObjects = new List<GameObject>();
+        script.StatisticsTexts = new List<StatisticsManager.TextStringPair>();
+        var children = new List<GameObject>();
+        children.ForEach(child => Destroy(child));
+        foreach (Transform child in script.transform)
+        {
+            children.Add(child.gameObject);
+        }
+        children.ForEach(DestroyImmediate);
+
     }
 }
