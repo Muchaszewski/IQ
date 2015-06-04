@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using Assets;
 
 public class ToolTipManager : UIManager
 {
@@ -99,16 +98,25 @@ public class ToolTipManager : UIManager
 
     public void SetWindowSize(float newHeight)
     {
+#if UNITY_EDITOR
+        _rectTransform = GetComponent<RectTransform>();
+#endif
         _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x, newHeight);
     }
 
     public void AddWindowSize(float height)
     {
+#if UNITY_EDITOR
+        _rectTransform = GetComponent<RectTransform>();
+#endif
         _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x, _rectTransform.sizeDelta.y + height);
     }
 
     public float GetWindowHeight()
     {
+#if UNITY_EDITOR
+        _rectTransform = GetComponent<RectTransform>();
+#endif
         return _rectTransform.sizeDelta.y;
     }
 
@@ -141,6 +149,9 @@ public class ToolTipManager : UIManager
         AddLabel(new Vector2(0, 15 + relativeHeight), item.Price.ToString(), 35, TextAnchor.MiddleCenter);
         AddWindowSize(50);
     }
+
+    //__________________________________________Overrided methods_____________________________________________
+
 
     protected override void CreateParent(Vector2 position, RectTransform rectTransform)
     {
