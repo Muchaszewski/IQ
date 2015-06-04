@@ -42,13 +42,13 @@ public class ToolTipManager : UIManager
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!Show)
+        if (!Show || Input.GetMouseButton(0))
         {
             transform.position = new Vector3(-10000, -10000, 0);
         }
         else
         {
-            transform.position = (Vector2)Input.mousePosition;
+            transform.position = (Vector2)Input.mousePosition + new Vector2(-4, -4);
             Show = false;
         }
     }

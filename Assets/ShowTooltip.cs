@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.AnimatedValues;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -8,21 +9,25 @@ using UnityEngine.UI;
 public class ShowTooltip : MonoBehaviour
 {
     private ToolTipManager toolTip;
-    private RectTransform RactTransform;
+    private RectTransform _rectTransofrm;
     private Rect ItemPosition;
     private Item ItemData;
+
     // Use this for initialization
     void Start()
     {
         toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ToolTipManager>();
         ItemData = GetComponent<Item>();
-        RactTransform = GetComponent<RectTransform>();
+        _rectTransofrm = GetComponent<RectTransform>();
         UpdatePosition();
     }
 
     void UpdatePosition()
     {
-        ItemPosition = new Rect(transform.position.x, transform.position.y, RactTransform.rect.width * RactTransform.localScale.x, RactTransform.rect.height * RactTransform.localScale.y);
+        float rectX = _rectTransofrm.rect.width * _rectTransofrm.localScale.x;
+        float rectY = _rectTransofrm.rect.height * _rectTransofrm.localScale.y;
+
+        ItemPosition = new Rect(transform.position.x - rectX / 2, transform.position.y - rectY / 2, rectX, rectY);
     }
 
     // Update is called once per frame
