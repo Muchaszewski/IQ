@@ -12,6 +12,7 @@ public class ToolTipManager : MonoBehaviour
     public GameObject Separator;
     public GameObject Text;
     public GameObject Image;
+    public Sprite[] Images;
     public Canvas Canvas;
 
     //Properties
