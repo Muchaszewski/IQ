@@ -157,6 +157,9 @@ public class StatisticsManager : UIManager
         //stat to display. This stat then will be checked and changed every update.
         //String in Addlabel is only for preview in editor, since text value will be overitten
         //Also this string will be displayed if object is null *(to consider change to String.Empty)
+        //
+        //UpdateableStatistics path can be intelisence finished by typing _player. ... and removeing _player. 
+        //All shoudl be surrounded with quotation marks
         AddLabel(new Vector2(60, 20), _player.Stats.Strength.Type.ToString(), 30);
         AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableStatistics("Stats.Strength.Current", this);
 
@@ -167,6 +170,11 @@ public class StatisticsManager : UIManager
 
 static class UpdateableText
 {
+    /// <summary>
+    /// Set statistic to be updated every Update
+    /// </summary>
+    /// <param name="content">Path to content</param>
+    /// <param name="manager">Current statisccs Manager</param>
     public static void UpdateableStatistics(this Text text, string content, StatisticsManager manager)
     {
         manager.StatisticsPath.Add(new StatisticsManager.TextStringPair(content, text));
