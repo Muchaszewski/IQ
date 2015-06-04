@@ -37,8 +37,8 @@ namespace InventoryQuest.Components.Statistics
         [StatScale(1)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Critical Chance", "TODO SHORT CRITICAL CHANCE")] CriticalChance,
         [StatScale(4)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Parry", "TODO SHORT DEFLECTION")] Deflection,
 
-        [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Min Damage", "PHISICAL")] MinDamage,
-        [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Max Damage", "PHISICAL")] MaxDamage,
+        [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Damage", "PHISICAL")] MinDamage,
+        [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Damage", "PHISICAL")] MaxDamage,
         [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Fire Damage", "FIRE")] FireDamage,
         [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Cold Damage", "COLD")] ColdDamage,
         [StatScale(2)] [StatType(EnumStatItemPartType.WeaponType)] [Name("Lightning Damage", "LIGHTNING")] LightningDamage,

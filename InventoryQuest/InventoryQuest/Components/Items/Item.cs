@@ -11,7 +11,7 @@ namespace InventoryQuest.Components.Items
     public class Item
     {
         private StatValueFloat _Durability = new StatValueFloat(EnumTypeStat.Durability);
-        private string _ExtraName;
+        private string _ExtraName = String.Empty;
         private string _FlavorText;
         private ImageIDPair _ImageID;
         private int _Index;

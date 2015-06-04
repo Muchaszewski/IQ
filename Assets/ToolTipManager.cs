@@ -1,26 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class ToolTipManager : MonoBehaviour
 {
+
+    //Show in inspector
     public Color[] RarityColors;
     public GameObject Separator;
     public GameObject Text;
+    public GameObject Image;
     public Canvas Canvas;
 
+    //Properties
     public bool Show { get; set; }
 
-    private RectTransform RactTransform;
+    //Private varibles
+    private RectTransform _rectTransform;
+    private InventoryQuest.Components.Items.Item _item;
+    //_____________________________________________________________________________________________________________
 
-    //TODO change to one call SetTooltip and PoolManager
-    private List<GameObject> TempGC = new List<GameObject>();
+    [SerializeField]
+    [HideInInspector]
+    private List<GameObject> _tootipObjects = new List<GameObject>();
+
+    /// <summary>
+    /// List of tooltip objects current displayed
+    /// </summary>
+    public List<GameObject> TootipObjects
+    {
+        get { return _tootipObjects; }
+        set { _tootipObjects = value; }
+    }
+
+    //__________________________________________________MonoBehaviour______________________________________________
 
     // Use this for initialization
     void Start()
     {
-        RactTransform = GetComponent<RectTransform>();
+        _rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -37,60 +57,147 @@ public class ToolTipManager : MonoBehaviour
         }
     }
 
+    //______________________________________________End MonoBehaviour End__________________________________________
+
+    //______________________________________________Public Methods_________________________________________________
+
     public void SetTooltip(InventoryQuest.Components.Items.Item item)
     {
-        //TODO change to one call SetTooltip and PoolManager
-        foreach (var o in TempGC)
+        if (item != _item)
         {
-            Destroy(o);
+            _item = item;
+            foreach (var o in _tootipObjects)
+            {
+                Destroy(o);
+            }
+            _tootipObjects = new List<GameObject>();
+            if (item != null)
+            {
+                //Do not use outside this method or in cusotm inspector methods
+#pragma warning disable 618
+                CreateLabels(item);
+#pragma warning restore 618
+            }
         }
-        TempGC = new List<GameObject>();
-        //Tooltip code
-        AddLabel(new Vector2(50, 50), "Test");
-        AddSeparator(new Vector2(0, 100));
     }
 
-    void SetWindowSize(float newHeight)
+    /// <summary>
+    /// Create all labels for tooltip
+    /// </summary>
+    /// <param name="item"></param>
+    [Obsolete("Only for inspector use, and SetTooltip method")]
+    public void CreateLabels(InventoryQuest.Components.Items.Item item)
     {
-        RactTransform.sizeDelta.Set(RactTransform.sizeDelta.x, newHeight);
+#if UNITY_EDITOR
+        _rectTransform = GetComponent<RectTransform>();
+#endif
+        SetWindowSize(381);
+        CreateHeader(item);
+        CreateBasicMisc(item);
+        //---------------
+
+        //---------------
+        CreateValue(item);
     }
 
-    void AddWindowSize(float height)
+    public void SetWindowSize(float newHeight)
     {
-        RactTransform.sizeDelta.Set(RactTransform.sizeDelta.x, RactTransform.sizeDelta.y + height);
+        _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x, newHeight);
     }
 
-    void AddLabel(Vector2 position, string text)
+    public void AddWindowSize(float height)
     {
-        AddLabel(position, text, 20, new Color(112, 112, 112));
+        _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x, _rectTransform.sizeDelta.y + height);
     }
 
-    void AddLabel(Vector2 position, string text, int fontSize)
+    public float GetWindowHeight()
     {
-        AddLabel(position, text, fontSize, new Color(112, 112, 112));
+        return _rectTransform.sizeDelta.y;
     }
 
-    Text AddLabel(Vector2 position, string text, int fontSize, Color fontColor)
+    //__________________________________________End Public Methods End_____________________________________________
+
+    void CreateHeader(InventoryQuest.Components.Items.Item item)
+    {
+        if (item.ExtraName == null)
+        {
+            AddLabel(new Vector2(0, 30), item.Name, 35, TextAnchor.MiddleCenter);
+        }
+        else
+        {
+            AddLabel(new Vector2(0, 15), item.Name, TextAnchor.MiddleCenter);
+            AddLabel(new Vector2(0, 42), item.ExtraName, TextAnchor.MiddleCenter);
+        }
+    }
+
+    void CreateBasicMisc(InventoryQuest.Components.Items.Item item)
+    {
+        AddLabel(new Vector2(40, 86), item.ValidSlot.ToString() + " " + item.Type.ToString(), 16, Color.gray);
+        AddLabel(new Vector2(219, 334), item.Rarity.ToString(), 16, Color.gray, TextAnchor.UpperCenter);
+
+    }
+
+    void CreateValue(InventoryQuest.Components.Items.Item item)
+    {
+        var relativeHeight = GetWindowHeight();
+        AddSeparator(new Vector2(0, relativeHeight));
+        AddLabel(new Vector2(0, 15 + relativeHeight), item.Price.ToString(), 35, TextAnchor.MiddleCenter);
+        AddWindowSize(50);
+    }
+
+    Text AddLabel(Vector2 position, string text, TextAnchor aligment = TextAnchor.UpperLeft)
+    {
+        return AddLabel(position, text, 20, new Color(112, 112, 112), aligment);
+    }
+
+    Text AddLabel(Vector2 position, string text, int fontSize, TextAnchor aligment = TextAnchor.UpperLeft)
+    {
+        return AddLabel(position, text, fontSize, new Color(112, 112, 112), aligment);
+    }
+
+    Text AddLabel(Vector2 position, string text, int fontSize, Color fontColor, TextAnchor aligment = TextAnchor.UpperLeft)
     {
         Text textPrefab = Instantiate(Text).GetComponent<Text>();
-        textPrefab.name = "Text" + text;
+        textPrefab.name = "Text " + text;
         textPrefab.text = text;
         textPrefab.color = fontColor;
         textPrefab.fontSize = fontSize;
-        textPrefab.transform.SetParent(this.transform);
-        textPrefab.transform.localScale = Vector3.one;
-        textPrefab.transform.position = this.transform.position + Vector3.Scale(position, Canvas.transform.localScale);
-        TempGC.Add(textPrefab.gameObject);
+        textPrefab.alignment = aligment;
+        textPrefab.horizontalOverflow = HorizontalWrapMode.Overflow;
+        textPrefab.verticalOverflow = VerticalWrapMode.Overflow;
+        var rectTransform = textPrefab.GetComponent<RectTransform>();
+        CreateParent(position, rectTransform);
         return textPrefab;
     }
 
     GameObject AddSeparator(Vector2 position)
     {
         GameObject separator = Instantiate(Separator);
-        separator.transform.SetParent(this.transform);
-        separator.transform.localScale = Vector3.one;
-        separator.transform.position = this.transform.position + Vector3.Scale(position, Canvas.transform.localScale);
-        TempGC.Add(separator.gameObject);
+        CreateParent(position, separator.GetComponent<RectTransform>());
         return separator;
+    }
+
+    Image AddImage(Vector2 position, Vector2 size, Sprite sprite)
+    {
+        Image image = Instantiate(Image).GetComponent<Image>();
+        var rect = image.GetComponent<RectTransform>();
+        rect.sizeDelta = size;
+        CreateParent(position, rect);
+        return image;
+    }
+
+
+    /// <summary>
+    /// Set position relative to tooltip parent and add to tooltipObjects
+    /// </summary>
+    /// <param name="position">Position relative to tooltip (parent)</param>
+    /// <param name="rectTransform">Object to set position</param>
+    void CreateParent(Vector2 position, RectTransform rectTransform)
+    {
+        rectTransform.transform.SetParent(this.transform);
+        rectTransform.transform.localScale = Vector3.one;
+        rectTransform.pivot = new Vector2(0.5f, 1);
+        rectTransform.anchoredPosition = position * -1;
+        _tootipObjects.Add(rectTransform.gameObject);
     }
 }

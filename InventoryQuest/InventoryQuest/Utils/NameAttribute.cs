@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -80,14 +81,14 @@ namespace InventoryQuest
         /// <param name="member">Member, to get attribute from.</param>
         public static NameAttribute GetNameAttribute(MemberInfo member)
         {
-            NameAttribute attrib = member.GetCustomAttributes(typeof(NameAttribute), false)[0] as NameAttribute;
-            if (attrib == null)
+            object[] attrib = member.GetCustomAttributes(typeof(NameAttribute), false);
+            if (!attrib.Any())
             {
                 // If there is no NameAttribute for this member, create one with default name.
                 return new NameAttribute(member.Name);
             }
 
-            return attrib;
+            return (NameAttribute)attrib[0];
         }
     }
 }
