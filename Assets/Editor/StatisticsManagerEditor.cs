@@ -22,12 +22,13 @@ public class StatisticsManagerEditor : Editor
 #pragma warning disable 618
             script.CreateLabels();
 #pragma warning restore 618
+            Debug.Log("Updated");
         }
     }
 
     void ClearTooltipEditor()
     {
-        script.StatisticsTexts = new List<StatisticsManager.TextStringPair>();
+        script.StatisticsTexts = new List<StatisticsManager.TextObjectPair>();
         var children = new List<GameObject>();
         children.ForEach(child => Destroy(child));
         foreach (Transform child in script.transform)

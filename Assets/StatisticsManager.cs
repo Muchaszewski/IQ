@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using InventoryQuest.Components.Entities.Player;
 using InventoryQuest.Game;
 using UnityEditor;
@@ -16,22 +17,58 @@ public class StatisticsManager : UIManager
     private Player _player;
     [SerializeField]
     [HideInInspector]
-    private List<TextStringPair> _statisticsTexts = new List<TextStringPair>();
+    private List<TextStringPair> _statisticsPath = new List<TextStringPair>();
 
-    public List<TextStringPair> StatisticsTexts
+    public List<TextStringPair> StatisticsPath
+    {
+        get { return _statisticsPath; }
+        set { _statisticsPath = value; }
+    }
+
+    private List<TextObjectPair> _statisticsTexts = new List<TextObjectPair>();
+
+    public List<TextObjectPair> StatisticsTexts
     {
         get { return _statisticsTexts; }
         set { _statisticsTexts = value; }
     }
 
+    [Serializable]
     public class TextStringPair
     {
         [SerializeField]
-        public object Text { get; set; }
+        private string _text;
+
+        public string Text
+        {
+            get { return _text; }
+            set { _text = value; }
+        }
+
         [SerializeField]
+        private Text _gameObjectText;
+
+        public Text GameObjectText
+        {
+            get { return _gameObjectText; }
+            set { _gameObjectText = value; }
+        }
+
+        public TextStringPair(string text, Text gameObjectText)
+        {
+            _text = text;
+            _gameObjectText = gameObjectText;
+        }
+    }
+
+
+    public class TextObjectPair
+    {
+        public object Text { get; set; }
+
         public Text GameObjectText { get; set; }
 
-        public TextStringPair(object text, Text gameObjectText)
+        public TextObjectPair(object text, Text gameObjectText)
         {
             Text = text;
             GameObjectText = gameObjectText;
@@ -45,6 +82,7 @@ public class StatisticsManager : UIManager
     {
         _rectTransform = new RectTransform();
         _player = CurrentGame.Instance.Player;
+        ConvertStatistics();
     }
 
     // Update is called once per frame
@@ -74,9 +112,27 @@ public class StatisticsManager : UIManager
 
     //__________________________________________End Public Methods End_____________________________________________
 
+    void ConvertStatistics()
+    {
+        for (int i = 0; i < StatisticsPath.Count; i++)
+        {
+            var types = StatisticsPath[i].Text.Split('.');
+            List<object> list = new List<object>();
+            list.Add(_player);
+            for (int j = 0; j < types.Count(); j++)
+            {
+                var type = list[j].GetType();
+                var field = type.GetProperty(types[j]);
+                var value = field.GetValue(list[j], null);
+                list.Add(value);
+            }
+            StatisticsTexts.Add(new TextObjectPair(list[types.Count() - 1], _statisticsPath[i].GameObjectText));
+        }
+    }
+
+
     void UpdateStatistics()
     {
-        Debug.Log(StatisticsTexts.Count);
         for (int i = 0; i < StatisticsTexts.Count; i++)
         {
             StatisticsTexts[i].GameObjectText.text = StatisticsTexts[i].Text.ToString();
@@ -85,6 +141,7 @@ public class StatisticsManager : UIManager
 
     void CreateStatistics()
     {
+        StatisticsPath = new List<TextStringPair>();
 #if UNITY_EDITOR
         _player = CurrentGame.Instance.Player;
         //If current stat is empty, extract field from Addlabel and add it in preprocessor command
@@ -98,9 +155,10 @@ public class StatisticsManager : UIManager
         AddLabel(new Vector2(0, -15), playerName, 50, TextAnchor.UpperCenter);
         //If stat is updateable then extend Text with UpdateableStatistics method and add as object 
         //stat to display. This stat then will be checked and changed every update.
-        //String in Addlabel is only for preview in editor, since text value will be overitten anyway
+        //String in Addlabel is only for preview in editor, since text value will be overitten
+        //Also this string will be displayed if object is null *(to consider change to String.Empty)
         AddLabel(new Vector2(60, 20), _player.Stats.Strength.Type.ToString(), 30);
-        AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableStatistics(_player.Stats.Strength.Current, this);
+        AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableStatistics("Stats.Strength.Current", this);
 
     }
 
@@ -109,8 +167,9 @@ public class StatisticsManager : UIManager
 
 static class UpdateableText
 {
-    public static void UpdateableStatistics(this Text text, object content, StatisticsManager manager)
+    public static void UpdateableStatistics(this Text text, string content, StatisticsManager manager)
     {
-        manager.StatisticsTexts.Add(new StatisticsManager.TextStringPair(content, text));
+        manager.StatisticsPath.Add(new StatisticsManager.TextStringPair(content, text));
+        Debug.Log(manager.StatisticsPath.Count);
     }
 }
