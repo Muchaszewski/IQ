@@ -3,17 +3,13 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Assets;
 
-public class ToolTipManager : MonoBehaviour
+public class ToolTipManager : UIManager
 {
 
     //Show in inspector
     public Color[] RarityColors;
-    public GameObject Separator;
-    public GameObject Text;
-    public GameObject Image;
-    public Sprite[] Images;
-    public Canvas Canvas;
 
     //Properties
     public bool Show { get; set; }
@@ -146,59 +142,9 @@ public class ToolTipManager : MonoBehaviour
         AddWindowSize(50);
     }
 
-    Text AddLabel(Vector2 position, string text, TextAnchor aligment = TextAnchor.UpperLeft)
+    protected override void CreateParent(Vector2 position, RectTransform rectTransform)
     {
-        return AddLabel(position, text, 20, new Color(112, 112, 112), aligment);
-    }
-
-    Text AddLabel(Vector2 position, string text, int fontSize, TextAnchor aligment = TextAnchor.UpperLeft)
-    {
-        return AddLabel(position, text, fontSize, new Color(112, 112, 112), aligment);
-    }
-
-    Text AddLabel(Vector2 position, string text, int fontSize, Color fontColor, TextAnchor aligment = TextAnchor.UpperLeft)
-    {
-        Text textPrefab = Instantiate(Text).GetComponent<Text>();
-        textPrefab.name = "Text " + text;
-        textPrefab.text = text;
-        textPrefab.color = fontColor;
-        textPrefab.fontSize = fontSize;
-        textPrefab.alignment = aligment;
-        textPrefab.horizontalOverflow = HorizontalWrapMode.Overflow;
-        textPrefab.verticalOverflow = VerticalWrapMode.Overflow;
-        var rectTransform = textPrefab.GetComponent<RectTransform>();
-        CreateParent(position, rectTransform);
-        return textPrefab;
-    }
-
-    GameObject AddSeparator(Vector2 position)
-    {
-        GameObject separator = Instantiate(Separator);
-        CreateParent(position, separator.GetComponent<RectTransform>());
-        return separator;
-    }
-
-    Image AddImage(Vector2 position, Vector2 size, Sprite sprite)
-    {
-        Image image = Instantiate(Image).GetComponent<Image>();
-        var rect = image.GetComponent<RectTransform>();
-        rect.sizeDelta = size;
-        CreateParent(position, rect);
-        return image;
-    }
-
-
-    /// <summary>
-    /// Set position relative to tooltip parent and add to tooltipObjects
-    /// </summary>
-    /// <param name="position">Position relative to tooltip (parent)</param>
-    /// <param name="rectTransform">Object to set position</param>
-    void CreateParent(Vector2 position, RectTransform rectTransform)
-    {
-        rectTransform.transform.SetParent(this.transform);
-        rectTransform.transform.localScale = Vector3.one;
-        rectTransform.pivot = new Vector2(0.5f, 1);
-        rectTransform.anchoredPosition = position * -1;
+        base.CreateParent(position, rectTransform);
         _tootipObjects.Add(rectTransform.gameObject);
     }
 }
