@@ -12,25 +12,25 @@ public class Item : MonoBehaviour
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
-    private RectTransform _rectTransform;
+    public RectTransform RectTransform { get; private set; }
 
-    private static RectTransform _panel;
-    private static RectTransform _inventory;
-    private static Canvas _canvas;
+    public static RectTransform Panel;
+    public static RectTransform Inventory;
+    public static Canvas Canvas;
 
     // Use this for initialization
     void Start()
     {
-        if (_canvas == null)
+        if (Canvas == null)
         {
-            _inventory = transform.parent.GetComponent<RectTransform>();
-            _panel = transform.parent.parent.GetComponent<RectTransform>();
-            _canvas = FindObjectOfType<Canvas>();
+            Inventory = transform.parent.GetComponent<RectTransform>();
+            Panel = transform.parent.parent.GetComponent<RectTransform>();
+            Canvas = FindObjectOfType<Canvas>();
         }
         var spot = CurrentGame.Instance.Spot;
         ItemData = RandomItemFactory.CreateItem(1, spot);
         SetIcon();
-        _rectTransform = GetComponent<RectTransform>();
+        RectTransform = GetComponent<RectTransform>();
     }
 
     void SetIcon()
@@ -44,12 +44,12 @@ public class Item : MonoBehaviour
     public void Drag()
     {
         this.transform.position = Input.mousePosition;
-        this.transform.SetParent(_canvas.transform);
+        Inventory.GetComponent<InventoryPanel>().RemoveFromPanel(this);
     }
 
     public void Drop()
     {
-        this.transform.SetParent(_inventory.transform);
-        this._rectTransform.anchoredPosition = Vector2.one;
+        Inventory.GetComponent<InventoryPanel>().AddToPanel(this);
+
     }
 }

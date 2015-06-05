@@ -277,8 +277,7 @@ public class ToolTipManager : UIManager
         // The window often does not display correctly when this if case does not fire
         // I have no idea why.
 
-        if (true)
-        //if (item.FlavorText.Length > 0)
+        if (item.FlavorText != null)
         {
             int topMargin = _currentHeight;
             topMargin += 12;
