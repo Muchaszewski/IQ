@@ -62,7 +62,7 @@
         ///     Return Current procent
         /// </summary>
         /// <returns></returns>
-        double GetPercent();
+        float GetPercent();
 
         /// <summary>
         ///     Set Current base on procentage </para>

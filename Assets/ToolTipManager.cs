@@ -3,12 +3,14 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using InventoryQuest.Utils;
 
 public class ToolTipManager : UIManager
 {
 
     //Show in inspector
     public Color[] RarityColors;
+    public Image TooltipImage;
 
     //Properties
     public bool Show { get; set; }
@@ -44,13 +46,13 @@ public class ToolTipManager : UIManager
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!Show)
+        if (!Show || Input.GetMouseButton(0))
         {
             transform.position = new Vector3(-10000, -10000, 0);
         }
         else
         {
-            transform.position = (Vector2)Input.mousePosition;
+            transform.position = (Vector2)Input.mousePosition + new Vector2(-4, -4);
             Show = false;
         }
     }
@@ -71,12 +73,21 @@ public class ToolTipManager : UIManager
             _tootipObjects = new List<GameObject>();
             if (item != null)
             {
-                //Do not use outside this method or in cusotm inspector methods
+                SetIcon();
+                //Do not use outside this method or in custom inspector methods
 #pragma warning disable 618
                 CreateLabels(item);
 #pragma warning restore 618
             }
         }
+    }
+
+    void SetIcon()
+    {
+        var u = ImagesNames.ItemsImageNames[_item.ImageID.ImageIDType].FullNameList[_item.ImageID.ImageIDItem];
+        //TODO Take code from work :P
+        var sprite = Resources.Load<Sprite>(FileUtility.AssetsRelativePath(u));
+        TooltipImage.sprite = sprite;
     }
 
     /// <summary>
