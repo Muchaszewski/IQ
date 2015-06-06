@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using InventoryQuest.Components.Items;
+using UnityEngine;
 
 namespace InventoryQuest.Components.Entities.Player.Inventory
 {
@@ -41,12 +42,26 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
 
         /// <summary>
         ///     Add new item to inventory
+        /// <para>With resolved loaction</para>
         /// </summary>
         public void AddItem(Item item)
         {
             if (item != null)
             {
                 var index = GetNewIndex();
+                Items.Add(index, item);
+                EventItemAdded.Invoke(this, new EventItemArgs(index, item));
+            }
+        }
+
+        /// <summary>
+        ///     Add new item to inventory
+        /// <para>With given location</para>
+        /// </summary>
+        public void AddItem(int index, Item item)
+        {
+            if (item != null)
+            {
                 Items.Add(index, item);
                 EventItemAdded.Invoke(this, new EventItemArgs(index, item));
             }
@@ -91,6 +106,14 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             Items[indexFrom] = Items[indexWhere];
             Items[indexWhere] = itemToSawp;
             EventItemSwaped.Invoke(this, EventArgs.Empty);
+        }
+
+        public void MoveItem(int indexFrom, int indexWhere)
+        {
+            Item itemToSawp;
+            Items.TryGetValue(indexFrom, out itemToSawp);
+            Items.Remove(indexFrom);
+            Items.Add(indexWhere, itemToSawp);
         }
 
         /// <summary>

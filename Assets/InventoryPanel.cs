@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using InventoryQuest.Components;
 using InventoryQuest.Components.Entities.Player.Inventory;
 using InventoryQuest.Components.Generation.Items;
@@ -12,6 +13,8 @@ public class InventoryPanel : MonoBehaviour
 {
     public GameObject ItemPrefab;
     public int InventoryWidth = 8;
+    [SerializeField]
+    public float InventoryScale = 0.5f;
     private float _itemWidth;
     private float _itemHeight;
 
@@ -28,10 +31,13 @@ public class InventoryPanel : MonoBehaviour
 
     void Start()
     {
+        _itemWidth = ItemPrefab.GetComponent<RectTransform>().sizeDelta.x * InventoryScale;
+        _itemHeight = ItemPrefab.GetComponent<RectTransform>().sizeDelta.y * InventoryScale;
+
         Inventory.EventItemAdded += Inventory_EventItemAdded;
         Inventory.EventItemDeleted += Inventory_EventItemDeleted;
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 20; i++)
         {
             CurrentGame.Instance.Player.Inventory.AddItem(RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, EnumItemRarity.Normal));
         }
@@ -50,6 +56,8 @@ public class InventoryPanel : MonoBehaviour
     public void AddToPanel(ItemIcon itemIcon)
     {
         itemIcon.transform.SetParent(ItemIcon.Inventory.transform);
+        itemIcon.transform.localScale = new Vector3(InventoryScale, InventoryScale);
+        ResizeInventoryPanel();
     }
 
     /// <summary>
@@ -60,8 +68,6 @@ public class InventoryPanel : MonoBehaviour
     /// <returns></returns>
     public int ResolvePosition(ItemIcon itemIcon)
     {
-        _itemWidth = itemIcon.RectTransform.sizeDelta.x * itemIcon.transform.localScale.x;
-        _itemHeight = itemIcon.RectTransform.sizeDelta.y * itemIcon.transform.localScale.y;
 
         var position = itemIcon.RectTransform.anchoredPosition;//+= new Vector2(ItemWidth, -ItemHeight);
 
@@ -99,8 +105,6 @@ public class InventoryPanel : MonoBehaviour
         }
         else
         {
-            _itemWidth = itemIcon.RectTransform.sizeDelta.x * itemIcon.transform.localScale.x;
-            _itemHeight = itemIcon.RectTransform.sizeDelta.y * itemIcon.transform.localScale.y;
 
             int indexW = index % InventoryWidth;
             int indexH = index / InventoryWidth;
@@ -116,13 +120,13 @@ public class InventoryPanel : MonoBehaviour
     /// Swap out 2 ItemIcons in specific index if there is any
     /// </summary>
     /// <param name="itemIcon">Current item</param>
-    /// <param name="index">New position</param>
-    public void SwapItemsOnPanel(ItemIcon itemIcon, int index)
+    /// <param name="newKey">New position</param>
+    public void SwapItemsOnPanel(ItemIcon itemIcon, int newKey)
     {
         var inventory = CurrentGame.Instance.Player.Inventory;
-        if (index < 0)
+        if (newKey < 0)
         {
-            if (index == -(int)itemIcon.ItemData.ValidSlot)
+            if (newKey == -(int)itemIcon.ItemData.ValidSlot)
             {
                 //TODO equipment required
             }
@@ -133,21 +137,26 @@ public class InventoryPanel : MonoBehaviour
         }
         else
         {
-            var inventoryItem = ItemsPanel[index];
+            ItemIcon inventoryItem;
+            int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+            ItemsPanel.TryGetValue(newKey, out inventoryItem);
             if (inventoryItem == null)
             {
-                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
+                ItemsPanel.Remove(oldKey);
+                inventory.MoveItem(oldKey, newKey);
+                ItemsPanel.Add(newKey, itemIcon);
+                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, newKey);
             }
             else
             {
-                int oldIndex = ItemsPanel.IndexOfValue(itemIcon);
-                ItemsPanel[index] = itemIcon;
-                ItemsPanel[oldIndex] = inventoryItem;
-                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
-                inventoryItem.RectTransform.anchoredPosition = SetPosition(inventoryItem, oldIndex);
-                inventory.SawpItems(index, oldIndex);
+                ItemsPanel[newKey] = itemIcon;
+                ItemsPanel[oldKey] = inventoryItem;
+                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, newKey);
+                inventoryItem.RectTransform.anchoredPosition = SetPosition(inventoryItem, oldKey);
+                inventory.SawpItems(newKey, oldKey);
             }
         }
+        ResizeInventoryPanel();
     }
 
     /// <summary>
@@ -158,6 +167,7 @@ public class InventoryPanel : MonoBehaviour
     public void RemoveFromPanel(ItemIcon itemIcon)
     {
         itemIcon.transform.SetParent(ItemIcon.Canvas.transform);
+        ResizeInventoryPanel();
     }
 
     #endregion
@@ -171,6 +181,7 @@ public class InventoryPanel : MonoBehaviour
     void Inventory_EventItemAdded(object sender, EventItemArgs e)
     {
         _ItemsPanel.Add(e.Index, CreateItemIcon(e.Index, e.Item));
+        ResizeInventoryPanel();
     }
 
     /// <summary>
@@ -180,7 +191,27 @@ public class InventoryPanel : MonoBehaviour
     /// <param name="e"></param>
     void Inventory_EventItemDeleted(object sender, EventItemArgs e)
     {
-        _ItemsPanel.RemoveAt(e.Index);
+        ItemIcon go;
+        ItemsPanel.TryGetValue(e.Index, out go);
+        Destroy(go.gameObject);
+        ItemsPanel.RemoveAt(e.Index);
+        ResizeInventoryPanel();
+    }
+
+    void ResizeInventoryPanel()
+    {
+        if (!ItemsPanel.Any()) return;
+        var lastKey = ItemsPanel.Keys[ItemsPanel.Count - 1];
+        if (lastKey < 3 * InventoryWidth)
+        {
+            ItemIcon.Inventory.sizeDelta = new Vector2(532, 476);
+        }
+        else
+        {
+            var height = Mathf.CeilToInt(lastKey / (float)InventoryWidth);
+            Debug.Log(height);
+            ItemIcon.Inventory.sizeDelta = new Vector2(532, 35 + _itemHeight * height);
+        }
     }
 
     #endregion
