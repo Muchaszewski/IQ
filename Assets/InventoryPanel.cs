@@ -90,7 +90,6 @@ public class InventoryPanel : MonoBehaviour
                     //Return negative index of equipment
                     //Easier to manipulate with index then with abstract slot
                     //Also easier to manipulate if slot there is more then one type of slot
-                    Debug.Log(_equipment[i].Slot + " " + (-i - 1));
                     return -i - 1;
                 }
                 else
@@ -99,7 +98,6 @@ public class InventoryPanel : MonoBehaviour
                 }
             }
         }
-        Debug.LogError("Nope");
         //else if inventory
 
         if (itemIcon.transform.position.x < transform.position.x)
@@ -155,7 +153,6 @@ public class InventoryPanel : MonoBehaviour
     {
         if (index < 0)
         {
-            Debug.Log(index);
             //Return negative index of equipment 
             //Look ResolvePostion
             var eq = _equipment[-(index + 1)];
