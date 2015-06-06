@@ -37,7 +37,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         ///     If any of item has changed
         /// </summary>
         [field: NonSerialized]
-        public static event EventHandler<EventItemArgs> EventItemChanged = delegate { };
+        public static event EventHandler<EventArgs> EventItemSwaped = delegate { };
 
         /// <summary>
         ///     Add new item to inventory
@@ -78,6 +78,19 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             }
             //Return if foreach is empty
             return index += 1;
+        }
+
+        /// <summary>
+        /// Swap 2 items with places
+        /// </summary>
+        /// <param name="indexFrom"></param>
+        /// <param name="indexWhere"></param>
+        public void SawpItems(int indexFrom, int indexWhere)
+        {
+            var itemToSawp = Items[indexFrom];
+            Items[indexFrom] = Items[indexWhere];
+            Items[indexWhere] = itemToSawp;
+            EventItemSwaped.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>

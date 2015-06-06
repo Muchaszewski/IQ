@@ -72,6 +72,7 @@ public class ItemIcon : MonoBehaviour
     {
         var inventory = Inventory.GetComponent<InventoryPanel>();
         inventory.AddToPanel(this);
-        this.RectTransform.anchoredPosition = inventory.SetPosition(this, inventory.ResolvePosition(this));
+        inventory.SwapItemsOnPanel(this, inventory.ResolvePosition(this));
+        //this.RectTransform.anchoredPosition = inventory.SetPosition(this, inventory.ResolvePosition(this));
     }
 }

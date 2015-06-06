@@ -115,8 +115,8 @@ public class InventoryPanel : MonoBehaviour
     /// <summary>
     /// Swap out 2 ItemIcons in specific index if there is any
     /// </summary>
-    /// <param name="itemIcon"></param>
-    /// <param name="index"></param>
+    /// <param name="itemIcon">Current item</param>
+    /// <param name="index">New position</param>
     public void SwapItemsOnPanel(ItemIcon itemIcon, int index)
     {
         var inventory = CurrentGame.Instance.Player.Inventory;
@@ -128,20 +128,25 @@ public class InventoryPanel : MonoBehaviour
             }
             else
             {
-                //                SetPosition(itemIcon, itemIcon.ItemData.Index);
+                //SetPosition(itemIcon, itemIcon.ItemData.Index);
             }
         }
         else
         {
-            //var inventoryItem = inventory.Items.FirstOrDefault(x => x.Index == index);
-            //if (inventoryItem == null)
-            //{
-            //    SetPosition(itemIcon, index);
-            //}
-            //else
-            //{
-            //    SetPosition(itemIcon, index);
-            //}
+            var inventoryItem = ItemsPanel[index];
+            if (inventoryItem == null)
+            {
+                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
+            }
+            else
+            {
+                int oldIndex = ItemsPanel.IndexOfValue(itemIcon);
+                ItemsPanel[index] = itemIcon;
+                ItemsPanel[oldIndex] = inventoryItem;
+                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
+                inventoryItem.RectTransform.anchoredPosition = SetPosition(inventoryItem, oldIndex);
+                inventory.SawpItems(index, oldIndex);
+            }
         }
     }
 
@@ -166,7 +171,6 @@ public class InventoryPanel : MonoBehaviour
     void Inventory_EventItemAdded(object sender, EventItemArgs e)
     {
         _ItemsPanel.Add(e.Index, CreateItemIcon(e.Index, e.Item));
-        Debug.Log("Added");
     }
 
     /// <summary>
