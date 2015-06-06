@@ -12,7 +12,23 @@ public class ItemIcon : MonoBehaviour
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
-    public RectTransform RectTransform { get; private set; }
+    public RectTransform RectTransform
+    {
+        get
+        {
+            if (_rectTransform != null)
+            {
+                return _rectTransform;
+            }
+            else
+            {
+                _rectTransform = GetComponent<RectTransform>();
+                return _rectTransform;
+            }
+        }
+    }
+
+    private RectTransform _rectTransform;
 
     public static RectTransform Panel;
     public static RectTransform Inventory;
@@ -21,20 +37,22 @@ public class ItemIcon : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (Canvas == null)
-        {
-            Inventory = transform.parent.GetComponent<RectTransform>();
-            Panel = transform.parent.parent.GetComponent<RectTransform>();
-            Canvas = FindObjectOfType<Canvas>();
-        }
         if (ItemData == null)
         {
             Debug.LogError("Item data is required but was null");
         }
         SetIcon();
-        RectTransform = GetComponent<RectTransform>();
     }
 
+    public static void SetReferences()
+    {
+        if (Canvas == null)
+        {
+            Inventory = FindObjectOfType<InventoryPanel>().GetComponent<RectTransform>();
+            Panel = Inventory.parent.GetComponent<RectTransform>();
+            Canvas = FindObjectOfType<Canvas>();
+        }
+    }
 
     void SetIcon()
     {
@@ -52,7 +70,8 @@ public class ItemIcon : MonoBehaviour
 
     public void Drop()
     {
-        Inventory.GetComponent<InventoryPanel>().AddToPanel(this);
-
+        var inventory = Inventory.GetComponent<InventoryPanel>();
+        inventory.AddToPanel(this);
+        this.RectTransform.anchoredPosition = inventory.SetPosition(this, inventory.ResolvePosition(this));
     }
 }

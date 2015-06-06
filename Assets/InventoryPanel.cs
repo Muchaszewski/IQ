@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using InventoryQuest.Components;
 using InventoryQuest.Components.Entities.Player.Inventory;
+using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 
@@ -28,6 +30,11 @@ public class InventoryPanel : MonoBehaviour
     {
         Inventory.EventItemAdded += Inventory_EventItemAdded;
         Inventory.EventItemDeleted += Inventory_EventItemDeleted;
+
+        for (int i = 0; i < 30; i++)
+        {
+            CurrentGame.Instance.Player.Inventory.AddItem(RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, EnumItemRarity.Normal));
+        }
     }
 
 
@@ -38,13 +45,11 @@ public class InventoryPanel : MonoBehaviour
     #region PanelManupilations
     /// <summary>
     /// Add item from other control to panel
-    /// TODO Index manupilation
     /// </summary>
     /// <param name="itemIcon"></param>
     public void AddToPanel(ItemIcon itemIcon)
     {
         itemIcon.transform.SetParent(ItemIcon.Inventory.transform);
-        itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, ResolvePosition(itemIcon));
     }
 
     /// <summary>
@@ -160,8 +165,8 @@ public class InventoryPanel : MonoBehaviour
     /// <param name="e"></param>
     void Inventory_EventItemAdded(object sender, EventItemArgs e)
     {
-        _ItemsPanel.Add(e.Index, CreateItemIcon(e.Index, e.Item));   
-
+        _ItemsPanel.Add(e.Index, CreateItemIcon(e.Index, e.Item));
+        Debug.Log("Added");
     }
 
     /// <summary>
@@ -187,8 +192,10 @@ public class InventoryPanel : MonoBehaviour
     /// <returns></returns>
     public ItemIcon CreateItemIcon(int index, Item item)
     {
+        ItemIcon.SetReferences();
         var itemIcon = Instantiate(ItemPrefab).GetComponent<ItemIcon>();
         itemIcon.ItemData = item;
+        AddToPanel(itemIcon);
         itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
         return itemIcon;
     }

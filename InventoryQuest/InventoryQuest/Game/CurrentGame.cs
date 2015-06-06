@@ -3,6 +3,8 @@ using InventoryQuest.Components;
 using InventoryQuest.Components.Entities;
 using InventoryQuest.Components.Entities.Generation;
 using InventoryQuest.Components.Entities.Player;
+using InventoryQuest.Components.Generation.Items;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game.Fight;
 using InventoryQuest.Utils;
@@ -50,7 +52,7 @@ namespace InventoryQuest.Game
                 var stats = new Stats();
                 Player = new Player("Unnamed", 1, stats);
             }
-            var Enemy = new List<Entity> {RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal)};
+            var Enemy = new List<Entity> { RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal) };
             Idle = new Idle();
             FightController = new FightControllerPvE(Player, Enemy);
         }
@@ -74,7 +76,7 @@ namespace InventoryQuest.Game
                         {
                             Spot = GenerationStorage.Instance.Spots[TravelToSpot];
                             TravelToSpot = -1;
-                            ((FightControllerPvE) FightController).FightsInCurrentSpot = 0;
+                            ((FightControllerPvE)FightController).FightsInCurrentSpot = 0;
                         }
                         Traveling = 2;
                         FightController.ResetBattle();
