@@ -65,14 +65,15 @@ public class ItemIcon : MonoBehaviour
     public void Drag()
     {
         this.transform.position = Input.mousePosition;
-        Inventory.GetComponent<InventoryPanel>().RemoveFromPanel(this);
+        Inventory.GetComponent<InventoryPanel>().RemoveFromPanelAndResize(this);
     }
 
     public void Drop()
     {
         var inventory = Inventory.GetComponent<InventoryPanel>();
-        inventory.AddToPanel(this);
-        inventory.SwapItemsOnPanel(this, inventory.ResolvePosition(this));
+        int key = inventory.ResolvePosition(this);
+
+        inventory.SwapItemsOnPanel(this, key);
         //this.RectTransform.anchoredPosition = inventory.SetPosition(this, inventory.ResolvePosition(this));
     }
 }

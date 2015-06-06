@@ -11,14 +11,17 @@ using InventoryQuest.Game;
 
 public class InventoryPanel : MonoBehaviour
 {
+    public static InventoryPanel Instance { get; set; }
     public GameObject ItemPrefab;
     public int InventoryWidth = 8;
-    [SerializeField]
     public float InventoryScale = 0.5f;
+    [Tooltip("If screen is too small for displaying new items it will resize and this is additional space after last lane of items")]
+    public float InventoryNewLineSpace = 35;
     private float _itemWidth;
     private float _itemHeight;
 
     private SortedList<int, ItemIcon> _ItemsPanel = new SortedList<int, ItemIcon>();
+    private List<EquipmentSlot> _equipment = new List<EquipmentSlot>();
 
     /// <summary>
     ///     List of items on panel
@@ -29,10 +32,13 @@ public class InventoryPanel : MonoBehaviour
         set { _ItemsPanel = value; }
     }
 
+
     void Start()
     {
+        Instance = this;
         _itemWidth = ItemPrefab.GetComponent<RectTransform>().sizeDelta.x * InventoryScale;
         _itemHeight = ItemPrefab.GetComponent<RectTransform>().sizeDelta.y * InventoryScale;
+        _equipment.AddRange(FindObjectsOfType<EquipmentSlot>());
 
         Inventory.EventItemAdded += Inventory_EventItemAdded;
         Inventory.EventItemDeleted += Inventory_EventItemDeleted;
@@ -43,11 +49,16 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        //Debug.Log(Input.mousePosition);
+    }
+
 
     /*
      * All of those are panel operations and non of that acctauli do anything with items it self yet
      * CONSIDE THIS WHILE MORE CODE MANIPULATIONS
-    */
+     */
     #region PanelManupilations
     /// <summary>
     /// Add item from other control to panel
@@ -56,31 +67,55 @@ public class InventoryPanel : MonoBehaviour
     public void AddToPanel(ItemIcon itemIcon)
     {
         itemIcon.transform.SetParent(ItemIcon.Inventory.transform);
-        itemIcon.transform.localScale = new Vector3(InventoryScale, InventoryScale);
         ResizeInventoryPanel();
     }
 
     /// <summary>
     /// Input ItemIcon to recive its position on GUI
-    /// TODO if eq is closed and item is pulled of grid?
     /// </summary>
     /// <param name="itemIcon"></param>
     /// <returns></returns>
     public int ResolvePosition(ItemIcon itemIcon)
     {
-
-        var position = itemIcon.RectTransform.anchoredPosition;//+= new Vector2(ItemWidth, -ItemHeight);
-
         int index = 0;
+        var key = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
 
-        if (position.x < 0)
+        //If equipment
+        for (int i = 0; i < _equipment.Count; i++)
         {
-            position.x = 0;
+            if (_equipment[i].GetAbsolutiveRect().Contains(itemIcon.transform.position))
+            {
+                if (_equipment[i].Slot == itemIcon.ItemData.ValidSlot)
+                {
+                    //Return negative index of equipment
+                    //Easier to manipulate with index then with abstract slot
+                    //Also easier to manipulate if slot there is more then one type of slot
+                    Debug.Log(_equipment[i].Slot + " " + (-i - 1));
+                    return -i - 1;
+                }
+                else
+                {
+                    return key;
+                }
+            }
         }
-        if (-position.y < 0)
+        Debug.LogError("Nope");
+        //else if inventory
+
+        if (itemIcon.transform.position.x < transform.position.x)
         {
-            position.y = 0;
+            return key;
         }
+        if (itemIcon.transform.position.y < transform.position.y)
+        {
+            return key;
+        }
+
+        //Change paretn to inventory for easier position controll
+        AddToPanel(itemIcon);
+        var position = itemIcon.RectTransform.anchoredPosition;
+        RemoveFromPanel(itemIcon);
+        //Proper adding is called later so remove it for good sake
         int positionX = (int)(position.x / _itemWidth);
         int positionY = (int)(-position.y / _itemHeight);
 
@@ -96,16 +131,16 @@ public class InventoryPanel : MonoBehaviour
     /// <param name="itemIcon"></param>
     /// <param name="index"></param>
     /// <returns></returns>
-    public Vector2 SetPosition(ItemIcon itemIcon, int index)
+    public Vector2 GetPosition(int index)
     {
         if (index < 0)
         {
-            //TODO equipment
-            return new Vector2();
+            //For equipment return zero
+            //and resolve it while setting
+            return Vector2.zero;
         }
         else
         {
-
             int indexW = index % InventoryWidth;
             int indexH = index / InventoryWidth;
 
@@ -114,6 +149,30 @@ public class InventoryPanel : MonoBehaviour
 
             return new Vector2(x, y);
         }
+    }
+
+    public void SetPositon(ItemIcon itemIcon, int index, Vector2 position)
+    {
+        if (index < 0)
+        {
+            Debug.Log(index);
+            //Return negative index of equipment 
+            //Look ResolvePostion
+            var eq = _equipment[-(index + 1)];
+            eq.AddToPanel(itemIcon);
+            //Resolve position while setting because every setting in eq is diffrent
+            eq.SetItemIcon(itemIcon);
+        }
+        else
+        {
+            AddToPanel(itemIcon);
+            itemIcon.RectTransform.anchoredPosition = position;
+        }
+    }
+
+    public void GetAndSetPosition(ItemIcon itemIcon, int index)
+    {
+        SetPositon(itemIcon, index, GetPosition(index));
     }
 
     /// <summary>
@@ -132,7 +191,7 @@ public class InventoryPanel : MonoBehaviour
             }
             else
             {
-                //SetPosition(itemIcon, itemIcon.ItemData.Index);
+                GetAndSetPosition(itemIcon, newKey);
             }
         }
         else
@@ -145,18 +204,29 @@ public class InventoryPanel : MonoBehaviour
                 ItemsPanel.Remove(oldKey);
                 inventory.MoveItem(oldKey, newKey);
                 ItemsPanel.Add(newKey, itemIcon);
-                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, newKey);
+                GetAndSetPosition(itemIcon, newKey);
             }
             else
             {
                 ItemsPanel[newKey] = itemIcon;
                 ItemsPanel[oldKey] = inventoryItem;
-                itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, newKey);
-                inventoryItem.RectTransform.anchoredPosition = SetPosition(inventoryItem, oldKey);
+                GetAndSetPosition(itemIcon, newKey);
+                GetAndSetPosition(inventoryItem, oldKey);
                 inventory.SawpItems(newKey, oldKey);
             }
+            ResizeInventoryPanel();
         }
-        ResizeInventoryPanel();
+    }
+
+
+    /// <summary>
+    /// Move element to Canvas and resize it to userfrendly scale
+    /// </summary>
+    /// <param name="itemIcon"></param>
+    public void RemoveFromPanelAndResize(ItemIcon itemIcon)
+    {
+        ResizeItemIcon(itemIcon);
+        RemoveFromPanel(itemIcon);
     }
 
     /// <summary>
@@ -166,8 +236,24 @@ public class InventoryPanel : MonoBehaviour
     /// <param name="itemIcon"></param>
     public void RemoveFromPanel(ItemIcon itemIcon)
     {
+        //Add to Canvas for free movemnt
         itemIcon.transform.SetParent(ItemIcon.Canvas.transform);
+        //Resize inventory panel (in canse it was in invetnory)
         ResizeInventoryPanel();
+    }
+
+    /// <summary>
+    /// Resize element to userfrendly scale
+    /// </summary>
+    /// <param name="itemIcon"></param>
+    public void ResizeItemIcon(ItemIcon itemIcon)
+    {
+        //Set userfrendly size of itemIcon
+        itemIcon.RectTransform.sizeDelta = ItemPrefab.GetComponent<RectTransform>().sizeDelta;
+        itemIcon.transform.localScale = Vector3.one * InventoryScale;
+        var image = itemIcon.RectTransform.GetChild(0).GetComponent<RectTransform>();
+        image.sizeDelta = ItemPrefab.GetComponent<RectTransform>().sizeDelta;
+        image.transform.localScale = Vector3.one;
     }
 
     #endregion
@@ -209,8 +295,7 @@ public class InventoryPanel : MonoBehaviour
         else
         {
             var height = Mathf.CeilToInt(lastKey / (float)InventoryWidth);
-            Debug.Log(height);
-            ItemIcon.Inventory.sizeDelta = new Vector2(532, 35 + _itemHeight * height);
+            ItemIcon.Inventory.sizeDelta = new Vector2(532, InventoryNewLineSpace + _itemHeight * height);
         }
     }
 
@@ -231,7 +316,8 @@ public class InventoryPanel : MonoBehaviour
         var itemIcon = Instantiate(ItemPrefab).GetComponent<ItemIcon>();
         itemIcon.ItemData = item;
         AddToPanel(itemIcon);
-        itemIcon.RectTransform.anchoredPosition = SetPosition(itemIcon, index);
+        itemIcon.transform.localScale = Vector3.one * InventoryScale;
+        GetAndSetPosition(itemIcon, index);
         return itemIcon;
     }
 
