@@ -8,7 +8,7 @@ using InventoryQuest.Utils;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+public class ItemIcon : MonoBehaviour
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
@@ -27,11 +27,14 @@ public class Item : MonoBehaviour
             Panel = transform.parent.parent.GetComponent<RectTransform>();
             Canvas = FindObjectOfType<Canvas>();
         }
-        var spot = CurrentGame.Instance.Spot;
-        ItemData = RandomItemFactory.CreateItem(1, spot);
+        if (ItemData == null)
+        {
+            Debug.LogError("Item data is required but was null");
+        }
         SetIcon();
         RectTransform = GetComponent<RectTransform>();
     }
+
 
     void SetIcon()
     {

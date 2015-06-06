@@ -4,11 +4,14 @@ namespace InventoryQuest.Components.Items
 {
     public class EventItemArgs : EventArgs
     {
-        public EventItemArgs(Item item)
+        public EventItemArgs(int index, Item item)
         {
             Item = item;
+            Index = index;
         }
 
         public Item Item { get; set; }
+
+        public int Index { get; set; }
     }
 }

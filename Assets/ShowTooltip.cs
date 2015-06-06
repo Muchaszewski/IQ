@@ -4,20 +4,20 @@ using UnityEditor.AnimatedValues;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Item))]
+[RequireComponent(typeof(ItemIcon))]
 [RequireComponent(typeof(RectTransform))]
 public class ShowTooltip : MonoBehaviour
 {
     private ToolTipManager toolTip;
     private RectTransform _rectTransofrm;
     private Rect ItemPosition;
-    private Item ItemData;
+    private ItemIcon ItemData;
 
     // Use this for initialization
     void Start()
     {
         toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ToolTipManager>();
-        ItemData = GetComponent<Item>();
+        ItemData = GetComponent<ItemIcon>();
         _rectTransofrm = GetComponent<RectTransform>();
         UpdatePosition();
     }

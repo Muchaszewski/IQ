@@ -10,12 +10,12 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
     [Serializable]
     public class Inventory
     {
-        private readonly List<Item> _Items = new List<Item>();
+        private SortedList<int, Item> _Items = new SortedList<int, Item>();
 
         /// <summary>
         ///     List of items in inventory
         /// </summary>
-        public List<Item> Items
+        public SortedList<int, Item> Items
         {
             get { return _Items; }
             set { Items = value; }
@@ -25,19 +25,19 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         ///     If item was added
         /// </summary>
         [field: NonSerialized]
-        public event EventHandler<EventItemArgs> EventItemAdded = delegate { };
+        public static event EventHandler<EventItemArgs> EventItemAdded = delegate { };
 
         /// <summary>
         ///     If item was deleted
         /// </summary>
         [field: NonSerialized]
-        public event EventHandler<EventItemArgs> EventItemDeleted = delegate { };
+        public static event EventHandler<EventItemArgs> EventItemDeleted = delegate { };
 
         /// <summary>
         ///     If any of item has changed
         /// </summary>
         [field: NonSerialized]
-        public event EventHandler<EventItemArgs> EventItemChanged = delegate { };
+        public static event EventHandler<EventItemArgs> EventItemChanged = delegate { };
 
         /// <summary>
         ///     Add new item to inventory
@@ -47,10 +47,8 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             if (item != null)
             {
                 var index = GetNewIndex();
-                Items.Add(item);
-                item.Index = index;
-                Items.Sort((x, y) => x.Index.CompareTo(y.Index));
-                EventItemAdded.Invoke(this, new EventItemArgs(item));
+                Items.Add(index, item);
+                EventItemAdded.Invoke(this, new EventItemArgs(index, item));
             }
         }
 
@@ -61,20 +59,24 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         public int GetNewIndex()
         {
             var index = -1;
-            foreach (Item item in Items)
+            foreach (KeyValuePair<int, Item> keyValuePair in Items)
             {
-                if (item.Index < 0) continue;
+                //Dont check negative indexes
+                if (keyValuePair.Key < 0) continue;
 
-                if (index + 1 == item.Index)
+                //If selected key if equal to current index
+                if (index + 1 == keyValuePair.Key)
                 {
-                    index = item.Index;
+                    index = keyValuePair.Key;
                 }
                 else
                 {
+                    //Return on first occurance of free spot
                     index += 1;
                     return index;
                 }
             }
+            //Return if foreach is empty
             return index += 1;
         }
 
@@ -93,12 +95,20 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         /// <summary>
         ///     Remove item form inventory
         /// </summary>
+        public void RemoveItem(int index)
+        {
+            EventItemDeleted.Invoke(this, new EventItemArgs(index, Items[index]));
+            Items.RemoveAt(index);
+        }
+
+        /// <summary>
+        ///     Remove item form inventory
+        /// </summary>
         public void RemoveItem(Item item)
         {
-            var index = Items.IndexOf(item);
+            var index = Items.IndexOfValue(item);
+            EventItemDeleted.Invoke(this, new EventItemArgs(index, item));
             Items.RemoveAt(index);
-            Items.Sort((x, y) => x.Index.CompareTo(y.Index));
-            EventItemDeleted.Invoke(this, new EventItemArgs(item));
         }
 
         /// <summary>

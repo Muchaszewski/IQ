@@ -54,12 +54,6 @@ namespace InventoryQuest.Components.Items
             set { _Name = value; }
         }
 
-        public int Index
-        {
-            get { return _Index; }
-            set { _Index = value; }
-        }
-
         /// <summary>
         ///     Name only if Mithical/Rare
         /// </summary>
