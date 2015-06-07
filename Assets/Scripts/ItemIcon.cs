@@ -64,8 +64,11 @@ public class ItemIcon : MonoBehaviour
 
     public void Drag()
     {
-        this.transform.position = Input.mousePosition;
-        Inventory.GetComponent<InventoryPanel>().RemoveFromPanelAndResize(this);
+        if (Input.GetMouseButton(0))
+        {
+            this.transform.position = Input.mousePosition;
+            Inventory.GetComponent<InventoryPanel>().RemoveFromPanelAndResize(this);
+        }
     }
 
     public void Drop()

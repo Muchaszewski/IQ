@@ -99,12 +99,13 @@ public class InventoryPanel : MonoBehaviour
             }
         }
         //else if inventory
-
-        if (itemIcon.transform.position.x < transform.position.x)
-        {
-            return key;
-        }
-        if (itemIcon.transform.position.y < transform.position.y)
+        Rect rect = new Rect(
+            transform.position.x,
+            transform.position.y,
+            GetComponent<RectTransform>().sizeDelta.x * transform.localScale.x,
+            GetComponent<RectTransform>().sizeDelta.y * transform.localScale.y
+            );
+        if (!rect.Contains(itemIcon.transform.position))
         {
             return key;
         }
@@ -180,39 +181,28 @@ public class InventoryPanel : MonoBehaviour
     public void SwapItemsOnPanel(ItemIcon itemIcon, int newKey)
     {
         var inventory = CurrentGame.Instance.Player.Inventory;
-        if (newKey < 0)
+
+        ItemIcon inventoryItem;
+        int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        ItemsPanel.TryGetValue(newKey, out inventoryItem);
+        Debug.Log(newKey + " " + oldKey);
+        if (inventoryItem == null)
         {
-            if (newKey == -(int)itemIcon.ItemData.ValidSlot)
-            {
-                //TODO equipment required
-            }
-            else
-            {
-                GetAndSetPosition(itemIcon, newKey);
-            }
+            ItemsPanel.Remove(oldKey);
+            inventory.MoveItem(oldKey, newKey);
+            ItemsPanel.Add(newKey, itemIcon);
+            GetAndSetPosition(itemIcon, newKey);
         }
         else
         {
-            ItemIcon inventoryItem;
-            int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
-            ItemsPanel.TryGetValue(newKey, out inventoryItem);
-            if (inventoryItem == null)
-            {
-                ItemsPanel.Remove(oldKey);
-                inventory.MoveItem(oldKey, newKey);
-                ItemsPanel.Add(newKey, itemIcon);
-                GetAndSetPosition(itemIcon, newKey);
-            }
-            else
-            {
-                ItemsPanel[newKey] = itemIcon;
-                ItemsPanel[oldKey] = inventoryItem;
-                GetAndSetPosition(itemIcon, newKey);
-                GetAndSetPosition(inventoryItem, oldKey);
-                inventory.SawpItems(newKey, oldKey);
-            }
-            ResizeInventoryPanel();
+            ItemsPanel[newKey] = itemIcon;
+            ItemsPanel[oldKey] = inventoryItem;
+            GetAndSetPosition(itemIcon, newKey);
+            GetAndSetPosition(inventoryItem, oldKey);
+            ResizeItemIcon(inventoryItem);
+            inventory.SawpItems(newKey, oldKey);
         }
+        ResizeInventoryPanel();
     }
 
 
