@@ -33,27 +33,6 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         private Item _Weapon;
 
         /// <summary>
-        ///     If equiped item changed
-        ///     <para>Called in method UpdateStatisticsOnUnEquip</para>
-        /// </summary>
-        public EventHandler<EventArgs> EquipmentChange = delegate { };
-
-        /// <summary>
-        /// </summary>
-        /// <param name="player">This player</param>
-        public Equipment(Player player)
-        {
-            this.player = player;
-            Amulets = new Item[AMULETS_COUNT];
-            Ring = new Item[RINGS_COUNT];
-            Armor = new List<Item>();
-            for (var i = 0; i < 9; i++)
-            {
-                Armor.Add(null);
-            }
-        }
-
-        /// <summary>
         ///     Every equiped armor piece
         /// </summary>
         public List<Item> Armor
@@ -96,6 +75,21 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         {
             get { return _Ring; }
             set { _Ring = value; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="player">This player</param>
+        public Equipment(Player player)
+        {
+            this.player = player;
+            Amulets = new Item[AMULETS_COUNT];
+            Ring = new Item[RINGS_COUNT];
+            Armor = new List<Item>();
+            for (var i = 0; i < 9; i++)
+            {
+                Armor.Add(null);
+            }
         }
 
         public void Equip(Item item, EnumItemSlot slot)
@@ -188,7 +182,6 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                     playerStatsFloat[i].Extend -= itemStats[i].Base;
                 }
             }
-            EquipmentChange(this, EventArgs.Empty);
         }
 
         public void SetCustomStats()

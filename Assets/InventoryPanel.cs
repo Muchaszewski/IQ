@@ -185,7 +185,6 @@ public class InventoryPanel : MonoBehaviour
         ItemIcon inventoryItem;
         int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
         ItemsPanel.TryGetValue(newKey, out inventoryItem);
-        Debug.Log(newKey + " " + oldKey);
         if (inventoryItem == null)
         {
             ItemsPanel.Remove(oldKey);
