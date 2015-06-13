@@ -8,7 +8,7 @@ using InventoryQuest.Game;
 using UnityEditor;
 using UnityEngine.UI;
 
-public class StatisticsManager : UIManager
+public class SkillsManager : UIManager
 {
 
     //_____________________________________________________________________________________________________________
@@ -161,7 +161,7 @@ public class StatisticsManager : UIManager
         //UpdateableStatistics path can be intelisence finished by typing _player. ... and removeing _player. 
         //All shoudl be surrounded with quotation marks
         AddLabel(new Vector2(60, 20), _player.Stats.Strength.Type.ToString(), 30);
-        AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableStatistics("Stats.Strength.Current", this);
+        AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableSkills("Stats.Strength.Current", this);
 
     }
 
@@ -175,9 +175,9 @@ static partial class UpdateableText
     /// </summary>
     /// <param name="content">Path to content</param>
     /// <param name="manager">Current statisccs Manager</param>
-    public static void UpdateableStatistics(this Text text, string content, StatisticsManager manager)
+    public static void UpdateableSkills(this Text text, string content, SkillsManager manager)
     {
-        manager.StatisticsPath.Add(new StatisticsManager.TextStringPair(content, text));
+        manager.StatisticsPath.Add(new SkillsManager.TextStringPair(content, text));
         Debug.Log(manager.StatisticsPath.Count);
     }
 }
