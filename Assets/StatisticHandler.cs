@@ -11,6 +11,7 @@ public class StatisticHandler : MonoBehaviour
     public bool isStat = true;
     public EnumItemClassSkill skill;
     public EnumTypeStat stat;
+    public EnumStatValue value;
 
 }
 

@@ -13,6 +13,7 @@ public class StatisticsHandlerEditor : Editor {
 
     public override void OnInspectorGUI()
     {
+        EditorGUILayout.HelpBox("Za dużo zachodu w dodawaniu inspektora więc idę na łatwiznę. If bool is true only \"stat\" and \"value\" will work, else only \"skill\"", MessageType.Info);
         DrawDefaultInspector();
     }
 }
