@@ -67,8 +67,23 @@ public class StatisticsManagerEditor : Editor
                               text.text + ", " +
                               text.fontSize + ", " +
                               "new Color(" + text.color.r + "," + text.color.g + "," + text.color.b + "," + text.color.a + "), " +
-                              "TextAnchor."+text.alignment + ");"
+                              "TextAnchor." + text.alignment + ")"
                               );
+                var handler = text.GetComponent<StatisticHandler>();
+                if (handler != null)
+                {
+                    sb.Append(".UpdateableStatistics(\"");
+                    if (handler.isStat)
+                    {
+                        sb.Append("Stats." + handler.stat + "." + handler.value);
+                    }
+                    else
+                    {
+                        Debug.Log("Not implemented Exception");
+                    }
+                    sb.Append("\", this)");
+                }
+                sb.Append(";");
             }
         }
         return sb;
