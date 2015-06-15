@@ -141,18 +141,23 @@ public class StatisticsManager : UIManager
 
     void CreateStatistics()
     {
+
         StatisticsPath = new List<TextStringPair>();
+
 #if UNITY_EDITOR
         _player = CurrentGame.Instance.Player;
         //If current stat is empty, extract field from Addlabel and add it in preprocessor command
         //UNITY_EDIOTOR enter test value and surround with "if (!EditorApplication.isPlaying)"
+        
         var playerName = _player.Name;
         if (!EditorApplication.isPlaying)
         {
-            playerName = "Regnar";
+            playerName = "Ragnar";
         }
 #endif
-        AddLabel(new Vector2(0, -15), playerName, 50, TextAnchor.UpperCenter);
+
+        string playerLevelText = "LEVEL " + _player.Level;
+
         //If stat is updateable then extend Text with UpdateableStatistics method and add as object 
         //stat to display. This stat then will be checked and changed every update.
         //String in Addlabel is only for preview in editor, since text value will be overitten
@@ -160,8 +165,68 @@ public class StatisticsManager : UIManager
         //
         //UpdateableStatistics path can be intelisence finished by typing _player. ... and removeing _player. 
         //All shoudl be surrounded with quotation marks
-        AddLabel(new Vector2(60, 20), _player.Stats.Strength.Type.ToString(), 30);
-        AddLabel(new Vector2(-60, 20), "Strength", 30).UpdateableStatistics("Stats.Strength.Current", this);
+
+
+
+        /////////////////
+        // Player info //
+        /////////////////
+
+        AddLabel(new Vector2(3, 10), playerName, 38, TextAnchor.UpperCenter);
+        AddLabel(new Vector2(3, 49), playerLevelText, 20, TextAnchor.UpperCenter);
+
+
+
+        ///////////
+        // Stats //
+        ///////////
+
+        // Base Stats
+
+        //AddLabel(new Vector2(180, 160), _player.Stats.Strength.Type.ToString(), 30);
+        AddLabel(new Vector2(155, 178), "STR", 25);
+        AddLabel(new Vector2(45, 178), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this);
+
+        AddLabel(new Vector2(155, 207), "CON", 25);
+        AddLabel(new Vector2(45, 207), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+        AddLabel(new Vector2(155, 236), "AGI", 25);
+        AddLabel(new Vector2(45, 236), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+        AddLabel(new Vector2(155, 265), "PER", 25);
+        AddLabel(new Vector2(45, 265), "VAL", 25).UpdateableStatistics("Stats.Perception.Current", this);
+
+        AddLabel(new Vector2(155, 294), "WIS", 25);
+        AddLabel(new Vector2(45, 294), "VAL", 25).UpdateableStatistics("Stats.Wisdom.Current", this);
+
+        AddLabel(new Vector2(155, 323), "INT", 25);
+        AddLabel(new Vector2(45, 323), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+
+
+        ////////////////////
+        // Resource Stats //
+        ////////////////////
+
+        AddLabel(new Vector2(-116, 178), "HTH", 25);
+        AddLabel(new Vector2(-255, 178), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+        AddLabel(new Vector2(-116, 203), "REG", 12);
+        AddLabel(new Vector2(-255, 203), "VAL", 12).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+        AddLabel(new Vector2(-116, 222), "SHLD", 25);
+        AddLabel(new Vector2(-255, 222), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+        AddLabel(new Vector2(-116, 247), "REG", 12);
+        AddLabel(new Vector2(-255, 247), "VAL", 12).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+        AddLabel(new Vector2(-116, 274), "STA", 25);
+        AddLabel(new Vector2(-255, 274), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+        AddLabel(new Vector2(-116, 299), "REG", 12);
+        AddLabel(new Vector2(-255, 299), "VAL", 12).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+
+        AddLabel(new Vector2(-116, 318), "MANA", 25);
+        AddLabel(new Vector2(-255, 318), "VAL", 25).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
+        AddLabel(new Vector2(-116, 343), "REG", 12);
+        AddLabel(new Vector2(-255, 343), "VAL", 12).UpdateableStatistics("Stats.Strength.Current", this); // Stat name?
 
     }
 
