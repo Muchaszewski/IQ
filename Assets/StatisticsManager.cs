@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using InventoryQuest.Components.Entities.Player;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using UnityEditor;
 using UnityEngine.UI;
@@ -148,7 +149,7 @@ public class StatisticsManager : UIManager
         _player = CurrentGame.Instance.Player;
         //If current stat is empty, extract field from Addlabel and add it in preprocessor command
         //UNITY_EDIOTOR enter test value and surround with "if (!EditorApplication.isPlaying)"
-        
+
         var playerName = _player.Name;
         if (!EditorApplication.isPlaying)
         {
@@ -174,8 +175,6 @@ public class StatisticsManager : UIManager
 
         AddLabel(new Vector2(3, 10), playerName, 38, TextAnchor.UpperCenter);
         AddLabel(new Vector2(3, 49), playerLevelText, 20, TextAnchor.UpperCenter);
-
-
 
         ///////////
         // Stats //
