@@ -26,10 +26,12 @@ public class StatisticsManagerEditor : Editor
         }
         if (!String.IsNullOrEmpty(codeString.ToString()))
         {
+            if (GUILayout.Button("Copy"))
+            {
+                EditorGUIUtility.systemCopyBuffer = codeString.ToString();
+            }
             GUILayout.TextArea(codeString.ToString());
             EditorGUILayout.HelpBox("To apply changes to live code, copy above code and paste it to StatisticsManager class", MessageType.Info);
-            EditorGUILayout.HelpBox("Note that it wont change anything since StatisticHandler is not implemented yet", MessageType.Warning);
-
         }
         //        if (GUILayout.Button("Set preview values"))
         //        {
@@ -62,9 +64,9 @@ public class StatisticsManagerEditor : Editor
             var text = script.transform.GetChild(i).GetComponent<Text>();
             if (text != null)
             {
-                sb.AppendLine("AddLabel(" +
+                sb.Append("AddLabel(" +
                               "new Vector2(" + text.GetComponent<RectTransform>().anchoredPosition.x + "," + text.GetComponent<RectTransform>().anchoredPosition.y + "), " +
-                              text.text + ", " +
+                              "\"" + text.text + "\"" + ", " +
                               text.fontSize + ", " +
                               "new Color(" + text.color.r + "," + text.color.g + "," + text.color.b + "," + text.color.a + "), " +
                               "TextAnchor." + text.alignment + ")"
@@ -73,7 +75,7 @@ public class StatisticsManagerEditor : Editor
                 if (handler != null)
                 {
                     sb.Append(".UpdateableStatistics(\"");
-                    if (handler.isStat)
+                    if (handler.statType == EnumStatisticHandler.Stat)
                     {
                         sb.Append("Stats." + handler.stat + "." + handler.value);
                     }
@@ -83,7 +85,7 @@ public class StatisticsManagerEditor : Editor
                     }
                     sb.Append("\", this)");
                 }
-                sb.Append(";");
+                sb.AppendLine(";");
             }
         }
         return sb;
