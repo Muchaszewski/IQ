@@ -242,6 +242,5 @@ static partial class UpdateableText
     public static void UpdateableStatistics(this Text text, string content, StatisticsManager manager)
     {
         manager.StatisticsPath.Add(new StatisticsManager.TextStringPair(content, text));
-        Debug.Log(manager.StatisticsPath.Count);
     }
 }
