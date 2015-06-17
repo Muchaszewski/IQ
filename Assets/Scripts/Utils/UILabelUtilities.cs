@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UILabelManager : MonoBehaviour
 {
     public GameObject Separator;
     public GameObject Text;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using InventoryQuest.Utils;
 
-public class ToolTipManager : UIManager
+public class ToolTipManager : UILabelManager
 {
 
     //Show in inspector
