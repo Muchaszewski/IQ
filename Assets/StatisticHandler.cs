@@ -2,6 +2,7 @@
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,13 +21,13 @@ public class StatisticHandler : MonoBehaviour
     [HideInInspector]
     public EnumPlayerBasics entityStatType;
 
-    private Text _textComponent;
-    private object _statReference;
+    public Text TextComponent { get; private set; }
+    public object StatReference { get; private set; }
 
     void Start()
     {
         var _player = CurrentGame.Instance.Player;
-        _textComponent = GetComponent<Text>();
+        TextComponent = GetComponent<Text>();
         switch (statType)
         {
             case EnumStatisticHandler.Special:
@@ -38,35 +39,35 @@ public class StatisticHandler : MonoBehaviour
                 var reflectedValue = reflectedField.GetValue(_player.Stats, null);
                 reflectedType = reflectedValue.GetType();
                 reflectedField = reflectedType.GetProperty(value.ToString());
-                _statReference = reflectedField.GetValue(reflectedValue, null);
+                StatReference = reflectedField.GetValue(reflectedValue, null);
                 break;
             case EnumStatisticHandler.Skill:
                 if (level)
                 {
-                    _statReference = _player.PasiveSkills.GetSkillLevelByEnum(skill);
+                    StatReference = _player.PasiveSkills.GetSkillLevelByEnum(skill);
                 }
                 else
                 {
-                    _statReference = _player.PasiveSkills.GetSkillExperienceByEnum(skill);
+                    StatReference = _player.PasiveSkills.GetSkillExperienceByEnum(skill);
                 }
                 break;
             case EnumStatisticHandler.Entity:
                 switch (entityStatType)
                 {
                     case EnumPlayerBasics.Name:
-                        _statReference = _player.Name;
+                        StatReference = _player.Name;
                         break;
                     case EnumPlayerBasics.Sex:
-                        _statReference = _player.Sex;
+                        StatReference = _player.Sex;
                         break;
                     case EnumPlayerBasics.Type:
-                        _statReference = _player.Type;
+                        StatReference = _player.Type;
                         break;
                     case EnumPlayerBasics.Level:
-                        _statReference = _player.Level;
+                        StatReference = _player.Level;
                         break;
                     case EnumPlayerBasics.Experience:
-                        _statReference = _player.Experience;
+                        StatReference = _player.Experience;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -75,13 +76,8 @@ public class StatisticHandler : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+        TextComponent.text = StatReference.ToString();
     }
-
-    void Update()
-    {
-        _textComponent.text = _statReference.ToString();
-    }
-
 }
 
 public enum EnumStatisticHandler
