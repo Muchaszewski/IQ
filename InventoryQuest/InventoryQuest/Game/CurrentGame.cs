@@ -3,24 +3,18 @@ using InventoryQuest.Components;
 using InventoryQuest.Components.Entities;
 using InventoryQuest.Components.Entities.Generation;
 using InventoryQuest.Components.Entities.Player;
-using InventoryQuest.Components.Generation.Items;
-using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game.Fight;
 using InventoryQuest.Utils;
+using UnityEngine;
 
 namespace InventoryQuest.Game
 {
-    public class CurrentGame
+    public class CurrentGame : MonoBehaviour
     {
         private int _travelToSpot = -1;
         private byte Refiling;
         private byte Traveling;
-
-        private CurrentGame()
-        {
-        }
-
         public Player Player { get; set; }
         public FightController FightController { get; private set; }
         public Idle Idle { get; set; }
@@ -34,17 +28,11 @@ namespace InventoryQuest.Game
         public Spot Spot { get; private set; }
 
         /// <summary>
-        ///     For classes that require CurrentGame Instance use FixedInit
-        /// </summary>
-        protected void OnInit()
-        {
-        }
-
-        /// <summary>
         ///     Waiting for CurrentGame Instance to create
         /// </summary>
-        private void FixedInit()
+        private void Awake()
         {
+            instance = this;
             Spot = GenerationStorage.Instance.Spots[0];
             Player = Load();
             if (Player == null)
@@ -54,10 +42,10 @@ namespace InventoryQuest.Game
             }
             var Enemy = new List<Entity> { RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal) };
             Idle = new Idle();
-            FightController = new FightControllerPvE(Player, Enemy);
+            FightController = new FightControllerPvE(Player, Enemy).Begin();
         }
 
-        protected void OnUpdate()
+        private void Update()
         {
             //If fight is in progress
             if (FightController.IsFight)
@@ -120,10 +108,6 @@ namespace InventoryQuest.Game
             Traveling = 0;
         }
 
-        protected void OnDestroy()
-        {
-        }
-
         public static Player Load()
         {
             return BinaryFilesOperations.Load<Player>("SaveFile.sav");
@@ -142,11 +126,6 @@ namespace InventoryQuest.Game
         {
             get
             {
-                if (instance == null)
-                {
-                    instance = new CurrentGame();
-                    instance.FixedInit();
-                }
                 return instance;
             }
         }

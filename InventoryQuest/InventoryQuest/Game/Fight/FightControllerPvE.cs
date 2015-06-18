@@ -13,7 +13,7 @@ namespace InventoryQuest.Game.Fight
 {
     public class FightControllerPvE : FightController
     {
-        private readonly int TURN_TIME = 1000;
+        private readonly int TURN_TIME = 2;
         private StringBuilder _battleLog = new StringBuilder();
         private float _oneSecondTimer;
 
@@ -306,7 +306,12 @@ namespace InventoryQuest.Game.Fight
             var staminaUsed =
                 10
                 * (0.5f / me.Stats.AttackSpeed.Current)
-                * Math.Max((100 - me.Stats.Strength.Current + weaponsRequiredStrength) / 100, 0.5f);
+                * Math.Max((100 - me.Stats.Strength.Current + weaponsRequiredStrength) / 100f, 0.5f);
+            if (float.IsInfinity(staminaUsed))
+            {
+                Debug.LogWarning("Current stamina usage was Infinity, posible deviding by 0?");
+                staminaUsed = 0;
+            }
             me.Stats.StaminaPoints.Current -= staminaUsed;
 
             var blockAmount = 0;

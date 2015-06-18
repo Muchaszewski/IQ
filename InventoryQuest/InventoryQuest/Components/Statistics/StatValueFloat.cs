@@ -162,11 +162,15 @@ namespace InventoryQuest.Components.Statistics
         /// <returns></returns>
         public float GetPercent()
         {
-            if (Current == 0 || Base == 0)
+            var nubmer = (Current/Base)*100f;
+            if (float.IsInfinity(nubmer) || float.IsNaN(nubmer))
             {
                 return 0;
             }
-            return (Current/Base)*100f;
+            else
+            {
+                return nubmer;
+            }
         }
 
         /// <summary>
@@ -217,7 +221,7 @@ namespace InventoryQuest.Components.Statistics
         /// <param name="regenValue">% of max value to regen</param>
         public void Regen(float regenPercent = 0, StatValueFloat regen = null)
         {
-            Current += Extend * (regenPercent / 100) * (Time.deltaTime / 50);
+            Current += Extend * (regenPercent / 100) * (Time.deltaTime);
             if (regen != null)
             {
                 Current += regen.Current;

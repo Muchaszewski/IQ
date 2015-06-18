@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using InventoryQuest.Components.Entities.Player;
 
 namespace InventoryQuest.Game
@@ -36,8 +37,16 @@ namespace InventoryQuest.Game
         public bool RefillAll(int percent = 100)
         {
             var firstSet = Math.Min(Player.Stats.HealthPoints.GetPercent(), Player.Stats.ManaPoints.GetPercent());
+            if (Math.Abs(Player.Stats.ManaPoints.Base) < 0.03)
+            {
+                firstSet = Player.Stats.HealthPoints.GetPercent();
+            }
             var secondSet = Math.Min(Player.Stats.StaminaPoints.GetPercent(), Player.Stats.ShieldPoints.GetPercent());
-            var minStatPercent = (int) Math.Min(firstSet, secondSet);
+            if (Math.Abs(Player.Stats.ShieldPoints.Base) < 0.03)
+            {
+                secondSet = Player.Stats.StaminaPoints.GetPercent();
+            }
+            var minStatPercent = (int)Math.Min(firstSet, secondSet);
             if (percent > minStatPercent)
             {
                 Player.Stats.HealthPoints.Regen(3, Player.Stats.HealthRegen);
@@ -59,7 +68,7 @@ namespace InventoryQuest.Game
         {
             var firstSet = Math.Max(Player.Stats.HealthPoints.GetPercent(), Player.Stats.ManaPoints.GetPercent());
             var secondSet = Math.Max(Player.Stats.StaminaPoints.GetPercent(), Player.Stats.ShieldPoints.GetPercent());
-            var maxStatPercent = (int) Math.Max(firstSet, secondSet);
+            var maxStatPercent = (int)Math.Max(firstSet, secondSet);
             if (percent > maxStatPercent)
             {
                 Player.Stats.HealthPoints.Regen(3, Player.Stats.HealthRegen);

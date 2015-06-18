@@ -220,6 +220,7 @@ namespace InventoryQuest.Components.Statistics
         /// </summary>
         /// <param name="regen">base stats from witch base regen is taken</param>
         /// <param name="regenValue">% of max value to regen</param>
+        [Obsolete]
         public void Regen(float regenPercent = 0, StatValueFloat regen = null)
         {
             Current += (int) (Extend*(regenPercent/100));
