@@ -66,8 +66,9 @@ public class ItemIcon : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            var inventory = Inventory.GetComponent<InventoryPanel>();
             this.transform.position = Input.mousePosition;
-            Inventory.GetComponent<InventoryPanel>().RemoveFromPanelAndResize(this);
+            inventory.RemoveFromPanelAndResize(this);
         }
     }
 
@@ -75,8 +76,6 @@ public class ItemIcon : MonoBehaviour
     {
         var inventory = Inventory.GetComponent<InventoryPanel>();
         int key = inventory.ResolvePosition(this);
-
         inventory.SwapItemsOnPanel(this, key);
-        //this.RectTransform.anchoredPosition = inventory.SetPosition(this, inventory.ResolvePosition(this));
     }
 }

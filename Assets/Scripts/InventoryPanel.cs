@@ -124,8 +124,6 @@ public class InventoryPanel : MonoBehaviour
 
     /// <summary>
     /// Take ItemIcon (size) and return current position in equipment
-    /// TODO took resized element? Always change to default after drag
-    /// TODO Set position in equipment
     /// </summary>
     /// <param name="itemIcon"></param>
     /// <param name="index"></param>

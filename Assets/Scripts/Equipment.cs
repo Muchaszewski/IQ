@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using InventoryQuest.Components.Entities.Player;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using UnityEngine;
 
-namespace InventoryQuest.Components.Entities.Player.Inventory
+namespace Assets.Scripts
 {
     /// <summary>
     ///     Player equipment
     /// </summary>
     [Serializable]
-    public class Equipment
+    public class Equipment : ScriptableObject
     {
         /// <summary>
         ///     Max amulet posible to wear at once

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using Assets.Scripts;
 using InventoryQuest;
 using InventoryQuest.Components.Items;
+using InventoryQuest.Game;
 
 public class EquipmentSlot : MonoBehaviour
 {

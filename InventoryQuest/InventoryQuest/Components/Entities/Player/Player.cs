@@ -125,9 +125,9 @@ namespace InventoryQuest.Components.Entities.Player
                     defence += def;
                 }
             }
-            if (Equipment.Shield != null)
+            if (Equipment.OffHand != null)
             {
-                Item item = Equipment.Shield;
+                Item item = Equipment.OffHand;
                 var def = item.Stats.Armor.Current;
                 PasiveSkills.AddSkillExperienceByEnum(item.Skill, def);
                 return defence + def;
