@@ -48,6 +48,7 @@ public class EquipmentSlot : MonoBehaviour
         float x = RectTransform.sizeDelta.x / 2f;
         float y = -RectTransform.sizeDelta.y / 2f;
         itemIcon.RectTransform.anchoredPosition = new Vector2(x, y);
+
         CurrentGame.Instance.Player.Equipment.Items[(int)Slot] = itemIcon.ItemData;
         CurrentGame.Instance.Player.Equipment.UpdateStatistics();
         //FitItemBackground

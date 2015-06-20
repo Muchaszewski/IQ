@@ -184,6 +184,9 @@ public class InventoryPanel : MonoBehaviour
         //Get item to swap (probably)
         ItemIcon inventoryItem;
         ItemsPanel.TryGetValue(newKey, out inventoryItem);
+
+        //BUG If swap out from equipment to inventory 
+        //Implemented special behavior
         if (inventoryItem != null)
         {
             if (oldKey < 0)
@@ -219,6 +222,28 @@ public class InventoryPanel : MonoBehaviour
             ResizeItemIcon(inventoryItem);
             inventory.SawpItems(newKey, oldKey);
         }
+
+        //If TwoHanded is beeing performed to equip
+        if (itemIcon.ItemData.RequiredHands == EnumItemHands.TwoHanded)
+        {
+            var shieldSlotIndex = _equipment.FindIndex(x => x.Slot == EnumItemSlot.OffHand);
+            var shield = ItemsPanel.First(x => x.Key == -shieldSlotIndex - 1);
+            ItemsPanel.Remove(-shieldSlotIndex - 1);
+            CurrentGame.Instance.Player.Inventory.AddItem(shield.Value.ItemData);
+        }
+        //If Shield is beeing perform to equip and you already have two handed weapon
+        if (itemIcon.ItemData.ValidSlot == EnumItemSlot.OffHand)
+        {
+            int weaponSlotIndex = _equipment.FindIndex(x => x.Slot == EnumItemSlot.Weapon);
+            var weapon = ItemsPanel.First(x => x.Key == -weaponSlotIndex - 1);
+            if (weapon.Value.ItemData.RequiredHands == EnumItemHands.TwoHanded)
+            {
+                ItemsPanel.Remove(-weaponSlotIndex - 1);
+                CurrentGame.Instance.Player.Inventory.AddItem(weapon.Value.ItemData);
+            }
+
+        }
+
         ResizeInventoryPanel();
     }
 
