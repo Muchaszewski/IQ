@@ -14,6 +14,8 @@ public class __TEST_TURN : MonoBehaviour {
 	void Update ()
 	{
         GetComponent<Text>().text = CurrentGame.Instance.FightController.Player.NextTurn + " " + CurrentGame.Instance.FightController.Enemy[0].NextTurn +
-            " " + CurrentGame.Instance.FightController.Player.Stats.HealthPoints;
+            " " + CurrentGame.Instance.FightController.Player.Stats.HealthPoints +
+            " " + CurrentGame.Instance.FightController.Player.Stats.Armor +
+            " " + CurrentGame.Instance.FightController.Player.Stats.Armor.Extend;
 	}
 }

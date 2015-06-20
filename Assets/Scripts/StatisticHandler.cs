@@ -34,12 +34,28 @@ public class StatisticHandler : MonoBehaviour
 
                 break;
             case EnumStatisticHandler.Stat:
+                if (stat == EnumTypeStat.DPS)
+                {
+                    StatReference = _player.DPS;
+                    break;
+                }
                 var reflectedType = _player.Stats.GetType();
                 var reflectedField = reflectedType.GetProperty(stat.ToString());
                 var reflectedValue = reflectedField.GetValue(_player.Stats, null);
+
+                if (reflectedValue.GetType() == typeof(StatValueFloat))
+                {
+                    StatReference = _player.Stats.GetStatFloatByEnum(stat);
+                }
+                else if (reflectedValue.GetType() == typeof(StatValueInt))
+                {
+                    StatReference = _player.Stats.GetStatIntByEnum(stat);
+                }
+
                 reflectedType = reflectedValue.GetType();
                 reflectedField = reflectedType.GetProperty(value.ToString());
-                StatReference = reflectedField.GetValue(reflectedValue, null);
+                TextComponent.text = reflectedField.GetValue(reflectedValue, null).ToString();
+
                 break;
             case EnumStatisticHandler.Skill:
                 if (level)

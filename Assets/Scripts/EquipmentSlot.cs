@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
-using Assets.Scripts;
 using InventoryQuest;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
@@ -49,6 +48,8 @@ public class EquipmentSlot : MonoBehaviour
         float x = RectTransform.sizeDelta.x / 2f;
         float y = -RectTransform.sizeDelta.y / 2f;
         itemIcon.RectTransform.anchoredPosition = new Vector2(x, y);
+        CurrentGame.Instance.Player.Equipment.Items[(int)Slot] = itemIcon.ItemData;
+        CurrentGame.Instance.Player.Equipment.UpdateStatistics();
         //FitItemBackground
         if (FitItemBackground)
         {

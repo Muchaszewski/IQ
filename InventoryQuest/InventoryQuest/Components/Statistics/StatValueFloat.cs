@@ -46,7 +46,7 @@ namespace InventoryQuest.Components.Statistics
                 {
                     value = Maximum;
                 }
-                _Current = value;
+                //_Current = value;
                 _Extend = value;
             }
         }

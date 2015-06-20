@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
+using InventoryQuest.Game;
 using UnityEngine;
 
 namespace InventoryQuest.Components.Entities.Player.Inventory
@@ -16,17 +17,17 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         /// <summary>
         ///     Max amulet posible to wear at once
         /// </summary>
-        private const int AMULETS_COUNT = 1;
+        protected const int AMULETS_COUNT = 1;
 
         /// <summary>
         ///     Max rings posible to wear at once
         /// </summary>
-        private const int RINGS_COUNT = 2;
+        protected const int RINGS_COUNT = 2;
 
         /// <summary>
         ///     Player
         /// </summary>
-        private readonly Player player;
+        protected readonly Player player;
 
         private Item[] _Amulets;
         private List<Item> _Armor;
@@ -150,6 +151,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                     throw new ArgumentOutOfRangeException("slot", slot, null);
             }
         }
+
         void ZeroOutStatistics()
         {
             //Get all player stats
@@ -165,6 +167,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                 playerStatsFloat[i].Extend = playerStats[i].Base;
             }
         }
+
 
         /// <summary>
         ///     Update player statistics if equiping an item

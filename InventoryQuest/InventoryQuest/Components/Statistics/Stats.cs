@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEngine;
 
 namespace InventoryQuest.Components.Statistics
 {
@@ -29,34 +30,34 @@ namespace InventoryQuest.Components.Statistics
 
         private void FindAllStatsInt()
         {
-            //Type t = GetType();
-            //PropertyInfo[] props =
-            //    t.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
-            //for (var i = 0; i < props.Length; i++)
-            //{
-            //    PropertyInfo pi = props[i];
-            //    object a = pi.GetValue(this, props);
-            //    if (pi.PropertyType == typeof (StatValueInt))
-            //    {
-            //        allBaseStatsInt.Add(a as StatValueInt);
-            //    }
-            //}
+            Type t = GetType();
+            PropertyInfo[] props =
+                t.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
+            for (var i = 0; i < props.Length; i++)
+            {
+                PropertyInfo pi = props[i];
+                object a = pi.GetValue(this, null);
+                if (pi.PropertyType == typeof(StatValueInt))
+                {
+                    allBaseStatsInt.Add((StatValueInt) a);
+                }
+            }
         }
 
         private void FindAllStatsFloat()
         {
-            //Type t = GetType();
-            //PropertyInfo[] props =
-            //    t.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
-            //for (var i = 0; i < props.Length; i++)
-            //{
-            //    PropertyInfo pi = props[i];
-            //    object a = pi.GetValue(this, props);
-            //    if (pi.PropertyType == typeof (StatValueFloat))
-            //    {
-            //        allBaseStatsFloat.Add(a as StatValueFloat);
-            //    }
-            //}
+            Type t = GetType();
+            PropertyInfo[] props =
+                t.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
+            for (var i = 0; i < props.Length; i++)
+            {
+                PropertyInfo pi = props[i];
+                object a = pi.GetValue(this, null);
+                if (pi.PropertyType == typeof(StatValueFloat))
+                {
+                    allBaseStatsFloat.Add((StatValueFloat) a);
+                }
+            }
         }
 
         /// <summary>
@@ -395,78 +396,78 @@ namespace InventoryQuest.Components.Statistics
             set { _MaxDamage = value; }
         }
 
-        //#region Magic Damage
-        //private StatValueInt _FireDamage = new StatValueInt(EnumTypeStat.FireDamage);
-        ///// <summary>
-        ///// Fire damage
-        ///// </summary>
+        #region Magic Damage
+        private StatValueInt _FireDamage = new StatValueInt(EnumTypeStat.FireDamage);
+        /// <summary>
+        /// Fire damage
+        /// </summary>
 
-        //public StatValueInt FireDamage
-        //{
-        //    get { return _FireDamage; }
-        //    set { _FireDamage = value; }
-        //}
-        //private StatValueInt _ColdDamage = new StatValueInt(EnumTypeStat.ColdDamage);
-        ///// <summary>
-        ///// Cold damage
-        ///// </summary>
+        public StatValueInt FireDamage
+        {
+            get { return _FireDamage; }
+            set { _FireDamage = value; }
+        }
+        private StatValueInt _ColdDamage = new StatValueInt(EnumTypeStat.ColdDamage);
+        /// <summary>
+        /// Cold damage
+        /// </summary>
 
-        //public StatValueInt ColdDamage
-        //{
-        //    get { return _ColdDamage; }
-        //    set { _ColdDamage = value; }
-        //}
-        //private StatValueInt _LightningDamage = new StatValueInt(EnumTypeStat.LightningDamage);
-        ///// <summary>
-        ///// Lightning damage
-        ///// </summary>
+        public StatValueInt ColdDamage
+        {
+            get { return _ColdDamage; }
+            set { _ColdDamage = value; }
+        }
+        private StatValueInt _LightningDamage = new StatValueInt(EnumTypeStat.LightningDamage);
+        /// <summary>
+        /// Lightning damage
+        /// </summary>
 
-        //public StatValueInt LightningDamage
-        //{
-        //    get { return _LightningDamage; }
-        //    set { _LightningDamage = value; }
-        //}
-        //private StatValueInt _PoisonDamage = new StatValueInt(EnumTypeStat.PoisonDamage);
-        ///// <summary>
-        ///// Poison damage
-        ///// </summary>
+        public StatValueInt LightningDamage
+        {
+            get { return _LightningDamage; }
+            set { _LightningDamage = value; }
+        }
+        private StatValueInt _PoisonDamage = new StatValueInt(EnumTypeStat.PoisonDamage);
+        /// <summary>
+        /// Poison damage
+        /// </summary>
 
-        //public StatValueInt PoisonDamage
-        //{
-        //    get { return _PoisonDamage; }
-        //    set { _PoisonDamage = value; }
-        //}
-        //private StatValueInt _ArcaneDamage = new StatValueInt(EnumTypeStat.ArcaneDamage);
-        ///// <summary>
-        /////  Arcane damage
-        ///// </summary>
+        public StatValueInt PoisonDamage
+        {
+            get { return _PoisonDamage; }
+            set { _PoisonDamage = value; }
+        }
+        private StatValueInt _ArcaneDamage = new StatValueInt(EnumTypeStat.ArcaneDamage);
+        /// <summary>
+        ///  Arcane damage
+        /// </summary>
 
-        //public StatValueInt ArcaneDamage
-        //{
-        //    get { return _ArcaneDamage; }
-        //    set { _ArcaneDamage = value; }
-        //}
-        //private StatValueInt _LightDamage = new StatValueInt(EnumTypeStat.LightDamage);
-        ///// <summary>
-        ///// Light damage
-        ///// </summary>
+        public StatValueInt ArcaneDamage
+        {
+            get { return _ArcaneDamage; }
+            set { _ArcaneDamage = value; }
+        }
+        private StatValueInt _LightDamage = new StatValueInt(EnumTypeStat.LightDamage);
+        /// <summary>
+        /// Light damage
+        /// </summary>
 
-        //public StatValueInt LightDamage
-        //{
-        //    get { return _LightDamage; }
-        //    set { _LightDamage = value; }
-        //}
-        //private StatValueInt _DarkDamage = new StatValueInt(EnumTypeStat.DarkDamage);
-        ///// <summary>
-        ///// Dark damage
-        ///// </summary>
+        public StatValueInt LightDamage
+        {
+            get { return _LightDamage; }
+            set { _LightDamage = value; }
+        }
+        private StatValueInt _DarkDamage = new StatValueInt(EnumTypeStat.DarkDamage);
+        /// <summary>
+        /// Dark damage
+        /// </summary>
 
-        //public StatValueInt DarkDamage
-        //{
-        //    get { return _DarkDamage; }
-        //    set { _DarkDamage = value; }
-        //}
-        //#endregion
+        public StatValueInt DarkDamage
+        {
+            get { return _DarkDamage; }
+            set { _DarkDamage = value; }
+        }
+        #endregion
 
 
         private StatValueInt _Armor = new StatValueInt(EnumTypeStat.Armor);
@@ -480,79 +481,79 @@ namespace InventoryQuest.Components.Statistics
             set { _Armor = value; }
         }
 
-        //#region resists
-        //private StatValueInt _FireResist = new StatValueInt(EnumTypeStat.FireResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        #region resists
+        private StatValueInt _FireResist = new StatValueInt(EnumTypeStat.FireResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt FireResist
-        //{
-        //    get { return _FireResist; }
-        //    set { _FireResist = value; }
-        //}
-        //private StatValueInt _ColdResist = new StatValueInt(EnumTypeStat.ColdResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        public StatValueInt FireResist
+        {
+            get { return _FireResist; }
+            set { _FireResist = value; }
+        }
+        private StatValueInt _ColdResist = new StatValueInt(EnumTypeStat.ColdResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt ColdResist
-        //{
-        //    get { return _ColdResist; }
-        //    set { _ColdResist = value; }
-        //}
-        //private StatValueInt _LightningResist = new StatValueInt(EnumTypeStat.LightningResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        public StatValueInt ColdResist
+        {
+            get { return _ColdResist; }
+            set { _ColdResist = value; }
+        }
+        private StatValueInt _LightningResist = new StatValueInt(EnumTypeStat.LightningResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt LightningResist
-        //{
-        //    get { return _LightningResist; }
-        //    set { _LightningResist = value; }
-        //}
-        //private StatValueInt _PoisonResist = new StatValueInt(EnumTypeStat.PoisonResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        public StatValueInt LightningResist
+        {
+            get { return _LightningResist; }
+            set { _LightningResist = value; }
+        }
+        private StatValueInt _PoisonResist = new StatValueInt(EnumTypeStat.PoisonResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt PoisonResist
-        //{
-        //    get { return _PoisonResist; }
-        //    set { _PoisonResist = value; }
-        //}
-        //private StatValueInt _ArcaneResist = new StatValueInt(EnumTypeStat.ArcaneResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        public StatValueInt PoisonResist
+        {
+            get { return _PoisonResist; }
+            set { _PoisonResist = value; }
+        }
+        private StatValueInt _ArcaneResist = new StatValueInt(EnumTypeStat.ArcaneResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt ArcaneResist
-        //{
-        //    get { return _ArcaneResist; }
-        //    set { _ArcaneResist = value; }
-        //}
-        //private StatValueInt _LightResist = new StatValueInt(EnumTypeStat.LightResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        public StatValueInt ArcaneResist
+        {
+            get { return _ArcaneResist; }
+            set { _ArcaneResist = value; }
+        }
+        private StatValueInt _LightResist = new StatValueInt(EnumTypeStat.LightResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt LightResist
-        //{
-        //    get { return _LightResist; }
-        //    set { _LightResist = value; }
-        //}
+        public StatValueInt LightResist
+        {
+            get { return _LightResist; }
+            set { _LightResist = value; }
+        }
 
-        //private StatValueInt _DarkResist = new StatValueInt(EnumTypeStat.DarkResist);
-        ///// <summary>
-        ///// Armor defence stat
-        ///// </summary>
+        private StatValueInt _DarkResist = new StatValueInt(EnumTypeStat.DarkResist);
+        /// <summary>
+        /// Armor defence stat
+        /// </summary>
 
-        //public StatValueInt DarkResist
-        //{
-        //    get { return _DarkResist; }
-        //    set { _DarkResist = value; }
-        //}
-        //#endregion
+        public StatValueInt DarkResist
+        {
+            get { return _DarkResist; }
+            set { _DarkResist = value; }
+        }
+        #endregion
 
         private StatValueInt _Evasion = new StatValueInt(EnumTypeStat.Evasion);
 

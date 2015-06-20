@@ -50,7 +50,7 @@ namespace InventoryQuest.Components.Statistics
                 }
                 var currDiff = Current - Extend;
                 _Extend = value;
-                Current = Extend + currDiff;
+                //Current = Extend + currDiff;
             }
         }
 
