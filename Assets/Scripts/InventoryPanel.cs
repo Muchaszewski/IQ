@@ -179,11 +179,31 @@ public class InventoryPanel : MonoBehaviour
     public void SwapItemsOnPanel(ItemIcon itemIcon, int newKey)
     {
         var inventory = CurrentGame.Instance.Player.Inventory;
-
-        ItemIcon inventoryItem;
+        //Get old key
         int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        //Get item to swap (probably)
+        ItemIcon inventoryItem;
         ItemsPanel.TryGetValue(newKey, out inventoryItem);
+        if (inventoryItem != null)
+        {
+            if (oldKey < 0)
+            {
+                if (_equipment[-(oldKey + 1)].Slot != inventoryItem.ItemData.ValidSlot)
+                {
+                    GetAndSetPosition(itemIcon, oldKey);
+                    return;
+                }
+            }
+        }
+
         if (inventoryItem == null)
+        {
+            ItemsPanel.Remove(oldKey);
+            inventory.MoveItem(oldKey, newKey);
+            ItemsPanel.Add(newKey, itemIcon);
+            GetAndSetPosition(itemIcon, newKey);
+        }
+        else if (inventoryItem == itemIcon)
         {
             ItemsPanel.Remove(oldKey);
             inventory.MoveItem(oldKey, newKey);

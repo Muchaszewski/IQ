@@ -305,23 +305,23 @@ namespace InventoryQuest.Game.Fight
             var weaponsRequiredStrength = 0;
             var staminaUsed =
                 10
-                * (0.5f / me.Stats.AttackSpeed.Current)
-                * Math.Max((100 - me.Stats.Strength.Current + weaponsRequiredStrength) / 100f, 0.5f);
+                * (0.5f / me.Stats.AttackSpeed.Extend)
+                * Math.Max((100 - me.Stats.Strength.Extend + weaponsRequiredStrength) / 100f, 0.5f);
             if (float.IsInfinity(staminaUsed))
             {
                 Debug.LogWarning("Current stamina usage was Infinity, posible deviding by 0?");
                 staminaUsed = 0;
             }
-            me.Stats.StaminaPoints.Current -= staminaUsed;
+            me.Stats.StaminaPoints.Extend -= staminaUsed;
 
             var blockAmount = 0;
 
-            if (target.Stats.StaminaPoints.Current > -100 * target.Stats.StaminaPoints.Extend)
+            if (target.Stats.StaminaPoints.Extend > -100 * target.Stats.StaminaPoints.Extend)
             {
                 //Evasion
                 var evasion =
                     (int)
-                        (((float)me.Stats.Accuracy.Current / (me.Stats.Accuracy.Current + target.Stats.Evasion.Current)) *
+                        (((float)me.Stats.Accuracy.Extend / (me.Stats.Accuracy.Extend + target.Stats.Evasion.Extend)) *
                          100);
                 if (evasion > 95)
                 {
@@ -340,8 +340,8 @@ namespace InventoryQuest.Game.Fight
                 //Deflection
                 var deflection =
                     (int)
-                        (((float)me.Stats.Accuracy.Current /
-                          (me.Stats.Accuracy.Current + target.Stats.Deflection.Current)) * 100);
+                        (((float)me.Stats.Accuracy.Extend /
+                          (me.Stats.Accuracy.Extend + target.Stats.Deflection.Extend)) * 100);
                 if (deflection > 95)
                 {
                     deflection = 95;
@@ -359,8 +359,8 @@ namespace InventoryQuest.Game.Fight
                 //Block
                 var block =
                     (int)
-                        (((float)me.Stats.Accuracy.Current /
-                          (me.Stats.Accuracy.Current + target.Stats.BlockChance.Current)) * 100);
+                        (((float)me.Stats.Accuracy.Extend /
+                          (me.Stats.Accuracy.Extend + target.Stats.BlockChance.Extend)) * 100);
                 if (block > 95)
                 {
                     block = 95;
@@ -371,7 +371,7 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (RandomNumberGenerator.BoolRandom(block))
                 {
-                    blockAmount = target.Stats.BlockAmount.Current;
+                    blockAmount = target.Stats.BlockAmount.Extend;
                     BattleLog.AppendLine(target.Name + " blocked " + block + " damage, ");
                 }
             }
