@@ -22,6 +22,11 @@ public class StatisticHandlerUpdater : MonoBehaviour
         switch (_statisticHandler.statType)
         {
             case EnumStatisticHandler.Stat:
+                if (_statisticHandler.stat == EnumTypeStat.DPS)
+                {
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.DPS.ToString();
+                    break;
+                }
                 if (_statisticHandler.StatReference.GetType() == typeof(StatValueFloat))
                 {
                     SetStatText(_statisticHandler.StatReference as StatValueFloat);

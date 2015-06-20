@@ -208,14 +208,14 @@ namespace InventoryQuest.Game.Fight
             //Fight
             if (IsFight)
             {
-                Player.NextTurn -= Player.Stats.AttackSpeed.Current * Time.deltaTime;
+                Player.NextTurn -= Player.Stats.AttackSpeed.Extend * Time.deltaTime;
                 if (Player.NextTurn <= 0)
                 {
                     Target = null;
                     float targetValue = 0;
                     foreach (Entity enemy in Enemy)
                     {
-                        if (enemy.Stats.HealthPoints.Current > 0)
+                        if (enemy.Stats.HealthPoints.Extend > 0)
                         {
                             if (Target == null)
                             {
@@ -230,10 +230,10 @@ namespace InventoryQuest.Game.Fight
                                 float newTargetValue = 0;
                                 foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
                                 {
-                                    newTargetValue += item.Current * 10;
+                                    newTargetValue += item.Extend * 10;
                                 }
-                                newTargetValue += enemy.Stats.HealthPoints.Current;
-                                newTargetValue += enemy.Stats.ManaPoints.Current;
+                                newTargetValue += enemy.Stats.HealthPoints.Extend;
+                                newTargetValue += enemy.Stats.ManaPoints.Extend;
                                 if (newTargetValue < targetValue)
                                 {
                                     Target = enemy;
@@ -252,7 +252,7 @@ namespace InventoryQuest.Game.Fight
                 }
                 foreach (Entity enemy in Enemy)
                 {
-                    enemy.NextTurn -= enemy.Stats.AttackSpeed.Current * Time.deltaTime;
+                    enemy.NextTurn -= enemy.Stats.AttackSpeed.Extend * Time.deltaTime;
                     if (enemy.NextTurn <= 0)
                     {
                         Attack(enemy, Player);
@@ -440,9 +440,8 @@ namespace InventoryQuest.Game.Fight
         public override void DoOneSideAttack(Entity me, Entity target)
         {
             //TODO
-            var damage = 0;
             int critical;
-            damage = me.Attack(out critical);
+            float damage = me.Attack(out critical);
             damage -= target.Defend();
             target.Stats.HealthPoints.Current -= damage;
         }

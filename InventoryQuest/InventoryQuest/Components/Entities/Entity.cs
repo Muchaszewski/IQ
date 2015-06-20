@@ -70,9 +70,9 @@ namespace InventoryQuest.Components.Entities
         {
             get
             {
-                float avgDmg = ((Stats.MinDamage.Current + Stats.MaxDamage.Current)/2);
-                float avgCrit = (Stats.CriticalChance.Current*Stats.CriticalDamage.Current)/(2*100*100);
-                var speed = Stats.AttackSpeed.Current;
+                float avgDmg = ((Stats.MinDamage.Extend + Stats.MaxDamage.Extend) / 2f);
+                float avgCrit = (Stats.CriticalChance.Extend * Stats.CriticalDamage.Extend) / (2f * 100 * 100);
+                var speed = Stats.AttackSpeed.Extend;
                 if (avgCrit == 0)
                 {
                     avgCrit = 1;
@@ -108,19 +108,18 @@ namespace InventoryQuest.Components.Entities
         ///     <para> out critical damage alone </para>
         /// </summary>
         /// <returns></returns>
-        public virtual int Attack(out int critical)
+        public virtual float Attack(out int critical)
         {
-            float damage;
-            damage = RandomNumberGenerator.NextRandom(Stats.MinDamage.Current, Stats.MaxDamage.Current);
+            float damage = RandomNumberGenerator.NextRandom(Stats.MinDamage.Extend, Stats.MaxDamage.Extend);
             critical = 0;
-            if (RandomNumberGenerator.NextRandom(100) <= Stats.CriticalChance.Current)
+            if (RandomNumberGenerator.NextRandom(100) <= Stats.CriticalChance.Extend)
             {
                 critical = (int) damage;
-                damage *= Stats.CriticalDamage.Current/100f;
+                damage *= Stats.CriticalDamage.Extend / 100f;
                 critical -= (int) damage;
                 critical = Math.Abs(critical);
             }
-            return (int) damage;
+            return damage;
         }
 
         /// <summary>
@@ -130,7 +129,7 @@ namespace InventoryQuest.Components.Entities
         /// <returns></returns>
         public virtual int Pierce()
         {
-            return Stats.ArmorPenetration.Current;
+            return Stats.ArmorPenetration.Extend;
         }
 
         /// <summary>
@@ -140,7 +139,7 @@ namespace InventoryQuest.Components.Entities
         /// <returns></returns>
         public virtual int Defend()
         {
-            return Stats.Armor.Current;
+            return Stats.Armor.Extend;
         }
     }
 }

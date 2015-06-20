@@ -86,4 +86,13 @@ public class EquipmentSlot : MonoBehaviour
             RectTransform.sizeDelta.y * GameObject.FindGameObjectWithTag("Canvas").transform.localScale.y
             );
     }
+
+    void Update()
+    {
+        if (CurrentGame.Instance.Player.Equipment.Items[(int) Slot] != null && transform.childCount == 0)
+        {
+            CurrentGame.Instance.Player.Equipment.Items[(int) Slot] = null;
+            CurrentGame.Instance.Player.Equipment.UpdateStatistics();
+        }
+    }
 }

@@ -164,7 +164,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             List<StatValueFloat> playerStatsFloat = player.Stats.GetAllStatsFloat();
             for (var i = 0; i < playerStatsFloat.Count; i++)
             {
-                playerStatsFloat[i].Extend = playerStats[i].Base;
+                playerStatsFloat[i].Extend = playerStatsFloat[i].Base;
             }
         }
 

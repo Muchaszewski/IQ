@@ -84,19 +84,19 @@ namespace InventoryQuest.Components.Entities.Player
         ///     Return damage based on stats and equipment
         /// </summary>
         /// <returns></returns>
-        public override int Attack(out int critical)
+        public override float Attack(out int critical)
         {
             if (Equipment.Weapon != null && Equipment.Weapon.Name != "Unarmed")
             {
                 Item item = Equipment.Weapon;
                 var damage = base.Attack(out critical);
-                PasiveSkills.AddSkillExperienceByEnum(Equipment.Weapon.Skill, damage);
+                PasiveSkills.AddSkillExperienceByEnum(Equipment.Weapon.Skill, (int)damage);
                 return damage;
             }
             else
             {
                 var damage = base.Attack(out critical);
-                PasiveSkills.AddSkillExperienceByEnum(EnumItemClassSkill.Unarmed, damage);
+                PasiveSkills.AddSkillExperienceByEnum(EnumItemClassSkill.Unarmed, (int)damage);
                 return damage;
             }
         }
@@ -104,9 +104,9 @@ namespace InventoryQuest.Components.Entities.Player
         [Obsolete]
         private int calculateDamage(EnumTypeStat stat1, EnumTypeStat stat2)
         {
-            return ((Stats.GetStatIntByEnum(stat1).Current + Stats.GetStatIntByEnum(stat2).Current)/2 +
-                    Equipment.Weapon.Stats.MinDamage.Current*
-                    (int) (1 + PasiveSkills.GetSkillLevelByEnum(Equipment.Weapon.Skill)/100f));
+            return ((Stats.GetStatIntByEnum(stat1).Current + Stats.GetStatIntByEnum(stat2).Current) / 2 +
+                    Equipment.Weapon.Stats.MinDamage.Current *
+                    (int)(1 + PasiveSkills.GetSkillLevelByEnum(Equipment.Weapon.Skill) / 100f));
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace InventoryQuest.Components.Entities.Player
             {
                 if (item != null)
                 {
-                    var def = item.Stats.Armor.Current;
+                    var def = item.Stats.Armor.Extend;
                     PasiveSkills.AddSkillExperienceByEnum(item.Skill, def);
                     defence += def;
                 }
@@ -128,26 +128,11 @@ namespace InventoryQuest.Components.Entities.Player
             if (Equipment.OffHand != null)
             {
                 Item item = Equipment.OffHand;
-                var def = item.Stats.Armor.Current;
+                var def = item.Stats.Armor.Extend;
                 PasiveSkills.AddSkillExperienceByEnum(item.Skill, def);
                 return defence + def;
             }
             return defence;
-        }
-
-        /// <summary>
-        ///     Return atack speed based on stats and equipment
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete]
-        public float CreateAttackSpeed()
-        {
-            if (Equipment != null && Equipment.Weapon != null && Equipment.Weapon.Name != "Unarmed")
-            {
-                Stats ws = Equipment.Weapon.Stats;
-                return ws.AttackSpeed.Current;
-            }
-            return -999f;
         }
 
         /// <summary>
@@ -168,11 +153,11 @@ namespace InventoryQuest.Components.Entities.Player
             var attribute2 =
                 Stats.GetStatIntByEnum(Equipment.Weapon.Skill.GetAttributeOfType<ItemParameter>().Attribute2)
                     .Current;
-            var passiveSkill = (int) PasiveSkills.GetSkillLevelByEnum(Equipment.Weapon.Skill)*5;
+            var passiveSkill = (int)PasiveSkills.GetSkillLevelByEnum(Equipment.Weapon.Skill) * 5;
             //Turn to % value
-            var weaponAccExtended = (1 + Equipment.Weapon.Stats.Accuracy.Extend/100);
+            var weaponAccExtended = (1 + Equipment.Weapon.Stats.Accuracy.Extend / 100);
             //TODO if weapon can lose its accuracy base and current algo required
-            var accuracy = ((attribute1 + attribute2)*2 + passiveSkill + Level*3)*weaponAccExtended;
+            var accuracy = ((attribute1 + attribute2) * 2 + passiveSkill + Level * 3) * weaponAccExtended;
             Stats.Accuracy.Base = accuracy;
         }
 
@@ -182,7 +167,7 @@ namespace InventoryQuest.Components.Entities.Player
         /// <returns></returns>
         public double GetToNextLevelExperience()
         {
-            return 40*Math.Pow(Level + 1, 3) + 1250;
+            return 40 * Math.Pow(Level + 1, 3) + 1250;
         }
 
         /// <summary>
@@ -204,20 +189,20 @@ namespace InventoryQuest.Components.Entities.Player
         /// </summary>
         public void SetAllBaseStats()
         {
-            Stats.HealthPoints.Base = 10 + (Stats.Vitality.Base*5) + (Level*(1 + Stats.Vitality.Base/(float) 7.5));
+            Stats.HealthPoints.Base = 10 + (Stats.Vitality.Base * 5) + (Level * (1 + Stats.Vitality.Base / (float)7.5));
             Stats.HealthRegen.Base = 0;
 
-            Stats.ShieldPoints.Base = (1 + (Stats.Intelligence.Base + Stats.Wisdom.Base)/100);
-            Stats.ShieldRegen.Base = Stats.ShieldPoints.Base/10;
+            Stats.ShieldPoints.Base = (1 + (Stats.Intelligence.Base + Stats.Wisdom.Base) / 100);
+            Stats.ShieldRegen.Base = Stats.ShieldPoints.Base / 10;
 
-            Stats.StaminaPoints.Base = 60 + (Stats.Vitality.Base*3) + (Level*(1 + Stats.Vitality.Base/25));
-            Stats.StaminaRegen.Base = Stats.StaminaPoints.Base/5;
+            Stats.StaminaPoints.Base = 60 + (Stats.Vitality.Base * 3) + (Level * (1 + Stats.Vitality.Base / 25));
+            Stats.StaminaRegen.Base = Stats.StaminaPoints.Base / 5;
 
-            Stats.ManaPoints.Base = 0 + (Stats.Intelligence.Base*2) + (Stats.Wisdom.Base*1) +
-                                    (Level*(Stats.Intelligence.Base*2 + Stats.Wisdom.Base)/50);
-            Stats.ManaRegen.Base = Stats.ManaPoints.Base/60;
+            Stats.ManaPoints.Base = 0 + (Stats.Intelligence.Base * 2) + (Stats.Wisdom.Base * 1) +
+                                    (Level * (Stats.Intelligence.Base * 2 + Stats.Wisdom.Base) / 50);
+            Stats.ManaRegen.Base = Stats.ManaPoints.Base / 60;
 
-            Stats.Evasion.Base = (Stats.Dexterity.Base + Stats.Perception.Base)*2 + Level*5;
+            Stats.Evasion.Base = (Stats.Dexterity.Base + Stats.Perception.Base) * 2 + Level * 5;
         }
     }
 }

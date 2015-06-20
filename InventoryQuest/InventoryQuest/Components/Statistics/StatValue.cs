@@ -48,9 +48,7 @@ namespace InventoryQuest.Components.Statistics
                 {
                     value = Maximum;
                 }
-                var currDiff = Current - Extend;
                 _Extend = value;
-                //Current = Extend + currDiff;
             }
         }
 
