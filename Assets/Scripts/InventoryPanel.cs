@@ -227,19 +227,25 @@ public class InventoryPanel : MonoBehaviour
         if (itemIcon.ItemData.RequiredHands == EnumItemHands.TwoHanded)
         {
             var shieldSlotIndex = _equipment.FindIndex(x => x.Slot == EnumItemSlot.OffHand);
-            var shield = ItemsPanel.First(x => x.Key == -shieldSlotIndex - 1);
-            ItemsPanel.Remove(-shieldSlotIndex - 1);
-            CurrentGame.Instance.Player.Inventory.AddItem(shield.Value.ItemData);
+            var shield = ItemsPanel.FirstOrDefault(x => x.Key == -shieldSlotIndex - 1);
+            if (shield.Value != null)
+            {
+                ItemsPanel.Remove(-shieldSlotIndex - 1);
+                CurrentGame.Instance.Player.Inventory.AddItem(shield.Value.ItemData);
+            }
         }
         //If Shield is beeing perform to equip and you already have two handed weapon
         if (itemIcon.ItemData.ValidSlot == EnumItemSlot.OffHand)
         {
             int weaponSlotIndex = _equipment.FindIndex(x => x.Slot == EnumItemSlot.Weapon);
-            var weapon = ItemsPanel.First(x => x.Key == -weaponSlotIndex - 1);
-            if (weapon.Value.ItemData.RequiredHands == EnumItemHands.TwoHanded)
+            var weapon = ItemsPanel.FirstOrDefault(x => x.Key == -weaponSlotIndex - 1);
+            if (weapon.Value != null)
             {
-                ItemsPanel.Remove(-weaponSlotIndex - 1);
-                CurrentGame.Instance.Player.Inventory.AddItem(weapon.Value.ItemData);
+                if (weapon.Value.ItemData.RequiredHands == EnumItemHands.TwoHanded)
+                {
+                    ItemsPanel.Remove(-weaponSlotIndex - 1);
+                    CurrentGame.Instance.Player.Inventory.AddItem(weapon.Value.ItemData);
+                }
             }
 
         }
