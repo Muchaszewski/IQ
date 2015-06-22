@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Linq;
 using InventoryQuest;
@@ -7,6 +8,10 @@ using InventoryQuest.Game;
 
 public class EquipmentSlot : MonoBehaviour
 {
+
+    public static event EventHandler ItemEquiped = delegate { };
+    public static event EventHandler ItemUnequiped = delegate { };
+
 
     public EnumItemSlot Slot;
 
@@ -51,6 +56,7 @@ public class EquipmentSlot : MonoBehaviour
 
         CurrentGame.Instance.Player.Equipment.Items[(int)Slot] = itemIcon.ItemData;
         CurrentGame.Instance.Player.Equipment.UpdateStatistics();
+        ItemEquiped.Invoke(this, EventArgs.Empty);
         //FitItemBackground
         if (FitItemBackground)
         {
@@ -90,10 +96,11 @@ public class EquipmentSlot : MonoBehaviour
 
     void Update()
     {
-        if (CurrentGame.Instance.Player.Equipment.Items[(int) Slot] != null && transform.childCount == 0)
+        if (CurrentGame.Instance.Player.Equipment.Items[(int)Slot] != null && transform.childCount == 0)
         {
-            CurrentGame.Instance.Player.Equipment.Items[(int) Slot] = null;
+            CurrentGame.Instance.Player.Equipment.Items[(int)Slot] = null;
             CurrentGame.Instance.Player.Equipment.UpdateStatistics();
+            ItemUnequiped.Invoke(this, EventArgs.Empty);
         }
     }
 }
