@@ -269,7 +269,6 @@ namespace InventoryQuest.Game.Fight
         {
             if (entity.Stats.StaminaPoints.Current <= -1000 * entity.Stats.StaminaPoints.Extend)
             {
-                BattleLog.AppendLine(entity.Name + " died out exhaustion");
                 return entity.Stats.HealthPoints.Current <= 0;
             }
             if (entity.Stats.HealthPoints.Current <= 0)
@@ -312,7 +311,7 @@ namespace InventoryQuest.Game.Fight
                 Debug.LogWarning("Current stamina usage was Infinity, posible deviding by 0?");
                 staminaUsed = 0;
             }
-            me.Stats.StaminaPoints.Extend -= staminaUsed;
+            me.Stats.StaminaPoints.Current -= staminaUsed;
 
             var blockAmount = 0;
 
