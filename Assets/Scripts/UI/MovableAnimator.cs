@@ -44,14 +44,14 @@ public class MovableContainer
 
     public float FullOutTime = 1f;
     public float FullInTime = 1f;
-    [Tooltip("If false object In will be waitng for object Out to leave the scene")]
+    [Tooltip("If false object In will be waiting for object Out to leave the scene")]
     public bool MoveSimultaneously = true;
     [Tooltip("If false first listed MovablePanel will be displayed at MoveToPosition")]
     public bool StartWithNone = false;
 
-    [Tooltip("Move movable twards this point on Out")]
+    [Tooltip("Move movable towards this point on Out")]
     public Vector2 MoveOutPoint;
-    [Tooltip("Movable will be teleported at this poin on In Begin")]
+    [Tooltip("Movable will be teleported at this point on In Begin")]
     public Vector2 MoveInPoint;
     [Tooltip("This is Netutral point of displayed a panel")]
     public Vector2 MoveToPoint;
@@ -61,18 +61,18 @@ public class MovableContainer
     private List<MovablePanel> _panels = new List<MovablePanel>();
 
     public bool IsAnimating { get; private set; }
-    private MovablePanel panelInMove;
-    private MovablePanel panelOutMove;
-    private bool panelOutEscaped;
+    private MovablePanel _panelInMove;
+    private MovablePanel _panelOutMove;
+    private bool _isPanelOutEscaped;
 
-    private readonly Queue<MovablePanel> _queue = new Queue<MovablePanel>();
+    private MovablePanel _nextToMove;
 
     public void Init()
     {
         if (!StartWithNone)
         {
-            panelOutMove = _panels[0];
-            panelOutMove.RectTransform.anchoredPosition = MoveToPoint;
+            _panelOutMove = _panels[0];
+            _panelOutMove.RectTransform.anchoredPosition = MoveToPoint;
         }
         else
         {
@@ -85,66 +85,90 @@ public class MovableContainer
 
     public void StartAnimation(int panelID)
     {
-        IsAnimating = true;
-        _queue.Enqueue(_panels[panelID]);
-        _queue.Peek().RectTransform.anchoredPosition = MoveInPoint;
+        if (!IsAnimating)
+        {
+            IsAnimating = true;
+            if (_panels[panelID] != _panelOutMove)
+            {
+                _nextToMove = _panels[panelID];
+                _nextToMove.RectTransform.anchoredPosition = MoveInPoint;
+            }
+        }
     }
 
     public void StartAnimation()
     {
         IsAnimating = true;
-        _queue.Enqueue(null);
+        _nextToMove = null;
     }
+
 
     /// <summary>
     /// Progress thru one step of animation
     /// </summary>
     public void Animate()
     {
+
         //If Current panel is null
         //Set it to null to avoid moving it
-        if (panelOutMove == null)
+        if (_panelOutMove == null)
         {
-            panelOutEscaped = true;
+            _isPanelOutEscaped = true;
+        }
+        else
+        {
+            _isPanelOutEscaped = false;
         }
 
         //If panel exists move it
-        if (!panelOutEscaped)
+        if (!_isPanelOutEscaped)
         {
-            if (panelOutMove.CustomDestination)
+            if (_panelOutMove.CustomDestination)
             {
-                if (panelOutMove.MovePanelTowards(panelOutMove.Destination, MoveToPoint, FullOutTime))
+                if (_panelOutMove.MovePanelTowards(_panelOutMove.Destination, MoveToPoint, FullOutTime))
                 {
-                    panelOutEscaped = true;
+                    _isPanelOutEscaped = true;
                 }
             }
             else
             {
-                if (panelOutMove.MovePanelTowards(MoveOutPoint, MoveToPoint, FullOutTime))
+                if (_panelOutMove.MovePanelTowards(MoveOutPoint, MoveToPoint, FullOutTime))
                 {
-                    panelOutEscaped = true;
+                    _isPanelOutEscaped = true;
                 }
 
             }
         }
 
         //If there are any panels to animate
-        if (_queue.Any())
+        if (_nextToMove != null)
         {
             //Get this panel and set it to panelInMove variable
-            panelInMove = _queue.Peek();
+            _panelInMove = _nextToMove;
 
             //If panel should move
-            if (MoveSimultaneously || (!MoveSimultaneously && panelOutEscaped))
+            if (MoveSimultaneously || (!MoveSimultaneously && _isPanelOutEscaped))
             {
-                if (panelInMove.MovePanelTowards(MoveToPoint, MoveInPoint, FullInTime))
+                if (_panelInMove.MovePanelTowards(MoveToPoint, MoveInPoint, FullInTime))
                 {
                     //If panel is in place
                     //Swap current panel with in panel
-                    panelOutMove = panelInMove;
+                    _panelOutMove = _panelInMove;
                     //Remove from queue
-                    _queue.Dequeue();
+                    _nextToMove = null;
+                    if (_isPanelOutEscaped)
+                    {
+                        IsAnimating = false;
+                    }
                 }
+            }
+        }
+        else
+        {
+            if (_isPanelOutEscaped)
+            {
+                IsAnimating = false;
+                _panelOutMove = null;
             }
         }
     }

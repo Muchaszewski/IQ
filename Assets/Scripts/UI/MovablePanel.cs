@@ -20,9 +20,9 @@ public class MovablePanel : MonoBehaviour
     public bool MovePanelTowards(Vector2 destination, Vector2 begining, float time)
     {
         var current = Vector2.MoveTowards(RectTransform.anchoredPosition, destination,
-                    Vector2.Distance(begining, destination) * (time * Time.deltaTime));
+                    Vector2.Distance(begining, destination) * (Time.deltaTime / time));
         RectTransform.anchoredPosition = current;
-        if (current == destination)
+        if (current.normalized == destination.normalized)
         {
             return true;
         }
