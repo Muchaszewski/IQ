@@ -123,6 +123,24 @@ public class InventoryPanel : MonoBehaviour
     }
 
     /// <summary>
+    /// Return equipment slot with index ready value
+    /// Return 0 if something broke?
+    /// </summary>
+    /// <param name="itemIcon"></param>
+    /// <returns></returns>
+    public int GetEquipment(ItemIcon itemIcon)
+    {
+        for (int i = 0; i < _equipment.Count; i++)
+        {
+            if (_equipment[i].Slot == itemIcon.ItemData.ValidSlot)
+            {
+                return -i - 1;
+            }
+        }
+        return 0;
+    }
+
+    /// <summary>
     /// Take ItemIcon (size) and return current position in equipment
     /// </summary>
     /// <param name="itemIcon"></param>

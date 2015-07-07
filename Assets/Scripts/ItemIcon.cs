@@ -8,7 +8,7 @@ using InventoryQuest.Utils;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler
+public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
@@ -64,7 +64,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             var inventory = Inventory.GetComponent<InventoryPanel>();
             this.transform.position = Input.mousePosition;
@@ -77,5 +77,15 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler
         var inventory = Inventory.GetComponent<InventoryPanel>();
         int key = inventory.ResolvePosition(this);
         inventory.SwapItemsOnPanel(this, key);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            var inventory = Inventory.GetComponent<InventoryPanel>();
+            int key = inventory.GetEquipment(this);
+            inventory.SwapItemsOnPanel(this, key);
+        }
     }
 }
