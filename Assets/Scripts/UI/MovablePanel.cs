@@ -17,10 +17,10 @@ public class MovablePanel : MonoBehaviour
         RectTransform = GetComponent<RectTransform>();
     }
 
-    public bool MovePanelTowards(Vector2 destination, Vector2 begining, float time)
+    public bool MovePanelTowards(Vector2 destination, Vector2 beginning, float time)
     {
         var current = Vector2.MoveTowards(RectTransform.anchoredPosition, destination,
-                    Vector2.Distance(begining, destination) * (Time.deltaTime / time));
+                    Vector2.Distance(beginning, destination) * (Time.deltaTime / time));
         RectTransform.anchoredPosition = current;
         if (current.normalized == destination.normalized)
         {

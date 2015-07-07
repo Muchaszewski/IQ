@@ -8,7 +8,7 @@ using InventoryQuest.Utils;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemIcon : MonoBehaviour
+public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
@@ -62,7 +62,7 @@ public class ItemIcon : MonoBehaviour
         transform.GetChild(0).GetComponent<Image>().sprite = sprite;
     }
 
-    public void Drag()
+    public void OnDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButton(0))
         {
@@ -72,10 +72,10 @@ public class ItemIcon : MonoBehaviour
         }
     }
 
-    public void Drop()
+    public void OnEndDrag(PointerEventData eventData)
     {
         var inventory = Inventory.GetComponent<InventoryPanel>();
         int key = inventory.ResolvePosition(this);
-        inventory.SwapItemsOnPanel(this, key); 
+        inventory.SwapItemsOnPanel(this, key);
     }
 }
