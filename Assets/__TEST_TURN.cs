@@ -15,11 +15,11 @@ public class __TEST_TURN : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = CurrentGame.Instance.FightController.Player.NextTurn + " " +
-                                    CurrentGame.Instance.FightController.Enemy[0].NextTurn +
-                                    " " + CurrentGame.Instance.FightController.Player.Stats.HealthPoints +
-                                    " " + CurrentGame.Instance.FightController.Player.Stats.Armor +
-                                    " " + CurrentGame.Instance.FightController.Player.Stats.Armor.Extend
-                                    + "/r/n" + CurrentGame.Instance.FightController.Enemy[0].Stats.StaminaPoints.Current;
+        GetComponent<Text>().text =
+                       "Player Turn: "  + CurrentGame.Instance.FightController.Player.NextTurn
+            + "\r\n" + "Next Turn: "    + CurrentGame.Instance.FightController.Enemy[0].NextTurn
+            + "\r\n" + "Health: "       + CurrentGame.Instance.FightController.Player.Stats.HealthPoints
+            + "\r\n" + "Armor: "        + CurrentGame.Instance.FightController.Player.Stats.Armor + " / " + CurrentGame.Instance.FightController.Player.Stats.Armor.Extend
+            + "\r\n" + "Stamina: "      + CurrentGame.Instance.FightController.Enemy[0].Stats.StaminaPoints.Current;
     }
 }

@@ -63,6 +63,7 @@ public class ProgressBar : MonoBehaviour
                         .GetProperty(ValueName.ToString())
                         .GetValue(fightController.Player.Stats, null);
                 break;
+
             case EnumCurrentEntity.Enemy:
                 try
                 {
