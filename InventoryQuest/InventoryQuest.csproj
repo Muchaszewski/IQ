@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{625F005A-8E91-44F2-A97E-CEEB4433D6D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>InventoryQuest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assets\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>InventoryQuest</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\ExtLibs\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InventoryQuest\_Graphs and Diagrams\InventoryQuest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InventoryQuest\_Graphs and Diagrams\Class Diagrams\EntityDiagram.cd" />
+    <None Include="InventoryQuest\_Graphs and Diagrams\Class Diagrams\ItemDiagram.cd" />
+    <None Include="InventoryQuest\_Graphs and Diagrams\Class Diagrams\PlayerDiagram.cd" />
+    <None Include="InventoryQuest\_Graphs and Diagrams\Class Diagrams\StatsDiagram.cd" />
+    <None Include="InventoryQuest\_Graphs and Diagrams\InventoryQuest.xmind" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InventoryQuest\Components\Entities\Entity.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\EnumEntityRarity.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\EnumEntityType.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\EnumSex.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Generation\RandomEnemyFactory.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Generation\Types\EntityType.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Inventory\Equipment.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Inventory\Inventory.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Money\Currency.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Money\CurrencyUtils.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Money\Wallet.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\PasiveSkills.cs" />
+    <Compile Include="InventoryQuest\Components\Entities\Player\Player.cs" />
+    <Compile Include="InventoryQuest\Components\EntityLists.cs" />
+    <Compile Include="InventoryQuest\Components\GameComponent.cs" />
+    <Compile Include="InventoryQuest\Components\GenerationStorage.cs" />
+    <Compile Include="InventoryQuest\Components\GenerationTemplate.cs" />
+    <Compile Include="InventoryQuest\Components\GenerationWeight.cs" />
+    <Compile Include="InventoryQuest\Components\GenerationWeightLists.cs" />
+    <Compile Include="InventoryQuest\Components\ItemsLists.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemClassSkill.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemDisplayedType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemHands.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemModificator.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemRarity.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemSlot.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EventItemArgs.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\RandomItemFactory.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\ArmorType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\IItemType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\ItemType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\Jewelry.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\OffHandType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\ShieldType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\WeaponType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Item.cs" />
+    <Compile Include="InventoryQuest\Components\Items\ItemComparer.cs" />
+    <Compile Include="InventoryQuest\Components\Items\SpecialAbilities.cs" />
+    <Compile Include="InventoryQuest\Components\Spot.cs" />
+    <Compile Include="InventoryQuest\Components\SpotList.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\EnumStatItemPartType.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\EnumStatValue.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\EnumTypeStat.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\IStats.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\IStatValue.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\Stats.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\StatScaleAttribute.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\StatTypeAttribute.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\StatValue.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\StatValueFloat.cs" />
+    <Compile Include="InventoryQuest\Components\Statistics\TypeStatsUtils.cs" />
+    <Compile Include="InventoryQuest\Game\CurrentGame.cs" />
+    <Compile Include="InventoryQuest\Game\Fight\FightController.cs" />
+    <Compile Include="InventoryQuest\Game\Fight\FightControllerEventArgs.cs" />
+    <Compile Include="InventoryQuest\Game\Fight\FightControllerPvE.cs" />
+    <Compile Include="InventoryQuest\Game\Idle.cs" />
+    <Compile Include="InventoryQuest\Game\IIdle.cs" />
+    <Compile Include="InventoryQuest\Properties\AssemblyInfo.cs" />
+    <Compile Include="InventoryQuest\Utils\AttributeHelper.cs" />
+    <Compile Include="InventoryQuest\Utils\BinaryFilesOperations.cs" />
+    <Compile Include="InventoryQuest\Utils\DisplayFormatAttribute.cs" />
+    <Compile Include="InventoryQuest\Utils\Extensions\StringExtensions.cs" />
+    <Compile Include="InventoryQuest\Utils\FileUtility.cs" />
+    <Compile Include="InventoryQuest\Utils\ImageIDPair.cs" />
+    <Compile Include="InventoryQuest\Utils\ImagesNames.cs" />
+    <Compile Include="InventoryQuest\Utils\Logger.cs" />
+    <Compile Include="InventoryQuest\Utils\MinMaxStat.cs" />
+    <Compile Include="InventoryQuest\Utils\MinMaxStatType.cs" />
+    <Compile Include="InventoryQuest\Utils\NameAttribute.cs" />
+    <Compile Include="InventoryQuest\Utils\PairTypeItem.cs" />
+    <Compile Include="InventoryQuest\Utils\RandomNumberGenerator.cs" />
+    <Compile Include="InventoryQuest\Utils\Utils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

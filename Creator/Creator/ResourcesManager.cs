@@ -15,7 +15,7 @@ namespace Creator
         /// <summary>
         /// List of all possible root path to look in.
         /// </summary>
-        public static readonly string[] ROOT_PATHS = new string[] { "", "../", "../../" };
+        public static readonly string[] ROOT_PATHS = new string[] { @"..\..\..\Assets\Resources" };
 
         private static string _PathRoot = "";
         /// <summary>
@@ -27,7 +27,7 @@ namespace Creator
             private set { ResourcesManager._PathRoot = value; }
         }
 
-        private static string _PathGfx = "gfx";
+        private static string _PathGfx = "Sprites";
         /// <summary>
         /// Path to directory inside root path to directory with all gfx resources.
         /// </summary>
@@ -109,7 +109,6 @@ namespace Creator
             for (int i = 0; i < ROOT_PATHS.Length; i++)
             {
                 string path = Path.Combine(PathRoot, ROOT_PATHS[i], lookFor);
-
                 if (Directory.Exists(path))
                 {
                     PathRoot = Path.Combine(PathRoot, ROOT_PATHS[i]);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Security.Policy;
 using System.Xml.Serialization;
 using InventoryQuest.Components.Entities.Generation.Types;
@@ -110,6 +111,10 @@ namespace InventoryQuest.Components
             if (isDefault)
             {
                 path += XMLPath;
+            }
+            if (System.AppDomain.CurrentDomain.FriendlyName.Contains("Creator"))
+            {
+                var b = 0;
             }
             var file = Resources.Load(path) as TextAsset;
             if (file != null)

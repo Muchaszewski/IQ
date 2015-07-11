@@ -284,7 +284,7 @@ namespace InventoryQuest.Game.Fight
             {
                 entity.Stats.HealthPoints.Regen(0, entity.Stats.HealthRegen);
                 entity.Stats.ManaPoints.Regen(0, entity.Stats.ManaRegen);
-                entity.Stats.StaminaPoints.Regen(0, entity.Stats.StaminaPoints);
+                entity.Stats.StaminaPoints.Regen(0, entity.Stats.ShieldRegen);
             }
             return false;
         }
