@@ -15,7 +15,11 @@ namespace InventoryQuest.Components
     public class GenerationStorage
     {
         private static GenerationStorage _Instance;
+#if CREATOR
+        public static readonly string XMLPath = "Storage.xml";
+#else
         public static readonly string XMLPath = "Storage";
+#endif
         private List<ArmorType> _Armors = new List<ArmorType>();
         private List<EntityType> _Entities = new List<EntityType>();
         private List<EntityLists> _EntityLists = new List<EntityLists>();
@@ -112,21 +116,28 @@ namespace InventoryQuest.Components
             {
                 path += XMLPath;
             }
-            if (System.AppDomain.CurrentDomain.FriendlyName.Contains("Creator"))
-            {
-                var b = 0;
-            }
-            var file = Resources.Load(path) as TextAsset;
-            if (file != null)
+#if CREATOR
+            if (File.Exists(path))
             {
                 var gs = new GenerationStorage();
-                gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
+                TextReader file = new StreamReader(path);
+                gs = (GenerationStorage)serializer.Deserialize(file);
+                file.Close();
                 return gs;
             }
-            else
-            {
-                throw new Exception(Directory.GetFiles(path).Aggregate((x, y) => x.ToString()));
-            }
+#else
+                var file = Resources.Load(path) as TextAsset;
+                if (file != null)
+                {
+                    var gs = new GenerationStorage();
+                    gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
+                    return gs;
+                }
+                else
+                {
+                    throw new Exception(Directory.GetFiles(path).Aggregate((x, y) => x.ToString()));
+                }
+#endif
             return new GenerationStorage();
         }
 

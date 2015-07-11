@@ -3,6 +3,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using InventoryQuest;
+using InventoryQuest.Components.Items;
+using InventoryQuest.Components.Statistics;
+using InventoryQuest.Game;
 using InventoryQuest.Utils;
 
 public class ToolTipManager : UILabelManager
@@ -106,6 +110,7 @@ public class ToolTipManager : UILabelManager
         //---------------
         CreateStats(item);
         CreateRequirements(item);
+        SetMagicAttributes(item);
         CreateFlavor(item);
         //---------------
         CreateValue(item);
@@ -154,7 +159,7 @@ public class ToolTipManager : UILabelManager
 
     void CreateBasicMisc(InventoryQuest.Components.Items.Item item)
     {
-        switch ( item.ValidSlot )
+        switch (item.ValidSlot)
         {
             // Weapon
             case InventoryQuest.Components.Items.EnumItemSlot.Weapon:
@@ -185,7 +190,7 @@ public class ToolTipManager : UILabelManager
         int largeGap = 12;
 
         // Round up values that should not be floating-point type variables
-        item.Durability.Current = (float) Math.Floor(item.Durability.Current);
+        item.Durability.Current = (float)Math.Floor(item.Durability.Current);
         item.Durability.Base = (float)Math.Floor(item.Durability.Base);
 
         switch (item.ValidSlot)
@@ -207,7 +212,7 @@ public class ToolTipManager : UILabelManager
                 AddLabel(new Vector2(valueLeftMargin, topMargin), item.DPS.ToString(), bigFontSize, Color.white, TextAnchor.UpperLeft);
                 topMargin += bigFontSize + smallGap;
                 AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Critical:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
-                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Stats.CriticalChance.ToString() + " (" + item.Stats.CriticalDamage.ToString()  + ")", normalFontSize, Color.white, TextAnchor.UpperLeft);
+                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Stats.CriticalChance.ToString() + " (" + item.Stats.CriticalDamage.ToString() + ")", normalFontSize, Color.white, TextAnchor.UpperLeft);
                 topMargin += normalFontSize + largeGap;
 
                 AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Range:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
@@ -263,13 +268,156 @@ public class ToolTipManager : UILabelManager
         topMargin += 12;
 
         AddSeparator(new Vector2(0, topMargin));
+        topMargin += 3;
+        AddLabel(new Vector2(0, topMargin), "Requirements", 16, Color.gray, TextAnchor.UpperCenter);
         topMargin += 20;
 
-        AddLabel(new Vector2(160, topMargin), "Level " + item.ItemLevel.ToString(), 20, Color.grey, TextAnchor.UpperLeft);
-        AddLabel(new Vector2(-160, topMargin), "Required stats", 20, Color.grey, TextAnchor.UpperRight);
+
+        if (item.RequiredLevel != 0)
+        {
+            if (CurrentGame.Instance.Player.Level < item.RequiredLevel)
+            {
+                AddLabel(new Vector2(160, topMargin), "Level: " + item.RequiredLevel.ToString(), 20, Color.red, TextAnchor.UpperLeft);
+            }
+            else
+            {
+                AddLabel(new Vector2(160, topMargin), "Level: " + item.RequiredLevel.ToString(), 20, Color.grey, TextAnchor.UpperLeft);
+            }
+        }
+        if (item.RequiredStats.Count != 0)
+        {
+            string requiredStats = "";
+            for (int i = 0; i < item.RequiredStats.Count; i++)
+            {
+                requiredStats += item.RequiredStats[i].Current + " " + AttributeHelper.GetEnumDescription(item.RequiredStats[i].Type);
+                if (i < item.RequiredStats.Count - 1)
+                {
+                    requiredStats += ", ";
+                }
+            }
+            //To change right margin set with less then 204
+            AddLabel(new Vector2(-160, topMargin), requiredStats, 20, Color.grey, TextAnchor.UpperRight);
+        }
+
         topMargin += 28;
 
         _currentHeight = topMargin;
+    }
+
+    private void SetMagicAttributes(InventoryQuest.Components.Items.Item item)
+    {
+        switch (item.ValidSlot)
+        {
+            case EnumItemSlot.Head:
+            case EnumItemSlot.Chest:
+            case EnumItemSlot.Waist:
+            case EnumItemSlot.Legs:
+            case EnumItemSlot.Feet:
+            case EnumItemSlot.Shoulders:
+            case EnumItemSlot.Hands:
+            case EnumItemSlot.Back:
+                SetMagicDescription(new List<EnumStatItemPartType>()
+                    {
+                        EnumStatItemPartType.BaseType,
+                        EnumStatItemPartType.CharacterType,
+                        EnumStatItemPartType.ShieldType,
+                        EnumStatItemPartType.WeaponType,
+                    }, item);
+                break;
+            case EnumItemSlot.OffHand:
+                SetMagicDescription(new List<EnumStatItemPartType>()
+                    {
+                        EnumStatItemPartType.BaseType,
+                        EnumStatItemPartType.CharacterType,
+                        EnumStatItemPartType.ArmorType,
+                        EnumStatItemPartType.WeaponType,
+                    }, item);
+                break;
+            case EnumItemSlot.Weapon:
+                SetMagicDescription(new List<EnumStatItemPartType>()
+                    {
+                        EnumStatItemPartType.ArmorType,
+                        EnumStatItemPartType.BaseType,
+                        EnumStatItemPartType.CharacterType,
+                        EnumStatItemPartType.ShieldType,
+                    }, item);
+                break;
+        }
+    }
+
+    private void SetMagicDescription(List<EnumStatItemPartType> types, InventoryQuest.Components.Items.Item item)
+    {
+        int topMargin = _currentHeight;
+        int counter = 0;
+        topMargin += 12;
+        //movement in x direction
+        foreach (var stat in item.Stats.GetAllStatsInt())
+        {
+            if (stat.Current != 0)
+            {
+                bool addNewLabel = false;
+                foreach (var type in types)
+                {
+                    if (stat.Type.GetAttributeOfType<StatTypeAttribute>().Type == type)
+                    {
+                        addNewLabel = true;
+                    }
+                }
+
+                if (addNewLabel)
+                {
+                    topMargin += 20;
+                    AddLabel(new Vector2(-160, topMargin), "+" + stat.Current + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                        20, Color.gray, TextAnchor.UpperRight);
+                    counter++;
+                }
+            }
+            if (stat.Extend != stat.Base)
+            {
+                topMargin += 20;
+                AddLabel(new Vector2(-160, topMargin), "+" + (stat.Extend - stat.Base) + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                    20, Color.gray, TextAnchor.UpperRight);
+                counter++;
+            }
+        }
+
+        foreach (var stat in item.Stats.GetAllStatsFloat())
+        {
+            if (stat.Current != 0)
+            {
+                bool addNewLabel = false;
+                foreach (var type in types)
+                {
+                    if (AttributeHelper.GetAttributeOfType<StatTypeAttribute>(stat.Type).Type == type)
+                    {
+                        addNewLabel = true;
+                    }
+                }
+
+                if (addNewLabel)
+                {
+                    topMargin += 20;
+                    AddLabel(new Vector2(-160, topMargin), "+" + stat.Current.ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                        20, Color.gray, TextAnchor.UpperRight);
+                    counter++;
+                }
+            }
+            if (stat.Extend != stat.Base)
+            {
+                topMargin += 20;
+                AddLabel(new Vector2(-160, topMargin), "+" + (stat.Extend - stat.Base).ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                    20, Color.gray, TextAnchor.UpperRight);
+                counter++;
+            }
+        }
+
+        if (counter > 0)
+        {
+            AddSeparator(new Vector2(0, _currentHeight));
+            _currentHeight = topMargin;
+        }
+
+
     }
 
     void CreateFlavor(InventoryQuest.Components.Items.Item item)
