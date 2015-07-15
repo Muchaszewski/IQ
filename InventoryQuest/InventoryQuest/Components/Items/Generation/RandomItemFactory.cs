@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using InventoryQuest.Components.Items;
@@ -73,23 +74,23 @@ namespace InventoryQuest.Components.Generation.Items
         {
             if (typeID >= 0 && typeID <= 8) //Armors
             {
-                return CreateArmorItem(level, itemList, rarity, (EnumItemType) typeID);
+                return CreateArmorItem(level, itemList, rarity, (EnumItemType)typeID);
             }
             if (typeID == 9 || typeID == 10) //Amu and Rings
             {
             }
             else if (typeID == 11) //Shields
             {
-                return CreateShieldItem(level, itemList, rarity, (EnumItemType) typeID);
+                return CreateShieldItem(level, itemList, rarity, (EnumItemType)typeID);
             }
             else if (typeID == 12) //Offhand
             {
-                return CreateOffHandItem(level, itemList, rarity, (EnumItemType) typeID);
+                return CreateOffHandItem(level, itemList, rarity, (EnumItemType)typeID);
             }
             //13 is Unarmed
             else if (typeID >= 14 && typeID <= 27) //Weapons
             {
-                return CreateWeaponItem(level, itemList, rarity, (EnumItemType) typeID);
+                return CreateWeaponItem(level, itemList, rarity, (EnumItemType)typeID);
             }
             return null;
         }
@@ -108,7 +109,7 @@ namespace InventoryQuest.Components.Generation.Items
             Stats stats = item.Stats;
             item.ValidSlot = EnumItemSlot.Weapon;
             item.ItemLevel = level;
-            var weaponType = (WeaponType) ChooseRarity(
+            var weaponType = (WeaponType)ChooseRarity(
                 level,
                 rarity,
                 type,
@@ -118,16 +119,16 @@ namespace InventoryQuest.Components.Generation.Items
             CreateBasics(ref item, weaponType, level, rarity);
 
             //Setting weapon stats
-            stats.Accuracy.Base = (int) weaponType.Accuracy.GetRandomForLevel(level);
-            stats.ArmorPenetration.Base = (int) weaponType.ArmorPenetration.GetRandomForLevel(level);
-            stats.MinDamage.Base = (int) weaponType.MinDamage.GetRandomForLevel(level);
-            stats.MaxDamage.Base = (int) weaponType.MaxDamage.GetRandomForLevel(level);
+            stats.Accuracy.Base = (int)weaponType.Accuracy.GetRandomForLevel(level);
+            stats.ArmorPenetration.Base = (int)weaponType.ArmorPenetration.GetRandomForLevel(level);
+            stats.MinDamage.Base = (int)weaponType.MinDamage.GetRandomForLevel(level);
+            stats.MaxDamage.Base = (int)weaponType.MaxDamage.GetRandomForLevel(level);
             if (stats.MinDamage.Base > stats.MaxDamage.Base)
             {
                 stats.MaxDamage.Base = stats.MinDamage.Base;
             }
-            stats.AttackSpeed.Base = (float) weaponType.AttackSpeed.GetRandomForLevel(level);
-            stats.Deflection.Base = (int) weaponType.Deflection.GetRandomForLevel(level);
+            stats.AttackSpeed.Base = (float)weaponType.AttackSpeed.GetRandomForLevel(level);
+            stats.Deflection.Base = (int)weaponType.Deflection.GetRandomForLevel(level);
 
             //Item skill
             item.Skill = weaponType.Skill;
@@ -144,7 +145,7 @@ namespace InventoryQuest.Components.Generation.Items
             item.RequiredLevel = level; // I have changed it to this - M.L.
             foreach (MinMaxStatType stat in weaponType.RequiredStats)
             {
-                item.RequiredStats.Add(new StatValueInt(stat.StatType) {Base = (int)stat.GetRandomForLevel(level)});
+                item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandomForLevel(level) });
             }
             return item;
         }
@@ -163,7 +164,7 @@ namespace InventoryQuest.Components.Generation.Items
             item.ValidSlot = EnumItemSlot.OffHand;
             item.ItemLevel = level;
 
-            var shieldType = (ShieldType) ChooseRarity(
+            var shieldType = (ShieldType)ChooseRarity(
                 level,
                 rarity,
                 type,
@@ -187,7 +188,7 @@ namespace InventoryQuest.Components.Generation.Items
             item.RequiredLevel = shieldType.RequiredLevel;
             foreach (MinMaxStatType stat in shieldType.RequiredStats)
             {
-                item.RequiredStats.Add(new StatValueInt(stat.StatType) {Base = (int)stat.GetRandom()});
+                item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandom() });
             }
             return item;
         }
@@ -206,7 +207,7 @@ namespace InventoryQuest.Components.Generation.Items
             item.ValidSlot = EnumItemSlot.OffHand;
             item.ItemLevel = level;
 
-            var offHandType = (OffHandType) ChooseRarity(
+            var offHandType = (OffHandType)ChooseRarity(
                 level,
                 rarity,
                 type,
@@ -243,17 +244,17 @@ namespace InventoryQuest.Components.Generation.Items
             Stats stats = item.Stats;
             item.ItemLevel = level;
 
-            var armorType = (ArmorType) ChooseRarity(
+            var armorType = (ArmorType)ChooseRarity(
                 level,
                 rarity,
                 type,
                 itemsLists.ArmorTypeID,
                 GenerationStorage.Instance.Armors.Cast<ItemType>().ToList());
 
-            item.ValidSlot = (EnumItemSlot) (armorType.Type + 1);
+            item.ValidSlot = (EnumItemSlot)(armorType.Type + 1);
             CreateBasics(ref item, armorType, level, rarity);
 
-            stats.Armor.Base = (int) armorType.Armor.GetRandomForLevel(level);
+            stats.Armor.Base = (int)armorType.Armor.GetRandomForLevel(level);
 
 
             //Item skill
@@ -278,7 +279,7 @@ namespace InventoryQuest.Components.Generation.Items
             item.Name = type.Name;
             item.ExtraName = type.ExtraName;
             item.FlavorText = type.FlavorText;
-            item.Price.Base = level*20;
+            item.Price.Base = level * 20;
 
             //Set item type
             item.Type = type.Type;
@@ -422,18 +423,21 @@ namespace InventoryQuest.Components.Generation.Items
         {
             var attrib = new List<RarityChance>();
             var maxRand = 0;
-            MemberInfo[] mem = typeof (EnumItemRarity).GetMembers();
+            MemberInfo[] mem = typeof(EnumItemRarity).GetMembers();
             var index = 0;
             foreach (MemberInfo item in mem)
             {
-                if (item.DeclaringType == typeof(EnumItemRarity) && item.GetCustomAttributes(typeof(EnumItemRarity), false).Length != 0)
+                if (item.DeclaringType == typeof(EnumItemRarity))
                 {
-                    if (index < (int) rarity)
+                    if (item.GetCustomAttributes(true).Length != 0)
                     {
-                        index++;
-                        var attribute = (RarityChance) item.GetCustomAttributes(true)[0];
-                        attrib.Add(attribute);
-                        maxRand += attribute.Chance;
+                        if (index < (int)rarity)
+                        {
+                            index++;
+                            var attribute = (RarityChance)item.GetCustomAttributes(true)[0];
+                            attrib.Add(attribute);
+                            maxRand += attribute.Chance;
+                        }
                     }
                 }
             }
@@ -445,7 +449,7 @@ namespace InventoryQuest.Components.Generation.Items
                 rand -= attrib[i].Chance;
                 if (rand <= 0)
                 {
-                    return (EnumItemRarity) i;
+                    return (EnumItemRarity)i;
                 }
             }
             return EnumItemRarity.Poor;
@@ -467,7 +471,7 @@ namespace InventoryQuest.Components.Generation.Items
                     {
                         if (statValueInt.Base > 0)
                         {
-                            statValueInt.Base = (int) (Math.Max(statValueInt.Base*(1 - PoorModifier), 1));
+                            statValueInt.Base = (int)(Math.Max(statValueInt.Base * (1 - PoorModifier), 1));
                         }
                     }
                     break;
@@ -558,14 +562,14 @@ namespace InventoryQuest.Components.Generation.Items
             {
                 StatValueInt stat = item.Stats.GetAllStatsInt()[statR];
                 StatScaleAttribute scale =
-                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof (EnumTypeStat), stat.Type));
+                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
                 if (stat.Base == 0)
                 {
-                    stat.Base = bonusStat*Convert.ToInt32(scale.Scale);
+                    stat.Base = bonusStat * Convert.ToInt32(scale.Scale);
                 }
                 else
                 {
-                    stat.Extend += bonusStat*Convert.ToInt32(scale.Scale);
+                    stat.Extend += bonusStat * Convert.ToInt32(scale.Scale);
                 }
             }
             else
@@ -573,14 +577,14 @@ namespace InventoryQuest.Components.Generation.Items
                 statR -= statsI;
                 StatValueFloat stat = item.Stats.GetAllStatsFloat()[statR];
                 StatScaleAttribute scale =
-                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof (EnumTypeStat), stat.Type));
+                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
                 if (stat.Base == 0)
                 {
-                    stat.Base = bonusStat*scale.Scale;
+                    stat.Base = bonusStat * scale.Scale;
                 }
                 else
                 {
-                    stat.Extend += bonusStat*scale.Scale;
+                    stat.Extend += bonusStat * scale.Scale;
                 }
             }
         }

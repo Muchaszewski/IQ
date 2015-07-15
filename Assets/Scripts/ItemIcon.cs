@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 using System.Linq;
+using Assets.Scripts;
+using Assets.Scripts.Utils;
 using InventoryQuest;
 using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Game;
@@ -42,6 +45,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
             Debug.LogError("Item data is required but was null");
         }
         SetIcon();
+        SetBackground();
     }
 
     public static void SetReferences()
@@ -54,12 +58,19 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
         }
     }
 
+    /// <summary>
+    /// Set icon for given image
+    /// </summary>
     void SetIcon()
     {
-        var u = ImagesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
-        //TODO Take code from work :P
-        var sprite = Resources.Load<Sprite>(FileUtility.AssetsRelativePath(u));
-        transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        var path = ImagesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
+        transform.GetChild(0).GetComponent<Image>().sprite = ResourceManager.Get(FileUtility.AssetsRelativePath(path));
+    }
+
+    void SetBackground()
+    {
+        string path = ItemBackgrounds.Get(ItemData.Rarity);
+        GetComponent<Image>().sprite = ResourceManager.Get(path);
     }
 
     public void OnDrag(PointerEventData eventData)

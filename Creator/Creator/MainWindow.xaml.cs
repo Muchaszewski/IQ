@@ -474,7 +474,14 @@ namespace Creator
                 TextBoxItemsFlavor.Text = item.FlavorText;
                 ComboBoxItemType.SelectedIndex = (int)item.Type;
                 ComboBoxItemSkill.SelectedIndex = (int)item.Skill;
-                ButtonItemDurability.Content = item.Durability.ToString();
+                if (item.Durability == null)
+                {
+                    ButtonItemDurability.Content = 0.ToString();
+                }
+                else
+                {
+                    ButtonItemDurability.Content = item.Durability.ToString();
+                }
                 ComboBoxRarity.SelectedIndex = (int)item.Rarity;
                 TextBoxItemRequired.Text = item.RequiredLevel.ToString();
                 TextBoxItemDrop.Text = item.DropLevel.ToString();
@@ -609,7 +616,7 @@ namespace Creator
             {
                 var item = DataGridItemsAll.SelectedItem as ItemType;
                 int temp = 0;
-                int.TryParse(TextBoxItemRequired.Text,out temp);
+                int.TryParse(TextBoxItemRequired.Text, out temp);
                 item.RequiredLevel = temp;
                 if (isToggledButton)
                 {
@@ -2040,7 +2047,7 @@ namespace Creator
                 window.ShowDialog();
                 RefreshItems();
             }
-            
+
         }
 
 

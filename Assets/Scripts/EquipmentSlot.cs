@@ -46,6 +46,18 @@ public class EquipmentSlot : MonoBehaviour
         itemIcon.transform.SetParent(transform);
     }
 
+    public bool IsEquipable(ItemIcon itemIcon)
+    {
+        var item = itemIcon.ItemData;
+        var player = CurrentGame.Instance.Player;
+        if (item.RequiredLevel > player.Level
+            )
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void SetItemIcon(ItemIcon itemIcon)
     {
         var image = itemIcon.transform.GetChild(0).GetComponent<RectTransform>();

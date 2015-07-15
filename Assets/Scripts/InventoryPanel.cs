@@ -252,7 +252,7 @@ public class InventoryPanel : MonoBehaviour
                 CurrentGame.Instance.Player.Inventory.AddItem(shield.Value.ItemData);
             }
         }
-        //If Shield is beeing perform to equip and you already have two handed weapon
+        //If Shield is perform to equip and you already have two handed weapon
         if (itemIcon.ItemData.ValidSlot == EnumItemSlot.OffHand)
         {
             int weaponSlotIndex = _equipment.FindIndex(x => x.Slot == EnumItemSlot.Weapon);
