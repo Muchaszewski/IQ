@@ -507,6 +507,7 @@ namespace Creator
                 if (enumItemType >= 0 && enumItemType <= 8) //Armors
                 {
                     var armor = (ArmorType)DataGridItemsAll.SelectedItem;
+                    if (armor.Armor == null) return;
                     ButtonItemsArmor.Content = armor.Armor.ToString();
                 }
                 else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
@@ -1264,6 +1265,7 @@ namespace Creator
                 DataGridMonsterAllItems.SelectedIndex < GenerationStorage.Instance.Entities.Count)
             {
                 var entity = (EntityType)DataGridMonsterAllItems.SelectedItem;
+                if (entity.HealthPoints == null) return;
                 TextBoxMonsterName.Text = entity.Name;
                 TextBoxMonsterID.Text = entity.ID.ToString();
                 ComboBoxMonsterSex.SelectedIndex = (int)entity.Sex;
