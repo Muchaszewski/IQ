@@ -488,16 +488,20 @@ namespace Creator
 
                 var imageList = new List<Image>();
                 // "Try" bracket added for program not to crash when an image of certain index does not exist.
+                PairTypeItem pp = null;
                 try
                 {
                     foreach (var pair in item.ImageID)
                     {
+                        pp = pair;
                         var id = ResolveImage(pair.Type, pair.Item);
                         imageList.Add(_imagesList[id.ImageIDType][id.ImageIDItem]);
                     }
                 }
                 catch
                 {
+                    MessageBox.Show("Given image doesnot exist. Please ensure that this image in in sprite folder\r\n" + pp);
+                    // Do nothing, temporary fix
                     // Do nothing, temporary fix
                     // Just not crashing is enough
                 }
