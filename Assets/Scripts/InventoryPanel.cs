@@ -45,7 +45,7 @@ public class InventoryPanel : MonoBehaviour
 
         for (int i = 0; i < 20; i++)
         {
-            CurrentGame.Instance.Player.Inventory.AddItem(RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, EnumItemRarity.Normal));
+            CurrentGame.Instance.Player.Inventory.AddItem(RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, EnumItemRarity.Mythical));
         }
     }
 

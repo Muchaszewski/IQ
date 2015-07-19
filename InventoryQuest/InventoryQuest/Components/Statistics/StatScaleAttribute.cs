@@ -15,13 +15,21 @@ namespace InventoryQuest.Components.Statistics
 
         static StatScaleAttribute()
         {
-            MemberInfo[] enumTypeStatMembers = typeof (EnumTypeStat).GetMembers();
+            MemberInfo[] enumTypeStatMembers = typeof(EnumTypeStat).GetMembers();
             foreach (MemberInfo item in enumTypeStatMembers)
             {
-                if (item.DeclaringType == typeof (EnumTypeStat) && item.GetCustomAttributes(typeof(EnumTypeStat), false).Count() != 0 &&
+                if (item.DeclaringType == typeof(EnumTypeStat) &&
+                    item.GetCustomAttributes(true).Length != 0 &&
                     item.Name != "Unknown")
                 {
-                    statScaleList.Add(item.GetCustomAttributes(typeof(StatScaleAttribute), false)[0] as StatScaleAttribute);
+                    foreach (var attribute in item.GetCustomAttributes(typeof(StatScaleAttribute), false))
+                    {
+                        if (attribute.GetType() == typeof(StatScaleAttribute))
+                        {
+                            statScaleList.Add(attribute as StatScaleAttribute);
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -42,7 +50,7 @@ namespace InventoryQuest.Components.Statistics
 
         public static StatScaleAttribute GetAttributeByName(string name)
         {
-            string[] collection = Enum.GetNames(typeof (EnumTypeStat));
+            string[] collection = Enum.GetNames(typeof(EnumTypeStat));
             var attrib = new StatScaleAttribute(0);
             for (var i = 0; i < collection.Count(); i++)
             {

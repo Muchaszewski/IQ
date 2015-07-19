@@ -464,6 +464,7 @@ namespace InventoryQuest.Components.Generation.Items
                     {
                         if (statValueFloat.Base > 0)
                         {
+                            //TODO
                             //statValueFloat.Base = Math.Max(statValueFloat.Base*(1 - PoorModifier), 0.01f);
                         }
                     }
@@ -561,8 +562,7 @@ namespace InventoryQuest.Components.Generation.Items
             if (statR < statsI)
             {
                 StatValueInt stat = item.Stats.GetAllStatsInt()[statR];
-                StatScaleAttribute scale =
-                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
+                StatScaleAttribute scale = StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
                 if (stat.Base == 0)
                 {
                     stat.Base = bonusStat * Convert.ToInt32(scale.Scale);
