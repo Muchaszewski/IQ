@@ -83,6 +83,7 @@ namespace InventoryQuest.Utils
         /// </summary>
         public static int FoundResourcesItems { get; private set; }
 
+
         public static List<NamedList<string>> GetAllImagesNames()
         {
             ItemsImageNames = new List<NamedList<string>>();
@@ -133,14 +134,22 @@ namespace InventoryQuest.Utils
         /// <summary>
         ///     Initialize the resource manager.
         /// </summary>
-        public static void Init()
+        static void Init()
         {
-
+#if CREATOR
+            PathRoot = Directory.GetCurrentDirectory();
+            string unityAssetsPath = "..\\..\\..\\Assets\\Resources";
+            PathRoot = Path.GetFullPath(Path.Combine(PathRoot, unityAssetsPath));
+#endif
         }
 
         public static string[] GetAllFiles(string path, bool searchFiles = true)
         {
+#if CREATOR
+            string[] fullPath = { PathRoot };
+#else
             var fullPath = FileUtility.GetResourcesDirectories();
+#endif
             var extension = "";
             var files = new List<string>();
             if (searchFiles)
