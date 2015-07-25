@@ -18,6 +18,7 @@ public class ToolTipManager : UILabelManager
 
     //Properties
     public bool Show { get; set; }
+    public float Margin = 50;
 
     //Private varibles
     private RectTransform _rectTransform;
@@ -58,17 +59,30 @@ public class ToolTipManager : UILabelManager
         }
         else
         {
-            transform.position = _item.transform.position
-                + new Vector3(
+            transform.position =
+                _item.transform.position
+                + new Vector3 (
                     -(_item.RectTransform.sizeDelta.x * _item.transform.localScale.x * _canvas.transform.localScale.x) / 2f,
-                    -(_item.RectTransform.sizeDelta.y * _item.transform.localScale.y * _canvas.transform.localScale.y) / 2f
-                    );
-            Debug.Log(Screen.height + " " +( _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y - transform.position.y).ToString());
-            if (Screen.height < _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y + _rectTransform.anchoredPosition.y)
+                    (_item.RectTransform.sizeDelta.y * _item.transform.localScale.y * _canvas.transform.localScale.y) / 2f,
+                    0
+                );
+
+            float diff = 0;
+
+            // Move up if under the screen
+            if (_rectTransform.transform.position.y - _rectTransform.sizeDelta.y * _rectTransform.localScale.y / 2f < Margin)
             {
-                var diff = Screen.height - _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y;
+                diff = Margin - (_rectTransform.transform.position.y - _rectTransform.sizeDelta.y * _rectTransform.localScale.y / 2f);
                 transform.AddY(diff);
             }
+
+            // Move down if over the screen
+            if (_rectTransform.transform.position.y >= Screen.height - Margin)
+            {
+                diff = Screen.height - Margin - _rectTransform.transform.position.y;
+                transform.AddY(diff);
+            }
+
             Show = false;
         }
     }
@@ -280,7 +294,7 @@ public class ToolTipManager : UILabelManager
         topMargin += 12;
 
         AddSeparator(new Vector2(0, topMargin));
-        topMargin += 3;
+        topMargin += 10;
         AddLabel(new Vector2(0, topMargin), "Requirements", 16, Color.gray, TextAnchor.UpperCenter);
         topMargin += 20;
 
@@ -361,7 +375,11 @@ public class ToolTipManager : UILabelManager
     {
         int topMargin = _currentHeight;
         int counter = 0;
-        topMargin += 12;
+
+        int magicAttributeLabelHeight = 24;
+        float magicAttributeLabelMargin = 160;
+        //topMargin += 0;
+
         //movement in x direction
         foreach (var stat in item.Stats.GetAllStatsInt())
         {
@@ -378,17 +396,27 @@ public class ToolTipManager : UILabelManager
 
                 if (addNewLabel)
                 {
-                    topMargin += 20;
-                    AddLabel(new Vector2(-160, topMargin), "+" + stat.Current + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
-                        20, Color.gray, TextAnchor.UpperRight);
+                    topMargin += magicAttributeLabelHeight;
+                    AddLabel(
+                        new Vector2(magicAttributeLabelMargin, topMargin),
+                        "+" + stat.Current + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                        20,
+                        Color.gray,
+                        TextAnchor.UpperLeft
+                    );
                     counter++;
                 }
             }
             if (stat.Extend != stat.Base)
             {
-                topMargin += 20;
-                AddLabel(new Vector2(-160, topMargin), "+" + (stat.Extend - stat.Base) + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
-                    20, Color.gray, TextAnchor.UpperRight);
+                topMargin += magicAttributeLabelHeight;
+                AddLabel(
+                    new Vector2(magicAttributeLabelMargin, topMargin),
+                    "+" + (stat.Extend - stat.Base) + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                    20,
+                    Color.gray,
+                    TextAnchor.UpperLeft
+                );
                 counter++;
             }
         }
@@ -408,23 +436,34 @@ public class ToolTipManager : UILabelManager
 
                 if (addNewLabel)
                 {
-                    topMargin += 20;
-                    AddLabel(new Vector2(-160, topMargin), "+" + stat.Current.ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
-                        20, Color.gray, TextAnchor.UpperRight);
+                    topMargin += magicAttributeLabelHeight;
+                    AddLabel(
+                        new Vector2(magicAttributeLabelMargin, topMargin),
+                        "+" + stat.Current.ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                        20,
+                        Color.gray,
+                        TextAnchor.UpperLeft
+                    );
                     counter++;
                 }
             }
             if (stat.Extend != stat.Base)
             {
-                topMargin += 20;
-                AddLabel(new Vector2(-160, topMargin), "+" + (stat.Extend - stat.Base).ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
-                    20, Color.gray, TextAnchor.UpperRight);
+                topMargin += magicAttributeLabelHeight;
+                AddLabel(
+                    new Vector2(magicAttributeLabelMargin, topMargin),
+                    "+" + (stat.Extend - stat.Base).ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                    20,
+                    Color.gray,
+                    TextAnchor.UpperLeft
+                );
                 counter++;
             }
         }
 
         if (counter > 0)
         {
+            topMargin += 24;
             AddSeparator(new Vector2(0, _currentHeight));
             _currentHeight = topMargin;
         }
