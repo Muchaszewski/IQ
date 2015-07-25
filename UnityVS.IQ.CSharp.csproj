@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\UI\MovableAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\MovablePanel.cs" />
+    <Compile Include="Assets\Scripts\Utils\Existentions.cs" />
     <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
     <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />

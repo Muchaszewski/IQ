@@ -38,7 +38,7 @@ public class ShowTooltip : MonoBehaviour
         if (ItemPosition.Contains(Input.mousePosition))
         {
             toolTip.Show = true;
-            toolTip.SetTooltip(ItemData.ItemData);
+            toolTip.SetTooltip(ItemData);
         }
     }
 

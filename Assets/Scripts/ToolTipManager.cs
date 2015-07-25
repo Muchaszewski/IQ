@@ -21,7 +21,8 @@ public class ToolTipManager : UILabelManager
 
     //Private varibles
     private RectTransform _rectTransform;
-    private InventoryQuest.Components.Items.Item _item;
+    private ItemIcon _item;
+    private Canvas _canvas;
 
     private int _currentHeight = 0;
     //_____________________________________________________________________________________________________________
@@ -45,6 +46,7 @@ public class ToolTipManager : UILabelManager
     void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
+        _canvas = GameObject.FindObjectOfType<Canvas>();
     }
 
     // Update is called once per frame
@@ -56,7 +58,17 @@ public class ToolTipManager : UILabelManager
         }
         else
         {
-            transform.position = (Vector2)Input.mousePosition + new Vector2(-4, -4);
+            transform.position = _item.transform.position
+                + new Vector3(
+                    -(_item.RectTransform.sizeDelta.x * _item.transform.localScale.x * _canvas.transform.localScale.x) / 2f,
+                    -(_item.RectTransform.sizeDelta.y * _item.transform.localScale.y * _canvas.transform.localScale.y) / 2f
+                    );
+            Debug.Log(Screen.height + " " +( _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y - transform.position.y).ToString());
+            if (Screen.height < _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y + _rectTransform.anchoredPosition.y)
+            {
+                var diff = Screen.height - _rectTransform.sizeDelta.y * this.transform.localScale.y * _canvas.transform.localScale.y;
+                transform.AddY(diff);
+            }
             Show = false;
         }
     }
@@ -65,7 +77,7 @@ public class ToolTipManager : UILabelManager
 
     //______________________________________________Public Methods_________________________________________________
 
-    public void SetTooltip(InventoryQuest.Components.Items.Item item)
+    public void SetTooltip(ItemIcon item)
     {
         if (item != _item)
         {
@@ -75,12 +87,12 @@ public class ToolTipManager : UILabelManager
                 Destroy(o);
             }
             _tootipObjects = new List<GameObject>();
-            if (item != null)
+            if (item.ItemData != null)
             {
                 SetIcon();
                 //Do not use outside this method or in custom inspector methods
 #pragma warning disable 618
-                CreateLabels(item);
+                CreateLabels(item.ItemData);
 #pragma warning restore 618
             }
         }
@@ -88,7 +100,7 @@ public class ToolTipManager : UILabelManager
 
     void SetIcon()
     {
-        var u = ImagesNames.ItemsImageNames[_item.ImageID.ImageIDType].FullNameList[_item.ImageID.ImageIDItem];
+        var u = ImagesNames.ItemsImageNames[_item.ItemData.ImageID.ImageIDType].FullNameList[_item.ItemData.ImageID.ImageIDItem];
         //TODO Take code from work :P
         var sprite = Resources.Load<Sprite>(FileUtility.AssetsRelativePath(u));
         TooltipImage.sprite = sprite;
