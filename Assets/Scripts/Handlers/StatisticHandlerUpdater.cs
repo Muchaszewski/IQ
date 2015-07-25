@@ -27,6 +27,16 @@ public class StatisticHandlerUpdater : MonoBehaviour
                     _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.DPS.ToString();
                     break;
                 }
+                if (_statisticHandler.stat == EnumTypeStat.Accuracy)
+                {
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Accuracy.ToString();
+                    break;
+                }
+                if (_statisticHandler.stat == EnumTypeStat.Deflection)
+                {
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString();
+                    break;
+                }
                 if (_statisticHandler.StatReference.GetType() == typeof(StatValueFloat))
                 {
                     SetStatText(_statisticHandler.StatReference as StatValueFloat);

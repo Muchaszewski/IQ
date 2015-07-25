@@ -13597,6 +13597,7 @@ MonoBehaviour:
   Canvas: {fileID: 853227630}
   RarityColors: []
   TooltipImage: {fileID: 893902823}
+  Margin: 50
   _tootipObjects: []
 --- !u!1001 &1773427029
 Prefab:

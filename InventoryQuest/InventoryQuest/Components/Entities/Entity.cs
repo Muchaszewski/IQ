@@ -141,5 +141,15 @@ namespace InventoryQuest.Components.Entities
         {
             return Stats.Armor.Extend;
         }
+
+        public virtual float Accuracy
+        {
+            get { return Stats.Accuracy.Extend; }
+        }
+
+        public virtual float Parry
+        {
+            get { return Stats.Deflection.Extend; }
+        }
     }
 }

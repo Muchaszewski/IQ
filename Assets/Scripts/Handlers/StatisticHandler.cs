@@ -30,13 +30,20 @@ public class StatisticHandler : MonoBehaviour
         TextComponent = GetComponent<Text>();
         switch (statType)
         {
-            case EnumStatisticHandler.Special:
-
-                break;
             case EnumStatisticHandler.Stat:
                 if (stat == EnumTypeStat.DPS)
                 {
                     StatReference = _player.DPS;
+                    break;
+                }
+                if (stat == EnumTypeStat.Accuracy)
+                {
+                    StatReference = _player.Accuracy;
+                    break;
+                }
+                if (stat == EnumTypeStat.Deflection)
+                {
+                    StatReference = _player.Parry;
                     break;
                 }
                 var reflectedType = _player.Stats.GetType();

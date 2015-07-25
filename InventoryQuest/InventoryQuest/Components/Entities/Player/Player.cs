@@ -3,6 +3,7 @@ using InventoryQuest.Components.Entities.Money;
 using InventoryQuest.Components.Entities.Player.Inventory;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
+using UnityEngine;
 
 namespace InventoryQuest.Components.Entities.Player
 {
@@ -135,30 +136,60 @@ namespace InventoryQuest.Components.Entities.Player
             return defence;
         }
 
-        /// <summary>
-        ///     Create player accuracy based
-        /// </summary>
-        /// <returns></returns>
-        public void SetCustomAccuracy()
+        public override float Accuracy
         {
-            if (Equipment.Weapon == null)
+            get
             {
-                Stats.Accuracy.Base = 0;
-                return;
+                var item = Equipment.Items[(int) EnumItemSlot.Weapon];
+                if (item != null)
+                {
+                    int attribute1 = 0, attribute2 = 0;
+                    attribute1 =
+                        Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute1)
+                            .Current;
+                    attribute2 =
+                        Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute2)
+                            .Current;
+
+                    var passiveSkill = (int)PasiveSkills.GetSkillLevelByEnum(item.Skill) * 5;
+                    //Turn to % value
+                    var weaponAccExtended = (1 + Stats.Accuracy.Extend / 100);
+                    return ((attribute1 + attribute2) * 2 + passiveSkill + Level * 3) * weaponAccExtended;
+                }
+                else
+                {
+                    return 0;
+                }
             }
-            // ( ( attribute_1 + attribute_2 ) * 2 + weapon_skilli * 5 ) * weapon_accuracy
-            var attribute1 =
-                Stats.GetStatIntByEnum(Equipment.Weapon.Skill.GetAttributeOfType<ItemParameter>().Attribute1)
-                    .Current;
-            var attribute2 =
-                Stats.GetStatIntByEnum(Equipment.Weapon.Skill.GetAttributeOfType<ItemParameter>().Attribute2)
-                    .Current;
-            var passiveSkill = (int)PasiveSkills.GetSkillLevelByEnum(Equipment.Weapon.Skill) * 5;
-            //Turn to % value
-            var weaponAccExtended = (1 + Equipment.Weapon.Stats.Accuracy.Extend / 100);
-            //TODO if weapon can lose its accuracy base and current algo required
-            var accuracy = ((attribute1 + attribute2) * 2 + passiveSkill + Level * 3) * weaponAccExtended;
-            Stats.Accuracy.Base = accuracy;
+        }
+
+        public override float Parry
+        {
+            get
+            {
+                var item = Equipment.Items[(int)EnumItemSlot.Weapon];
+                if (item != null)
+                {
+                    int attribute1 = 0, attribute2 = 0;
+                    attribute1 =
+                        Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute1)
+                            .Current;
+                    attribute2 =
+                        Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute2)
+                            .Current;
+
+                    var passiveSkill = (int)PasiveSkills.GetSkillLevelByEnum(item.Skill) * 5;
+                    //Turn to % value
+                    var percent = (1 + Stats.Deflection.Extend / 100);
+
+                    return (attribute1 + Stats.Perception.Extend +
+                            passiveSkill * (2 + (attribute1 + Stats.Dexterity.Extend) / 100) * percent);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
         }
 
         /// <summary>

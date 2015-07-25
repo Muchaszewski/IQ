@@ -299,7 +299,6 @@ namespace InventoryQuest.Game.Fight
             BattleLog.Append(me.Name + " attacked... ");
 
             //Use Stamina
-
             // TODO: get required strength for the weapon if attacker is the player
             var weaponsRequiredStrength = 0;
             var staminaUsed =
@@ -320,7 +319,7 @@ namespace InventoryQuest.Game.Fight
                 //Evasion
                 var evasion =
                     (int)
-                        (((float)me.Stats.Accuracy.Extend / (me.Stats.Accuracy.Extend + target.Stats.Evasion.Extend)) *
+                        (((float)me.Accuracy / (me.Accuracy + target.Stats.Evasion.Extend)) *
                          100);
                 if (evasion > 95)
                 {
@@ -339,8 +338,8 @@ namespace InventoryQuest.Game.Fight
                 //Deflection
                 var deflection =
                     (int)
-                        (((float)me.Stats.Accuracy.Extend /
-                          (me.Stats.Accuracy.Extend + target.Stats.Deflection.Extend)) * 100);
+                        (((float)me.Accuracy /
+                          (me.Accuracy + target.Parry)) * 100);
                 if (deflection > 95)
                 {
                     deflection = 95;
@@ -358,8 +357,8 @@ namespace InventoryQuest.Game.Fight
                 //Block
                 var block =
                     (int)
-                        (((float)me.Stats.Accuracy.Extend /
-                          (me.Stats.Accuracy.Extend + target.Stats.BlockChance.Extend)) * 100);
+                        (((float)me.Accuracy /
+                          (me.Accuracy + target.Stats.BlockChance.Extend)) * 100);
                 if (block > 95)
                 {
                     block = 95;
