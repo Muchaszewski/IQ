@@ -284,7 +284,7 @@ namespace InventoryQuest.Game.Fight
             {
                 entity.Stats.HealthPoints.Regen(0, entity.Stats.HealthRegen);
                 entity.Stats.ManaPoints.Regen(0, entity.Stats.ManaRegen);
-                entity.Stats.StaminaPoints.Regen(0, entity.Stats.ShieldRegen);
+                entity.Stats.StaminaPoints.Regen(0, entity.Stats.StaminaRegen);
             }
             return false;
         }
@@ -472,7 +472,7 @@ namespace InventoryQuest.Game.Fight
 
         public void CountDownTimers()
         {
-            _oneSecondTimer += Time.deltaTime / 1000f;
+            _oneSecondTimer += Time.deltaTime;
         }
     }
 }
