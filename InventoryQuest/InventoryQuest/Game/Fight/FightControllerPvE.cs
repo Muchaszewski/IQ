@@ -8,6 +8,7 @@ using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace InventoryQuest.Game.Fight
 {
@@ -186,21 +187,22 @@ namespace InventoryQuest.Game.Fight
                 BattleLog.AppendLine("You have lost...");
                 BattleLog.AppendLine();
             }
-            var isEnemyDead = false;
+            var areEnemiesDead = false;
             foreach (Entity enemy in Enemy)
             {
                 if (PreFight(enemy))
                 {
-                    isEnemyDead = true;
+                    areEnemiesDead = true;
                 }
             }
-            if (isEnemyDead)
+            if (areEnemiesDead)
             {
                 IsPlayerWinner = true;
                 BattleLog.AppendLine("You have won!");
 
                 BattleLog.AppendLine();
             }
+            //Reset regen timer
             if (_oneSecondTimer >= 1)
             {
                 _oneSecondTimer = 0;
@@ -255,11 +257,26 @@ namespace InventoryQuest.Game.Fight
                     enemy.NextTurn -= enemy.Stats.AttackSpeed.Extend * Time.deltaTime;
                     if (enemy.NextTurn <= 0)
                     {
-                        Attack(enemy, Player);
+                        if (!Move(enemy, Player))
+                        {
+                            Attack(enemy, Player);
+                        }
                         enemy.NextTurn = TURN_TIME + enemy.NextTurn;
                     }
                 }
             }
+        }
+
+        private bool Move(Entity entity, Entity target)
+        {
+            if (entity.Type == EnumEntityType.Player) return false;
+            if (entity.Position - target.Position <= entity.Stats.Range.Extend)
+            {
+                Debug.Log(entity.Position);
+                entity.Position -= entity.Stats.MovmentSpeed.Current;
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -294,7 +311,7 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         /// <param name="me">Attacking entity</param>
         /// <param name="target">Target entity</param>
-        private void Attack(Entity me, Entity target)
+        public override void Attack(Entity me, Entity target)
         {
             BattleLog.Append(me.Name + " attacked... ");
 
@@ -431,19 +448,6 @@ namespace InventoryQuest.Game.Fight
             }
         }
 
-        /// <summary>
-        ///     Invoke if you want to do one side attack with no block/parry mechanics
-        /// </summary>
-        /// <param name="me">Who should make attack</param>
-        public override void DoOneSideAttack(Entity me, Entity target)
-        {
-            //TODO
-            int critical;
-            float damage = me.Attack(out critical);
-            damage -= target.Defend();
-            target.Stats.HealthPoints.Current -= damage;
-        }
-
         public override void ResetBattle()
         {
             FightsInCurrentSpot++;
@@ -463,6 +467,16 @@ namespace InventoryQuest.Game.Fight
             else
             {
                 Enemy.Add(RandomEnemyFactory.CreateEnemy(CurrentGame.Instance.Spot, EnumEntityRarity.Normal));
+            }
+
+            foreach (var entity in Enemy)
+            {
+                var max = Mathf.Max(entity.Stats.Range.Extend, Player.Stats.Range.Extend);
+                if (max < 5)
+                {
+                    max = Random.Range(5, 10);
+                }
+                entity.Position = max;
             }
 
             IsEnded = false;

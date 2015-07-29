@@ -521,8 +521,12 @@ namespace Creator
                 else if (enumItemType == 11) //Shields
                 {
                     var shield = (ShieldType)DataGridItemsAll.SelectedItem;
-                    ButtonItemBlockChance.Content = shield.BlockChance.ToString();
-                    ButtonItemBlockAmount.Content = shield.BlockAmount.ToString();
+                    try
+                    { 
+                        ButtonItemBlockChance.Content = shield.BlockChance.ToString();
+                        ButtonItemBlockAmount.Content = shield.BlockAmount.ToString();
+                    }
+                    catch { }
                 }
                 else if (enumItemType == 12) //Offhand
                 {
@@ -532,14 +536,18 @@ namespace Creator
                 else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
                 {
                     var weapon = (WeaponType)DataGridItemsAll.SelectedItem;
-                    ButtonItemAccuracy.Content = weapon.Accuracy.ToString();
-                    ButtonItemAttackSpeed.Content = weapon.AttackSpeed.ToString();
-                    ButonItemMinDmg.Content = weapon.MinDamage.ToString();
-                    ButtonItemMaxDmg.Content = weapon.MaxDamage.ToString();
-                    ButtonItemArmorPen.Content = weapon.ArmorPenetration.ToString();
-                    ButtonItemParryChance.Content = weapon.Deflection.ToString();
-                    ComboBoxItemRequiredHands.SelectedIndex = (int)weapon.RequiredHands;
-                    TextBoxRange.Text = weapon.Range.ToString();
+                    try
+                    {
+                        ButtonItemAccuracy.Content = weapon.Accuracy.ToString();
+                        ButtonItemAttackSpeed.Content = weapon.AttackSpeed.ToString();
+                        ButonItemMinDmg.Content = weapon.MinDamage.ToString();
+                        ButtonItemMaxDmg.Content = weapon.MaxDamage.ToString();
+                        ButtonItemArmorPen.Content = weapon.ArmorPenetration.ToString();
+                        ButtonItemParryChance.Content = weapon.Deflection.ToString();
+                        ComboBoxItemRequiredHands.SelectedIndex = (int)weapon.RequiredHands;
+                        TextBoxRange.Text = weapon.Range.ToString();
+                    }
+                    catch { }
                 }
             }
         }

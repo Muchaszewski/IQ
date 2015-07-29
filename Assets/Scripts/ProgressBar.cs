@@ -44,6 +44,7 @@ public class ProgressBar : MonoBehaviour
         }
         else
         {
+            UpdateTarget();
             ProgressBarImage.transform.localScale = new Vector3(0, 1, 1);
         }
     }
@@ -63,7 +64,6 @@ public class ProgressBar : MonoBehaviour
                         .GetProperty(ValueName.ToString())
                         .GetValue(fightController.Player.Stats, null);
                 break;
-
             case EnumCurrentEntity.Enemy:
                 try
                 {
@@ -72,10 +72,7 @@ public class ProgressBar : MonoBehaviour
                             .GetProperty(ValueName.ToString())
                             .GetValue(fightController.Target.Stats, null);
                 }
-                catch
-                {
-                    Debug.LogError("Target does not exists");
-                }
+                catch { }
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

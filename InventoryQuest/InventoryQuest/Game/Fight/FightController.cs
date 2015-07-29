@@ -220,10 +220,6 @@ namespace InventoryQuest.Game.Fight
             IsFight = true;
         }
 
-        /// <summary>
-        ///     Invoke if you want to do one side attack
-        /// </summary>
-        /// <param name="entity">Who should make attack</param>
-        public abstract void DoOneSideAttack(Entity me, Entity target);
+        public abstract void Attack(Entity me, Entity target);
     }
 }

@@ -22,7 +22,7 @@ public class StatisticHandler : MonoBehaviour
     public EnumPlayerBasics entityStatType;
 
     public Text TextComponent { get; private set; }
-    public object StatReference { get; private set; }
+    public object StatReference { get; set; }
 
     void Start()
     {
@@ -96,10 +96,13 @@ public class StatisticHandler : MonoBehaviour
                         throw new ArgumentOutOfRangeException();
                 }
                 break;
+            case EnumStatisticHandler.Target:
+                //LOGIC IN UPDATE
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        TextComponent.text = StatReference.ToString();
+        TextComponent.text = StatReference != null ? StatReference.ToString() : "";
     }
 }
 
@@ -109,6 +112,7 @@ public enum EnumStatisticHandler
     Stat,
     Skill,
     Entity,
+    Target,
 }
 
 public enum EnumPlayerBasics
