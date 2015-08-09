@@ -70,6 +70,7 @@ namespace InventoryQuest.Game.Fight
                 return this;
             }
             IsFight = true;
+            InvokeEvent_onCreatingEnemies(new FightControllerEventArgs(this, null));
             return this;
         }
 
@@ -270,12 +271,25 @@ namespace InventoryQuest.Game.Fight
         private bool Move(Entity entity, Entity target)
         {
             if (entity.Type == EnumEntityType.Player) return false;
-            if (entity.Position - target.Position <= entity.Stats.Range.Extend)
+            if (entity.Position > 0)
             {
-                Debug.Log(entity.Position);
-                entity.Position -= entity.Stats.MovmentSpeed.Current;
-                return true;
+                if (entity.Position > entity.Stats.Range.Extend)
+                {
+                    Debug.Log(entity.Position);
+                    entity.Position -= entity.Stats.MovmentSpeed.Current;
+                    return true;
+                }
             }
+            else if (entity.Position < 0)
+            {
+                if (entity.Position > -entity.Stats.Range.Extend)
+                {
+                    Debug.Log(entity.Position);
+                    entity.Position += entity.Stats.MovmentSpeed.Current;
+                    return true;
+                }
+            }
+
             return false;
         }
 
@@ -481,6 +495,8 @@ namespace InventoryQuest.Game.Fight
 
             IsEnded = false;
             IsFight = true;
+
+            InvokeEvent_onCreatingEnemies(new FightControllerEventArgs(this, null));
         }
 
         public void CountDownTimers()

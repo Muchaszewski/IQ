@@ -99,6 +99,8 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         public static event EventHandler<FightControllerEventArgs> onMove = delegate { };
 
+        public static event EventHandler<FightControllerEventArgs> onCreatingEnemies = delegate { };
+
         /// <summary>
         ///     Raise Event on Attack
         /// </summary>
@@ -170,6 +172,12 @@ namespace InventoryQuest.Game.Fight
         protected void InvokeEvent_onMove(FightControllerEventArgs fightControllerEventArgs)
         {
             onMove.Invoke(this, fightControllerEventArgs);
+        }
+
+
+        protected void InvokeEvent_onCreatingEnemies(FightControllerEventArgs fightControllerEventArgs)
+        {
+            onCreatingEnemies.Invoke(this, fightControllerEventArgs);
         }
 
         /// <summary>

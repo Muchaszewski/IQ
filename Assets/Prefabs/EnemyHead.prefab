@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060dfc4464a0bcc49b71906936935a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
   IsRightSide: 1
   EntityID: 0
 --- !u!222 &22285044
@@ -73,7 +72,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 238, y: 0}
+  m_AnchoredPosition: {x: 236, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

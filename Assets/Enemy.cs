@@ -29,13 +29,16 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         _progress = Mathf.Abs(_entityData.Position);
-        Debug.Log(_progress);
         var position = _progress + MinCombatPosition;
         if (MaxCombatPosition < Mathf.Abs(position))
         {
             position = MaxCombatPosition;
         }
         _rectTransform.anchoredPosition = new Vector2(position, 0);
+        if (_entityData.Stats.HealthPoints.Current <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
