@@ -522,7 +522,7 @@ namespace Creator
                 {
                     var shield = (ShieldType)DataGridItemsAll.SelectedItem;
                     try
-                    { 
+                    {
                         ButtonItemBlockChance.Content = shield.BlockChance.ToString();
                         ButtonItemBlockAmount.Content = shield.BlockAmount.ToString();
                     }
@@ -1293,6 +1293,7 @@ namespace Creator
                 ButtonMonstersStaminaRegen.Content = entity.StaminaRegen.ToString();
 
                 ButtonMonstersMovment.Content = entity.MovmentSpeed.ToString();
+                ButtonMonstersRange.Content = entity.Range.ToString();
                 ButtonMonstersAttackSpeed.Content = entity.AttackSpeed.ToString();
                 ButtonMonstersAccuracy.Content = entity.Accuracy.ToString();
                 ButtonMonstersDefence.Content = entity.Armor.ToString();
@@ -1509,6 +1510,21 @@ namespace Creator
                 var window = new MinMaxStatWindow(entity.MovmentSpeed);
                 CenterWindow(window);
                 entity.MovmentSpeed = window.ValueFloat;
+                RefreshAllMonstersControls();
+            }
+        }
+
+
+        private void ButtonMonstersRange_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGridMonsterAllItems.SelectedIndex != -1 &&
+                DataGridMonsterAllItems.SelectedIndex < GenerationStorage.Instance.Entities.Count)
+            {
+                EntityType entity =
+                    GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
+                var window = new MinMaxStatWindow(entity.Range);
+                CenterWindow(window);
+                entity.Range = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }

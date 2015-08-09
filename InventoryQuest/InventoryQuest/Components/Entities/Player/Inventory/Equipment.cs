@@ -131,22 +131,16 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                 case EnumItemSlot.Hands:
                 case EnumItemSlot.Back:
                     return Armor[(int)slot - 1];
-                    break;
                 case EnumItemSlot.Neck:
                     return Amulets[(int)extraSlot];
-                    break;
                 case EnumItemSlot.Finger:
                     return Ring[(int)extraSlot];
-                    break;
                 case EnumItemSlot.OffHand:
                     return OffHand;
-                    break;
                 case EnumItemSlot.Weapon:
                     return Weapon;
-                    break;
                 case EnumItemSlot.Unknown:
                     throw new ArgumentOutOfRangeException("slot", slot, null);
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException("slot", slot, null);
             }

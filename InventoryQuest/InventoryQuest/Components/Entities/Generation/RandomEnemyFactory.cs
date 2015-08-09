@@ -181,7 +181,6 @@ namespace InventoryQuest.Components.Entities.Generation
                     break;
                 default:
                     throw new Exception("Unknown error while creating enemy");
-                    break;
             }
             //Setting up name
             var name = type.Name;

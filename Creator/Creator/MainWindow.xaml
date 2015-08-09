@@ -245,6 +245,8 @@
                                 <Button x:Name="ButtonMonstersStamina" Content="putShieldHere" HorizontalAlignment="Left" Margin="120,282,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersStamina_Click" Height="20"/>
                                 <Label Content="Stamina Regen:" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="92"/>
                                 <Button x:Name="ButtonMonstersStaminaRegen" Content="putShieldRegHere" HorizontalAlignment="Left" Margin="120,307,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersStaminaRegen_Click" Height="20"/>
+                                <Label Content="Range:" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="64"/>
+                                <Button x:Name="ButtonMonstersRange" Content="putRangeHere" HorizontalAlignment="Left" Margin="120,367,0,0" VerticalAlignment="Top" Width="180" Height="20" Click="ButtonMonstersRange_Click"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Offense" Width="100">
