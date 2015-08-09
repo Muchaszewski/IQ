@@ -521,8 +521,12 @@ namespace Creator
                 else if (enumItemType == 11) //Shields
                 {
                     var shield = (ShieldType)DataGridItemsAll.SelectedItem;
-                    ButtonItemBlockChance.Content = shield.BlockChance.ToString();
-                    ButtonItemBlockAmount.Content = shield.BlockAmount.ToString();
+                    try
+                    {
+                        ButtonItemBlockChance.Content = shield.BlockChance.ToString();
+                        ButtonItemBlockAmount.Content = shield.BlockAmount.ToString();
+                    }
+                    catch { }
                 }
                 else if (enumItemType == 12) //Offhand
                 {
@@ -532,14 +536,18 @@ namespace Creator
                 else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
                 {
                     var weapon = (WeaponType)DataGridItemsAll.SelectedItem;
-                    ButtonItemAccuracy.Content = weapon.Accuracy.ToString();
-                    ButtonItemAttackSpeed.Content = weapon.AttackSpeed.ToString();
-                    ButonItemMinDmg.Content = weapon.MinDamage.ToString();
-                    ButtonItemMaxDmg.Content = weapon.MaxDamage.ToString();
-                    ButtonItemArmorPen.Content = weapon.ArmorPenetration.ToString();
-                    ButtonItemParryChance.Content = weapon.Deflection.ToString();
-                    ComboBoxItemRequiredHands.SelectedIndex = (int)weapon.RequiredHands;
-                    TextBoxRange.Text = weapon.Range.ToString();
+                    try
+                    {
+                        ButtonItemAccuracy.Content = weapon.Accuracy.ToString();
+                        ButtonItemAttackSpeed.Content = weapon.AttackSpeed.ToString();
+                        ButonItemMinDmg.Content = weapon.MinDamage.ToString();
+                        ButtonItemMaxDmg.Content = weapon.MaxDamage.ToString();
+                        ButtonItemArmorPen.Content = weapon.ArmorPenetration.ToString();
+                        ButtonItemParryChance.Content = weapon.Deflection.ToString();
+                        ComboBoxItemRequiredHands.SelectedIndex = (int)weapon.RequiredHands;
+                        TextBoxRange.Text = weapon.Range.ToString();
+                    }
+                    catch { }
                 }
             }
         }
@@ -1285,6 +1293,7 @@ namespace Creator
                 ButtonMonstersStaminaRegen.Content = entity.StaminaRegen.ToString();
 
                 ButtonMonstersMovment.Content = entity.MovmentSpeed.ToString();
+                ButtonMonstersRange.Content = entity.Range.ToString();
                 ButtonMonstersAttackSpeed.Content = entity.AttackSpeed.ToString();
                 ButtonMonstersAccuracy.Content = entity.Accuracy.ToString();
                 ButtonMonstersDefence.Content = entity.Armor.ToString();
@@ -1501,6 +1510,21 @@ namespace Creator
                 var window = new MinMaxStatWindow(entity.MovmentSpeed);
                 CenterWindow(window);
                 entity.MovmentSpeed = window.ValueFloat;
+                RefreshAllMonstersControls();
+            }
+        }
+
+
+        private void ButtonMonstersRange_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGridMonsterAllItems.SelectedIndex != -1 &&
+                DataGridMonsterAllItems.SelectedIndex < GenerationStorage.Instance.Entities.Count)
+            {
+                EntityType entity =
+                    GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
+                var window = new MinMaxStatWindow(entity.Range);
+                CenterWindow(window);
+                entity.Range = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }

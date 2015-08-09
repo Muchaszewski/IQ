@@ -99,6 +99,8 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         public static event EventHandler<FightControllerEventArgs> onMove = delegate { };
 
+        public static event EventHandler<FightControllerEventArgs> onCreatingEnemies = delegate { };
+
         /// <summary>
         ///     Raise Event on Attack
         /// </summary>
@@ -172,6 +174,12 @@ namespace InventoryQuest.Game.Fight
             onMove.Invoke(this, fightControllerEventArgs);
         }
 
+
+        protected void InvokeEvent_onCreatingEnemies(FightControllerEventArgs fightControllerEventArgs)
+        {
+            onCreatingEnemies.Invoke(this, fightControllerEventArgs);
+        }
+
         /// <summary>
         ///     StartLoop battle
         ///     TODO change to generic
@@ -220,10 +228,6 @@ namespace InventoryQuest.Game.Fight
             IsFight = true;
         }
 
-        /// <summary>
-        ///     Invoke if you want to do one side attack
-        /// </summary>
-        /// <param name="entity">Who should make attack</param>
-        public abstract void DoOneSideAttack(Entity me, Entity target);
+        public abstract void Attack(Entity me, Entity target);
     }
 }

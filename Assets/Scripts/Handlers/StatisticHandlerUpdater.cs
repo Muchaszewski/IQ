@@ -46,6 +46,21 @@ public class StatisticHandlerUpdater : MonoBehaviour
                     SetStatText(_statisticHandler.StatReference as StatValueInt);
                 }
                 break;
+            case EnumStatisticHandler.Target:
+                if (_statisticHandler.StatReference == null)
+                {
+                    _statisticHandler.TextComponent.text = "";
+                    try
+                    {
+                        _statisticHandler.StatReference = CurrentGame.Instance.FightController.Target.Name;
+                    }
+                    catch { }
+                }
+                else
+                {
+                    _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
+                }
+                break;
             default:
                 _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
                 break;

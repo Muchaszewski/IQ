@@ -139,6 +139,12 @@
           <Weight>100</Weight>
         </GenerationWeightLists>
       </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
     <EntityType>
       <Name>Giant Scorpion</Name>
@@ -273,6 +279,12 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
     <EntityType>
       <Name>Rabid Crow</Name>
@@ -407,6 +419,12 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
     <EntityType>
       <Name>Goblin Scout</Name>
@@ -541,6 +559,12 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
     <EntityType>
       <Name>Vile Scorpion</Name>
@@ -675,6 +699,12 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
     <EntityType>
       <Name>Goblin Warrior</Name>
@@ -809,6 +839,12 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
     </EntityType>
   </Entities>
   <Weapons>
@@ -1804,15 +1840,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>20</RequiredLevel>
       <DropLevel>20</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>7</Min>
-          <Max>7</Max>
-          <MinMaxLevel>24</MinMaxLevel>
-          <MaxMaxLevel>24</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>2</Min>
         <Max>4</Max>
@@ -1842,15 +1870,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>25</RequiredLevel>
       <DropLevel>25</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>10</Min>
-          <Max>10</Max>
-          <MinMaxLevel>40</MinMaxLevel>
-          <MaxMaxLevel>40</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>4</Min>
         <Max>6</Max>
@@ -1880,15 +1900,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>30</RequiredLevel>
       <DropLevel>30</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>11</Min>
-          <Max>11</Max>
-          <MinMaxLevel>42</MinMaxLevel>
-          <MaxMaxLevel>42</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>4</Min>
         <Max>6</Max>
@@ -1918,15 +1930,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>35</RequiredLevel>
       <DropLevel>35</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>10</Min>
-          <Max>10</Max>
-          <MinMaxLevel>41</MinMaxLevel>
-          <MaxMaxLevel>41</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>4</Min>
         <Max>6</Max>
@@ -1956,15 +1960,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>9</Min>
-          <Max>9</Max>
-          <MinMaxLevel>30</MinMaxLevel>
-          <MaxMaxLevel>30</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>4</Min>
         <Max>6</Max>
@@ -1994,15 +1990,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>6</Min>
-          <Max>6</Max>
-          <MinMaxLevel>22</MinMaxLevel>
-          <MaxMaxLevel>22</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>2</Min>
         <Max>4</Max>
@@ -2940,15 +2928,7 @@
       <Rarity>Poor</Rarity>
       <RequiredLevel>22</RequiredLevel>
       <DropLevel>22</DropLevel>
-      <RequiredStats>
-        <MinMaxStatTypeOfInt32>
-          <Min>9</Min>
-          <Max>9</Max>
-          <MinMaxLevel>38</MinMaxLevel>
-          <MaxMaxLevel>38</MaxMaxLevel>
-          <StatType>Strength</StatType>
-        </MinMaxStatTypeOfInt32>
-      </RequiredStats>
+      <RequiredStats />
       <Armor>
         <Min>4</Min>
         <Max>6</Max>

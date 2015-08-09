@@ -396,6 +396,17 @@ namespace InventoryQuest.Components.Statistics
             set { _MaxDamage = value; }
         }
 
+        private StatValueFloat _Range = new StatValueFloat(EnumTypeStat.Range);
+
+        /// <summary>
+        ///     Weapon damage
+        /// </summary>
+        public StatValueFloat Range
+        {
+            get { return _Range; }
+            set { _Range = value; }
+        }
+
         #region Magic Damage
         private StatValueInt _FireDamage = new StatValueInt(EnumTypeStat.FireDamage);
         /// <summary>

@@ -138,7 +138,6 @@ namespace InventoryQuest.Components
                     throw new Exception(Directory.GetFiles(path).Aggregate((x, y) => x.ToString()));
                 }
 #endif
-            return new GenerationStorage();
         }
 
         public static void SaveXml(string path)

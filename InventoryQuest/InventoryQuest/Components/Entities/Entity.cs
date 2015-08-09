@@ -63,6 +63,8 @@ namespace InventoryQuest.Components.Entities
 
         public float NoDamageTime { get; set; }
 
+        public float Position { get; set; }
+
         /// <summary>
         ///     Get Damage per second
         /// </summary>
@@ -80,6 +82,7 @@ namespace InventoryQuest.Components.Entities
                 return avgDmg*avgCrit*speed;
             }
         }
+
 
         /// <summary>
         ///     General power based on all stats

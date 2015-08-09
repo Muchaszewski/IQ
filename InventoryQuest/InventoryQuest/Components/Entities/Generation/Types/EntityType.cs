@@ -26,6 +26,7 @@ namespace InventoryQuest.Components.Entities.Generation.Types
         private MinMaxStat _MaxDamage;
         private MinMaxStat _MinDamage;
         private MinMaxStat _MovmentSpeed;
+        private MinMaxStat _Range = new MinMaxStat(1, 1);
         private string _Name;
         private EnumSex _Sex = EnumSex.None;
         private MinMaxStat _ShieldPoints;
@@ -230,6 +231,12 @@ namespace InventoryQuest.Components.Entities.Generation.Types
         {
             get { return _itemsLists; }
             set { _itemsLists = value; }
+        }
+
+        public MinMaxStat Range
+        {
+            get { return _Range; }
+            set { _Range = value; }
         }
     }
 }

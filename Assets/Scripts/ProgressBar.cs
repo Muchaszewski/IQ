@@ -38,12 +38,28 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CurrentEntityType == EnumCurrentEntity.Enemy)
+        {
+            try
+            {
+                statValueFloat = CurrentGame.Instance.FightController.Target.Stats.HealthPoints;
+            }
+            catch { }
+        }
         if (statValueFloat != null)
         {
-            ProgressBarImage.transform.localScale = new Vector3(statValueFloat.GetPercent() / 100f, 1, 1);
+            if (statValueFloat.Current <= 0)
+            {
+                ProgressBarImage.transform.localScale = new Vector3(0, 1, 1);
+            }
+            else
+            {
+                ProgressBarImage.transform.localScale = new Vector3(statValueFloat.GetPercent() / 100f, 1, 1);
+            }
         }
         else
         {
+            UpdateTarget();
             ProgressBarImage.transform.localScale = new Vector3(0, 1, 1);
         }
     }
@@ -63,19 +79,8 @@ public class ProgressBar : MonoBehaviour
                         .GetProperty(ValueName.ToString())
                         .GetValue(fightController.Player.Stats, null);
                 break;
-
             case EnumCurrentEntity.Enemy:
-                try
-                {
-                    statValueFloat =
-                        (StatValueFloat)fightController.Target.Stats.GetType()
-                            .GetProperty(ValueName.ToString())
-                            .GetValue(fightController.Target.Stats, null);
-                }
-                catch
-                {
-                    Debug.LogError("Target does not exists");
-                }
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
