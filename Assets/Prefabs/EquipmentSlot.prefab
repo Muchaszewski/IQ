@@ -13,7 +13,7 @@ GameObject:
   - 222: {fileID: 22246228}
   - 114: {fileID: 11493446}
   m_Layer: 5
-  m_Name: EquipmentSlotWeapon
+  m_Name: EquipmentSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

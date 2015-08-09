@@ -150,7 +150,6 @@ namespace InventoryQuest.Utils
 #else
             var fullPath = FileUtility.GetResourcesDirectories();
 #endif
-            var extension = "";
             var files = new List<string>();
             if (searchFiles)
             {
@@ -171,6 +170,9 @@ namespace InventoryQuest.Utils
                     files.AddRange(str);
                 }
             }
+#if CREATOR
+            files.RemoveAll(x => x.EndsWith("meta"));
+#endif
             return files.ToArray();
         }
 
