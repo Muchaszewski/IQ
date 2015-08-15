@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
-using InventoryQuest.Game;
 using UnityEngine;
 
 namespace InventoryQuest.Components.Entities.Player.Inventory

@@ -120,12 +120,6 @@
     <Compile Include="InventoryQuest\Components\Statistics\StatValue.cs" />
     <Compile Include="InventoryQuest\Components\Statistics\StatValueFloat.cs" />
     <Compile Include="InventoryQuest\Components\Statistics\TypeStatsUtils.cs" />
-    <Compile Include="InventoryQuest\Game\CurrentGame.cs" />
-    <Compile Include="InventoryQuest\Game\Fight\FightController.cs" />
-    <Compile Include="InventoryQuest\Game\Fight\FightControllerEventArgs.cs" />
-    <Compile Include="InventoryQuest\Game\Fight\FightControllerPvE.cs" />
-    <Compile Include="InventoryQuest\Game\Idle.cs" />
-    <Compile Include="InventoryQuest\Game\IIdle.cs" />
     <Compile Include="InventoryQuest\Properties\AssemblyInfo.cs" />
     <Compile Include="InventoryQuest\Utils\AttributeHelper.cs" />
     <Compile Include="InventoryQuest\Utils\BinaryFilesOperations.cs" />

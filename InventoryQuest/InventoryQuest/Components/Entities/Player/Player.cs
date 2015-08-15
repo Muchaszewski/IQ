@@ -140,8 +140,8 @@ namespace InventoryQuest.Components.Entities.Player
         {
             get
             {
-                var item = Equipment.Items[(int) EnumItemSlot.Weapon];
-
+                var item = Equipment.Items[(int)EnumItemSlot.Weapon];
+                if (item == null) return 0;
                 int attribute1 = 0, attribute2 = 0;
                 attribute1 =
                     Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute1)

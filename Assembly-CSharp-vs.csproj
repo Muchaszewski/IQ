@@ -49,6 +49,12 @@
      <Compile Include="Assets\CombatLineManager.cs" />
      <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\Scripts\EquipmentSlot.cs" />
+     <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
+     <Compile Include="Assets\Scripts\Game\Fight\FightController.cs" />
+     <Compile Include="Assets\Scripts\Game\Fight\FightControllerEventArgs.cs" />
+     <Compile Include="Assets\Scripts\Game\Fight\FightControllerPvE.cs" />
+     <Compile Include="Assets\Scripts\Game\IIdle.cs" />
+     <Compile Include="Assets\Scripts\Game\Idle.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GenericScripts\Extenstions\StringExtenstion.cs" />
      <Compile Include="Assets\Scripts\GenericScripts\Framework\Singleton.cs" />
