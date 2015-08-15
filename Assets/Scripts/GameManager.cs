@@ -16,14 +16,4 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
-    public void Save()
-    {
-        CurrentGame.Save();
-    }
-
-    public void Load()
-    {
-       var player =  CurrentGame.Load();
-    }
 }

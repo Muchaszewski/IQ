@@ -275,7 +275,6 @@ namespace InventoryQuest.Game.Fight
             {
                 if (entity.Position > entity.Stats.Range.Extend)
                 {
-                    Debug.Log(entity.Position);
                     entity.Position -= entity.Stats.MovmentSpeed.Current;
                     return true;
                 }
@@ -284,7 +283,6 @@ namespace InventoryQuest.Game.Fight
             {
                 if (entity.Position > -entity.Stats.Range.Extend)
                 {
-                    Debug.Log(entity.Position);
                     entity.Position += entity.Stats.MovmentSpeed.Current;
                     return true;
                 }

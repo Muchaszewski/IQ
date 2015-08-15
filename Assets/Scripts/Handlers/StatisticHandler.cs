@@ -104,6 +104,12 @@ public class StatisticHandler : MonoBehaviour
         }
         TextComponent.text = StatReference != null ? StatReference.ToString() : "";
     }
+
+    public void RecalculateStatistics()
+    {
+        Start();
+    }
+
 }
 
 public enum EnumStatisticHandler

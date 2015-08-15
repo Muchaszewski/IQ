@@ -7,16 +7,19 @@ using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game.Fight;
 using InventoryQuest.Utils;
 using UnityEngine;
+using System;
+using System.Collections;
 
 namespace InventoryQuest.Game
 {
+    [Serializable]
     public class CurrentGame : MonoBehaviour
     {
         private int _travelToSpot = -1;
         private byte Refiling;
         private byte Traveling;
         public Player Player { get; set; }
-        public FightController FightController { get; private set; }
+        public FightController FightController { get; set; }
         public Idle Idle { get; set; }
 
         public int TravelToSpot
@@ -25,7 +28,7 @@ namespace InventoryQuest.Game
             set { _travelToSpot = value; }
         }
 
-        public Spot Spot { get; private set; }
+        public Spot Spot { get; set; }
 
         /// <summary>
         ///     Waiting for CurrentGame Instance to create
@@ -34,12 +37,10 @@ namespace InventoryQuest.Game
         {
             instance = this;
             Spot = GenerationStorage.Instance.Spots[0];
-            Player = Load();
-            if (Player == null)
-            {
-                var stats = new Stats();
-                Player = new Player("Unnamed", 1, stats);
-            }
+
+            var stats = new Stats();
+            stats.Strength.Base = UnityEngine.Random.Range(0, 20);
+            Player = new Player("Unnamed", 1, stats);
             var Enemy = new List<Entity> { RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal) };
             Idle = new Idle();
             FightController = new FightControllerPvE(Player, Enemy).Begin();
@@ -108,12 +109,18 @@ namespace InventoryQuest.Game
             Traveling = 0;
         }
 
-        public static Player Load()
+        public void Load()
         {
-            return BinaryFilesOperations.Load<Player>("SaveFile.sav");
+            Player = BinaryFilesOperations.Load<Player>("SaveFile.sav");
+            InventoryPanel.Instance.PopulateInventory();
+            foreach (var item in FindObjectsOfType<StatisticHandler>())
+            {
+                item.RecalculateStatistics();
+            }
         }
 
-        public static void Save()
+
+        public void Save()
         {
             BinaryFilesOperations.Save(Instance.Player, "SaveFile.sav");
         }

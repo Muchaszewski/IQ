@@ -352,6 +352,25 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    public void ClearInventory()
+    {
+        foreach (var item in ItemsPanel)
+        {
+            Destroy(item.Value.gameObject);
+        }
+        ItemsPanel = new SortedList<int, ItemIcon>();
+    }
+
+    public void PopulateInventory()
+    {
+        ClearInventory();
+        Debug.Log(ItemsPanel.Count);
+        foreach (var item in CurrentGame.Instance.Player.Inventory.Items)
+        {
+            _ItemsPanel.Add(item.Key, CreateItemIcon(item.Key, item.Value));
+            ResizeInventoryPanel();
+        }
+    }
     #endregion
 
     #region ItemsIconFactory

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 namespace InventoryQuest.Utils
 {
@@ -12,7 +13,7 @@ namespace InventoryQuest.Utils
                 using (var fs = new FileStream(file, FileMode.Open))
                 {
                     var w = new BinaryFormatter();
-                    return (T) w.Deserialize(fs);
+                    return (T)w.Deserialize(fs);
                 }
             }
             catch
