@@ -141,7 +141,10 @@ namespace InventoryQuest.Components.Entities.Player
             get
             {
                 var item = Equipment.Items[(int)EnumItemSlot.Weapon];
-                if (item == null) return 0;
+                if (item == null)
+                {
+                    return Stats.Accuracy.Extend + 20;
+                }
                 int attribute1 = 0, attribute2 = 0;
                 attribute1 =
                     Stats.GetStatIntByEnum(item.Skill.GetAttributeOfType<ItemParameter>().Attribute1)
@@ -154,16 +157,9 @@ namespace InventoryQuest.Components.Entities.Player
 
                 var baseAccuracy = (attribute1 + attribute2) * 2 + passiveSkill + Level * 3;
 
-                if (item != null)
-                {
-                    //Turn to % value
-                    var weaponAccExtended = (1 + Stats.Accuracy.Extend / 100);
-                    return baseAccuracy * weaponAccExtended;
-                }
-                else
-                {
-                    return baseAccuracy;
-                }
+                //Turn to % value
+                var weaponAccExtended = (1 + Stats.Accuracy.Extend / 100);
+                return baseAccuracy * weaponAccExtended;
             }
         }
 

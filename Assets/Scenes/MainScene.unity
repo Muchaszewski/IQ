@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1986830826}
+      - m_Target: {fileID: 1986830827}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -3662,7 +3662,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1986830826}
+      - m_Target: {fileID: 1986830827}
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
