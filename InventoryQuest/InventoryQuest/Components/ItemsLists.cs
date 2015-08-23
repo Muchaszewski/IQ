@@ -9,6 +9,7 @@ namespace InventoryQuest.Components
         private List<GenerationWeight> _OffHandTypeID = new List<GenerationWeight>();
         private List<GenerationWeight> _ShieldTypeID = new List<GenerationWeight>();
         private List<GenerationWeight> _WeaponTypeID = new List<GenerationWeight>();
+        private List<GenerationWeight> _LoreTypeID = new List<GenerationWeight>();
         private List<int> _Weight = new List<int>();
         public string Name { get; set; }
 
@@ -55,6 +56,12 @@ namespace InventoryQuest.Components
         {
             get { return _JeweleryTypeID; }
             set { _JeweleryTypeID = value; }
+        }
+
+        public List<GenerationWeight> LoreTypeID
+        {
+            get { return _LoreTypeID; }
+            set { _LoreTypeID = value; }
         }
     }
 }

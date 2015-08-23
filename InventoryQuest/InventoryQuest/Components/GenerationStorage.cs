@@ -25,7 +25,8 @@ namespace InventoryQuest.Components
         private List<EntityLists> _EntityLists = new List<EntityLists>();
         private List<EntityType> _EntityTemplateList = new List<EntityType>();
         private List<ItemsLists> _ItemsLists = new List<ItemsLists>();
-        private List<Jewelery> _Jewelery = new List<Jewelery>();
+        private List<JeweleryType> _Jewelery = new List<JeweleryType>();
+        private List<LoreType> _Lore = new List<LoreType>();
         private List<OffHandType> _OffHands = new List<OffHandType>();
         private List<ShieldType> _Shields = new List<ShieldType>();
         private List<Spot> _Spots = new List<Spot>();
@@ -74,10 +75,16 @@ namespace InventoryQuest.Components
             set { _OffHands = value; }
         }
 
-        public List<Jewelery> Jewelery
+        public List<JeweleryType> Jewelery
         {
             get { return _Jewelery; }
             set { _Jewelery = value; }
+        }
+
+        public List<LoreType> Lore
+        {
+            get { return _Lore; }
+            set { _Lore = value; }
         }
 
         public List<Spot> Spots
@@ -133,11 +140,11 @@ namespace InventoryQuest.Components
                     gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
                     return gs;
                 }
-                else
-                {
-                    throw new Exception(Directory.GetFiles(path).Aggregate((x, y) => x.ToString()));
-                }
 #endif
+            else
+            {
+                throw new Exception(Directory.GetFiles(path).Aggregate((x, y) => x.ToString()));
+            }
         }
 
         public static void SaveXml(string path)

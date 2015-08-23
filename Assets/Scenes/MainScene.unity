@@ -216,6 +216,7 @@ MonoBehaviour:
   stat: 10
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &12521582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +721,7 @@ MonoBehaviour:
   stat: 31
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &59542911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +992,7 @@ MonoBehaviour:
   stat: 15
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &111037935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1157,7 @@ MonoBehaviour:
   stat: 20
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &120182183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,6 +1391,7 @@ MonoBehaviour:
   stat: 5
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &185681640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,6 +1535,7 @@ MonoBehaviour:
   stat: 23
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &192647905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,6 +1700,7 @@ MonoBehaviour:
   stat: 21
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &227694869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,6 +2239,7 @@ MonoBehaviour:
   stat: 19
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &314117740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2365,6 +2373,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &338265876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,6 +2728,7 @@ MonoBehaviour:
   stat: 0
   value: 0
   entityStatType: 0
+  statName: 
 --- !u!1001 &374450666
 Prefab:
   m_ObjectHideFlags: 0
@@ -2964,6 +2974,7 @@ MonoBehaviour:
   stat: 0
   value: 0
   entityStatType: 0
+  statName: 
 --- !u!114 &380696409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,6 +3178,7 @@ MonoBehaviour:
   stat: 11
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &404254057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3550,6 +3562,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &415809542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,6 +4053,7 @@ MonoBehaviour:
   stat: 23
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &479841160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,6 +4150,7 @@ MonoBehaviour:
   stat: 34
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &494121331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4423,9 +4438,10 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 40
+  stat: 41
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &514913487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4561,6 +4577,7 @@ MonoBehaviour:
   stat: 40
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &546710889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4724,6 +4741,7 @@ MonoBehaviour:
   stat: 36
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &561877502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4992,6 +5010,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &591511811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,6 +5174,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &616027135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5816,6 +5836,7 @@ MonoBehaviour:
   stat: 4
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &776585065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,6 +6077,7 @@ MonoBehaviour:
   stat: 24
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &793616675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6152,6 +6174,7 @@ MonoBehaviour:
   stat: 24
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &805949470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6666,6 +6689,7 @@ MonoBehaviour:
   stat: 3
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &849579904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7042,6 +7066,7 @@ MonoBehaviour:
   stat: 38
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &928796266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7320,6 +7345,7 @@ MonoBehaviour:
   stat: 21
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &973731186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7667,6 +7693,7 @@ MonoBehaviour:
   stat: 9
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1018287916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7842,6 +7869,7 @@ MonoBehaviour:
   stat: 28
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1021254486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8005,6 +8033,7 @@ MonoBehaviour:
   stat: 24
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1047821046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8144,6 +8173,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1075299380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8413,6 +8443,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1116283720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8509,6 +8540,7 @@ MonoBehaviour:
   stat: 37
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1121528882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8967,6 +8999,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1160241363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9197,6 +9230,7 @@ MonoBehaviour:
   stat: 30
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1184933648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9522,6 +9556,7 @@ MonoBehaviour:
   stat: 0
   value: 0
   entityStatType: 0
+  statName: 
 --- !u!1 &1273066202
 GameObject:
   m_ObjectHideFlags: 0
@@ -9607,6 +9642,7 @@ MonoBehaviour:
   stat: 6
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1273066207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9682,6 +9718,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1290076632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9852,6 +9889,7 @@ MonoBehaviour:
   stat: 2
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1320951475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9959,6 +9997,7 @@ MonoBehaviour:
   stat: 27
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1329483568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10535,6 +10574,7 @@ MonoBehaviour:
   stat: 13
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1400848630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10995,6 +11035,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1433344172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11091,6 +11132,7 @@ MonoBehaviour:
   stat: 14
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1433584886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11187,6 +11229,7 @@ MonoBehaviour:
   stat: 24
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1451020647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11450,6 +11493,7 @@ MonoBehaviour:
   stat: 33
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1479059476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11773,6 +11817,7 @@ MonoBehaviour:
   stat: 16
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1530397376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11925,6 +11970,7 @@ MonoBehaviour:
   stat: 7
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1550341038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12337,6 +12383,7 @@ MonoBehaviour:
   stat: 8
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1591705403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12478,6 +12525,7 @@ MonoBehaviour:
   stat: 21
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1609869019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12731,6 +12779,7 @@ MonoBehaviour:
   stat: 23
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1635226066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13064,6 +13113,7 @@ MonoBehaviour:
   stat: 12
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1643662455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13171,6 +13221,7 @@ MonoBehaviour:
   stat: 26
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1652529906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13305,6 +13356,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1666219707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13401,6 +13453,7 @@ MonoBehaviour:
   stat: 23
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1719709354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13651,6 +13704,7 @@ MonoBehaviour:
   stat: 0
   value: 0
   entityStatType: 3
+  statName: 
 --- !u!114 &1736669898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13848,6 +13902,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1749437368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14203,6 +14258,7 @@ MonoBehaviour:
   stat: 35
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1795104738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14402,6 +14458,7 @@ MonoBehaviour:
   stat: 1
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1851101587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14991,6 +15048,7 @@ MonoBehaviour:
   stat: 21
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1936428544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15379,6 +15437,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1974044357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15475,6 +15534,7 @@ MonoBehaviour:
   stat: 29
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &1975163205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15707,6 +15767,7 @@ MonoBehaviour:
   stat: 0
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &2028093325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15782,6 +15843,7 @@ MonoBehaviour:
   stat: 25
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &2043419623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15872,12 +15934,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059290e3eb235d94089bfd9c11af9424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statType: 1
+  statType: 0
   level: 0
   skill: 0
   stat: 21
   value: 2
   entityStatType: 0
+  statName: DPS
 --- !u!114 &2046327478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16330,6 +16393,7 @@ MonoBehaviour:
   stat: 32
   value: 2
   entityStatType: 0
+  statName: 
 --- !u!114 &2117039136
 MonoBehaviour:
   m_ObjectHideFlags: 0

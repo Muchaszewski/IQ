@@ -3,9 +3,9 @@
 namespace InventoryQuest.Components.Items.Generation.Types
 {
     [Serializable]
-    public class Jewelery : ItemType
+    public class JeweleryType : ItemType
     {
-        public Jewelery()
+        public JeweleryType()
         {
             ResetAllSkippedStats();
         }

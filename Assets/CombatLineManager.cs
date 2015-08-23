@@ -24,10 +24,9 @@ public class CombatLineManager : MonoBehaviour
             var item = e.FightController.Enemy[i];
             var enemy = Instantiate(EnemyHead).GetComponent<Enemy>();
             enemy.transform.SetParent(this.transform);
-            enemy.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            enemy.GetComponent<RectTransform>().anchoredPosition = new Vector2(float.MaxValue, float.MaxValue);
             enemy.transform.localScale = Vector3.one;
             enemy.EntityID = i;
-            Debug.Log("Creating enemies");
         }
     }
 

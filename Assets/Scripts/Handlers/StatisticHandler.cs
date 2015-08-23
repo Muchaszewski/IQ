@@ -20,6 +20,8 @@ public class StatisticHandler : MonoBehaviour
     public EnumStatValue value;
     [HideInInspector]
     public EnumPlayerBasics entityStatType;
+    [HideInInspector]
+    public string statName;
 
     public Text TextComponent { get; private set; }
     public object StatReference { get; set; }
@@ -39,6 +41,11 @@ public class StatisticHandler : MonoBehaviour
                 if (stat == EnumTypeStat.Accuracy)
                 {
                     StatReference = _player.Accuracy;
+                    break;
+                }
+                if (stat == EnumTypeStat.AttackSpeed)
+                {
+                    StatReference = _player.AttackSpeed;
                     break;
                 }
                 if (stat == EnumTypeStat.Deflection)
@@ -99,6 +106,9 @@ public class StatisticHandler : MonoBehaviour
             case EnumStatisticHandler.Target:
                 //LOGIC IN UPDATE
                 break;
+            case EnumStatisticHandler.Special:
+                ApplySpecial();
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -110,6 +120,15 @@ public class StatisticHandler : MonoBehaviour
         Start();
     }
 
+    public void ApplySpecial()
+    {
+        var _player = CurrentGame.Instance.Player;
+        if (statName == "DPS")
+        {
+            TextComponent.text = _player.MinDamage + "-" + _player.MaxDamage;
+            return;
+        }
+    }
 }
 
 public enum EnumStatisticHandler

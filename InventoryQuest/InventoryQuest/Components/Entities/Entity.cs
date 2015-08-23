@@ -68,18 +68,18 @@ namespace InventoryQuest.Components.Entities
         /// <summary>
         ///     Get Damage per second
         /// </summary>
-        public float DPS
+        public virtual float DPS
         {
             get
             {
-                float avgDmg = ((Stats.MinDamage.Extend + Stats.MaxDamage.Extend) / 2f);
+                float avgDmg = ((MinDamage + MaxDamage) / 2f);
                 float avgCrit = (Stats.CriticalChance.Extend * Stats.CriticalDamage.Extend) / (2f * 100 * 100);
-                var speed = Stats.AttackSpeed.Extend;
+                var speed = AttackSpeed;
                 if (avgCrit == 0)
                 {
                     avgCrit = 1;
                 }
-                return avgDmg*avgCrit*speed;
+                return avgDmg * avgCrit * speed;
             }
         }
 
@@ -113,13 +113,13 @@ namespace InventoryQuest.Components.Entities
         /// <returns></returns>
         public virtual float Attack(out int critical)
         {
-            float damage = RandomNumberGenerator.NextRandom(Stats.MinDamage.Extend, Stats.MaxDamage.Extend);
+            float damage = RandomNumberGenerator.NextRandom(MinDamage, MaxDamage);
             critical = 0;
             if (RandomNumberGenerator.NextRandom(100) <= Stats.CriticalChance.Extend)
             {
-                critical = (int) damage;
+                critical = (int)damage;
                 damage *= Stats.CriticalDamage.Extend / 100f;
-                critical -= (int) damage;
+                critical -= (int)damage;
                 critical = Math.Abs(critical);
             }
             return damage;
@@ -145,14 +145,33 @@ namespace InventoryQuest.Components.Entities
             return Stats.Armor.Extend;
         }
 
+        public virtual float Parry
+        {
+            get { return Stats.Deflection.Extend; }
+        }
+        #region Statistics
+        //
+        //  All statistics overrided for no weapon fight
+        //
         public virtual float Accuracy
         {
             get { return Stats.Accuracy.Extend; }
         }
 
-        public virtual float Parry
+        public virtual float AttackSpeed
         {
-            get { return Stats.Deflection.Extend; }
+            get { return Stats.AttackSpeed.Extend; }
         }
+
+        public virtual float MinDamage
+        {
+            get { return Stats.MinDamage.Extend; }
+        }
+
+        public virtual float MaxDamage
+        {
+            get { return Stats.MaxDamage.Extend; }
+        }
+        #endregion
     }
 }

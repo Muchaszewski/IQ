@@ -87,7 +87,7 @@ namespace InventoryQuest.Components.Entities.Player
         /// <returns></returns>
         public override float Attack(out int critical)
         {
-            if (Equipment.Weapon != null && Equipment.Weapon.Name != "Unarmed")
+            if (Equipment.Weapon != null)
             {
                 Item item = Equipment.Weapon;
                 var damage = base.Attack(out critical);
@@ -160,6 +160,54 @@ namespace InventoryQuest.Components.Entities.Player
                 //Turn to % value
                 var weaponAccExtended = (1 + Stats.Accuracy.Extend / 100);
                 return baseAccuracy * weaponAccExtended;
+            }
+        }
+
+        public override float AttackSpeed
+        {
+            get
+            {
+                var item = Equipment.Items[(int)EnumItemSlot.Weapon];
+                if (item == null)
+                {
+                    return 1f;
+                }
+                else
+                {
+                    return Stats.AttackSpeed.Extend;
+                }
+            }
+        }
+
+        public override float MinDamage
+        {
+            get
+            {
+                var item = Equipment.Items[(int)EnumItemSlot.Weapon];
+                if (item == null)
+                {
+                    return 1f;
+                }
+                else
+                {
+                    return Stats.MinDamage.Extend;
+                }
+            }
+        }
+
+        public override float MaxDamage
+        {
+            get
+            {
+                var item = Equipment.Items[(int)EnumItemSlot.Weapon];
+                if (item == null)
+                {
+                    return 3f;
+                }
+                else
+                {
+                    return Stats.MaxDamage.Extend;
+                }
             }
         }
 

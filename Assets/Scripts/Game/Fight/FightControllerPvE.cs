@@ -188,12 +188,12 @@ namespace InventoryQuest.Game.Fight
                 BattleLog.AppendLine("You have lost...");
                 BattleLog.AppendLine();
             }
-            var areEnemiesDead = false;
+            var areEnemiesDead = true;
             foreach (Entity enemy in Enemy)
             {
-                if (PreFight(enemy))
+                if (!PreFight(enemy))
                 {
-                    areEnemiesDead = true;
+                    areEnemiesDead = false;
                 }
             }
             if (areEnemiesDead)
@@ -211,7 +211,7 @@ namespace InventoryQuest.Game.Fight
             //Fight
             if (IsFight)
             {
-                Player.NextTurn -= Player.Stats.AttackSpeed.Extend * Time.deltaTime;
+                Player.NextTurn -= Player.AttackSpeed * Time.deltaTime;
                 if (Player.NextTurn <= 0)
                 {
                     Target = null;
@@ -220,27 +220,39 @@ namespace InventoryQuest.Game.Fight
                     {
                         if (enemy.Stats.HealthPoints.Extend > 0)
                         {
+                            //if (Target == null)
+                            //{
+                            //    Target = enemy;
+                            //    foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
+                            //    {
+                            //        targetValue += item.Current * 10;
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    float newTargetValue = 0;
+                            //    foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
+                            //    {
+                            //        newTargetValue += item.Extend * 10;
+                            //    }
+                            //    newTargetValue += enemy.Stats.HealthPoints.Extend;
+                            //    newTargetValue += enemy.Stats.ManaPoints.Extend;
+                            //    if (newTargetValue < targetValue)
+                            //    {
+                            //        Target = enemy;
+                            //        targetValue = newTargetValue;
+                            //    }
+                            //}
                             if (Target == null)
                             {
+                                targetValue = enemy.Position;
                                 Target = enemy;
-                                foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
-                                {
-                                    targetValue += item.Current * 10;
-                                }
                             }
                             else
                             {
-                                float newTargetValue = 0;
-                                foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
-                                {
-                                    newTargetValue += item.Extend * 10;
-                                }
-                                newTargetValue += enemy.Stats.HealthPoints.Extend;
-                                newTargetValue += enemy.Stats.ManaPoints.Extend;
-                                if (newTargetValue < targetValue)
+                                if (targetValue > enemy.Position)
                                 {
                                     Target = enemy;
-                                    targetValue = newTargetValue;
                                 }
                             }
                         }
@@ -250,12 +262,15 @@ namespace InventoryQuest.Game.Fight
                         Stop(null);
                         return;
                     }
-                    Attack(Player, Target);
+                    if (!Move(Player, Target))
+                    {
+                        Attack(Player, Target);
+                    }
                     Player.NextTurn = TURN_TIME + Player.NextTurn;
                 }
                 foreach (Entity enemy in Enemy)
                 {
-                    enemy.NextTurn -= enemy.Stats.AttackSpeed.Extend * Time.deltaTime;
+                    enemy.NextTurn -= enemy.AttackSpeed * Time.deltaTime;
                     if (enemy.NextTurn <= 0)
                     {
                         if (!Move(enemy, Player))
@@ -270,21 +285,58 @@ namespace InventoryQuest.Game.Fight
 
         private bool Move(Entity entity, Entity target)
         {
-            if (entity.Type == EnumEntityType.Player) return false;
-            if (entity.Position > 0)
+            if (entity.Type == EnumEntityType.Player)
             {
-                if (entity.Position > entity.Stats.Range.Extend)
+                if (target.Position > 0)
                 {
-                    entity.Position -= entity.Stats.MovmentSpeed.Current;
-                    return true;
+                    if (target.Position > entity.Stats.Range.Extend)
+                    {
+                        target.Position -= target.Stats.MovmentSpeed.Current;
+                        if (target.Position < 0)
+                        {
+                            target.Position = 0;
+                        }
+                        return true;
+                    }
+                }
+                else if (target.Position < 0)
+                {
+                    if (target.Position < -entity.Stats.Range.Extend)
+                    {
+                        target.Position += target.Stats.MovmentSpeed.Current;
+                        if (target.Position > 0)
+                        {
+                            target.Position = -1f;
+                        }
+                        return true;
+                    }
                 }
             }
-            else if (entity.Position < 0)
+            else
             {
-                if (entity.Position > -entity.Stats.Range.Extend)
+                if (entity.Position > 0)
                 {
-                    entity.Position += entity.Stats.MovmentSpeed.Current;
-                    return true;
+                    if (entity.Position > entity.Stats.Range.Extend)
+                    {
+                        entity.Position -= entity.Stats.MovmentSpeed.Current;
+                        if (entity.Position < 0)
+                        {
+                            entity.Position = 0;
+                        }
+                        return true;
+                    }
+                }
+                else if (entity.Position < 0)
+                {
+                    if (entity.Position < -entity.Stats.Range.Extend)
+                    {
+                        entity.Position += entity.Stats.MovmentSpeed.Current;
+                        if (target.Position > 0)
+                        {
+                            target.Position = -1f;
+                        }
+                        return true;
+                    }
                 }
             }
 
@@ -328,11 +380,14 @@ namespace InventoryQuest.Game.Fight
             BattleLog.Append(me.Name + " attacked... ");
 
             //Use Stamina
-            // TODO: get required strength for the weapon if attacker is the player
             var weaponsRequiredStrength = 0;
+            if (me.Type == EnumEntityType.Player && ((Player)me).Equipment.Weapon != null)
+            {
+                weaponsRequiredStrength = ((Player)me).Equipment.Weapon.RequiredStats.Find(x => x.Type == EnumTypeStat.Strength).Extend;
+            }
             var staminaUsed =
                 10
-                * (0.5f / me.Stats.AttackSpeed.Extend)
+                * (0.5f / me.AttackSpeed)
                 * Math.Max((100 - me.Stats.Strength.Extend + weaponsRequiredStrength) / 100f, 0.5f);
             if (float.IsInfinity(staminaUsed))
             {
@@ -478,16 +533,14 @@ namespace InventoryQuest.Game.Fight
             }
             else
             {
-                Enemy.Add(RandomEnemyFactory.CreateEnemy(CurrentGame.Instance.Spot, EnumEntityRarity.Normal));
+                Enemy.AddRange(RandomEnemyFactory.CreateNumberOfEnemies(CurrentGame.Instance.Spot, CurrentGame.Instance.Player.Level, Random.Range(1, 4), EnumEntityRarity.Normal));
             }
 
             foreach (var entity in Enemy)
             {
                 var max = Mathf.Max(entity.Stats.Range.Extend, Player.Stats.Range.Extend);
-                if (max < 5)
-                {
-                    max = Random.Range(5, 10);
-                }
+                max = Random.Range(-50, 50);
+                Debug.Log(max);
                 entity.Position = max;
             }
 

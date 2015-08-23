@@ -387,10 +387,10 @@ namespace Creator
             }
             else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
             {
-                item = new Jewelery();
+                item = new JeweleryType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Jewelery.Count;
-                GenerationStorage.Instance.Jewelery.Add((Jewelery)item);
+                GenerationStorage.Instance.Jewelery.Add((JeweleryType)item);
             }
             else if (enumItemType == 11) //Shields
             {
@@ -407,12 +407,19 @@ namespace Creator
                 GenerationStorage.Instance.OffHands.Add((OffHandType)item);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
             {
                 item = new WeaponType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Weapons.Count;
                 GenerationStorage.Instance.Weapons.Add((WeaponType)item);
+            }
+            else if (enumItemType >= 25 && enumItemType <= 26) //Lore and Bestiary
+            {
+                item = new LoreType();
+                item.Type = (EnumItemType)enumItemType;
+                item.ID = GenerationStorage.Instance.Lore.Count;
+                GenerationStorage.Instance.Lore.Add((LoreType)item);
             }
 
             e.NewItem = item;
@@ -450,7 +457,7 @@ namespace Creator
             {
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
             {
                 ItemsTabWeapon.Visibility = Visibility.Visible;
             }
@@ -516,7 +523,7 @@ namespace Creator
                 }
                 else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
                 {
-                    var jewelery = (Jewelery)DataGridItemsAll.SelectedItem;
+                    var jewelery = (JeweleryType)DataGridItemsAll.SelectedItem;
                 }
                 else if (enumItemType == 11) //Shields
                 {
@@ -533,7 +540,7 @@ namespace Creator
                     var offhand = (OffHandType)DataGridItemsAll.SelectedItem;
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
                 {
                     var weapon = (WeaponType)DataGridItemsAll.SelectedItem;
                     try
@@ -548,6 +555,10 @@ namespace Creator
                         TextBoxRange.Text = weapon.Range.ToString();
                     }
                     catch { }
+                }
+                else if (enumItemType >= 25 && enumItemType <= 26) //Weapons
+                {
+                    var lore = (LoreType)DataGridItemsAll.SelectedItem;
                 }
             }
         }
@@ -905,9 +916,13 @@ namespace Creator
                 itemTypes = GenerationStorage.Instance.OffHands.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
             {
                 itemTypes = GenerationStorage.Instance.Weapons.FindAll(x => x.Type == (EnumItemType)enumItemType);
+            }
+            else if (enumItemType >= 25 && enumItemType <= 26) //Weapons
+            {
+                itemTypes = GenerationStorage.Instance.Lore.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
             return itemTypes;
         }
@@ -968,11 +983,24 @@ namespace Creator
                     });
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
                     let tItem = GenerationStorage.Instance.Weapons[item.ID]
+                    where (int)tItem.Type == enumItemType
+                    select new DisplayNameWeightList
+                    {
+                        ID = item.ID,
+                        Name = tItem.Name,
+                        Weight = item.Weight
+                    });
+            }
+            else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+            {
+                itemTypes.AddRange(
+                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
+                    let tItem = GenerationStorage.Instance.Lore[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
                     {
@@ -1177,7 +1205,7 @@ namespace Creator
                     });
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
@@ -1186,6 +1214,20 @@ namespace Creator
                         continue;
                     }
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID.Add(new GenerationWeight
+                    {
+                        ID = item.ID,
+                        Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
+                    });
+                }
+                else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+                {
+                    if (
+                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
+                            .FirstOrDefault(x => x.ID == item.ID) != null)
+                    {
+                        continue;
+                    }
+                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -1221,9 +1263,14 @@ namespace Creator
                     x => x.ID == item.ID);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID.RemoveAll(
+                    x => x.ID == item.ID);
+            }
+            else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+            {
+                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             PopulateItemsListsItems();
@@ -2046,10 +2093,16 @@ namespace Creator
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 27) //Weapons
+                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .WeaponTypeID.Find(x => x.ID == item.ID).Weight =
+                        Convert.ToInt32((e.EditingElement as TextBox).Text);
+                }
+                else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+                {
+                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                        .LoreTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
             }

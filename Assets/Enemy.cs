@@ -18,6 +18,11 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     private Entity _entityData;
     private RectTransform _rectTransform;
 
+    public Entity EntityData
+    {
+        get { return _entityData; }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -28,14 +33,27 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        _progress = Mathf.Abs(_entityData.Position);
-        var position = _progress + MinCombatPosition;
-        if (MaxCombatPosition < Mathf.Abs(position))
+        _progress = EntityData.Position;
+        float position = 0;
+        if (_progress < 0)
         {
-            position = MaxCombatPosition;
+            position = _progress - MinCombatPosition;
+            if (MaxCombatPosition < Mathf.Abs(position))
+            {
+                position = -MaxCombatPosition;
+            }
         }
+        else
+        {
+            position = _progress + MinCombatPosition;
+            if (MaxCombatPosition < Mathf.Abs(position))
+            {
+                position = MaxCombatPosition;
+            }
+        }
+
         _rectTransform.anchoredPosition = new Vector2(position, 0);
-        if (_entityData.Stats.HealthPoints.Current <= 0)
+        if (EntityData.Stats.HealthPoints.Current <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -43,7 +61,6 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, _entityData);
-        Debug.Log("Attacked :D");
+        CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
     }
 }

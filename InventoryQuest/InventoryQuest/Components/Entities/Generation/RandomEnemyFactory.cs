@@ -60,7 +60,6 @@ namespace InventoryQuest.Components.Entities.Generation
         /// <param name="maxLevel">Maximum Level of created enemy</param>
         /// <param name="numberOfEnemies">Number of enemies (Number larger then 2 may cause instant death while in fight)</param>
         /// <returns></returns>
-        [Obsolete]
         public static List<Entity> CreateNumberOfEnemies(Spot Spot, int maxLevel, int numberOfEnemies,
             EnumEntityRarity rarity)
         {

@@ -14,7 +14,6 @@ namespace InventoryQuest.Components.Items
         private string _ExtraName = String.Empty;
         private string _FlavorText;
         private ImageIDPair _ImageID;
-        private int _Index;
         private int _ItemLevel;
         private string _Name;
         private StatValueInt _Price = new StatValueInt(EnumTypeStat.Sell);

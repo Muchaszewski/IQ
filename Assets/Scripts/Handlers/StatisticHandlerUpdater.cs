@@ -32,6 +32,11 @@ public class StatisticHandlerUpdater : MonoBehaviour
                     _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Accuracy.ToString();
                     break;
                 }
+                if (_statisticHandler.stat == EnumTypeStat.AttackSpeed)
+                {
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.AttackSpeed.ToString();
+                    break;
+                }
                 if (_statisticHandler.stat == EnumTypeStat.Deflection)
                 {
                     _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString();
@@ -60,6 +65,9 @@ public class StatisticHandlerUpdater : MonoBehaviour
                 {
                     _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
                 }
+                break;
+            case EnumStatisticHandler.Special:
+                _statisticHandler.ApplySpecial();
                 break;
             default:
                 _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();

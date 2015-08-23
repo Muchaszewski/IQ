@@ -32,7 +32,9 @@ namespace InventoryQuest.Components.Items
         Wand,
         Bow,
         Crossbow,
-        Thrown //24
+        Thrown, //24
+        Lore,
+        Bestiary,
     }
 
     [AttributeUsage(AttributeTargets.All)]

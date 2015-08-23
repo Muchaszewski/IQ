@@ -105,7 +105,8 @@
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\ArmorType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\IItemType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\ItemType.cs" />
-    <Compile Include="InventoryQuest\Components\Items\Generation\Types\Jewelry.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\JewelryType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\Types\LoreType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\OffHandType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\ShieldType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\WeaponType.cs" />
