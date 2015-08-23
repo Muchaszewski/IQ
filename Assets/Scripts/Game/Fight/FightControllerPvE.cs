@@ -9,6 +9,8 @@ using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace InventoryQuest.Game.Fight
 {
@@ -53,7 +55,7 @@ namespace InventoryQuest.Game.Fight
         /// <summary>
         ///     Player target
         /// </summary>
-        public override Entity Target { get; protected set; }
+        public override Entity Target { get; set; }
 
         public int FightsInCurrentSpot { get; set; }
 
@@ -107,6 +109,13 @@ namespace InventoryQuest.Game.Fight
         {
             IsFight = false;
             IsEnded = true;
+
+            if (BattleLog.Length > 1000)
+            {
+                var lines = Regex.Split(BattleLog.ToString(), "\r\n|\r|\n").Skip(20);
+                BattleLog = new StringBuilder();
+                BattleLog.Insert(0, string.Join(Environment.NewLine, lines.ToArray()));
+            }
 
             BattleLog.AppendLine();
 
@@ -212,37 +221,14 @@ namespace InventoryQuest.Game.Fight
             if (IsFight)
             {
                 Player.NextTurn -= Player.AttackSpeed * Time.deltaTime;
-                if (Player.NextTurn <= 0)
+                if (Target == null || Target.Stats.HealthPoints.Current <= 0)
                 {
                     Target = null;
                     float targetValue = 0;
                     foreach (Entity enemy in Enemy)
                     {
-                        if (enemy.Stats.HealthPoints.Extend > 0)
+                        if (enemy.Stats.HealthPoints.Current > 0)
                         {
-                            //if (Target == null)
-                            //{
-                            //    Target = enemy;
-                            //    foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
-                            //    {
-                            //        targetValue += item.Current * 10;
-                            //    }
-                            //}
-                            //else
-                            //{
-                            //    float newTargetValue = 0;
-                            //    foreach (StatValueInt item in enemy.Stats.GetAllStatsInt())
-                            //    {
-                            //        newTargetValue += item.Extend * 10;
-                            //    }
-                            //    newTargetValue += enemy.Stats.HealthPoints.Extend;
-                            //    newTargetValue += enemy.Stats.ManaPoints.Extend;
-                            //    if (newTargetValue < targetValue)
-                            //    {
-                            //        Target = enemy;
-                            //        targetValue = newTargetValue;
-                            //    }
-                            //}
                             if (Target == null)
                             {
                                 targetValue = enemy.Position;
@@ -262,6 +248,9 @@ namespace InventoryQuest.Game.Fight
                         Stop(null);
                         return;
                     }
+                }
+                if (Player.NextTurn <= 0)
+                {
                     if (!Move(Player, Target))
                     {
                         Attack(Player, Target);
@@ -540,7 +529,6 @@ namespace InventoryQuest.Game.Fight
             {
                 var max = Mathf.Max(entity.Stats.Range.Extend, Player.Stats.Range.Extend);
                 max = Random.Range(-50, 50);
-                Debug.Log(max);
                 entity.Position = max;
             }
 

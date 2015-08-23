@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        CurrentGame.Instance.FightController.Target = EntityData;
         CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
     }
 }

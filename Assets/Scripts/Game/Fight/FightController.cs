@@ -48,7 +48,7 @@ namespace InventoryQuest.Game.Fight
         /// <summary>
         ///     Current player target
         /// </summary>
-        public abstract Entity Target { get; protected set; }
+        public abstract Entity Target { get; set; }
 
         /// <summary>
         /// </summary>
