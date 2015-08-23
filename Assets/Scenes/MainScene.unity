@@ -6182,7 +6182,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
   m_Value: 0
-  m_Size: .173852563
+  m_Size: .999130726
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11101,8 +11101,6 @@ GameObject:
   - 224: {fileID: 1414563735}
   - 222: {fileID: 1414563738}
   - 114: {fileID: 1414563736}
-  - 114: {fileID: 1414563739}
-  - 114: {fileID: 1414563737}
   m_Layer: 5
   m_Name: SpotList
   m_TagString: Untagged
@@ -11124,7 +11122,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -228.100586, y: 475.200043}
+  m_AnchoredPosition: {x: 1, y: .500030518}
   m_SizeDelta: {x: 552.5, y: 575.200012}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1414563736
@@ -11139,45 +11137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaButton: {fileID: 115108, guid: 6786c2f4f5b89424b915341abd6585cd, type: 2}
---- !u!114 &1414563737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1414563734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &1414563738
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1414563734}
---- !u!114 &1414563739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1414563734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
 --- !u!224 &1416094616 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22410838, guid: c0643fbfaffed594da8e6007beb091e9,
@@ -13610,6 +13575,9 @@ GameObject:
   m_Component:
   - 224: {fileID: 1715002218}
   - 114: {fileID: 1715002219}
+  - 222: {fileID: 1715002222}
+  - 114: {fileID: 1715002221}
+  - 114: {fileID: 1715002220}
   m_Layer: 5
   m_Name: Scroll
   m_TagString: Untagged
@@ -13632,8 +13600,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1.99999237, y: -177.399902}
+  m_SizeDelta: {x: 551, y: 574.700012}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1715002219
 MonoBehaviour:
@@ -13647,7 +13615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1414563735}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: .100000001
@@ -13661,6 +13629,45 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1715002220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715002217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &1715002221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715002217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1715002222
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715002217}
 --- !u!1 &1719709350
 GameObject:
   m_ObjectHideFlags: 0

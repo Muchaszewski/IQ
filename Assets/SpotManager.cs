@@ -15,9 +15,10 @@ public class SpotManager : MonoBehaviour
     void Start()
     {
         var count = GenerationStorage.Instance.Spots.Count;
+        var spotListSorted = GenerationStorage.Instance.Spots.OrderBy(x => x.Level).ToList();
         for (int i = 0; i < count; i++)
         {
-            var item = GenerationStorage.Instance.Spots[i];
+            var item = spotListSorted[i];
             var area = Instantiate(AreaButton).GetComponent<AreaController>();
             area.Spot = item;
             area.transform.SetParent(transform);
