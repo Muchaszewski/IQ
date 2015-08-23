@@ -21,6 +21,8 @@ namespace InventoryQuest.Components
         public string Name { get; set; }
         public int Level { get; set; }
 
+        public int ID { get; set; }
+
         public List<GenerationWeightLists> EntitiesList
         {
             get { return _entitiesList; }

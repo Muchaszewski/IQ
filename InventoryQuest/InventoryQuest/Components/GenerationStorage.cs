@@ -37,6 +37,10 @@ namespace InventoryQuest.Components
             if (_Instance == null)
             {
                 _Instance = LoadXml("");
+                for (int i = 0; i < Instance.Spots.Count; i++)
+                {
+                    Instance.Spots[i].ID = i;
+                }
             }
         }
 
@@ -133,13 +137,13 @@ namespace InventoryQuest.Components
                 return gs;
             }
 #else
-                var file = Resources.Load(path) as TextAsset;
-                if (file != null)
-                {
-                    var gs = new GenerationStorage();
-                    gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
-                    return gs;
-                }
+            var file = Resources.Load(path) as TextAsset;
+            if (file != null)
+            {
+                var gs = new GenerationStorage();
+                gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
+                return gs;
+            }
 #endif
             else
             {

@@ -6,28 +6,24 @@ using InventoryQuest.Components;
 using System.Linq;
 using System.Text;
 
-public class SpotManager : MonoBehaviour {
+public class SpotManager : MonoBehaviour
+{
+    public GameObject AreaButton;
+    // -1 90
 
-	//All spots 
-	//GenerationStorage.Instance.Spots
-	//Current spot
-	//CurrentGame.Instance.Spot
-
-	Text _text;
-
-	// Use this for initialization
-	void Start () {
-		_text = GetComponent<Text>();
-		StringBuilder sb = new StringBuilder ();
-		foreach (var item in GenerationStorage.Instance.Spots) {
-			sb.AppendLine(item.Name);
-		}
-		_text.text = sb.ToString ();
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+        var count = GenerationStorage.Instance.Spots.Count;
+        for (int i = 0; i < count; i++)
+        {
+            var item = GenerationStorage.Instance.Spots[i];
+            var area = Instantiate(AreaButton).GetComponent<AreaController>();
+            area.Spot = item;
+            area.transform.SetParent(transform);
+            area.transform.localScale = Vector3.one;
+            area.RectTransform.anchoredPosition = new Vector2(0, -20 - 40 * i);
+        }
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(552.5f, count * 40);
+    }
 }
