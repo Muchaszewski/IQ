@@ -483,7 +483,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 662675487}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: .999999881
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -751,7 +751,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 31
+  stat: 32
   value: 2
   entityStatType: 0
   statName: 
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 34
+  stat: 35
   value: 2
   entityStatType: 0
   statName: 
@@ -4832,7 +4832,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 36
+  stat: 37
   value: 2
   entityStatType: 0
   statName: 
@@ -6182,7 +6182,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
   m_Value: 0
-  m_Size: .999130726
+  m_Size: .999130666
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8740,7 +8740,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 37
+  stat: 38
   value: 2
   entityStatType: 0
   statName: 
@@ -11667,7 +11667,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 33
+  stat: 34
   value: 2
   entityStatType: 0
   statName: 
@@ -14534,7 +14534,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 35
+  stat: 36
   value: 2
   entityStatType: 0
   statName: 
@@ -16670,7 +16670,7 @@ MonoBehaviour:
   statType: 1
   level: 0
   skill: 0
-  stat: 32
+  stat: 33
   value: 2
   entityStatType: 0
   statName: 

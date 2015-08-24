@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryQuest.Utils;
+using System;
 using System.Collections.Generic;
 
 namespace InventoryQuest.Components
@@ -13,15 +14,15 @@ namespace InventoryQuest.Components
         {
         }
 
-        public Spot(string name)
+        public Spot(string name) : base()
         {
             Name = name;
         }
 
         public string Name { get; set; }
         public int Level { get; set; }
-
         public int ID { get; set; }
+        public string ImageString { get; set; }
 
         public List<GenerationWeightLists> EntitiesList
         {

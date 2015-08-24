@@ -210,6 +210,11 @@ namespace Creator
 
         private void DataGridAreasAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            RefreshArea();
+        }
+
+        private void RefreshArea()
+        {
             if (DataGridAreasAll.SelectedItem != null &&
                 DataGridAreasAll.SelectedItem.GetType().Name != "NamedObject")
             {
@@ -234,6 +239,7 @@ namespace Creator
                 {
                     ButtonAreasItemsAdd.IsEnabled = false;
                 }
+                label.Content = spot.ImageString;
             }
             else
             {
@@ -360,7 +366,29 @@ namespace Creator
             DataGridAreasItemsList.ItemsSource = spot.ItemsList;
         }
 
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (DataGridAreasAll.SelectedItem != null && DataGridAreasAll.SelectedItem.GetType().Name != "NamedObject")
+            {
+                var item = DataGridAreasAll.SelectedItem as Spot;
+                if (item.ImageString == null)
+                {
+                    item.ImageString = "";
+                }
+                var window = new ImageAreaWindow(item.ImageString);
+                window.Owner = this;
+                window.ShowDialog();
+
+                if (window.DialogResult != null && window.DialogResult == true)
+                {
+                    item.ImageString = window.ImageString;
+                    RefreshArea();
+                }
+            }
+        }
+
         #endregion Areas
+
 
         #region Items
 

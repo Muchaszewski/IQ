@@ -1,0 +1,18 @@
+﻿<Window x:Class="Creator.ImageAreaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ImageWindow" Height="495" Width="928.331">
+
+    <Grid>
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" IsCancel="True" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonChoose" Content="Choose" HorizontalAlignment="Right" Margin="0,0,10,37" VerticalAlignment="Bottom" Width="75" IsDefault="True" Click="ButtonChoose_Click"/>
+        <ListBox x:Name="ListBoxImages" Margin="10,10,291,10" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseDoubleClick="ListBoxImages_PreviewMouseDoubleClick">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" Width="391"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <Label x:Name="label" Content="Currently selected" HorizontalAlignment="Left" Margin="634,10,0,0" VerticalAlignment="Top" Height="27" Width="276"/>
+    </Grid>
+</Window>

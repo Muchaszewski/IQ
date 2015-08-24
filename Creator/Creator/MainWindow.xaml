@@ -430,6 +430,8 @@
                             </Grid>
                         </TabItem>
                     </TabControl>
+                    <Button x:Name="button" Content="Choose area image" HorizontalAlignment="Left" Margin="951,36,0,0" VerticalAlignment="Top" Width="250" Click="button_Click_1"/>
+                    <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="951,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.577" Width="250"/>
                 </Grid>
             </TabItem>
         </TabControl>

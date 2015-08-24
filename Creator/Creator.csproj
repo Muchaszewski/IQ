@@ -83,6 +83,9 @@
     </ApplicationDefinition>
     <Compile Include="Creator\DisplayNameWeightList.cs" />
     <Compile Include="Creator\EnumTypeID.cs" />
+    <Compile Include="Creator\ImageAreaWindow.xaml.cs">
+      <DependentUpon>ImageAreaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Creator\ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
     <Compile Include="Creator\Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
     </Compile>
+    <Page Include="Creator\ImageAreaWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Creator\ImageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

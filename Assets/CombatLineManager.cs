@@ -29,7 +29,4 @@ public class CombatLineManager : MonoBehaviour
             enemy.EntityID = i;
         }
     }
-
-
-
 }

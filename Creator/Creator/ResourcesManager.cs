@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -128,6 +129,7 @@ namespace Creator
         public static string[] GetAllFiles(string path, bool searchFiles = true)
         {
             string fullPath = Path.Combine(PathRoot, PathGfx, PathGfxItems, path);
+            Console.WriteLine(Path.GetFullPath(fullPath));
             string extension = "";
             List<string> files = new List<string>();
             if (searchFiles)
