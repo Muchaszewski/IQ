@@ -19,7 +19,7 @@ public class SpotManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             var item = spotListSorted[i];
-            var area = Instantiate(AreaButton).GetComponent<AreaController>();
+            var area = Instantiate(AreaButton).GetComponent<AreaButtonController>();
             area.Spot = item;
             area.transform.SetParent(transform);
             area.transform.localScale = Vector3.one;

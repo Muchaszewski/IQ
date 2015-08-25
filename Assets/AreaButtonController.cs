@@ -4,16 +4,22 @@ using UnityEngine.UI;
 using InventoryQuest.Game;
 using InventoryQuest.Components;
 
-public class AreaController : MonoBehaviour
+public class AreaButtonController : MonoBehaviour
 {
     public Spot Spot;
     private Text _spotName;
     private Text _spotLevel;
     public RectTransform RectTransform { get; set; }
 
+    public static AreaImageController controller;
+
     void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
+        if (controller == null)
+        {
+            controller = GameObject.FindObjectOfType<AreaImageController>();
+        }
     }
 
     // Use this for initialization
@@ -31,5 +37,6 @@ public class AreaController : MonoBehaviour
     void ChangeSpot()
     {
         CurrentGame.Instance.TravelToSpot = Spot.ID;
+        controller.ChangeBackground(Spot.ImageString);
     }
 }

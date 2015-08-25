@@ -25,6 +25,7 @@ public class ProgressBar : MonoBehaviour
     {
         Player,
         Enemy,
+        Special,
     }
 
     // Use this for initialization
@@ -38,6 +39,11 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CurrentEntityType == EnumCurrentEntity.Special)
+        {
+            ProgressBarImage.transform.localScale = new Vector3((float)CurrentGame.Instance.Player.Experience / (float)CurrentGame.Instance.Player.GetToNextLevelExperience(), 1, 1);
+            return;
+        }
         if (CurrentEntityType == EnumCurrentEntity.Enemy)
         {
             try
