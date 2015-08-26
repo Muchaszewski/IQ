@@ -88,6 +88,8 @@ public class ProgressBar : MonoBehaviour
             case EnumCurrentEntity.Enemy:
 
                 break;
+            case EnumCurrentEntity.Special:
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }

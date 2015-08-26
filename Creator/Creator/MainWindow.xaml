@@ -385,6 +385,7 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                             <DataGridTextColumn Header="Level" Binding="{Binding Level}"/>
+                            <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Label Content="Areas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
