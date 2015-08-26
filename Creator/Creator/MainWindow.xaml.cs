@@ -937,7 +937,7 @@ namespace Creator
             }
             else if (enumItemType == 11) //Shields
             {
-                itemTypes = GenerationStorage.Instance.Shields.Cast<ItemType>();
+                itemTypes = GenerationStorage.Instance.Shields.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
             else if (enumItemType == 12) //Offhand
             {
