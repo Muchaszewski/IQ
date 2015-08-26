@@ -2961,8 +2961,186 @@
         <MaxMaxLevel>410</MaxMaxLevel>
       </Armor>
     </ArmorType>
+    <ArmorType>
+      <Name>Torn Pants</Name>
+      <ID>38</ID>
+      <Type>Leggins</Type>
+      <Skill>Cloth</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>cloth_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>1</RequiredLevel>
+      <DropLevel>1</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Desert Pants</Name>
+      <ID>39</ID>
+      <Type>Leggins</Type>
+      <Skill>Cloth</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>cloth_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>6</RequiredLevel>
+      <DropLevel>6</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Traveler's Pants</Name>
+      <ID>40</ID>
+      <Type>Leggins</Type>
+      <Skill>Light</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>leather_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>3</RequiredLevel>
+      <DropLevel>3</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Plated Pants</Name>
+      <ID>41</ID>
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>plate_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>21</RequiredLevel>
+      <DropLevel>21</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Plate Leggings</Name>
+      <ID>42</ID>
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>plate_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>27</RequiredLevel>
+      <DropLevel>27</DropLevel>
+      <RequiredStats />
+    </ArmorType>
   </Armors>
-  <Shields />
+  <Shields>
+    <ShieldType>
+      <Name>Pot Lid</Name>
+      <ID>0</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>makeshift_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Makeshift Board Shield</Name>
+      <ID>1</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>makeshift_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Round Shield</Name>
+      <ID>2</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_coat_teutonic</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_paint_lightBlue</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_paint_yellow</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Kite Shield</Name>
+      <ID>3</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_hospitalier</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_hre</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_templar</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_teutonic</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+  </Shields>
   <OffHands />
   <Jewelery />
   <Lore />
