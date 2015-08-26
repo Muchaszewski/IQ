@@ -6,7 +6,7 @@ using InventoryQuest.Components;
 
 public class AreaButtonController : MonoBehaviour
 {
-    public Spot Spot;
+    public Spot Spot { get; set; }
     private Text _spotName;
     private Text _spotLevel;
     public RectTransform RectTransform { get; set; }
@@ -27,9 +27,11 @@ public class AreaButtonController : MonoBehaviour
     {
         _spotName = transform.GetChild(0).GetComponent<Text>();
         _spotLevel = transform.GetChild(1).GetComponent<Text>();
+        var _spotCat = transform.GetChild(2).GetComponent<Text>();
 
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
+        _spotCat.text = Spot.Category;
         GetComponent<Button>().onClick.AddListener(() => ChangeSpot());
     }
 

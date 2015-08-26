@@ -14,6 +14,11 @@ namespace Creator
         {
             InitializeComponent();
             TextBoxPath.Text = Settings.Default.UserSavePath;
+            if (TextBoxPath.Text == null || TextBoxPath.Text == string.Empty)
+            {
+                TextBoxPath.Text = @"..\..\..\Assets\Resources";
+            }
+
         }
 
         private void ButtonBrowse_Click(object sender, RoutedEventArgs e)

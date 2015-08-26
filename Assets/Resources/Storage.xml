@@ -2939,132 +2939,14 @@
   </Armors>
   <Shields />
   <OffHands />
-  <Jewelery>
-    <Jewelery>
-      <Name>Plain Ring</Name>
-      <ID>0</ID>
-      <BaseStatsAllowed />
-      <Type>Ring</Type>
-      <Skill>Cloth</Skill>
-      <Durability>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Durability>
-      <ImageID>
-        <PairTypeItem>
-          <Type>finger</Type>
-          <Item>plain_1</Item>
-        </PairTypeItem>
-      </ImageID>
-      <SoundID />
-      <Rarity>Uncommon</Rarity>
-      <RequiredLevel>1</RequiredLevel>
-      <DropLevel>1</DropLevel>
-      <RequiredStats />
-    </Jewelery>
-    <Jewelery>
-      <Name>Thin Ring</Name>
-      <ID>1</ID>
-      <BaseStatsAllowed />
-      <Type>Ring</Type>
-      <Skill>Cloth</Skill>
-      <Durability>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Durability>
-      <ImageID>
-        <PairTypeItem>
-          <Type>finger</Type>
-          <Item>plain_0</Item>
-        </PairTypeItem>
-      </ImageID>
-      <SoundID />
-      <Rarity>Uncommon</Rarity>
-      <RequiredLevel>6</RequiredLevel>
-      <DropLevel>6</DropLevel>
-      <RequiredStats />
-    </Jewelery>
-    <Jewelery>
-      <Name>Carved Silver Ring</Name>
-      <ID>2</ID>
-      <BaseStatsAllowed />
-      <Type>Ring</Type>
-      <Skill>Cloth</Skill>
-      <Durability>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Durability>
-      <ImageID>
-        <PairTypeItem>
-          <Type>finger</Type>
-          <Item>carved_0</Item>
-        </PairTypeItem>
-      </ImageID>
-      <SoundID />
-      <Rarity>Uncommon</Rarity>
-      <RequiredLevel>12</RequiredLevel>
-      <DropLevel>12</DropLevel>
-      <RequiredStats />
-    </Jewelery>
-    <Jewelery>
-      <Name>Carved Bronze Medallion</Name>
-      <ID>3</ID>
-      <BaseStatsAllowed />
-      <Type>Amulet</Type>
-      <Skill>Cloth</Skill>
-      <Durability>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Durability>
-      <ImageID>
-        <PairTypeItem>
-          <Type>neck</Type>
-          <Item>plain_1</Item>
-        </PairTypeItem>
-      </ImageID>
-      <SoundID />
-      <Rarity>Uncommon</Rarity>
-      <RequiredLevel>0</RequiredLevel>
-      <DropLevel>0</DropLevel>
-      <RequiredStats />
-    </Jewelery>
-    <Jewelery>
-      <Name>Animal Medallion</Name>
-      <ID>4</ID>
-      <BaseStatsAllowed />
-      <Type>Amulet</Type>
-      <Skill>Cloth</Skill>
-      <Durability>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Durability>
-      <ImageID>
-        <PairTypeItem>
-          <Type>neck</Type>
-          <Item>plain_0</Item>
-        </PairTypeItem>
-      </ImageID>
-      <SoundID />
-      <Rarity>Uncommon</Rarity>
-      <RequiredLevel>0</RequiredLevel>
-      <DropLevel>0</DropLevel>
-      <RequiredStats />
-    </Jewelery>
-  </Jewelery>
+  <Jewelery />
+  <Lore />
   <Spots>
     <Spot>
       <Name>Junkyard Peninsula</Name>
       <Level>1</Level>
+      <ID>0</ID>
+      <ImageString>location_noImage_0</ImageString>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3081,6 +2963,8 @@
     <Spot>
       <Name>Desolate Coast</Name>
       <Level>3</Level>
+      <ID>1</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3105,6 +2989,8 @@
     <Spot>
       <Name>Sailor's Beach</Name>
       <Level>4</Level>
+      <ID>2</ID>
+      <ImageString>location_placeholder_westernTown_0</ImageString>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3129,6 +3015,7 @@
     <Spot>
       <Name>Jagged Cliffs</Name>
       <Level>4</Level>
+      <ID>3</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3153,6 +3040,7 @@
     <Spot>
       <Name>Scorpion Desert</Name>
       <Level>6</Level>
+      <ID>4</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3169,6 +3057,7 @@
     <Spot>
       <Name>Iron Plain</Name>
       <Level>6</Level>
+      <ID>5</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3185,6 +3074,7 @@
     <Spot>
       <Name>Western Road</Name>
       <Level>8</Level>
+      <ID>6</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3201,6 +3091,7 @@
     <Spot>
       <Name>The Broken Bridge</Name>
       <Level>11</Level>
+      <ID>7</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3217,6 +3108,7 @@
     <Spot>
       <Name>Shining Sans Desert</Name>
       <Level>9</Level>
+      <ID>8</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3237,6 +3129,7 @@
     <Spot>
       <Name>The Vesir's Desert</Name>
       <Level>12</Level>
+      <ID>9</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3257,6 +3150,7 @@
     <Spot>
       <Name>The Miracle Field</Name>
       <Level>20</Level>
+      <ID>10</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Birds</Name>
@@ -3281,6 +3175,7 @@
     <Spot>
       <Name>Ruins of Antioch</Name>
       <Level>30</Level>
+      <ID>11</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3297,6 +3192,7 @@
     <Spot>
       <Name>Highforest</Name>
       <Level>40</Level>
+      <ID>12</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3317,6 +3213,7 @@
     <Spot>
       <Name>The Prophet's Desert</Name>
       <Level>20</Level>
+      <ID>13</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3333,6 +3230,7 @@
     <Spot>
       <Name>Scorched Hills</Name>
       <Level>30</Level>
+      <ID>14</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Birds</Name>
@@ -3353,6 +3251,7 @@
     <Spot>
       <Name>Scorched Desert</Name>
       <Level>40</Level>
+      <ID>15</ID>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3553,6 +3452,7 @@
           <Weight>100</Weight>
         </GenerationWeight>
       </JewelerTypeID>
+      <LoreTypeID />
     </ItemsLists>
     <ItemsLists>
       <Name>Medieval Middle-East</Name>
@@ -3679,6 +3579,7 @@
           <Weight>100</Weight>
         </GenerationWeight>
       </JewelerTypeID>
+      <LoreTypeID />
     </ItemsLists>
     <ItemsLists>
       <Name>Junk</Name>
@@ -3772,6 +3673,7 @@
       <ShieldTypeID />
       <OffHandTypeID />
       <JewelerTypeID />
+      <LoreTypeID />
     </ItemsLists>
   </ItemsLists>
   <EntityLists>
