@@ -973,16 +973,20 @@ namespace Creator
             }
             else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
             {
-                itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID
-                    let tItem = GenerationStorage.Instance.Jewelery[item.ID]
-                    where (int)tItem.Type == enumItemType
-                    select new DisplayNameWeightList
-                    {
-                        ID = item.ID,
-                        Name = tItem.Name,
-                        Weight = item.Weight
-                    });
+                try
+                {
+                    itemTypes.AddRange(
+                        from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID
+                        let tItem = GenerationStorage.Instance.Jewelery[item.ID]
+                        where (int)tItem.Type == enumItemType
+                        select new DisplayNameWeightList
+                        {
+                            ID = item.ID,
+                            Name = tItem.Name,
+                            Weight = item.Weight
+                        });
+                }
+                catch { }
             }
             else if (enumItemType == 11) //Shields
             {
