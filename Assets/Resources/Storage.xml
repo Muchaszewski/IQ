@@ -1353,6 +1353,7 @@
     <WeaponType>
       <Name>Mace</Name>
       <ID>8</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
@@ -1540,6 +1541,7 @@
     <WeaponType>
       <Name>Wooden Stick</Name>
       <ID>11</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
@@ -1602,6 +1604,7 @@
     <WeaponType>
       <Name>Rotten Wooden Club</Name>
       <ID>12</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
@@ -1723,6 +1726,27 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Deflection>
+      <RequiredHands>OneHanded</RequiredHands>
+      <Range>1</Range>
+    </WeaponType>
+    <WeaponType>
+      <Name>Hammer of Justice</Name>
+      <ID>14</ID>
+      <ExtraName>Battle Hammer</ExtraName>
+      <BaseStatsAllowed />
+      <Type>Mace</Type>
+      <Skill>Mace</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>mace 1h</Type>
+          <Item>flanged_0.png</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Mythical</Rarity>
+      <RequiredLevel>32</RequiredLevel>
+      <DropLevel>32</DropLevel>
+      <RequiredStats />
       <RequiredHands>OneHanded</RequiredHands>
       <Range>1</Range>
     </WeaponType>
@@ -2031,6 +2055,7 @@
     <ArmorType>
       <Name>Patched Shirt</Name>
       <ID>10</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Chest</Type>
       <Skill>Cloth</Skill>
@@ -2936,8 +2961,186 @@
         <MaxMaxLevel>410</MaxMaxLevel>
       </Armor>
     </ArmorType>
+    <ArmorType>
+      <Name>Torn Pants</Name>
+      <ID>38</ID>
+      <Type>Leggins</Type>
+      <Skill>Cloth</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>cloth_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>1</RequiredLevel>
+      <DropLevel>1</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Desert Pants</Name>
+      <ID>39</ID>
+      <Type>Leggins</Type>
+      <Skill>Cloth</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>cloth_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>6</RequiredLevel>
+      <DropLevel>6</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Traveler's Pants</Name>
+      <ID>40</ID>
+      <Type>Leggins</Type>
+      <Skill>Light</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>leather_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>3</RequiredLevel>
+      <DropLevel>3</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Plated Pants</Name>
+      <ID>41</ID>
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>plate_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>21</RequiredLevel>
+      <DropLevel>21</DropLevel>
+      <RequiredStats />
+    </ArmorType>
+    <ArmorType>
+      <Name>Plate Leggings</Name>
+      <ID>42</ID>
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>plate_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>27</RequiredLevel>
+      <DropLevel>27</DropLevel>
+      <RequiredStats />
+    </ArmorType>
   </Armors>
-  <Shields />
+  <Shields>
+    <ShieldType>
+      <Name>Pot Lid</Name>
+      <ID>0</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>makeshift_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Makeshift Board Shield</Name>
+      <ID>1</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>makeshift_1</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Round Shield</Name>
+      <ID>2</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_coat_teutonic</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_paint_lightBlue</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>round_0_paint_yellow</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+    <ShieldType>
+      <Name>Kite Shield</Name>
+      <ID>3</ID>
+      <BaseStatsAllowed />
+      <Type>Shield</Type>
+      <Skill>Shield</Skill>
+      <ImageID>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_hospitalier</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_hre</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_templar</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>shield</Type>
+          <Item>kite_0_coat_teutonic</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </ShieldType>
+  </Shields>
   <OffHands />
   <Jewelery />
   <Lore />
@@ -2946,7 +3149,8 @@
       <Name>Junkyard Peninsula</Name>
       <Level>1</Level>
       <ID>0</ID>
-      <ImageString>location_noImage_0</ImageString>
+      <ImageString>location_coast_0</ImageString>
+      <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -2964,7 +3168,8 @@
       <Name>Desolate Coast</Name>
       <Level>3</Level>
       <ID>1</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>location_coast_0</ImageString>
+      <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -2990,7 +3195,8 @@
       <Name>Sailor's Beach</Name>
       <Level>4</Level>
       <ID>2</ID>
-      <ImageString>location_placeholder_westernTown_0</ImageString>
+      <ImageString>location_coast_0</ImageString>
+      <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3016,6 +3222,8 @@
       <Name>Jagged Cliffs</Name>
       <Level>4</Level>
       <ID>3</ID>
+      <ImageString>location_coast_0</ImageString>
+      <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scavangers</Name>
@@ -3041,6 +3249,8 @@
       <Name>Scorpion Desert</Name>
       <Level>6</Level>
       <ID>4</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3058,6 +3268,8 @@
       <Name>Iron Plain</Name>
       <Level>6</Level>
       <ID>5</ID>
+      <ImageString>location_placeholder_valley_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3075,6 +3287,8 @@
       <Name>Western Road</Name>
       <Level>8</Level>
       <ID>6</ID>
+      <ImageString>location_placeholder_valley_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3092,6 +3306,8 @@
       <Name>The Broken Bridge</Name>
       <Level>11</Level>
       <ID>7</ID>
+      <ImageString>location_placeholder_valley_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3109,6 +3325,8 @@
       <Name>Shining Sans Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3130,6 +3348,8 @@
       <Name>The Vesir's Desert</Name>
       <Level>12</Level>
       <ID>9</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3151,6 +3371,8 @@
       <Name>The Miracle Field</Name>
       <Level>20</Level>
       <ID>10</ID>
+      <ImageString>location_placeholder_valley_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Birds</Name>
@@ -3176,6 +3398,8 @@
       <Name>Ruins of Antioch</Name>
       <Level>30</Level>
       <ID>11</ID>
+      <ImageString>location_placeholder_desertTown_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3193,6 +3417,8 @@
       <Name>Highforest</Name>
       <Level>40</Level>
       <ID>12</ID>
+      <ImageString>location_placeholder_valley_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -3214,6 +3440,8 @@
       <Name>The Prophet's Desert</Name>
       <Level>20</Level>
       <ID>13</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
@@ -3231,6 +3459,8 @@
       <Name>Scorched Hills</Name>
       <Level>30</Level>
       <ID>14</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Birds</Name>
@@ -3252,6 +3482,8 @@
       <Name>Scorched Desert</Name>
       <Level>40</Level>
       <ID>15</ID>
+      <ImageString>location_placeholder_desert_0</ImageString>
+      <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Scorpions</Name>
