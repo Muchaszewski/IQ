@@ -69,6 +69,12 @@ public class StatisticHandlerUpdater : MonoBehaviour
             case EnumStatisticHandler.Special:
                 _statisticHandler.ApplySpecial();
                 break;
+            case EnumStatisticHandler.Entity:
+                if (_statisticHandler.entityStatType == EnumPlayerBasics.Level)
+                {
+                    _statisticHandler.TextComponent.text = "Level " + _statisticHandler.StatReference.ToString();
+                }
+                break;
             default:
                 _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
                 break;

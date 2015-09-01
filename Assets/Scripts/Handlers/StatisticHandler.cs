@@ -95,7 +95,8 @@ public class StatisticHandler : MonoBehaviour
                         break;
                     case EnumPlayerBasics.Level:
                         StatReference = _player.Level;
-                        break;
+                        TextComponent.text = StatReference != null ? "Level " + StatReference.ToString() : "";
+                        return;
                     case EnumPlayerBasics.Experience:
                         StatReference = _player.Experience;
                         break;

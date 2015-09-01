@@ -12,7 +12,7 @@ namespace InventoryQuest.Components.Items.Generation.Types
         private List<EnumTypeStat> _BaseStatsAllowed;
         private string _Description;
         private int _DropLevel;
-        private MinMaxStat _Durability;
+        private MinMaxStat _Durability = new MinMaxStat();
         private string _ExtraName;
         private int _ID;
         private List<PairTypeItem> _ImageID = new List<PairTypeItem>();

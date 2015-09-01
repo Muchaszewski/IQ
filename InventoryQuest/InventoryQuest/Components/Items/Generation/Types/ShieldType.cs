@@ -5,8 +5,8 @@ namespace InventoryQuest.Components.Items.Generation.Types
     [Serializable]
     public class ShieldType : ItemType
     {
-        private MinMaxStat _BlockAmount;
-        private MinMaxStat _BlockChance;
+        private MinMaxStat _BlockAmount = new MinMaxStat(0, 0);
+        private MinMaxStat _BlockChance = new MinMaxStat(0, 0);
 
         public ShieldType()
         {
