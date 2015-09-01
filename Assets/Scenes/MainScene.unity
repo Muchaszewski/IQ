@@ -14308,10 +14308,15 @@ MonoBehaviour:
   Separator: {fileID: 139752, guid: 09ce09efab1071b4f9920218b633cfed, type: 2}
   Text: {fileID: 113710, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
   Image: {fileID: 0}
-  Images: []
   Canvas: {fileID: 853227630}
-  RarityColors: []
+  RarityColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: .241379261, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: .420689583, a: 1}
+  - {r: 1, g: .806896567, b: 0, a: 1}
+  - {r: 0, g: .875862181, b: 1, a: 1}
   TooltipImage: {fileID: 893902823}
+  TooltipBGImage: {fileID: 358737284}
   Margin: 50
   _tootipObjects: []
 --- !u!1001 &1773427029

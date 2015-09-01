@@ -25,7 +25,7 @@ public class TooltipManagerEditor : Editor
             var spot = CurrentGame.Instance.Spot;
             ClearTooltipEditor();
 #pragma warning disable 618
-            script.CreateLabels(RandomItemFactory.CreateItem(1, spot));
+            script.CreateLabels(RandomItemFactory.CreateItem(1, spot, (EnumItemRarity)Random.Range(0,4)));
 #pragma warning restore 618
         }
         if (GUILayout.Button("Clear tooltip"))

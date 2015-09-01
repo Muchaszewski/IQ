@@ -21,12 +21,14 @@ public class ToolTipManager : UILabelManager
 
     //Properties
     public bool Show { get; set; }
+    private Color CurrentRarityColor { get; set; }
     public float Margin = 50;
 
     //Private varibles
     private RectTransform _rectTransform;
     private ItemIcon _item;
     private Canvas _canvas;
+
 
     private int _currentHeight = 0;
     //_____________________________________________________________________________________________________________
@@ -108,6 +110,7 @@ public class ToolTipManager : UILabelManager
             {
                 SetBackground();
                 SetIcon();
+                CurrentRarityColor = RarityColors[(int)_item.ItemData.Rarity];
                 //Do not use outside this method or in custom inspector methods
 #pragma warning disable 618
                 CreateLabels(item.ItemData);
@@ -184,12 +187,12 @@ public class ToolTipManager : UILabelManager
     {
         if (item.ExtraName == null)
         {
-            AddLabel(new Vector2(0, 30), item.Name, 35, TextAnchor.MiddleCenter);
+            AddLabel(new Vector2(0, 30), item.Name, 35, CurrentRarityColor, TextAnchor.MiddleCenter);
         }
         else
         {
-            AddLabel(new Vector2(0, 15), item.Name, TextAnchor.MiddleCenter);
-            AddLabel(new Vector2(0, 42), item.ExtraName, TextAnchor.MiddleCenter);
+            AddLabel(new Vector2(0, 15), item.Name, 20, CurrentRarityColor, TextAnchor.MiddleCenter);
+            AddLabel(new Vector2(0, 42), item.ExtraName, 20, TextAnchor.MiddleCenter);
         }
     }
 
