@@ -18,6 +18,7 @@ public class ToolTipManager : UILabelManager
     public Color[] RarityColors;
     public Image TooltipImage;
     public Image TooltipBGImage;
+    public Image TooltipHeaderImage;
 
     //Properties
     public bool Show { get; set; }
@@ -131,6 +132,9 @@ public class ToolTipManager : UILabelManager
     {
         string path = ItemBackgrounds.Get(_item.ItemData.Rarity);
         TooltipBGImage.sprite = ResourceManager.Get(path);
+
+        path = ItemBackgrounds.GetHeader(_item.ItemData.Rarity);
+        TooltipHeaderImage.sprite = ResourceManager.Get(path);
     }
 
     /// <summary>

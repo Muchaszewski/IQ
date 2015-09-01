@@ -20,9 +20,24 @@ namespace Assets.Scripts
             "gui_itemBackground_diabloGreen",
         };
 
+        private static readonly string[] BackgroundTooltipHeaderStrings =
+        {
+            "itemTooltip_header_diabloDarkGrey",
+            "itemTooltip_header_diabloLightGrey",
+            "itemTooltip_header_diabloBlue",
+            "itemTooltip_header_diabloYellow",
+            "itemTooltip_header_diabloOrange",
+            "itemTooltip_header_diabloGreen",
+        };
+
         public static string Get(EnumItemRarity rarity)
         {
             return AssetPath + BackgroundStrings[(int) rarity];
+        }
+
+        public static string GetHeader(EnumItemRarity rarity)
+        {
+            return AssetPath + BackgroundTooltipHeaderStrings[(int)rarity];
         }
     }
 }

@@ -14317,6 +14317,7 @@ MonoBehaviour:
   - {r: 0, g: .875862181, b: 1, a: 1}
   TooltipImage: {fileID: 893902823}
   TooltipBGImage: {fileID: 358737284}
+  TooltipHeaderImage: {fileID: 980151872}
   Margin: 50
   _tootipObjects: []
 --- !u!1001 &1773427029
