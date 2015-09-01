@@ -408,7 +408,7 @@ namespace InventoryQuest.Components.Generation.Items
         private static StatValueFloat RandomDurability(ItemType item, int level, int damaged = 0)
         {
             var durability = new StatValueFloat(EnumTypeStat.Durability);
-            durability.Base = RandomNumberGenerator.NextRandom(item.Durability.Min, item.Durability.Max);
+            durability.Base = (int)RandomNumberGenerator.NextRandom(item.Durability.Min, item.Durability.Max);
             if (damaged != 0)
             {
                 durability.Shred(damaged);
