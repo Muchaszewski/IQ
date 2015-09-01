@@ -8,6 +8,8 @@ using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game;
 using InventoryQuest.Utils;
+using Assets.Scripts;
+using Assets.Scripts.Utils;
 
 public class ToolTipManager : UILabelManager
 {
@@ -15,6 +17,7 @@ public class ToolTipManager : UILabelManager
     //Show in inspector
     public Color[] RarityColors;
     public Image TooltipImage;
+    public Image TooltipBGImage;
 
     //Properties
     public bool Show { get; set; }
@@ -61,7 +64,7 @@ public class ToolTipManager : UILabelManager
         {
             transform.position =
                 _item.transform.position
-                + new Vector3 (
+                + new Vector3(
                     -(_item.RectTransform.sizeDelta.x * _item.transform.localScale.x * _canvas.transform.localScale.x) / 2f,
                     (_item.RectTransform.sizeDelta.y * _item.transform.localScale.y * _canvas.transform.localScale.y) / 2f,
                     0
@@ -103,6 +106,7 @@ public class ToolTipManager : UILabelManager
             _tootipObjects = new List<GameObject>();
             if (item.ItemData != null)
             {
+                SetBackground();
                 SetIcon();
                 //Do not use outside this method or in custom inspector methods
 #pragma warning disable 618
@@ -116,8 +120,14 @@ public class ToolTipManager : UILabelManager
     {
         var u = ImagesNames.ItemsImageNames[_item.ItemData.ImageID.ImageIDType].FullNameList[_item.ItemData.ImageID.ImageIDItem];
         //TODO Take code from work :P
-        var sprite = Resources.Load<Sprite>(FileUtility.AssetsRelativePath(u));
+        var sprite = ResourceManager.Get(FileUtility.AssetsRelativePath(u));
         TooltipImage.sprite = sprite;
+    }
+
+    void SetBackground()
+    {
+        string path = ItemBackgrounds.Get(_item.ItemData.Rarity);
+        TooltipBGImage.sprite = ResourceManager.Get(path);
     }
 
     /// <summary>
