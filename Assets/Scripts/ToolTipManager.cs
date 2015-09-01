@@ -418,7 +418,7 @@ public class ToolTipManager : UILabelManager
                         new Vector2(magicAttributeLabelMargin, topMargin),
                         "+" + stat.Current + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                         20,
-                        Color.gray,
+                        CurrentRarityColor,
                         TextAnchor.UpperLeft
                     );
                     counter++;
@@ -431,7 +431,7 @@ public class ToolTipManager : UILabelManager
                     new Vector2(magicAttributeLabelMargin, topMargin),
                     "+" + (stat.Extend - stat.Base) + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                     20,
-                    Color.gray,
+                    CurrentRarityColor,
                     TextAnchor.UpperLeft
                 );
                 counter++;
@@ -458,7 +458,7 @@ public class ToolTipManager : UILabelManager
                         new Vector2(magicAttributeLabelMargin, topMargin),
                         "+" + stat.Current.ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                         20,
-                        Color.gray,
+                        CurrentRarityColor,
                         TextAnchor.UpperLeft
                     );
                     counter++;
@@ -471,7 +471,7 @@ public class ToolTipManager : UILabelManager
                     new Vector2(magicAttributeLabelMargin, topMargin),
                     "+" + (stat.Extend - stat.Base).ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                     20,
-                    Color.gray,
+                    CurrentRarityColor,
                     TextAnchor.UpperLeft
                 );
                 counter++;
