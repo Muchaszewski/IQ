@@ -29,14 +29,6 @@ namespace Creator
             set { _ValueFloat = value; }
         }
 
-        private MinMaxStat _ValueInt;
-
-        public MinMaxStat ValueInt
-        {
-            get { return _ValueInt; }
-            set { _ValueInt = value; }
-        }
-
         public MinMaxStatWindow()
         {
             InitializeComponent();
@@ -55,28 +47,28 @@ namespace Creator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ValueInt != null)
-            {
-                int parsedValue;
+            //if (ValueInt != null)
+            //{
+            //    int parsedValue;
 
-                Int32.TryParse(TextBoxMin.Text, out parsedValue);
-                ValueInt.Min = parsedValue;
+            //    Int32.TryParse(TextBoxMin.Text, out parsedValue);
+            //    ValueInt.Min = parsedValue;
 
-                Int32.TryParse(TextBoxMax.Text, out parsedValue);
-                ValueInt.Max = parsedValue;
+            //    Int32.TryParse(TextBoxMax.Text, out parsedValue);
+            //    ValueInt.Max = parsedValue;
 
-                Int32.TryParse(TextBoxMinMax.Text, out parsedValue);
-                ValueInt.MinMaxLevel = parsedValue;
+            //    Int32.TryParse(TextBoxMinMax.Text, out parsedValue);
+            //    ValueInt.MinMaxLevel = parsedValue;
 
-                Int32.TryParse(TextBoxMaxMax.Text, out parsedValue);
-                ValueInt.MaxMaxLevel = parsedValue;
+            //    Int32.TryParse(TextBoxMaxMax.Text, out parsedValue);
+            //    ValueInt.MaxMaxLevel = parsedValue;
 
-                if (ValueInt.Max < ValueInt.Min || ValueInt.MinMaxLevel > ValueInt.MaxMaxLevel)
-                {
-                    MessageBox.Show("Min cannot be bigger then Max");
-                    return;
-                }
-            }
+            //    if (ValueInt.Max < ValueInt.Min || ValueInt.MinMaxLevel > ValueInt.MaxMaxLevel)
+            //    {
+            //        MessageBox.Show("Min cannot be bigger then Max");
+            //        return;
+            //    }
+            //}
             if (ValueFloat != null)
             {
                 float parsedValue;

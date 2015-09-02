@@ -5,12 +5,12 @@ namespace InventoryQuest.Components.Items.Generation.Types
     [Serializable]
     public class WeaponType : ItemType
     {
-        private MinMaxStat _Accuracy;
-        private MinMaxStat _ArmorPenetration;
-        private MinMaxStat _AttackSpeed;
-        private MinMaxStat _MaxDamage;
-        private MinMaxStat _MinDamage;
-        private MinMaxStat _ParryChance;
+        private MinMaxStat _Accuracy = new MinMaxStat();
+        private MinMaxStat _ArmorPenetration = new MinMaxStat();
+        private MinMaxStat _AttackSpeed = new MinMaxStat();
+        private MinMaxStat _MaxDamage = new MinMaxStat();
+        private MinMaxStat _MinDamage = new MinMaxStat();
+        private MinMaxStat _ParryChance = new MinMaxStat();
         private int _Range;
         private EnumItemHands _RequiredHands;
 

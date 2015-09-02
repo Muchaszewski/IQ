@@ -158,17 +158,17 @@ namespace InventoryQuest.Components.Items.Generation.Types
             //PropertyInfo[] props = GetType().GetProperties();
             //foreach (PropertyInfo item in props)
             //{
-            //    if (item.GetValue(this, props) == null)
+            //    if (item.GetValue(this, new object[] { props[0] }) == null)
             //    {
-            //        if (item.PropertyType == typeof (MinMaxStat))
+            //        if (item.PropertyType == typeof(MinMaxStat))
             //        {
             //            item.SetValue(this, new MinMaxStat(0, 0), props);
             //        }
-            //        else if (item.PropertyType == typeof (MinMaxStat))
+            //        else if (item.PropertyType == typeof(MinMaxStat))
             //        {
             //            item.SetValue(this, new MinMaxStat(0, 0), props);
             //        }
-            //        else if (item.PropertyType == typeof (string) && item.Name == "Name")
+            //        else if (item.PropertyType == typeof(string) && item.Name == "Name")
             //        {
             //            item.SetValue(this, "!MISSING!!NAME!", props);
             //        }

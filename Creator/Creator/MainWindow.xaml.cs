@@ -728,7 +728,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as ArmorType;
                     var window = new MinMaxStatWindow(item.Armor);
                     CenterWindow(window);
-                    item.Armor = window.ValueInt;
+                    item.Armor = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -743,7 +743,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as ShieldType;
                     var window = new MinMaxStatWindow(item.BlockChance);
                     CenterWindow(window);
-                    item.BlockChance = window.ValueInt;
+                    item.BlockChance = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -758,7 +758,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as ShieldType;
                     var window = new MinMaxStatWindow(item.BlockAmount);
                     CenterWindow(window);
-                    item.BlockAmount = window.ValueInt;
+                    item.BlockAmount = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -773,7 +773,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as WeaponType;
                     var window = new MinMaxStatWindow(item.Accuracy);
                     CenterWindow(window);
-                    item.Accuracy = window.ValueInt;
+                    item.Accuracy = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -803,7 +803,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as WeaponType;
                     var window = new MinMaxStatWindow(item.MinDamage);
                     CenterWindow(window);
-                    item.MinDamage = window.ValueInt;
+                    item.MinDamage = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -818,7 +818,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as WeaponType;
                     var window = new MinMaxStatWindow(item.MaxDamage);
                     CenterWindow(window);
-                    item.MaxDamage = window.ValueInt;
+                    item.MaxDamage = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -833,7 +833,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as WeaponType;
                     var window = new MinMaxStatWindow(item.ArmorPenetration);
                     CenterWindow(window);
-                    item.ArmorPenetration = window.ValueInt;
+                    item.ArmorPenetration = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -848,7 +848,7 @@ namespace Creator
                     var item = DataGridItemsAll.SelectedItem as WeaponType;
                     var window = new MinMaxStatWindow(item.Deflection);
                     CenterWindow(window);
-                    item.Deflection = window.ValueInt;
+                    item.Deflection = window.ValueFloat;
                     RefreshItems();
                 }
             }
@@ -885,7 +885,7 @@ namespace Creator
                 var item = DataGridItemsAll.SelectedItem as ItemType;
                 var window = new MinMaxStatTypeWindow(item.RequiredStats);
                 CenterWindow(window);
-                item.RequiredStats = window.ValueInt;
+                item.RequiredStats = window.ValueFloat;
                 RefreshItems();
             }
         }
@@ -1631,7 +1631,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.MinDamage);
                 CenterWindow(window);
-                entity.MinDamage = window.ValueInt;
+                entity.MinDamage = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1645,7 +1645,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.MaxDamage);
                 CenterWindow(window);
-                entity.MaxDamage = window.ValueInt;
+                entity.MaxDamage = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1659,7 +1659,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.Armor);
                 CenterWindow(window);
-                entity.Armor = window.ValueInt;
+                entity.Armor = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1673,7 +1673,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.Accuracy);
                 CenterWindow(window);
-                entity.Accuracy = window.ValueInt;
+                entity.Accuracy = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1715,7 +1715,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.ArmorPenetration);
                 CenterWindow(window);
-                entity.ArmorPenetration = window.ValueInt;
+                entity.ArmorPenetration = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1729,7 +1729,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.CriticalChance);
                 CenterWindow(window);
-                entity.CriticalChance = window.ValueInt;
+                entity.CriticalChance = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1743,7 +1743,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.CriticalDamage);
                 CenterWindow(window);
-                entity.CriticalDamage = window.ValueInt;
+                entity.CriticalDamage = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1757,7 +1757,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.BlockAmount);
                 CenterWindow(window);
-                entity.BlockAmount = window.ValueInt;
+                entity.BlockAmount = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1771,7 +1771,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.BlockChance);
                 CenterWindow(window);
-                entity.BlockChance = window.ValueInt;
+                entity.BlockChance = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1785,7 +1785,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.Evasion);
                 CenterWindow(window);
-                entity.Evasion = window.ValueInt;
+                entity.Evasion = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }
@@ -1799,7 +1799,7 @@ namespace Creator
                     GenerationStorage.Instance.Entities[(DataGridMonsterAllItems.SelectedItem as EntityType).ID];
                 var window = new MinMaxStatWindow(entity.Deflection);
                 CenterWindow(window);
-                entity.Deflection = window.ValueInt;
+                entity.Deflection = window.ValueFloat;
                 RefreshAllMonstersControls();
             }
         }

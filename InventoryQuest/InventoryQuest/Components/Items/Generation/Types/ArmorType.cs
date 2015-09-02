@@ -5,7 +5,7 @@ namespace InventoryQuest.Components.Items.Generation.Types
     [Serializable]
     public class ArmorType : ItemType
     {
-        private MinMaxStat _Armor;
+        private MinMaxStat _Armor = new MinMaxStat();
 
         public ArmorType()
         {
