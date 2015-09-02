@@ -1736,6 +1736,12 @@
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>mace 1h</Type>
@@ -2964,8 +2970,15 @@
     <ArmorType>
       <Name>Torn Pants</Name>
       <ID>38</ID>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Cloth</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>legs</Type>
@@ -2981,8 +2994,15 @@
     <ArmorType>
       <Name>Desert Pants</Name>
       <ID>39</ID>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Cloth</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>legs</Type>
@@ -2998,8 +3018,15 @@
     <ArmorType>
       <Name>Traveler's Pants</Name>
       <ID>40</ID>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Light</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>legs</Type>
@@ -3015,8 +3042,15 @@
     <ArmorType>
       <Name>Plated Pants</Name>
       <ID>41</ID>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Heavy</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>legs</Type>
@@ -3032,8 +3066,15 @@
     <ArmorType>
       <Name>Plate Leggings</Name>
       <ID>42</ID>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Heavy</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>legs</Type>
@@ -3046,6 +3087,41 @@
       <DropLevel>27</DropLevel>
       <RequiredStats />
     </ArmorType>
+    <ArmorType>
+      <Name>Biggins</Name>
+      <ID>43</ID>
+      <Type>Helmet</Type>
+      <Skill>Cloth</Skill>
+      <Durability>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>50</MinMaxLevel>
+        <MaxMaxLevel>58</MaxMaxLevel>
+      </Durability>
+      <ImageID>
+        <PairTypeItem>
+          <Type>head</Type>
+          <Item>cap_0_black</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>head</Type>
+          <Item>cap_0_blue</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>head</Type>
+          <Item>cap_0_linen</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>head</Type>
+          <Item>cap_0_red</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <Rarity>Poor</Rarity>
+      <RequiredLevel>4</RequiredLevel>
+      <DropLevel>4</DropLevel>
+      <RequiredStats />
+    </ArmorType>
   </Armors>
   <Shields>
     <ShieldType>
@@ -3054,6 +3130,12 @@
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>shield</Type>
@@ -3065,6 +3147,18 @@
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
       <RequiredStats />
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
     </ShieldType>
     <ShieldType>
       <Name>Makeshift Board Shield</Name>
@@ -3072,6 +3166,12 @@
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>shield</Type>
@@ -3083,6 +3183,18 @@
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
       <RequiredStats />
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
     </ShieldType>
     <ShieldType>
       <Name>Round Shield</Name>
@@ -3090,6 +3202,12 @@
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>shield</Type>
@@ -3109,6 +3227,18 @@
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
       <RequiredStats />
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
     </ShieldType>
     <ShieldType>
       <Name>Kite Shield</Name>
@@ -3116,6 +3246,12 @@
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
       <ImageID>
         <PairTypeItem>
           <Type>shield</Type>
@@ -3139,6 +3275,18 @@
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
       <RequiredStats />
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
     </ShieldType>
   </Shields>
   <OffHands />
