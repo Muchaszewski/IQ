@@ -75,6 +75,7 @@
     <Compile Include="Assets\AreaImageController.cs" />
     <Compile Include="Assets\CombatLineManager.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\FloatingTextAnimation.cs" />
     <Compile Include="Assets\Scripts\EquipmentSlot.cs" />
     <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\FightController.cs" />
