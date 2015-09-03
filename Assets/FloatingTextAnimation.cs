@@ -34,11 +34,16 @@ public class FloatingTextAnimation : MonoBehaviour
             transform.localScale = Vector3.zero;
         }
         _currentWidthMod = Random.Range(AnimationMinWidth, AnimationMaxWidth);
+
+        // TEMP: RANDOM VALUES
+        _text.text = Mathf.Round(Random.Range(1, 10)).ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // Increase size
         _currentAnimationTime += Time.deltaTime;
         if (IsIncreasingInSize)
         {
@@ -53,19 +58,28 @@ public class FloatingTextAnimation : MonoBehaviour
             }
         }
 
+        // Move vertically
         transform.AddY(AnimationHeight / (TimeForAnimation * 100f));
-
-        if (_currentAnimationTime >= TimeForAlphaFade)
-        {
-            var alphaMod = (1 / (TimeForAnimation - TimeForAlphaFade)) * Time.deltaTime;
-            _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, _text.color.a - alphaMod);
-        }
+        // Move sideways
         if (TimeForTurn <= _currentAnimationTime)
         {
             var mod = (_currentWidthMod / (TimeForAnimation - TimeForTurn)) * Time.deltaTime;
             mod = IsRandomizingSide ? mod : TransformUtils.RandomBool() ? mod : -mod;
             transform.AddX(mod);
         }
+
+
+
+        // Reduce Alpha
+        if (_currentAnimationTime >= TimeForAlphaFade)
+        {
+            var alphaMod = (1 / (TimeForAnimation - TimeForAlphaFade)) * Time.deltaTime;
+            _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, _text.color.a - alphaMod);
+        }
+
+
+
+        // Destroy
         if (TimeForAnimation <= _currentAnimationTime)
         {
             Destroy(gameObject);
