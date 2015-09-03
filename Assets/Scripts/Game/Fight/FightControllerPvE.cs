@@ -364,8 +364,9 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         /// <param name="me">Attacking entity</param>
         /// <param name="target">Target entity</param>
-        public override void Attack(Entity me, Entity target)
+        public override string Attack(Entity me, Entity target)
         {
+            string returnMessage = "";
             BattleLog.Append(me.Name + " attacked... ");
 
             //Use Stamina
@@ -405,7 +406,7 @@ namespace InventoryQuest.Game.Fight
                 if (RandomNumberGenerator.BoolRandom(evasion))
                 {
                     BattleLog.AppendLine("but missed.");
-                    return;
+                    return "/m" + "missed";
                 }
 
                 //Deflection
@@ -424,7 +425,7 @@ namespace InventoryQuest.Game.Fight
                 if (RandomNumberGenerator.BoolRandom(deflection))
                 {
                     BattleLog.AppendLine("but " + target.Name + " parried.");
-                    return;
+                    return "/p" + "parried";
                 }
 
                 //Block
@@ -444,11 +445,13 @@ namespace InventoryQuest.Game.Fight
                 {
                     blockAmount = target.Stats.BlockAmount.Extend;
                     BattleLog.AppendLine(target.Name + " blocked " + block + " damage, ");
+                    returnMessage += "/b" + "blocked" + "@";
                 }
             }
             else
             {
                 BattleLog.AppendLine(" since " + target.Name + " is exhausted you ");
+                returnMessage += "/e" + "exhausted" + "@";
             }
 
             //Attack
@@ -496,11 +499,14 @@ namespace InventoryQuest.Game.Fight
                 {
                     target.Stats.HealthPoints.Current -= finalDamage;
                 }
+                return returnMessage + "/c" + critical + "@" + finalDamage;
             }
             else
             {
                 BattleLog.AppendLine("dealt no damage." +
                                      (absorbedDamage > 0 ? " (armor soaked " + absorbedDamage + ")" : ""));
+                returnMessage += "/a" + "@";
+                return returnMessage + "0";
             }
         }
 

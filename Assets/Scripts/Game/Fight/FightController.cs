@@ -228,6 +228,6 @@ namespace InventoryQuest.Game.Fight
             IsFight = true;
         }
 
-        public abstract void Attack(Entity me, Entity target);
+        public abstract string Attack(Entity me, Entity target);
     }
 }
