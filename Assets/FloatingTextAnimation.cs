@@ -28,6 +28,7 @@ public class FloatingTextAnimation : MonoBehaviour
     private Text _text;
     private RectTransform _rectTransform;
     private Vector3 _initialSize;
+    private Outline _outline;
 
     private float _currentAnimationTime = 0f;
     private float _currentWidthMod;
@@ -37,6 +38,7 @@ public class FloatingTextAnimation : MonoBehaviour
     {
         _rectTransform = GetComponent<RectTransform>();
         _text = GetComponent<Text>();
+        _outline = GetComponent<Outline>();
         _initialSize = transform.localScale;
         if (IsIncreasingInSize)
         {
@@ -81,6 +83,7 @@ public class FloatingTextAnimation : MonoBehaviour
         {
             var alphaMod = (1 / (TimeForAnimation - TimeForAlphaFade)) * Time.deltaTime;
             _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, _text.color.a - alphaMod);
+            _outline.effectColor = new Color(_outline.effectColor.r, _outline.effectColor.g, _outline.effectColor.b, _outline.effectColor.a - alphaMod);
         }
 
 
