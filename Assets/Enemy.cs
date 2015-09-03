@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
 
     public bool IsRightSide = true;
     public int EntityID;
+    public GameObject FloatingText;
 
     private float _progress;
     private Entity _entityData;
@@ -63,5 +64,8 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     {
         CurrentGame.Instance.FightController.Target = EntityData;
         CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
+        var text = Instantiate(FloatingText);
+        text.transform.SetParent(transform.parent);
+        text.transform.position = transform.position;
     }
 }

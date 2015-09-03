@@ -83,6 +83,13 @@ public static class TransformUtils
         return transform;
     }
 
+    public static Transform AddScale(this Transform transform, Vector3 vector)
+    {
+        var newTransform = new Vector3(transform.localScale.x + vector.x, transform.localScale.y + vector.y, transform.localScale.z + vector.z);
+        transform.localScale = newTransform;
+        return transform;
+    }
+
     #endregion
 
     #region Rotation
@@ -146,7 +153,7 @@ public static class TransformUtils
     #endregion
 
     #region Random
-    public static bool Bool(this Random random)
+    public static bool RandomBool()
     {
         return (Random.value > 0.5f);
     }
@@ -156,7 +163,7 @@ public static class TransformUtils
     /// </summary>
     /// <param name="chance">Value between 0f and 1f</param>
     /// <returns></returns>
-    public static bool Chance(this Random random, float chance)
+    public static bool RandomChance(float chance)
     {
         return (Random.value > chance);
     }
