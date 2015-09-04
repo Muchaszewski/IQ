@@ -2241,7 +2241,6 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &294032619
 MonoBehaviour:
@@ -2904,15 +2903,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_FontData.m_Alignment
@@ -3008,15 +3007,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
       propertyPath: m_FontData.m_Alignment
@@ -3080,6 +3079,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747bfb46072f6c847a8f69d85f561857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &380696413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 380696407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 0
 --- !u!1 &393290393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,46 +6626,6 @@ Prefab:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
-    - target: {fileID: 11458054, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: ValueName
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458054, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: BackgroundColor.r
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458054, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: BackgroundColor.g
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458054, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: BackgroundColor.b
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458054, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: BarColor.r
-      value: .490196109
-      objectReference: {fileID: 0}
-    - target: {fileID: 11480656, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: m_Color.r
-      value: .490196109
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489064, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: m_Color.r
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489064, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: m_Color.g
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489064, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: m_Color.b
-      value: .145098045
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489064, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
   m_IsPrefabParent: 0
@@ -9778,6 +9751,20 @@ MonoBehaviour:
   value: 0
   entityStatType: 0
   statName: 
+--- !u!114 &1267776880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267776874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1273066202
 GameObject:
   m_ObjectHideFlags: 0
@@ -10044,7 +10031,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &1302697334
 Transform:
   m_ObjectHideFlags: 0
@@ -15910,7 +15896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22477320, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 107.400002
+      value: 420
       objectReference: {fileID: 0}
     - target: {fileID: 22477320, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_SizeDelta.x

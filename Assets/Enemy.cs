@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     public bool IsRightSide = true;
     public int EntityID;
     public GameObject FloatingText;
+    public Vector3 floatingTextPosition;
 
     private float _progress;
     private Entity _entityData;
@@ -35,30 +36,27 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        _progress = EntityData.Position;
-        float position = 0;
-        if (_progress < 0)
-        {
-            position = _progress - MinCombatPosition;
-            if (MaxCombatPosition < Mathf.Abs(position))
-            {
-                position = -MaxCombatPosition;
-            }
-        }
-        else
-        {
-            position = _progress + MinCombatPosition;
-            if (MaxCombatPosition < Mathf.Abs(position))
-            {
-                position = MaxCombatPosition;
-            }
-        }
 
-        _rectTransform.anchoredPosition = new Vector2(position, 0);
+        // Death
         if (EntityData.Stats.HealthPoints.Current <= 0)
         {
             Destroy(this.gameObject);
         }
+
+        _progress = EntityData.Position;
+        float position = 0;
+
+        // Update position
+        position = _progress + ( _progress < 0 ? -MinCombatPosition : MinCombatPosition);
+        // Enemey out of bounds
+        if (Mathf.Abs(position) > MaxCombatPosition)
+        {
+            position = _progress < 0 ? -MaxCombatPosition : MaxCombatPosition;
+        }
+
+        // Apply position
+        _rectTransform.anchoredPosition = new Vector2(position, 0);
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -122,7 +120,8 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         }
         if (float.TryParse(splitted[splitted.Length - 1], out number))
         {
-            text.text = number.ToString("#.#");
+            //text.text = number.ToString("#.#");
+            text.text = number.ToString("#");
         }
         else
         {
@@ -130,6 +129,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         }
 
         text.transform.SetParent(transform.parent.parent);
-        text.transform.position = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 30f;
+        //text.transform.position = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 30f;
+        text.transform.position = transform.position + floatingTextPosition;
     }
 }

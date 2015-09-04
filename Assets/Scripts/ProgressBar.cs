@@ -1,13 +1,13 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using InventoryQuest.Components.Entities;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
 using UnityEngine.UI;
-
 
 public class ProgressBar : MonoBehaviour
 {
@@ -94,4 +94,5 @@ public class ProgressBar : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
+
 }
