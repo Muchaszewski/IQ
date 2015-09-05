@@ -189,7 +189,7 @@ public class ToolTipManager : UILabelManager
 
     void CreateHeader(InventoryQuest.Components.Items.Item item)
     {
-        if (item.ExtraName == null && item.ExtraName == String.Empty)
+        if (item.ExtraName == null || item.ExtraName == String.Empty)
         {
             AddLabel(new Vector2(0, 30), item.Name, 35, CurrentRarityColor, TextAnchor.MiddleCenter);
         }
@@ -363,7 +363,7 @@ public class ToolTipManager : UILabelManager
                     {
                         EnumStatItemPartType.BaseType,
                         EnumStatItemPartType.CharacterType,
-                        EnumStatItemPartType.ArmorType,
+                        EnumStatItemPartType.ShieldType,
                         EnumStatItemPartType.WeaponType,
                     }, item);
                 break;

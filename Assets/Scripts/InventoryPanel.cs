@@ -221,13 +221,18 @@ public class InventoryPanel : MonoBehaviour
                     GetAndSetPosition(itemIcon, oldKey);
                     return;
                 }
+                TakeOutItemFromSlot(itemIcon);
+                return;
             }
         }
 
         if (inventoryItem == null)
         {
+            //Get current item and remove it from unity list
             ItemsPanel.Remove(oldKey);
+            //Swap item in dll to match new setup
             inventory.MoveItem(oldKey, newKey);
+            //Add again item at new position to match dll new setup
             ItemsPanel.Add(newKey, itemIcon);
             GetAndSetPosition(itemIcon, newKey);
         }
@@ -255,10 +260,15 @@ public class InventoryPanel : MonoBehaviour
             var shield = ItemsPanel.FirstOrDefault(x => x.Key == -shieldSlotIndex - 1);
             if (shield.Value != null)
             {
+                var free = CurrentGame.Instance.Player.Inventory.GetNewIndex();
                 ItemsPanel.Remove(-shieldSlotIndex - 1);
-                CurrentGame.Instance.Player.Inventory.AddItem(shield.Value.ItemData);
+                inventory.MoveItem(-shieldSlotIndex - 1, free);
+                ItemsPanel.Add(free, shield.Value);
+                GetAndSetPosition(shield.Value, free);
+                ResizeItemIcon(shield.Value);
             }
         }
+
         //If Shield is perform to equip and you already have two handed weapon
         if (itemIcon.ItemData.ValidSlot == EnumItemSlot.OffHand)
         {
@@ -268,8 +278,12 @@ public class InventoryPanel : MonoBehaviour
             {
                 if (weapon.Value.ItemData.RequiredHands == EnumItemHands.TwoHanded)
                 {
+                    var free = CurrentGame.Instance.Player.Inventory.GetNewIndex();
                     ItemsPanel.Remove(-weaponSlotIndex - 1);
-                    CurrentGame.Instance.Player.Inventory.AddItem(weapon.Value.ItemData);
+                    inventory.MoveItem(-weaponSlotIndex - 1, free);
+                    ItemsPanel.Add(free, weapon.Value);
+                    GetAndSetPosition(weapon.Value, free);
+                    ResizeItemIcon(weapon.Value);
                 }
             }
 
@@ -278,6 +292,20 @@ public class InventoryPanel : MonoBehaviour
         ResizeInventoryPanel();
     }
 
+    public void TakeOutItemFromSlot(ItemIcon itemIcon)
+    {
+        int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        if (oldKey < 0)
+        {
+            var inventory = CurrentGame.Instance.Player.Inventory;
+            var free = CurrentGame.Instance.Player.Inventory.GetNewIndex();
+            ItemsPanel.Remove(oldKey);
+            inventory.MoveItem(oldKey, free);
+            ItemsPanel.Add(free, itemIcon);
+            GetAndSetPosition(itemIcon, free);
+            ResizeItemIcon(itemIcon);
+        }
+    }
 
     /// <summary>
     /// Move element to Canvas and resize it to userfrendly scale
@@ -371,11 +399,44 @@ public class InventoryPanel : MonoBehaviour
     public void PopulateInventory()
     {
         ClearInventory();
-        Debug.Log(ItemsPanel.Count);
         foreach (var item in CurrentGame.Instance.Player.Inventory.Items)
         {
             _ItemsPanel.Add(item.Key, CreateItemIcon(item.Key, item.Value));
             ResizeInventoryPanel();
+        }
+    }
+
+    public void SortInventory()
+    {
+        var items = CurrentGame.Instance.Player.Inventory.Items;
+        var equipment = items.Where(x => x.Key < 0).ToList();
+        foreach (var item in equipment)
+        {
+            items.Remove(item.Key);
+        }
+        var list = items.Values.ToList();
+        list.Sort(new InventoryConparer<Item>());
+        CurrentGame.Instance.Player.Inventory.Items.Clear();
+        foreach (var item in equipment)
+        {
+            items.Add(item.Key, item.Value);
+        }
+        for (int i = 0; i < list.Count; i++)
+        {
+            items.Add(i, list[i]);
+        }
+        PopulateInventory();
+    }
+
+    class InventoryConparer<T> : IComparer<T> where T : Item
+    {
+        public int Compare(T x, T y)
+        {
+            int result = y.Rarity.CompareTo(x.Rarity);
+            if (result != 0) { return result; }
+            result = x.Type.CompareTo(y.Type);
+            if (result != 0) { return result; }
+            return x.ItemLevel.CompareTo(y.ItemLevel);
         }
     }
     #endregion
