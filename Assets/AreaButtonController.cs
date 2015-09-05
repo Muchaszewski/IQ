@@ -27,11 +27,11 @@ public class AreaButtonController : MonoBehaviour
     {
         _spotName = transform.GetChild(0).GetComponent<Text>();
         _spotLevel = transform.GetChild(1).GetComponent<Text>();
-        var _spotCat = transform.GetChild(2).GetComponent<Text>();
+        //var _spotCat = transform.GetChild(2).GetComponent<Text>();
+        //_spotCat.text = Spot.Category;
 
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
-        _spotCat.text = Spot.Category;
         GetComponent<Button>().onClick.AddListener(() => ChangeSpot());
     }
 
