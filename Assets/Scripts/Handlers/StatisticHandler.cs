@@ -56,7 +56,6 @@ public class StatisticHandler : MonoBehaviour
                 var reflectedType = _player.Stats.GetType();
                 var reflectedField = reflectedType.GetProperty(stat.ToString());
                 var reflectedValue = reflectedField.GetValue(_player.Stats, null);
-
                 if (reflectedValue.GetType() == typeof(StatValueFloat))
                 {
                     StatReference = _player.Stats.GetStatFloatByEnum(stat);

@@ -189,7 +189,7 @@ public class ToolTipManager : UILabelManager
 
     void CreateHeader(InventoryQuest.Components.Items.Item item)
     {
-        if (item.ExtraName == null)
+        if (item.ExtraName == null && item.ExtraName == String.Empty)
         {
             AddLabel(new Vector2(0, 30), item.Name, 35, CurrentRarityColor, TextAnchor.MiddleCenter);
         }
@@ -363,7 +363,7 @@ public class ToolTipManager : UILabelManager
                     {
                         EnumStatItemPartType.BaseType,
                         EnumStatItemPartType.CharacterType,
-                        EnumStatItemPartType.ShieldType,
+                        EnumStatItemPartType.ArmorType,
                         EnumStatItemPartType.WeaponType,
                     }, item);
                 break;
@@ -456,7 +456,7 @@ public class ToolTipManager : UILabelManager
                     topMargin += magicAttributeLabelHeight;
                     AddLabel(
                         new Vector2(magicAttributeLabelMargin, topMargin),
-                        "+" + stat.Current.ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                        "+" + stat.Current.ToString("0.##") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                         20,
                         CurrentRarityColor,
                         TextAnchor.UpperLeft
@@ -469,7 +469,7 @@ public class ToolTipManager : UILabelManager
                 topMargin += magicAttributeLabelHeight;
                 AddLabel(
                     new Vector2(magicAttributeLabelMargin, topMargin),
-                    "+" + (stat.Extend - stat.Base).ToString("0.xx") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
+                    "+" + (stat.Extend - stat.Base).ToString("0.##") + " " + TypeStatsUtils.GetNameAttribute((int)stat.Type + 1).LongName,
                     20,
                     CurrentRarityColor,
                     TextAnchor.UpperLeft
@@ -493,7 +493,7 @@ public class ToolTipManager : UILabelManager
         // The window often does not display correctly when this if case does not fire
         // I have no idea why.
 
-        if (item.FlavorText != null)
+        if (item.FlavorText != null && item.FlavorText != String.Empty)
         {
             int topMargin = _currentHeight;
             topMargin += 12;

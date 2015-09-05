@@ -11,6 +11,7 @@ public class CombatLineManager : MonoBehaviour
     public void OnEnable()
     {
         FightController.onCreatingEnemies += FightController_onCreatingEnemies;
+        FightController_onCreatingEnemies(this, new FightControllerEventArgs(CurrentGame.Instance.FightController, null));
     }
     void OnDisable()
     {

@@ -203,6 +203,13 @@ public class InventoryPanel : MonoBehaviour
         ItemIcon inventoryItem;
         ItemsPanel.TryGetValue(newKey, out inventoryItem);
 
+        //Dont put item if it is level above player
+        if (CurrentGame.Instance.Player.Level < itemIcon.ItemData.RequiredLevel)
+        {
+            GetAndSetPosition(itemIcon, oldKey);
+            return;
+        }
+
         //BUG If swap out from equipment to inventory 
         //Implemented special behavior
         if (inventoryItem != null)

@@ -167,6 +167,39 @@ public static class TransformUtils
     {
         return (Random.value > chance);
     }
+
+    /// <summary>
+    ///   Generates normally distributed numbers. Each operation makes two Gaussians for the price of one;
+    /// </summary>
+    /// <param name="r"></param>
+    /// <param name = "mean">Mean of the distribution</param>
+    /// <param name = "sigma">Standard deviation</param>
+    /// <returns></returns>
+    public static float RandomGaussian(float mean = 0, float sigma = 1f)
+    {
+        float u1 = Random.value; //these are uniform(0,1) random doubles
+        float u2 = Random.value;
+        float randStdNormal = Mathf.Sqrt(-2f * Mathf.Log(u1)) *
+                     Mathf.Sin(2f * Mathf.PI * u2); //random normal(0,1)
+        float randNormal =
+                     mean + sigma * randStdNormal; //random normal(mean,stdDev^2)
+        return randNormal;
+    }
+
+    /// <summary>
+    /// Generate Gaussian [0,1) values with small percent of chance beeing above 1
+    /// </summary>
+    /// <param name="mean"></param>
+    /// <param name="sigma"></param>
+    /// <returns></returns>
+    public static float RandomNormalizedGaussian(float mean = 0, float sigma = 1f)
+    {
+        var gauss = RandomGaussian(mean, sigma);
+        gauss = (gauss + 3) / 6;
+        var abs = Mathf.Abs(gauss);
+        return abs;
+    }
+
     #endregion
 }
 
