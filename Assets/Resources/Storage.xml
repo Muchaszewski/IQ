@@ -914,6 +914,7 @@
     <WeaponType>
       <Name>Knight's Sword</Name>
       <ID>1</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Sword</Type>
       <Skill>Sword</Skill>
@@ -1669,9 +1670,9 @@
       <Range>2</Range>
     </WeaponType>
     <WeaponType>
-      <Name>Joyeuse</Name>
+      <Name>Knight's Sword</Name>
       <ID>13</ID>
-      <ExtraName />
+      <ExtraName>Joyeuse</ExtraName>
       <BaseStatsAllowed />
       <Type>Sword</Type>
       <Skill>Sword</Skill>
@@ -1733,9 +1734,9 @@
       <Range>1</Range>
     </WeaponType>
     <WeaponType>
-      <Name>Hammer of Justice</Name>
+      <Name>Battle Hammer</Name>
       <ID>14</ID>
-      <ExtraName>Battle Hammer</ExtraName>
+      <ExtraName>Hammer of Justice</ExtraName>
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
@@ -2171,9 +2172,9 @@ Here, the screams electrified.</FlavorText>
       <Range>1</Range>
     </WeaponType>
     <WeaponType>
-      <Name>Hammer of Fiery Justice</Name>
+      <Name>Battle Hammer</Name>
       <ID>21</ID>
-      <ExtraName />
+      <ExtraName>Hammer of Fiery Justice</ExtraName>
       <BaseStatsAllowed />
       <Type>Mace</Type>
       <Skill>Mace</Skill>
