@@ -51,6 +51,163 @@ namespace InventoryQuest.Components.Generation.Items
             return null;
         }
 
+        /// <summary>
+        /// WARNING VERY ADAVANCE TOOL FOR CREATING ITEM(S) REQUIRE A LOT OF TIME TO CREATE
+        /// </summary>
+        /// <param name="level">Desire level that item shoudl spawn with</param>
+        /// <param name="matchRarity">Rarity that item is signed with or poor to select all</param>
+        /// <param name="rarity">Rarity that item shoudl spawn with</param>
+        /// <param name="type">Type of item for precisiton, can NOT be NULL</param>
+        /// <param name="matchStrings">String array to match with names, extra names, flavorTexts, WARNING String.Empty or Null will create every item in the game of given type</param>
+        /// <returns></returns>
+        public static Item[] CreateCustomItems(int level, EnumItemRarity matchRarity, EnumItemRarity rarity, EnumItemType type, params string[] matchStrings)
+        {
+            var list = new List<Item>();
+            int enumItemType = (int)type;
+            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            {
+                foreach (var armorType in GenerationStorage.Instance.Armors)
+                {
+                    foreach (var matchString in matchStrings)
+                    {
+                        if ((String.Equals(armorType.Name, matchString, StringComparison.CurrentCultureIgnoreCase) ||
+                            String.Equals(armorType.ExtraName, matchString, StringComparison.CurrentCultureIgnoreCase) ||
+                            String.Equals(armorType.FlavorText, matchString, StringComparison.CurrentCultureIgnoreCase)
+                            ) && 
+                            (armorType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                        {
+                            var itemList = new ItemsLists();
+                            itemList.ArmorTypeID.Add(new GenerationWeight() {ID = armorType.ID, Weight = 100});
+                            list.Add(CreateArmorItem(level,
+                                itemList,
+                                rarity,
+                                type));
+
+                        }
+                    }
+                }
+            }
+            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            {
+                //TODO
+                //foreach (var jeweleryType in GenerationStorage.Instance.Jewelery)
+                //{
+                //    foreach (var matchString in matchStrings)
+                //    {
+                //        if ((jeweleryType.Name.ToLower() == matchString.ToLower() ||
+                //            jeweleryType.ExtraName.ToLower() == matchString.ToLower() ||
+                //            jeweleryType.FlavorText.ToLower() == matchString.ToLower()
+                //            ) &&
+                //            (jeweleryType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                //        {
+                //            var itemList = new ItemsLists();
+                //            itemList.JewelerTypeID.Add(new GenerationWeight() { ID = jeweleryType.ID, Weight = 100 });
+                //            list.Add(CreateOffHandItem(level,
+                //                itemList,
+                //                rarity,
+                //                type));
+
+                //        }
+                //    }
+                //}
+            }
+            else if (enumItemType == 11) //Shields
+            {
+                foreach (var shieldType in GenerationStorage.Instance.Shields)
+                {
+                    foreach (var matchString in matchStrings)
+                    {
+                        if ((String.Equals(shieldType.Name, matchString, StringComparison.CurrentCultureIgnoreCase) ||
+                            String.Equals(shieldType.ExtraName, matchString, StringComparison.CurrentCultureIgnoreCase) ||
+                            String.Equals(shieldType.FlavorText, matchString, StringComparison.CurrentCultureIgnoreCase)
+                            ) &&
+                            (shieldType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                        {
+                            var itemList = new ItemsLists();
+                            itemList.ShieldTypeID.Add(new GenerationWeight() { ID = shieldType.ID, Weight = 100 });
+                            list.Add(CreateShieldItem(level,
+                                itemList,
+                                rarity,
+                                type));
+
+                        }
+                    }
+                }
+            }
+            else if (enumItemType == 12) //Offhand
+            {
+                foreach (var offHandType in GenerationStorage.Instance.OffHands)
+                {
+                    foreach (var matchString in matchStrings)
+                    {
+                        if ((offHandType.Name.ToLower() == matchString.ToLower() ||
+                            offHandType.ExtraName.ToLower() == matchString.ToLower() ||
+                            offHandType.FlavorText.ToLower() == matchString.ToLower()
+                            ) &&
+                            (offHandType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                        {
+                            var itemList = new ItemsLists();
+                            itemList.OffHandTypeID.Add(new GenerationWeight() { ID = offHandType.ID, Weight = 100 });
+                            list.Add(CreateOffHandItem(level,
+                                itemList,
+                                rarity,
+                                type));
+
+                        }
+                    }
+                }
+            }
+            //13 is Unarmed
+            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            {
+                foreach (var weaponType in GenerationStorage.Instance.Weapons)
+                {
+                    foreach (var matchString in matchStrings)
+                    {
+                        if ((weaponType.Name.ToLower() == matchString.ToLower() ||
+                            weaponType.ExtraName.ToLower() == matchString.ToLower() ||
+                            weaponType.FlavorText.ToLower() == matchString.ToLower()
+                            ) &&
+                            (weaponType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                        {
+                            var itemList = new ItemsLists();
+                            itemList.WeaponTypeID.Add(new GenerationWeight() { ID = weaponType.ID, Weight = 100 });
+                            list.Add(CreateWeaponItem(level,
+                                itemList,
+                                rarity,
+                                type));
+
+                        }
+                    }
+                }
+            }
+            else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+            {
+                //TODO
+                //foreach (var loreType in GenerationStorage.Instance.Lore)
+                //{
+                //    foreach (var matchString in matchStrings)
+                //    {
+                //        if ((loreType.Name.ToLower() == matchString.ToLower() ||
+                //            loreType.ExtraName.ToLower() == matchString.ToLower() ||
+                //            loreType.FlavorText.ToLower() == matchString.ToLower()
+                //            ) &&
+                //            (loreType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
+                //        {
+                //            var itemList = new ItemsLists();
+                //            itemList.LoreTypeID.Add(new GenerationWeight() { ID = loreType.ID, Weight = 100 });
+                //            CreateArmorItem(level,
+                //                itemList,
+                //                rarity,
+                //                type);
+                //        }
+                //    }
+                //}
+            }
+
+            return null;
+        }
+
         private static Item ChooseItemType(int level, GenerationWeightLists listID,
             EnumItemRarity rarity = EnumItemRarity.Poor)
         {

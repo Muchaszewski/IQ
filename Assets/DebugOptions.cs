@@ -10,6 +10,10 @@ public class DebugOptions : MonoBehaviour
 {
     private int _equipmentSlider = 1;
     private EnumItemRarity _rarity = EnumItemRarity.Mythical;
+    private EnumItemRarity _matchRarity = EnumItemRarity.Poor;
+    private EnumItemType _enumItemType;
+    private string _name = "Put item name here";
+    private int _level = 1;
 
     public void OnGUI()
     {
@@ -27,7 +31,7 @@ public class DebugOptions : MonoBehaviour
 
         //ADD ITEMS ADV
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Add random item"))
+        if (GUILayout.Button("Add random item from current spot"))
         {
             for (int i = 0; i < _equipmentSlider; i++)
             {
@@ -42,6 +46,29 @@ public class DebugOptions : MonoBehaviour
         _equipmentSlider = (int)GUILayout.HorizontalSlider(_equipmentSlider, 1, 100);
         GUILayout.Label(_equipmentSlider.ToString());
         GUILayout.EndHorizontal();
+
+        //GUILayout.Space(3);
+
+        //GUILayout.BeginHorizontal();
+        //_name = GUILayout.TextField(_name);
+        //int.TryParse(GUILayout.TextField(_level.ToString()), out _level);
+        //_rarity = (EnumItemRarity)EditorGUILayout.EnumPopup(_rarity);
+        //_matchRarity = (EnumItemRarity)EditorGUILayout.EnumPopup(_matchRarity);
+        //GUILayout.EndHorizontal();
+        //GUILayout.BeginHorizontal();
+        //_enumItemType = (EnumItemType)EditorGUILayout.EnumPopup(_enumItemType);
+        //if (GUILayout.Button("ADV ITEM CREATION"))
+        //{
+        //    var list = RandomItemFactory.CreateCustomItems(_level, _matchRarity, _rarity, _enumItemType, _name);
+        //    if (list != null)
+        //    {
+        //        foreach (var item in list)
+        //        {
+        //            player.Inventory.AddItem(item);
+        //        }
+        //    }
+        //}
+        //GUILayout.EndHorizontal();
         //ADD ITEMS ADV
 
         GUILayout.EndArea();

@@ -11,9 +11,23 @@ public class StatisticHandlerUpdater : MonoBehaviour
 
     private StatisticHandler _statisticHandler;
 
+    private StatValueInt _statValueInt;
+    private StatValueFloat _statValueFloat;
+
     void Start()
     {
         _statisticHandler = GetComponent<StatisticHandler>();
+        if (_statisticHandler.StatReference != null)
+        {
+            if (_statisticHandler.StatReference.GetType() == typeof(StatValueFloat))
+            {
+                _statValueFloat = (_statisticHandler.StatReference as StatValueFloat);
+            }
+            else if (_statisticHandler.StatReference.GetType() == typeof(StatValueInt))
+            {
+                _statValueInt = (_statisticHandler.StatReference as StatValueInt);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -42,13 +56,13 @@ public class StatisticHandlerUpdater : MonoBehaviour
                     _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString();
                     break;
                 }
-                if (_statisticHandler.StatReference.GetType() == typeof(StatValueFloat))
+                if (_statValueFloat != null)
                 {
-                    SetStatText(_statisticHandler.StatReference as StatValueFloat);
+                    SetStatText(_statValueFloat);
                 }
-                else if (_statisticHandler.StatReference.GetType() == typeof(StatValueInt))
+                else if (_statValueInt != null)
                 {
-                    SetStatText(_statisticHandler.StatReference as StatValueInt);
+                    SetStatText(_statValueInt);
                 }
                 break;
             case EnumStatisticHandler.Target:
@@ -78,6 +92,29 @@ public class StatisticHandlerUpdater : MonoBehaviour
             default:
                 _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
                 break;
+        }
+
+        if (_statValueFloat != null)
+        {
+            if (_statValueFloat.Extend > _statValueFloat.Base)
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsBuffColor;
+            }
+            else if (_statValueFloat.Extend < _statValueFloat.Base)
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsDebuffColor;
+            }
+        }
+        else if (_statValueInt != null)
+        {
+            if (_statValueInt.Extend > _statValueInt.Base)
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsBuffColor;
+            }
+            else if (_statValueInt.Extend < _statValueInt.Base)
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsDebuffColor;
+            }
         }
     }
 

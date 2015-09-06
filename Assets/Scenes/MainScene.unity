@@ -2662,7 +2662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &296965861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,7 +3991,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 20
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 34368955}
   m_OnValueChanged:
@@ -7221,7 +7221,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
   m_Value: 0
-  m_Size: .999130726
+  m_Size: .999130845
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8211,6 +8211,7 @@ RectTransform:
   - {fileID: 428749225}
   - {fileID: 12730487}
   - {fileID: 1492867298}
+  - {fileID: 1761014310}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -11587,7 +11588,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .25
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 20
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_OnValueChanged:
@@ -17054,15 +17055,15 @@ RectTransform:
   m_GameObject: {fileID: 1761014309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .9140625, y: .9140625, z: .9140625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 358737283}
   - {fileID: 980151871}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 853227627}
+  m_RootOrder: 12
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 682.769287, y: 14.4273071}
+  m_AnchoredPosition: {x: -213.038696, y: -524.11377}
   m_SizeDelta: {x: 609, y: 381}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1761014311
@@ -18912,6 +18913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff7337d53c96834786e6d81d77774ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StatisticsBuffColor: {r: 0, g: 0, b: 1, a: 1}
+  StatisticsDebuffColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1986830827
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,16 +4,14 @@ using InventoryQuest.Game;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public Color StatisticsBuffColor = Color.blue;
+    public Color StatisticsDebuffColor = Color.red;
 
-    }
 }
