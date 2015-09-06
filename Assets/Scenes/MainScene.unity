@@ -13388,6 +13388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaButton: {fileID: 115108, guid: 6786c2f4f5b89424b915341abd6585cd, type: 2}
+  AreaButtonCategory: {fileID: 114146, guid: 8855b2941f87cbd4b92a01c42138fab8, type: 2}
 --- !u!222 &1414563738
 CanvasRenderer:
   m_ObjectHideFlags: 0
