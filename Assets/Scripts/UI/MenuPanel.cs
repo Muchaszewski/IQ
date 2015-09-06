@@ -26,6 +26,13 @@ public class MenuPanel : MonoBehaviour
         MovableAnimator.Instance.AddToQueue(0, 3);
     }
 
+    //Middle panels
+    private bool _isShown;
+    public void ShowOptions()
+    {
+        MovableAnimator.Instance.AddToQueue(1, _isShown ? 0 : 1);
+        _isShown = !_isShown;
+    }
 
 
     // Right panels

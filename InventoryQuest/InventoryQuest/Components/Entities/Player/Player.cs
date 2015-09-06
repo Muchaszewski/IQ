@@ -257,8 +257,8 @@ namespace InventoryQuest.Components.Entities.Player
             var expected = GetToNextLevelExperience();
             if (Experience >= expected)
             {
-                Experience = Experience - expected;
                 Level++;
+                Experience = Experience - expected;
             }
         }
 

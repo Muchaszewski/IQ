@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using InventoryQuest.Game;
+using System.Linq;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class TutorialManager : MonoBehaviour
     public int MinPlayerStats = 6;
     public int MaxPlayerStats = 18;
 
-    private int[] rolledStats = new int[] { 0, 0, 0, 0, 0, 0 };
-    private int[] savedStats = new int[] { 0, 0, 0, 0, 0, 0 };
+    private int[] _rolledStats = { 0, 0, 0, 0, 0, 0 };
+    private int[] _savedStats = { 0, 0, 0, 0, 0, 0 };
 
 
     void Start()
@@ -71,20 +72,6 @@ public class TutorialManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns the sum of all the rolled stats
-    /// </summary>
-    /// <returns></returns>
-    public int CalculateRolledStatsTotal()
-    {
-        int statsSum = 0;
-        for (int i = 0; i<=5 ; i++)
-        {
-            statsSum += rolledStats[i];
-        }
-        return statsSum;
-    }
-
-    /// <summary>
     /// Generate random stats and calculate their total.
     /// </summary>
     public void RollStats()
@@ -93,13 +80,13 @@ public class TutorialManager : MonoBehaviour
         var diff = MaxPlayerStats - MinPlayerStats;
         for (int i = 0; i<=5 ; i++)
         {
-            rolledStats[i] = Mathf.CeilToInt(TransformUtils.RandomNormalizedGaussian() * diff) + MinPlayerStats;
+            _rolledStats[i] = Mathf.CeilToInt(TransformUtils.RandomNormalizedGaussian() * diff) + MinPlayerStats;
         }
-        
+
         // Display the stats
-        refreshStatsDisplay();
+        ApplyStats(_rolledStats);
         // Display the total
-        TotalStatsValue.text = CalculateRolledStatsTotal().ToString();
+        TotalStatsValue.text = _rolledStats.Sum().ToString();
     }
 
     /// <summary>
@@ -107,12 +94,7 @@ public class TutorialManager : MonoBehaviour
     /// </summary>
     public void SaveStats()
     {
-        savedStats[0] = rolledStats[0];
-        savedStats[1] = rolledStats[1];
-        savedStats[2] = rolledStats[2];
-        savedStats[3] = rolledStats[3];
-        savedStats[4] = rolledStats[4];
-        savedStats[5] = rolledStats[5];
+        _savedStats = _rolledStats;
     }
 
     /// <summary>
@@ -120,27 +102,12 @@ public class TutorialManager : MonoBehaviour
     /// </summary>
     public void LoadStats()
     {
-        rolledStats[0] = savedStats[0];
-        rolledStats[1] = savedStats[1];
-        rolledStats[2] = savedStats[2];
-        rolledStats[3] = savedStats[3];
-        rolledStats[4] = savedStats[4];
-        rolledStats[5] = savedStats[5];
+        _rolledStats = _savedStats;
 
         // Display the stats
-        refreshStatsDisplay();
+        ApplyStats(_rolledStats);
         // Display the total
-        TotalStatsValue.text = CalculateRolledStatsTotal().ToString();
-    }
-
-    /// <summary>
-    /// Temporary method that should only update the display.
-    /// The stats should be applied only after the player accepts them, and not after every roll.
-    /// The display is handled somewhere else, hence this method justs updates the stat values.
-    /// </summary>
-    private void refreshStatsDisplay()
-    {
-        ApplyStats(rolledStats);
+        TotalStatsValue.text = _rolledStats.Sum().ToString();
     }
 
     public void ChangedName()
@@ -162,7 +129,7 @@ public class TutorialManager : MonoBehaviour
     {
         var stats = CurrentGame.Instance.Player.Stats;
 
-        ApplyStats(rolledStats);
+        ApplyStats(_rolledStats);
 
         GroupStatistics.transform.parent.GetComponent<Image>().sprite = StatiscicsPanel;
         GroupStatistics.SetActive(true);
