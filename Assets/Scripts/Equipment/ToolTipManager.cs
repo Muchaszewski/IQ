@@ -30,7 +30,6 @@ public class ToolTipManager : UILabelManager
     private ItemIcon _item;
     private Canvas _canvas;
 
-
     private int _currentHeight = 0;
     //_____________________________________________________________________________________________________________
 
@@ -59,11 +58,11 @@ public class ToolTipManager : UILabelManager
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!Show || Input.GetMouseButton(0))
+        if (!Show || Input.GetMouseButton(0) || _item == null)
         {
             transform.position = new Vector3(-10000, -10000, 0);
         }
-        else
+        else 
         {
             transform.position =
                 _item.transform.position
@@ -539,4 +538,16 @@ public class ToolTipManager : UILabelManager
         base.CreateParent(position, rectTransform);
         _tootipObjects.Add(rectTransform.gameObject);
     }
+
+    //__________________________________________Static methods_____________________________________________
+
+    /// <summary>
+    /// If item should be removed and there is posibility of reference beeing set up on ToolTipManager call this method
+    /// </summary>
+    public void RemoveTooltipReference()
+    {
+        Show = true;
+        _item = null;
+    }
+
 }

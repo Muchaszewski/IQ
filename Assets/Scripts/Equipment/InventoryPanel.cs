@@ -13,6 +13,7 @@ public class InventoryPanel : MonoBehaviour
 {
     public static InventoryPanel Instance { get; set; }
     public GameObject ItemPrefab;
+    public GameObject SellItemArea;
     public int InventoryWidth = 8;
     public float InventoryScale = 0.5f;
     [Tooltip("If screen is too small for displaying new items it will resize and this is additional space after last lane of items")]
@@ -75,7 +76,7 @@ public class InventoryPanel : MonoBehaviour
     /// </summary>
     /// <param name="itemIcon"></param>
     /// <returns></returns>
-    public int ResolvePosition(ItemIcon itemIcon)
+    public int? ResolvePosition(ItemIcon itemIcon)
     {
         int index = 0;
         var key = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
@@ -107,7 +108,7 @@ public class InventoryPanel : MonoBehaviour
             );
         if (!rect.Contains(itemIcon.transform.position))
         {
-            return key;
+            return null;
         }
 
         //Change paretn to inventory for easier position controll
@@ -194,8 +195,18 @@ public class InventoryPanel : MonoBehaviour
     /// </summary>
     /// <param name="itemIcon">Current item</param>
     /// <param name="newKey">New position</param>
-    public void SwapItemsOnPanel(ItemIcon itemIcon, int newKey)
+    public void SwapItemsOnPanel(ItemIcon itemIcon, int? givenKey)
     {
+        int newKey;
+        if (givenKey == null)
+        {
+            newKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        }
+        else
+        {
+            newKey = givenKey.Value;
+        }
+
         var inventory = CurrentGame.Instance.Player.Inventory;
         //Get old key
         int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
@@ -234,6 +245,7 @@ public class InventoryPanel : MonoBehaviour
             inventory.MoveItem(oldKey, newKey);
             //Add again item at new position to match dll new setup
             ItemsPanel.Add(newKey, itemIcon);
+            //Put new item in Unity space
             GetAndSetPosition(itemIcon, newKey);
         }
         else if (inventoryItem == itemIcon)
@@ -378,12 +390,12 @@ public class InventoryPanel : MonoBehaviour
         var lastKey = ItemsPanel.Keys[ItemsPanel.Count - 1];
         if (lastKey < 3 * InventoryWidth)
         {
-            ItemIcon.Inventory.sizeDelta = new Vector2(532, 476);
+            ItemIcon.Inventory.GetComponent<RectTransform>().sizeDelta = new Vector2(532, 476);
         }
         else
         {
-            var height = Mathf.CeilToInt(lastKey / (float)InventoryWidth);
-            ItemIcon.Inventory.sizeDelta = new Vector2(532, InventoryNewLineSpace + _itemHeight * height);
+            var height = Mathf.FloorToInt(lastKey / (float)InventoryWidth);
+            ItemIcon.Inventory.GetComponent<RectTransform>().sizeDelta = new Vector2(532, InventoryNewLineSpace + _itemHeight * height);
         }
     }
 
@@ -406,16 +418,24 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sort inventory with given comparer
+    /// </summary>
     public void SortInventory()
     {
         var items = CurrentGame.Instance.Player.Inventory.Items;
+        //Restrict sorting to inventory only (extract equipment)
         var equipment = items.Where(x => x.Key < 0).ToList();
+        //Remote equipment from list
         foreach (var item in equipment)
         {
             items.Remove(item.Key);
         }
+        //Pass current item list for easier manipulations
         var list = items.Values.ToList();
+        //Sort new list
         list.Sort(new InventoryConparer<Item>());
+        //Clear old list and fill with new items sorted
         CurrentGame.Instance.Player.Inventory.Items.Clear();
         foreach (var item in equipment)
         {
@@ -425,9 +445,14 @@ public class InventoryPanel : MonoBehaviour
         {
             items.Add(i, list[i]);
         }
+        //Set all to display
         PopulateInventory();
     }
 
+    /// <summary>
+    /// Comparer for sorting invetnory
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     class InventoryConparer<T> : IComparer<T> where T : Item
     {
         public int Compare(T x, T y)

@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AreaButtonController.cs" />
-     <Compile Include="Assets\AreaImageController.cs" />
-     <Compile Include="Assets\CharacterCreationHead.cs" />
-     <Compile Include="Assets\CombatLineManager.cs" />
-     <Compile Include="Assets\DebugOptions.cs" />
-     <Compile Include="Assets\Enemy.cs" />
-     <Compile Include="Assets\FloatingTextAnimation.cs" />
-     <Compile Include="Assets\Scripts\EquipmentSlot.cs" />
+     <Compile Include="Assets\Scripts\DebugOptions.cs" />
+     <Compile Include="Assets\Scripts\Equipment\EquipmentSlot.cs" />
+     <Compile Include="Assets\Scripts\Equipment\InventoryPanel.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ItemBackgrounds.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ItemIcon.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ShowTooltip.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ToolTipManager.cs" />
      <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
+     <Compile Include="Assets\Scripts\Game\Fight\CombatLineManager.cs" />
+     <Compile Include="Assets\Scripts\Game\Fight\Enemy.cs" />
      <Compile Include="Assets\Scripts\Game\Fight\FightController.cs" />
      <Compile Include="Assets\Scripts\Game\Fight\FightControllerEventArgs.cs" />
      <Compile Include="Assets\Scripts\Game\Fight\FightControllerPvE.cs" />
@@ -66,21 +67,20 @@
      <Compile Include="Assets\Scripts\Handlers\CustomHandler_DefenceType.cs" />
      <Compile Include="Assets\Scripts\Handlers\StatisticHandler.cs" />
      <Compile Include="Assets\Scripts\Handlers\StatisticHandlerUpdater.cs" />
-     <Compile Include="Assets\Scripts\InventoryPanel.cs" />
-     <Compile Include="Assets\Scripts\ItemBackgrounds.cs" />
-     <Compile Include="Assets\Scripts\ItemIcon.cs" />
-     <Compile Include="Assets\Scripts\ProgressBar.cs" />
-     <Compile Include="Assets\Scripts\ShowTooltip.cs" />
-     <Compile Include="Assets\Scripts\ToolTipManager.cs" />
+     <Compile Include="Assets\Scripts\Traveling\AreaButtonController.cs" />
+     <Compile Include="Assets\Scripts\Traveling\AreaImageController.cs" />
+     <Compile Include="Assets\Scripts\Traveling\SpotManager.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\CharacterCreationHead.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialManager.cs" />
+     <Compile Include="Assets\Scripts\UI\FloatingTextAnimation.cs" />
      <Compile Include="Assets\Scripts\UI\MenuPanel.cs" />
      <Compile Include="Assets\Scripts\UI\MovableAnimator.cs" />
      <Compile Include="Assets\Scripts\UI\MovablePanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ProgressBar.cs" />
      <Compile Include="Assets\Scripts\Utils\Existentions.cs" />
      <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
      <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />
-     <Compile Include="Assets\SpotManager.cs" />
-     <Compile Include="Assets\TutorialManager.cs" />
      <None Include="Assets\Resources\Storage.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

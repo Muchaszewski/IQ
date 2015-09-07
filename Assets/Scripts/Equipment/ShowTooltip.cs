@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class ShowTooltip : MonoBehaviour
 {
-    private ToolTipManager toolTip;
+    public ToolTipManager ToolTipManager { get; private set; }
     private RectTransform _rectTransofrm;
     private Rect ItemPosition;
     private ItemIcon ItemData;
@@ -16,7 +16,7 @@ public class ShowTooltip : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ToolTipManager>();
+        ToolTipManager = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ToolTipManager>();
         ItemData = GetComponent<ItemIcon>();
         _rectTransofrm = GetComponent<RectTransform>();
         UpdatePosition();
@@ -37,8 +37,8 @@ public class ShowTooltip : MonoBehaviour
 
         if (ItemPosition.Contains(Input.mousePosition))
         {
-            toolTip.Show = true;
-            toolTip.SetTooltip(ItemData);
+            ToolTipManager.Show = true;
+            ToolTipManager.SetTooltip(ItemData);
         }
     }
 
