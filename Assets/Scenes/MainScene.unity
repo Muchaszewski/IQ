@@ -3671,6 +3671,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .992708325
       objectReference: {fileID: 0}
+    - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25aadece3b4ec4843907865863168a7b, type: 2}
   m_IsPrefabParent: 0
@@ -17192,7 +17200,7 @@ RectTransform:
   m_RootOrder: 12
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -213.038696, y: -524.11377}
+  m_AnchoredPosition: {x: -213.038696, y: -582}
   m_SizeDelta: {x: 609, y: 381}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1761014311

@@ -66,19 +66,7 @@ public class StatisticHandlerUpdater : MonoBehaviour
                 }
                 break;
             case EnumStatisticHandler.Target:
-                if (_statisticHandler.StatReference == null)
-                {
-                    _statisticHandler.TextComponent.text = "";
-                    try
-                    {
-                        _statisticHandler.StatReference = CurrentGame.Instance.FightController.Target.Name;
-                    }
-                    catch { }
-                }
-                else
-                {
-                    _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
-                }
+                _statisticHandler.TextComponent.text = CurrentGame.Instance.FightController.Target.Name;
                 break;
             case EnumStatisticHandler.Special:
                 _statisticHandler.ApplySpecial();

@@ -104,8 +104,7 @@ public class StatisticHandler : MonoBehaviour
                 }
                 break;
             case EnumStatisticHandler.Target:
-                //LOGIC IN UPDATE
-                break;
+                //Logic in StatisticsHandlerUpdater
             case EnumStatisticHandler.Special:
                 ApplySpecial();
                 break;
