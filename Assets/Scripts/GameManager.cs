@@ -13,5 +13,6 @@ public class GameManager : MonoBehaviour
 
     public Color StatisticsBuffColor = Color.blue;
     public Color StatisticsDebuffColor = Color.red;
+    public Color StatisciscNormalColor = Color.white;
 
 }

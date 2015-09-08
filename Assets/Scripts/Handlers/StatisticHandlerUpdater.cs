@@ -25,7 +25,7 @@ public class StatisticHandlerUpdater : MonoBehaviour
             {
                 _statValueFloat = (_statisticHandler.StatReference as StatValueFloat);
             }
-            else if (_statisticHandler.StatReference.GetType() == typeof(StatValueInt))
+            if (_statisticHandler.StatReference.GetType() == typeof(StatValueInt))
             {
                 _statValueInt = (_statisticHandler.StatReference as StatValueInt);
             }
@@ -56,6 +56,11 @@ public class StatisticHandlerUpdater : MonoBehaviour
                 if (_statisticHandler.stat == EnumTypeStat.Deflection)
                 {
                     _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString(OutputFormat);
+                    break;
+                }
+                if (_statisticHandler.stat == EnumTypeStat.Armor)
+                {
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Stats.Armor.Extend.ToString();
                     break;
                 }
                 if (_statValueFloat != null)
@@ -94,6 +99,10 @@ public class StatisticHandlerUpdater : MonoBehaviour
             {
                 _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsDebuffColor;
             }
+            else
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisciscNormalColor;
+            }
         }
         else if (_statValueInt != null)
         {
@@ -104,6 +113,10 @@ public class StatisticHandlerUpdater : MonoBehaviour
             else if (_statValueInt.Extend < _statValueInt.Base)
             {
                 _statisticHandler.TextComponent.color = GameManager.Instance.StatisticsDebuffColor;
+            }
+            else
+            {
+                _statisticHandler.TextComponent.color = GameManager.Instance.StatisciscNormalColor;
             }
         }
     }

@@ -181,13 +181,13 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                 //Iter thru item stats
                 for (var i = 0; i < playerStats.Count; i++)
                 {
-                    playerStats[i].Extend += itemStats[i].Base;
+                    playerStats[i].Extend += itemStats[i].Extend;
                 }
 
                 List<StatValueFloat> itemStatsFloat = item.Stats.GetAllStatsFloat();
                 for (var i = 0; i < playerStatsFloat.Count; i++)
                 {
-                    playerStatsFloat[i].Extend += itemStatsFloat[i].Base;
+                    playerStatsFloat[i].Extend += itemStatsFloat[i].Extend;
                 }
             }
         }

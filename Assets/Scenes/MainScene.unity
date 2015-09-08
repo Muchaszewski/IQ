@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747bfb46072f6c847a8f69d85f561857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutputFormat: '####'
+  OutputFormat: 0
 --- !u!114 &120182182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8821,7 +8821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747bfb46072f6c847a8f69d85f561857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutputFormat: '####'
+  OutputFormat: 0
 --- !u!114 &928796265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13740,7 +13740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747bfb46072f6c847a8f69d85f561857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutputFormat: '####'
+  OutputFormat: 0
 --- !u!114 &1433584885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19113,6 +19113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StatisticsBuffColor: {r: 0, g: 0, b: 1, a: 1}
   StatisticsDebuffColor: {r: 1, g: 0, b: 0, a: 1}
+  StatisciscNormalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1986830827
 MonoBehaviour:
   m_ObjectHideFlags: 0
