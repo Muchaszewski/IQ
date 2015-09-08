@@ -37,7 +37,7 @@ public class TutorialManager : MonoBehaviour
     {
         // Initial player's stats
         ApplyStats(new int[] { StartPlayerStats, StartPlayerStats, StartPlayerStats, StartPlayerStats, StartPlayerStats, StartPlayerStats });
-
+        CurrentGame.Instance.Player.SetAllBaseStats();
         // Initial stat roll
         RollStats();
     }
@@ -69,6 +69,7 @@ public class TutorialManager : MonoBehaviour
         stats.Wisdom.Current        = stats.Wisdom.Base         = statsToApply[3];
         stats.Intelligence.Current  = stats.Intelligence.Base   = statsToApply[4];
         stats.Vitality.Current      = stats.Vitality.Base       = statsToApply[5];
+        CurrentGame.Instance.Player.SetAllBaseStats();
     }
 
     /// <summary>

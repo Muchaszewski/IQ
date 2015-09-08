@@ -33,6 +33,12 @@ namespace InventoryQuest.Components.Entities.Player
             Equipment = new Equipment(this);
             PasiveSkills = new PasiveSkills();
             SetAllBaseStats();
+            Entities.Player.Inventory.Inventory.EventItemSwaped += Inventory_EventItemSwaped;
+        }
+
+        private void Inventory_EventItemSwaped(object sender, EventArgs e)
+        {
+            SetAllBaseStats();
         }
 
         /// <summary>
@@ -259,12 +265,12 @@ namespace InventoryQuest.Components.Entities.Player
             {
                 Level++;
                 Experience = Experience - expected;
+                SetAllBaseStats();
             }
         }
 
         /// <summary>
         ///     If character is created for the first time, set all bases stats.
-        ///     TODO: Consider using this on level up
         /// </summary>
         public void SetAllBaseStats()
         {

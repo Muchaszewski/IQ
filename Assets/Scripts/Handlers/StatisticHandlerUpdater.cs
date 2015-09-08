@@ -8,11 +8,13 @@ using InventoryQuest.Game;
 [DisallowMultipleComponent]
 public class StatisticHandlerUpdater : MonoBehaviour
 {
+    public string OutputFormat = "####";
 
     private StatisticHandler _statisticHandler;
 
     private StatValueInt _statValueInt;
     private StatValueFloat _statValueFloat;
+
 
     void Start()
     {
@@ -111,19 +113,19 @@ public class StatisticHandlerUpdater : MonoBehaviour
         switch (_statisticHandler.value)
         {
             case EnumStatValue.Extend:
-                _statisticHandler.TextComponent.text = stat.Extend.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Extend).ToString(OutputFormat);
                 break;
             case EnumStatValue.Base:
-                _statisticHandler.TextComponent.text = stat.Base.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Base).ToString(OutputFormat);
                 break;
             case EnumStatValue.Current:
-                _statisticHandler.TextComponent.text = stat.Current.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Current).ToString(OutputFormat);
                 break;
             case EnumStatValue.Minimum:
-                _statisticHandler.TextComponent.text = stat.Minimum.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Minimum).ToString(OutputFormat);
                 break;
             case EnumStatValue.Maximum:
-                _statisticHandler.TextComponent.text = stat.Maximum.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Maximum).ToString(OutputFormat);
                 break;
             case EnumStatValue.Percent:
                 _statisticHandler.TextComponent.text = stat.GetPercent().ToString();
@@ -133,3 +135,4 @@ public class StatisticHandlerUpdater : MonoBehaviour
         }
     }
 }
+    
