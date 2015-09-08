@@ -30,7 +30,7 @@ public class TutorialManager : MonoBehaviour
     public int MaxPlayerStats = 18;
 
     private int[] _rolledStats = { 0, 0, 0, 0, 0, 0 };
-    private int[] _savedStats = { 0, 0, 0, 0, 0, 0 };
+    private int[] _savedStats = { 6, 6, 6, 6, 6, 6 };
 
 
     void Start()
@@ -69,6 +69,7 @@ public class TutorialManager : MonoBehaviour
         stats.Wisdom.Current        = stats.Wisdom.Base         = statsToApply[3];
         stats.Intelligence.Current  = stats.Intelligence.Base   = statsToApply[4];
         stats.Vitality.Current      = stats.Vitality.Base       = statsToApply[5];
+
         CurrentGame.Instance.Player.SetAllBaseStats();
     }
 
