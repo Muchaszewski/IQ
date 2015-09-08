@@ -40,22 +40,22 @@ public class StatisticHandlerUpdater : MonoBehaviour
             case EnumStatisticHandler.Stat:
                 if (_statisticHandler.stat == EnumTypeStat.DPS)
                 {
-                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.DPS.ToString();
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.DPS.ToString(OutputFormat);
                     break;
                 }
                 if (_statisticHandler.stat == EnumTypeStat.Accuracy)
                 {
-                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Accuracy.ToString();
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Accuracy.ToString(OutputFormat);
                     break;
                 }
                 if (_statisticHandler.stat == EnumTypeStat.AttackSpeed)
                 {
-                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.AttackSpeed.ToString();
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.AttackSpeed.ToString(OutputFormat);
                     break;
                 }
                 if (_statisticHandler.stat == EnumTypeStat.Deflection)
                 {
-                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString();
+                    _statisticHandler.TextComponent.text = CurrentGame.Instance.Player.Parry.ToString(OutputFormat);
                     break;
                 }
                 if (_statValueFloat != null)
@@ -80,7 +80,7 @@ public class StatisticHandlerUpdater : MonoBehaviour
                 }
                 break;
             default:
-                _statisticHandler.TextComponent.text = _statisticHandler.StatReference.ToString();
+                _statisticHandler.TextComponent.text = Convert.ToSingle(_statisticHandler.StatReference).ToString(OutputFormat);
                 break;
         }
 
@@ -113,22 +113,22 @@ public class StatisticHandlerUpdater : MonoBehaviour
         switch (_statisticHandler.value)
         {
             case EnumStatValue.Extend:
-                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Extend).ToString(OutputFormat);
+                _statisticHandler.TextComponent.text = Convert.ToSingle(stat.Extend).ToString(OutputFormat);
                 break;
             case EnumStatValue.Base:
-                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Base).ToString(OutputFormat);
+                _statisticHandler.TextComponent.text = Convert.ToSingle(stat.Base).ToString(OutputFormat);
                 break;
             case EnumStatValue.Current:
-                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Current).ToString(OutputFormat);
+                _statisticHandler.TextComponent.text = Convert.ToSingle(stat.Current).ToString(OutputFormat);
                 break;
             case EnumStatValue.Minimum:
-                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Minimum).ToString(OutputFormat);
+                _statisticHandler.TextComponent.text = Convert.ToSingle(stat.Minimum).ToString(OutputFormat);
                 break;
             case EnumStatValue.Maximum:
-                _statisticHandler.TextComponent.text = Convert.ToInt32(stat.Maximum).ToString(OutputFormat);
+                _statisticHandler.TextComponent.text = Convert.ToSingle(stat.Maximum).ToString(OutputFormat);
                 break;
             case EnumStatValue.Percent:
-                _statisticHandler.TextComponent.text = stat.GetPercent().ToString();
+                _statisticHandler.TextComponent.text = stat.GetPercent().ToString(OutputFormat);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
