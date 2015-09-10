@@ -107,17 +107,6 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
                 );
             if (rect.Contains(eventData.position))
             {
-                /*
-                ArgumentException: element already exists
-                System.Collections.Generic.SortedList`2[System.Int32,InventoryQuest.Components.Items.Item].PutImpl (Int32 key, InventoryQuest.Components.Items.Item value, Boolean overwrite)
-                System.Collections.Generic.SortedList`2[System.Int32,InventoryQuest.Components.Items.Item].Add (Int32 key, InventoryQuest.Components.Items.Item value)
-                InventoryQuest.Components.Entities.Player.Inventory.Inventory.MoveItem (Int32 indexFrom, Int32 indexWhere) (at InventoryQuest/InventoryQuest/Components/Entities/Player/Inventory/Inventory.cs:116)
-                InventoryPanel.SwapItemsOnPanel (.ItemIcon itemIcon, Nullable`1 givenKey) (at Assets/Scripts/Equipment/InventoryPanel.cs:245)
-                ItemIcon.OnEndDrag (UnityEngine.EventSystems.PointerEventData eventData) (at Assets/Scripts/Equipment/ItemIcon.cs:99)
-                UnityEngine.EventSystems.ExecuteEvents.Execute (IEndDragHandler handler, UnityEngine.EventSystems.BaseEventData eventData) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:80)
-                UnityEngine.EventSystems.ExecuteEvents.Execute[IEndDragHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) (at C:/buildslave/unity/build/Extensions/guisystem/UnityEngine.UI/EventSystem/ExecuteEvents.cs:269)
-                UnityEngine.EventSystems.EventSystem:Update()
-                */
                 //Remove all existence of this object in lists to allow GC work
                 var index = CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData);
                 var key = CurrentGame.Instance.Player.Inventory.Items.Keys[index];
