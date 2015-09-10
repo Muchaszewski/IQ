@@ -69,7 +69,6 @@ public class EquipmentSlot : MonoBehaviour
         CurrentGame.Instance.Player.Equipment.Items[(int)Slot] = itemIcon.ItemData;
         CurrentGame.Instance.Player.Equipment.UpdateStatistics();
         ItemEquiped.Invoke(this, EventArgs.Empty);
-        Debug.Log(CurrentGame.Instance.Player.Stats.Armor.Extend);
         //FitItemBackground
         if (FitItemBackground)
         {

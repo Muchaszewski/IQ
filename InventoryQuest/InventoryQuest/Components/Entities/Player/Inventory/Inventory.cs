@@ -96,7 +96,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         }
 
         /// <summary>
-        /// Swap 2 items with places
+        /// Swap 2 items with places INDEX NOT KEY
         /// </summary>
         /// <param name="indexFrom"></param>
         /// <param name="indexWhere"></param>
@@ -108,12 +108,12 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             EventItemSwaped.Invoke(this, EventArgs.Empty);
         }
 
-        public void MoveItem(int indexFrom, int indexWhere)
+        public void MoveItem(int keyFrom, int keyWhere)
         {
             Item itemToSawp;
-            Items.TryGetValue(indexFrom, out itemToSawp);
-            Items.Remove(indexFrom);
-            Items.Add(indexWhere, itemToSawp);
+            Items.TryGetValue(keyFrom, out itemToSawp);
+            Items.Remove(keyFrom);
+            Items.Add(keyWhere, itemToSawp);
         }
 
         /// <summary>

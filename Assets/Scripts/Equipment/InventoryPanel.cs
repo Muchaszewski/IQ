@@ -78,8 +78,8 @@ public class InventoryPanel : MonoBehaviour
     /// <returns></returns>
     public int? ResolvePosition(ItemIcon itemIcon)
     {
-        int index = 0;
-        var key = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        int index = ItemsPanel.IndexOfValue(itemIcon);
+        var key = ItemsPanel.Keys[index];
 
         //If equipment
         for (int i = 0; i < _equipment.Count; i++)
@@ -119,8 +119,7 @@ public class InventoryPanel : MonoBehaviour
         int positionX = (int)(position.x / _itemWidth);
         int positionY = (int)(-position.y / _itemHeight);
 
-        index = (positionY * InventoryWidth) + positionX;
-        return index;
+        return (positionY * InventoryWidth) + positionX;
     }
 
     /// <summary>
@@ -145,11 +144,11 @@ public class InventoryPanel : MonoBehaviour
     /// Take ItemIcon (size) and return current position in equipment
     /// </summary>
     /// <param name="itemIcon"></param>
-    /// <param name="index"></param>
+    /// <param name="key"></param>
     /// <returns></returns>
-    public Vector2 GetPosition(int index)
+    public Vector2 GetPosition(int key)
     {
-        if (index < 0)
+        if (key < 0)
         {
             //For equipment return zero
             //and resolve it while setting
@@ -157,8 +156,8 @@ public class InventoryPanel : MonoBehaviour
         }
         else
         {
-            int indexW = index % InventoryWidth;
-            int indexH = index / InventoryWidth;
+            int indexW = key % InventoryWidth;
+            int indexH = key / InventoryWidth;
 
             float x = indexW * _itemWidth + _itemWidth / 2f;
             float y = -indexH * _itemHeight - _itemHeight / 2f;
@@ -167,13 +166,13 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
-    public void SetPositon(ItemIcon itemIcon, int index, Vector2 position)
+    public void SetPositon(ItemIcon itemIcon, int key, Vector2 position)
     {
-        if (index < 0)
+        if (key < 0)
         {
             //Return negative index of equipment 
             //Look ResolvePostion
-            var eq = _equipment[-(index + 1)];
+            var eq = _equipment[-(key + 1)];
             eq.AddToPanel(itemIcon);
             //Resolve position while setting because every setting in eq is diffrent
             eq.SetItemIcon(itemIcon);
@@ -185,9 +184,9 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
-    public void GetAndSetPosition(ItemIcon itemIcon, int index)
+    public void GetAndSetPosition(ItemIcon itemIcon, int key)
     {
-        SetPositon(itemIcon, index, GetPosition(index));
+        SetPositon(itemIcon, key, GetPosition(key));
     }
 
     /// <summary>
@@ -198,9 +197,10 @@ public class InventoryPanel : MonoBehaviour
     public void SwapItemsOnPanel(ItemIcon itemIcon, int? givenKey)
     {
         int newKey;
+        int index = ItemsPanel.IndexOfValue(itemIcon);
         if (givenKey == null)
         {
-            newKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+            newKey = ItemsPanel.Keys[index];
         }
         else
         {
@@ -209,7 +209,7 @@ public class InventoryPanel : MonoBehaviour
 
         var inventory = CurrentGame.Instance.Player.Inventory;
         //Get old key
-        int oldKey = ItemsPanel.Keys[ItemsPanel.IndexOfValue(itemIcon)];
+        int oldKey = ItemsPanel.Keys[index];
         //Get item to swap (probably)
         ItemIcon inventoryItem;
         ItemsPanel.TryGetValue(newKey, out inventoryItem);

@@ -6,6 +6,7 @@ using Assets.Scripts;
 using Assets.Scripts.Utils;
 using InventoryQuest;
 using InventoryQuest.Components.Generation.Items;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using InventoryQuest.Utils;
 using UnityEngine.EventSystems;
@@ -95,8 +96,8 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        int? key = Inventory.ResolvePosition(this);
-        if (key == null)
+        int? positionKey = Inventory.ResolvePosition(this);
+        if (positionKey == null)
         {
             Rect rect = new Rect(
                 Inventory.SellItemArea.transform.position.x,
@@ -118,19 +119,21 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
                 UnityEngine.EventSystems.EventSystem:Update()
                 */
                 //Remove all existence of this object in lists to allow GC work
-                Debug.Log(Inventory.ItemsPanel.IndexOfValue(this) + " " + CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData));
-                CurrentGame.Instance.Player.Inventory.Items.Remove(CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData));
-                Inventory.ItemsPanel.Remove(Inventory.ItemsPanel.Keys[Inventory.ItemsPanel.IndexOfValue(this)]);
-                Debug.Log(Inventory.ItemsPanel.ContainsKey(Inventory.ItemsPanel.IndexOfValue(this)));
+                var index = CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData);
+                var key = CurrentGame.Instance.Player.Inventory.Items.Keys[index];
+                Item item;
+                CurrentGame.Instance.Player.Inventory.Items.TryGetValue(key, out item);
+                CurrentGame.Instance.Player.Inventory.Items.RemoveAt(index);
+                Inventory.ItemsPanel.RemoveAt(index);
                 //Give money
-                Debug.Log("Shut up and take my money!");
+                //Debug.Log("Shut up and take my money!");
                 //Destroy sold item
                 //TODO Store for rebuy
                 Destroy(gameObject);
                 return;
             }
         }
-        Inventory.SwapItemsOnPanel(this, key);
+        Inventory.SwapItemsOnPanel(this, positionKey);
     }
 
     public void OnPointerClick(PointerEventData eventData)
