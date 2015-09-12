@@ -20,7 +20,7 @@
         /// <summary>
         ///     1 Platinum coin = 100 gold coins = 10 000 gold coins = 1 000 000 copper coins.
         /// </summary>
-        [Name("platinum", "p")] Platinum = 1000000
+        //[Name("platinum", "p")] Platinum = 1000000
     }
 
     public static class CurrencyExtensions

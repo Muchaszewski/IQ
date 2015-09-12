@@ -75,7 +75,7 @@ namespace InventoryQuest.Components.Entities.Money
         public long AddMoney(long amount, Currency currency = Currency.Copper)
         {
             var prev = CurrentAmount;
-            CurrentAmount = CurrencyUitls.Convert(amount, currency, Currency.Copper);
+            CurrentAmount = CurrentAmount + CurrencyUitls.Convert(amount, currency, Currency.Copper);
             var delta = amount - (CurrentAmount - prev);
             AddedMoney.Invoke(this, EventArgs.Empty);
             return delta;
