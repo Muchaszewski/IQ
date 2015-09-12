@@ -44,7 +44,7 @@ public class UIMoney : MonoBehaviour
         else
         {
             Coins[2].SetActive(true);
-            Value[2].text = (wallet.GetCurrentAmount(Currency.Gold) % 100).ToString();
+            Value[2].text = (wallet.GetCurrentAmount(Currency.Gold)).ToString();
         }
         //if (wallet.GetCurrentAmount(Currency.Platinum) == 0)
         //{
