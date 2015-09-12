@@ -40,6 +40,11 @@ public class TutorialManager : MonoBehaviour
         CurrentGame.Instance.Player.SetAllBaseStats();
         // Initial stat roll
         RollStats();
+
+        GroupStatistics.SetActive(false);
+        GroupCharacterCreation.SetActive(true);
+        GroupCombat.SetActive(false);
+        GroupHeadCreation.SetActive(true);
     }
 
     public void ChooseHead()
@@ -59,16 +64,16 @@ public class TutorialManager : MonoBehaviour
     /// Update player's with values from statsTpApply.
     /// </summary>
     /// <param name="statsToApply"></param>
-    private void ApplyStats (int[] statsToApply)
+    private void ApplyStats(int[] statsToApply)
     {
         var stats = CurrentGame.Instance.Player.Stats;
 
-        stats.Strength.Current      = stats.Strength.Base       = statsToApply[0];
-        stats.Dexterity.Current     = stats.Dexterity.Base      = statsToApply[1];
-        stats.Perception.Current    = stats.Perception.Base     = statsToApply[2];
-        stats.Wisdom.Current        = stats.Wisdom.Base         = statsToApply[3];
-        stats.Intelligence.Current  = stats.Intelligence.Base   = statsToApply[4];
-        stats.Vitality.Current      = stats.Vitality.Base       = statsToApply[5];
+        stats.Strength.Current = stats.Strength.Base = statsToApply[0];
+        stats.Dexterity.Current = stats.Dexterity.Base = statsToApply[1];
+        stats.Perception.Current = stats.Perception.Base = statsToApply[2];
+        stats.Wisdom.Current = stats.Wisdom.Base = statsToApply[3];
+        stats.Intelligence.Current = stats.Intelligence.Base = statsToApply[4];
+        stats.Vitality.Current = stats.Vitality.Base = statsToApply[5];
 
         CurrentGame.Instance.Player.SetAllBaseStats();
     }
@@ -80,7 +85,7 @@ public class TutorialManager : MonoBehaviour
     {
         // Roll the stats
         var diff = MaxPlayerStats - MinPlayerStats;
-        for (int i = 0; i<=5 ; i++)
+        for (int i = 0; i <= 5; i++)
         {
             _rolledStats[i] = Mathf.CeilToInt(TransformUtils.RandomNormalizedGaussian() * diff) + MinPlayerStats;
         }
@@ -96,7 +101,7 @@ public class TutorialManager : MonoBehaviour
     /// </summary>
     public void SaveStats()
     {
-        _savedStats = _rolledStats;
+        _rolledStats.CopyTo(_savedStats, 0);
     }
 
     /// <summary>
@@ -104,7 +109,7 @@ public class TutorialManager : MonoBehaviour
     /// </summary>
     public void LoadStats()
     {
-        _rolledStats = _savedStats;
+        _savedStats.CopyTo(_rolledStats, 0);
 
         // Display the stats
         ApplyStats(_rolledStats);

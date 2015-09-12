@@ -163,7 +163,15 @@ namespace InventoryQuest.Components.Statistics
         /// <returns></returns>
         public float GetPercent()
         {
-            return (Current / (float)Extend) * 100f;
+            var nubmer = (Current / (float)Extend) * 100f;
+            if (float.IsInfinity(nubmer) || float.IsNaN(nubmer))
+            {
+                return 0;
+            }
+            else
+            {
+                return nubmer;
+            }
         }
 
         /// <summary>

@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
      <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />
+     <Compile Include="Assets\UIMoney.cs" />
      <None Include="Assets\Resources\Storage.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

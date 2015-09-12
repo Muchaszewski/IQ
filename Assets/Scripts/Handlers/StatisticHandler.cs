@@ -1,4 +1,5 @@
 ﻿using System;
+using InventoryQuest.Components.Entities.Money;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Game;
