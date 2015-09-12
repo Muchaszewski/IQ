@@ -81,7 +81,18 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 
     public void Sell()
     {
-
+        //Remove all existence of this object in lists to allow GC work
+        var index = CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData);
+        var key = CurrentGame.Instance.Player.Inventory.Items.Keys[index];
+        Item item;
+        CurrentGame.Instance.Player.Inventory.Items.TryGetValue(key, out item);
+        CurrentGame.Instance.Player.Inventory.Items.RemoveAt(index);
+        Inventory.ItemsPanel.RemoveAt(index);
+        //Give money
+        Debug.Log(CurrentGame.Instance.Player.Wallet.AddMoney(item.Price.Current));
+        //Destroy sold item
+        //TODO Store for rebuy
+        Destroy(gameObject);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -107,18 +118,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
                 );
             if (rect.Contains(eventData.position))
             {
-                //Remove all existence of this object in lists to allow GC work
-                var index = CurrentGame.Instance.Player.Inventory.Items.IndexOfValue(ItemData);
-                var key = CurrentGame.Instance.Player.Inventory.Items.Keys[index];
-                Item item;
-                CurrentGame.Instance.Player.Inventory.Items.TryGetValue(key, out item);
-                CurrentGame.Instance.Player.Inventory.Items.RemoveAt(index);
-                Inventory.ItemsPanel.RemoveAt(index);
-                //Give money
-                //Debug.Log("Shut up and take my money!");
-                //Destroy sold item
-                //TODO Store for rebuy
-                Destroy(gameObject);
+                Sell();
                 return;
             }
         }
