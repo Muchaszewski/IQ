@@ -73,11 +73,11 @@ namespace InventoryQuest.Components.Generation.Items
                         if ((String.Equals(armorType.Name, matchString, StringComparison.CurrentCultureIgnoreCase) ||
                             String.Equals(armorType.ExtraName, matchString, StringComparison.CurrentCultureIgnoreCase) ||
                             String.Equals(armorType.FlavorText, matchString, StringComparison.CurrentCultureIgnoreCase)
-                            ) && 
+                            ) &&
                             (armorType.Rarity == matchRarity || matchRarity == EnumItemRarity.Poor))
                         {
                             var itemList = new ItemsLists();
-                            itemList.ArmorTypeID.Add(new GenerationWeight() {ID = armorType.ID, Weight = 100});
+                            itemList.ArmorTypeID.Add(new GenerationWeight() { ID = armorType.ID, Weight = 100 });
                             list.Add(CreateArmorItem(level,
                                 itemList,
                                 rarity,
@@ -233,8 +233,9 @@ namespace InventoryQuest.Components.Generation.Items
             {
                 return CreateArmorItem(level, itemList, rarity, (EnumItemType)typeID);
             }
-            if (typeID == 9 || typeID == 10) //Amu and Rings
+            else if (typeID == 9 || typeID == 10) //Amu and Rings
             {
+                return null;
             }
             else if (typeID == 11) //Shields
             {
@@ -710,35 +711,40 @@ namespace InventoryQuest.Components.Generation.Items
                 bonusStat = 1;
             }
 
-            var statR = RandomNumberGenerator.NextRandom(statsI + statsF);
-            if (statR < statsI)
+            try
             {
-                StatValueInt stat = item.Stats.GetAllStatsInt()[statR];
-                StatScaleAttribute scale = StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
-                if (stat.Base == 0)
+                var statR = RandomNumberGenerator.NextRandom(statsI + statsF);
+                if (statR < statsI)
                 {
-                    stat.Base = bonusStat * Convert.ToInt32(scale.Scale);
+                    StatValueInt stat = item.Stats.GetAllStatsInt()[statR];
+                    StatScaleAttribute scale = StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
+                    if (stat.Base == 0)
+                    {
+                        stat.Base = bonusStat * Convert.ToInt32(scale.Scale);
+                    }
+                    else
+                    {
+                        stat.Extend += bonusStat * Convert.ToInt32(scale.Scale);
+                    }
                 }
                 else
                 {
-                    stat.Extend += bonusStat * Convert.ToInt32(scale.Scale);
+                    statR -= statsI;
+                    StatValueFloat stat = item.Stats.GetAllStatsFloat()[statR];
+                    StatScaleAttribute scale =
+                        StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
+                    if (stat.Base == 0)
+                    {
+                        stat.Base = bonusStat * scale.Scale;
+                    }
+                    else
+                    {
+                        stat.Extend += bonusStat * scale.Scale;
+                    }
                 }
             }
-            else
-            {
-                statR -= statsI;
-                StatValueFloat stat = item.Stats.GetAllStatsFloat()[statR];
-                StatScaleAttribute scale =
-                    StatScaleAttribute.GetAttributeByName(Enum.GetName(typeof(EnumTypeStat), stat.Type));
-                if (stat.Base == 0)
-                {
-                    stat.Base = bonusStat * scale.Scale;
-                }
-                else
-                {
-                    stat.Extend += bonusStat * scale.Scale;
-                }
-            }
+            catch
+            { }
         }
     }
 }
