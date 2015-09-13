@@ -3336,7 +3336,7 @@ RectTransform:
   m_Father: {fileID: 1064177141}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -8865,7 +8865,7 @@ RectTransform:
   m_Father: {fileID: 1416671193}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -10859,7 +10859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1083949095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12597,6 +12597,12 @@ MonoBehaviour:
   value: 0
   entityStatType: 0
   statName: 
+--- !u!114 &1267776878 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11474796, guid: 25aadece3b4ec4843907865863168a7b,
+    type: 2}
+  m_PrefabInternal: {fileID: 374450666}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1267776880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17878,7 +17884,8 @@ MonoBehaviour:
   TooltipBGImage: {fileID: 358737284}
   TooltipHeaderImage: {fileID: 980151872}
   Overlay: {fileID: 1039117203}
-  Margin: 50
+  XPosition: 365
+  YPosition: 500
   _tootipObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -19859,6 +19866,7 @@ MonoBehaviour:
   GroupHeadCreation: {fileID: 1083949094}
   InputNameField: {fileID: 184570659}
   PlayerNameText: {fileID: 366236048}
+  PlayerNameText2: {fileID: 1267776878}
   HeadAndNameApplyButton: {fileID: 833367957}
   GroupCharacterCreation: {fileID: 221540389}
   GroupStatistics: {fileID: 1628176425}

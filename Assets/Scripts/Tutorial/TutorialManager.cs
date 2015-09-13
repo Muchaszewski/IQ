@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour
 
     public InputField InputNameField;
     public Text PlayerNameText;
+    public Text PlayerNameText2;
 
     public GameObject HeadAndNameApplyButton;
 
@@ -53,6 +54,7 @@ public class TutorialManager : MonoBehaviour
         {
             CurrentGame.Instance.Player.Name = InputNameField.text;
             PlayerNameText.text = CurrentGame.Instance.Player.Name;
+            PlayerNameText2.text = CurrentGame.Instance.Player.Name;
 
             PlayerHead.sprite = CharacterCreationHead.CurrentHead;
             GroupCombat.SetActive(true);
