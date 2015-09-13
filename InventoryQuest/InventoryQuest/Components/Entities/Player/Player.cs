@@ -13,6 +13,9 @@ namespace InventoryQuest.Components.Entities.Player
     [Serializable]
     public sealed class Player : Entity
     {
+        public static event EventHandler LeveledUp = delegate { };
+
+
         private Equipment _equipment;
         private double _Experience;
         private Inventory.Inventory _inventory;
@@ -266,6 +269,7 @@ namespace InventoryQuest.Components.Entities.Player
                 Level++;
                 Experience = Experience - expected;
                 SetAllBaseStats();
+                LeveledUp.Invoke(this, EventArgs.Empty);
             }
         }
 

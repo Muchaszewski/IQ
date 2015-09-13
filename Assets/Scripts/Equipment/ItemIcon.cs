@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.IO;
 using System.Linq;
 using Assets.Scripts;
 using Assets.Scripts.Utils;
 using InventoryQuest;
+using InventoryQuest.Components.Entities.Player;
 using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
@@ -47,6 +49,19 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
         }
         SetIcon();
         SetBackground();
+        if (CurrentGame.Instance.Player.Level < ItemData.RequiredLevel)
+        {
+            SetOverlay(true);
+        }
+        Player.LeveledUp += PlayerOnLeveledUp;
+    }
+
+    private void PlayerOnLeveledUp(object sender, EventArgs eventArgs)
+    {
+        if (CurrentGame.Instance.Player.Level >= ItemData.RequiredLevel)
+        {
+            SetOverlay(false);
+        }
     }
 
     public void OnDestroy()
@@ -77,6 +92,11 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     {
         string path = ItemBackgrounds.Get(ItemData.Rarity);
         GetComponent<Image>().sprite = ResourceManager.Get(path);
+    }
+
+    void SetOverlay(bool option)
+    {
+        transform.GetChild(1).GetComponent<Image>().enabled = option;
     }
 
     public void Sell()
