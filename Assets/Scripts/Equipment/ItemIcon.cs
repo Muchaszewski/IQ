@@ -18,6 +18,8 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
+    public Image Overlay;
+
     public RectTransform RectTransform
     {
         get
@@ -85,7 +87,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     void SetIcon()
     {
         var path = ImagesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
-        transform.GetChild(0).GetComponent<Image>().sprite = ResourceManager.Get(FileUtility.AssetsRelativePath(path));
+        transform.GetChild(1).GetComponent<Image>().sprite = ResourceManager.Get(FileUtility.AssetsRelativePath(path));
     }
 
     void SetBackground()
@@ -96,7 +98,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 
     void SetOverlay(bool option)
     {
-        transform.GetChild(1).GetComponent<Image>().enabled = option;
+        Overlay.enabled = option;
     }
 
     public void Sell()

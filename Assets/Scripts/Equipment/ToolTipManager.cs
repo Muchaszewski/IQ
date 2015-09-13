@@ -10,6 +10,7 @@ using InventoryQuest.Game;
 using InventoryQuest.Utils;
 using Assets.Scripts;
 using Assets.Scripts.Utils;
+using InventoryQuest.Components.Entities.Player;
 
 public class ToolTipManager : UILabelManager
 {
@@ -19,6 +20,7 @@ public class ToolTipManager : UILabelManager
     public Image TooltipImage;
     public Image TooltipBGImage;
     public Image TooltipHeaderImage;
+    public Image Overlay;
 
     //Properties
     public bool Show { get; set; }
@@ -53,6 +55,15 @@ public class ToolTipManager : UILabelManager
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GameObject.FindObjectOfType<Canvas>();
+        Player.LeveledUp += Player_LeveledUp;
+    }
+
+    private void Player_LeveledUp(object sender, EventArgs e)
+    {
+        if (CurrentGame.Instance.Player.Level >= _item.ItemData.RequiredLevel)
+        {
+            SetOverlay(false);
+        }
     }
 
     // Update is called once per frame
@@ -88,6 +99,14 @@ public class ToolTipManager : UILabelManager
             {
                 SetBackground();
                 SetIcon();
+                if (CurrentGame.Instance.Player.Level < _item.ItemData.RequiredLevel)
+                {
+                    SetOverlay(true);
+                }
+                else
+                {
+                    SetOverlay(false);
+                }
                 CurrentRarityColor = RarityColors[(int)_item.ItemData.Rarity];
                 //Do not use outside this method or in custom inspector methods
 #pragma warning disable 618
@@ -112,6 +131,11 @@ public class ToolTipManager : UILabelManager
 
         path = ItemBackgrounds.GetHeader(_item.ItemData.Rarity);
         TooltipHeaderImage.sprite = ResourceManager.Get(path);
+    }
+
+    void SetOverlay(bool option)
+    {
+        Overlay.enabled = option;
     }
 
     /// <summary>
