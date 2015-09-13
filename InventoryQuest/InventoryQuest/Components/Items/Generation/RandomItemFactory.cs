@@ -265,7 +265,7 @@ namespace InventoryQuest.Components.Generation.Items
             //Creating item stats
             Stats stats = item.Stats;
             item.ValidSlot = EnumItemSlot.Weapon;
-            item.ItemLevel = level;
+
             var weaponType = (WeaponType)ChooseRarity(
                 level,
                 rarity,
@@ -299,7 +299,6 @@ namespace InventoryQuest.Components.Generation.Items
 
 
             //Setting item requirements
-            item.RequiredLevel = level; // I have changed it to this - M.L.
             foreach (MinMaxStatType stat in weaponType.RequiredStats)
             {
                 item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandomForLevel(level) });
@@ -319,7 +318,6 @@ namespace InventoryQuest.Components.Generation.Items
             //Creating item stats
             Stats stats = item.Stats;
             item.ValidSlot = EnumItemSlot.OffHand;
-            item.ItemLevel = level;
 
             var shieldType = (ShieldType)ChooseRarity(
                 level,
@@ -342,7 +340,6 @@ namespace InventoryQuest.Components.Generation.Items
 
 
             //Setting item requirements
-            item.RequiredLevel = shieldType.RequiredLevel;
             foreach (MinMaxStatType stat in shieldType.RequiredStats)
             {
                 item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandom() });
@@ -362,7 +359,6 @@ namespace InventoryQuest.Components.Generation.Items
             //Creating item stats
             Stats stats = item.Stats;
             item.ValidSlot = EnumItemSlot.OffHand;
-            item.ItemLevel = level;
 
             var offHandType = (OffHandType)ChooseRarity(
                 level,
@@ -381,7 +377,6 @@ namespace InventoryQuest.Components.Generation.Items
 
 
             //Setting item requirements
-            item.RequiredLevel = offHandType.RequiredLevel;
             foreach (MinMaxStatType stat in offHandType.RequiredStats)
             {
                 item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandom() });
@@ -399,7 +394,6 @@ namespace InventoryQuest.Components.Generation.Items
             var item = new Item();
             //Creating item stats
             Stats stats = item.Stats;
-            item.ItemLevel = level;
 
             var armorType = (ArmorType)ChooseRarity(
                 level,
@@ -422,7 +416,6 @@ namespace InventoryQuest.Components.Generation.Items
 
 
             //Setting item requirements
-            item.RequiredLevel = armorType.RequiredLevel;
             foreach (MinMaxStatType stat in armorType.RequiredStats)
             {
                 item.RequiredStats.Add(new StatValueInt(stat.StatType) { Base = (int)stat.GetRandom() });
@@ -437,6 +430,8 @@ namespace InventoryQuest.Components.Generation.Items
             item.ExtraName = type.ExtraName;
             item.FlavorText = type.FlavorText;
             item.Price.Base = level * 20;
+            item.RequiredLevel = level;
+            item.ItemLevel = level;
 
             //Set item type
             item.Type = type.Type;

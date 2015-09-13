@@ -37,7 +37,7 @@ public class DebugOptions : MonoBehaviour
             for (int i = 0; i < _equipmentSlider; i++)
             {
                 player.Inventory.AddItem(
-                    RandomItemFactory.CreateItem(player.Level, CurrentGame.Instance.Spot, _rarity));
+                    RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, _rarity));
             }
         }
         GUILayout.Label("Items count: " + player.Inventory.Items.Count);

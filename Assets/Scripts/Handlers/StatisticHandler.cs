@@ -85,8 +85,8 @@ public class StatisticHandler : MonoBehaviour
                 switch (entityStatType)
                 {
                     case EnumPlayerBasics.Name:
-                        StatReference = _player.Name;
-                        break;
+                        TextComponent.text = CurrentGame.Instance.Player.Name;
+                        return;
                     case EnumPlayerBasics.Sex:
                         StatReference = _player.Sex;
                         break;
