@@ -126,7 +126,14 @@ public class StatisticHandler : MonoBehaviour
         if (statName == "DPS")
         {
             TextComponent.text = _player.MinDamage + "-" + _player.MaxDamage;
-            return;
+        }
+        else if (statName == "AREA")
+        {
+            TextComponent.text = CurrentGame.Instance.Spot.Name;
+        }
+        else if (statName == "REGION")
+        {
+            TextComponent.text = CurrentGame.Instance.Spot.Category;
         }
     }
 }

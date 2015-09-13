@@ -19,7 +19,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         public SortedList<int, Item> Items
         {
             get { return _Items; }
-            set { Items = value; }
+            set { _Items = value; }
         }
 
         /// <summary>

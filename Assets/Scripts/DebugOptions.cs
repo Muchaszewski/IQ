@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
@@ -70,6 +71,14 @@ public class DebugOptions : MonoBehaviour
         //}
         //GUILayout.EndHorizontal();
         //ADD ITEMS ADV
+
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Clear Inventory"))
+        {
+            CurrentGame.Instance.Player.Inventory.Items = new SortedList<int, Item>();
+            InventoryPanel.Instance.PopulateInventory();
+        }
+        GUILayout.EndHorizontal();
 
         GUILayout.EndArea();
     }
