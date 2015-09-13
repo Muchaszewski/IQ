@@ -13,6 +13,8 @@ public class AreaButtonController : MonoBehaviour
 
     public static AreaImageController controller;
 
+    private bool isChangeingSpot;
+
     void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
@@ -33,12 +35,23 @@ public class AreaButtonController : MonoBehaviour
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
         GetComponent<Button>().onClick.AddListener(() => ChangeSpot());
+        CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
+    }
+
+    private void CurrentGame_TravelingFinished(object sender, System.EventArgs e)
+    {
+        if (isChangeingSpot)
+        {
+            controller.ChangeBackground(Spot.ImageString);
+            isChangeingSpot = false;
+        }
     }
 
     // Update is called once per frame
     void ChangeSpot()
     {
         CurrentGame.Instance.TravelToSpot = Spot.ID;
-        controller.ChangeBackground(Spot.ImageString);
+        isChangeingSpot = true;
     }
+
 }

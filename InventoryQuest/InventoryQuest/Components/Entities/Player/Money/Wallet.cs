@@ -8,8 +8,7 @@ namespace InventoryQuest.Components.Entities.Money
     [Serializable]
     public class Wallet
     {
-
-        public event EventHandler AddedMoney = delegate(object sender, EventArgs args) {  };
+        public static event EventHandler AddedMoney = delegate { };
 
         private long _CurrentAmount;
         private long _MaxAmount;
@@ -118,5 +117,6 @@ namespace InventoryQuest.Components.Entities.Money
         {
             return CurrencyUitls.ToNiceString(CurrentAmount, true);
         }
+
     }
 }

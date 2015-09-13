@@ -20,7 +20,7 @@ public class UIMoney : MonoBehaviour
     void Start()
     {
         _player = CurrentGame.Instance.Player;
-        _player.Wallet.AddedMoney += Wallet_AddedMoney;
+        Wallet.AddedMoney += Wallet_AddedMoney;
         Wallet_AddedMoney(this, EventArgs.Empty);
     }
 

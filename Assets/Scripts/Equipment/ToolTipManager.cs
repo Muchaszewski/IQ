@@ -64,29 +64,7 @@ public class ToolTipManager : UILabelManager
         }
         else 
         {
-            transform.position =
-                _item.transform.position
-                + new Vector3(
-                    -(_item.RectTransform.sizeDelta.x * _item.transform.localScale.x * _canvas.transform.localScale.x) / 2f,
-                    (_item.RectTransform.sizeDelta.y * _item.transform.localScale.y * _canvas.transform.localScale.y) / 2f,
-                    0
-                );
-
-            float diff = 0;
-
-            // Move up if under the screen
-            if (_rectTransform.transform.position.y - _rectTransform.sizeDelta.y * _rectTransform.localScale.y / 2f < Margin)
-            {
-                diff = Margin - (_rectTransform.transform.position.y - _rectTransform.sizeDelta.y * _rectTransform.localScale.y / 2f);
-                transform.AddY(diff);
-            }
-
-            // Move down if over the screen
-            if (_rectTransform.transform.position.y >= Screen.height - Margin)
-            {
-                diff = Screen.height - Margin - _rectTransform.transform.position.y;
-                transform.AddY(diff);
-            }
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(365,418);
 
             Show = false;
         }
