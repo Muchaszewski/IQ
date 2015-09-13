@@ -352,7 +352,7 @@ public class InventoryPanel : MonoBehaviour
         //Set userfrendly size of itemIcon
         itemIcon.RectTransform.sizeDelta = ItemPrefab.GetComponent<RectTransform>().sizeDelta;
         itemIcon.transform.localScale = Vector3.one * InventoryScale;
-        var image = itemIcon.RectTransform.GetChild(0).GetComponent<RectTransform>();
+        var image = itemIcon.RectTransform.GetChild(1).GetComponent<RectTransform>();
         image.sizeDelta = ItemPrefab.GetComponent<RectTransform>().sizeDelta;
         image.transform.localScale = Vector3.one;
     }

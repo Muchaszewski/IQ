@@ -60,7 +60,7 @@ public class EquipmentSlot : MonoBehaviour
 
     public void SetItemIcon(ItemIcon itemIcon)
     {
-        var image = itemIcon.transform.GetChild(0).GetComponent<RectTransform>();
+        var image = itemIcon.transform.GetChild(1).GetComponent<RectTransform>();
         //Set position
         float x = RectTransform.sizeDelta.x / 2f;
         float y = -RectTransform.sizeDelta.y / 2f;
