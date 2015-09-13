@@ -155,18 +155,18 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (RandomNumberGenerator.NextRandom(100) <= dropChance)
                     {
-                        Item item = RandomItemFactory.CreateItem(
-                            CurrentGame.Instance.Spot,
-                            (EnumItemRarity)RandomNumberGenerator.NextRandom(6));
-                        if (item != null)
-                        {
-                            Player.Inventory.AddItem(item);
-                            BattleLog.AppendLine("You have found: " + item.Name);
-                        }
-                        else
-                        {
-                            BattleLog.AppendLine("Error: Item was null!");
-                        }
+                            Item item = RandomItemFactory.CreateItem(
+                                CurrentGame.Instance.Spot,
+                                (EnumItemRarity)RandomNumberGenerator.NextRandom(6));
+                            if (item != null)
+                            {
+                                Player.Inventory.AddItem(item);
+                                BattleLog.AppendLine("You have found: " + item.Name);
+                            }
+                            else
+                            {
+                                BattleLog.AppendLine("Error: Item was null!");
+                            }
                     }
                 }
             }

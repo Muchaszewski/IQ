@@ -391,11 +391,11 @@ public class InventoryPanel : MonoBehaviour
         var lastKey = ItemsPanel.Keys[ItemsPanel.Count - 1];
         if (lastKey < 3 * InventoryWidth)
         {
-            ItemIcon.Inventory.GetComponent<RectTransform>().sizeDelta = new Vector2(532, 476);
+            ItemIcon.Inventory.GetComponent<RectTransform>().sizeDelta = new Vector2(532, 419);
         }
         else
         {
-            var height = Mathf.FloorToInt(lastKey / (float)InventoryWidth);
+            var height = Mathf.Ceil((lastKey + 1) / (float)(InventoryWidth));
             ItemIcon.Inventory.GetComponent<RectTransform>().sizeDelta = new Vector2(532, InventoryNewLineSpace + _itemHeight * height);
         }
     }
