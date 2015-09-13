@@ -75,7 +75,7 @@ public class ToolTipManager : UILabelManager
         }
         else 
         {
-            GetComponent<RectTransform>().anchoredPosition = new Vector2(365,418);
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(365,500);
 
             Show = false;
         }
