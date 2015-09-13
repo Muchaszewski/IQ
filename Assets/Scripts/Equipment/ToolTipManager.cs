@@ -23,7 +23,8 @@ public class ToolTipManager : UILabelManager
     //Properties
     public bool Show { get; set; }
     private Color CurrentRarityColor { get; set; }
-    public float Margin = 50;
+    public float XPosition = 365;
+    public float YPosition = 500;
 
     //Private varibles
     private RectTransform _rectTransform;
@@ -64,7 +65,7 @@ public class ToolTipManager : UILabelManager
         }
         else 
         {
-            GetComponent<RectTransform>().anchoredPosition = new Vector2(365,500);
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(XPosition, YPosition);
 
             Show = false;
         }
