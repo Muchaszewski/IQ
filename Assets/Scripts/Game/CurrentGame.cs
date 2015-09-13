@@ -15,6 +15,11 @@ namespace InventoryQuest.Game
     [Serializable]
     public class CurrentGame : MonoBehaviour
     {
+        private static event EventHandler Loaded = delegate { };
+        private static event EventHandler Saved = delegate { };
+
+        public static event EventHandler TravelingFinished = delegate { };
+
         private int _travelToSpot = -1;
         private byte Refiling;
         private byte Traveling;
@@ -70,6 +75,7 @@ namespace InventoryQuest.Game
                         Traveling = 2;
                         FightController.ResetBattle();
                         ResetIdle();
+                        TravelingFinished.Invoke(this, EventArgs.Empty);
                         return;
                     }
                     if (Traveling == 0)
