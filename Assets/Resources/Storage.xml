@@ -2768,6 +2768,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Chain Tunic</Name>
       <ID>17</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Chest</Type>
       <Skill>Light</Skill>
@@ -2804,6 +2805,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         </PairTypeItem>
       </ImageID>
       <SoundID />
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>15</RequiredLevel>
       <DropLevel>15</DropLevel>
@@ -3400,6 +3402,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Discussian Warrior Helmet</Name>
       <ID>37</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Helmet</Type>
       <Skill>Heavy</Skill>
@@ -3436,6 +3439,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         </PairTypeItem>
       </ImageID>
       <SoundID />
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>22</RequiredLevel>
       <DropLevel>22</DropLevel>
@@ -3642,6 +3646,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Arm Wraps</Name>
       <ID>44</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Chest</Type>
       <Skill>Cloth</Skill>
@@ -3658,6 +3663,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         </PairTypeItem>
       </ImageID>
       <SoundID />
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>2</RequiredLevel>
       <DropLevel>2</DropLevel>
@@ -4073,6 +4079,38 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <MaxMaxLevel>15</MaxMaxLevel>
       </Armor>
     </ArmorType>
+    <ArmorType>
+      <Name>Light Breastplate</Name>
+      <ID>58</ID>
+      <ExtraName>Armor of Hammerfall</ExtraName>
+      <BaseStatsAllowed />
+      <Type>Chest</Type>
+      <Skill>Heavy</Skill>
+      <Durability>
+        <Min>15</Min>
+        <Max>16</Max>
+        <MinMaxLevel>140</MinMaxLevel>
+        <MaxMaxLevel>150</MaxMaxLevel>
+      </Durability>
+      <ImageID>
+        <PairTypeItem>
+          <Type>chest</Type>
+          <Item>unique_hammerfall_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <FlavorText>TODO</FlavorText>
+      <Rarity>Mythical</Rarity>
+      <RequiredLevel>34</RequiredLevel>
+      <DropLevel>34</DropLevel>
+      <RequiredStats />
+      <Armor>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>830</MinMaxLevel>
+        <MaxMaxLevel>853</MaxMaxLevel>
+      </Armor>
+    </ArmorType>
   </Armors>
   <Shields>
     <ShieldType>
@@ -4426,15 +4464,15 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
-          <Weight>20</Weight>
+          <Weight>30</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
-          <Weight>100</Weight>
+          <Weight>10</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Junk</Name>
-          <Weight>20</Weight>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </ItemsList>
     </Spot>
@@ -4457,11 +4495,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
-          <Weight>100</Weight>
+          <Weight>40</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Junk</Name>
-          <Weight>20</Weight>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </ItemsList>
     </Spot>
@@ -4488,7 +4526,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Iron Plain</Name>
       <Level>6</Level>
       <ID>5</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4507,7 +4545,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Western Road</Name>
       <Level>8</Level>
       <ID>6</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4526,7 +4564,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>The Broken Bridge</Name>
       <Level>11</Level>
       <ID>7</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4542,7 +4580,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Shining Sans Desert</Name>
+      <Name>Shining Sands Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
@@ -4588,10 +4626,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>The Miracle Field</Name>
+      <Name>ME 20</Name>
       <Level>20</Level>
       <ID>10</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_forest_0</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4615,11 +4653,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Ruins of Antioch</Name>
+      <Name>ME 30</Name>
       <Level>30</Level>
       <ID>11</ID>
-      <ImageString>location_placeholder_desertTown_0</ImageString>
-      <Category>Desert</Category>
+      <ImageString>_location_placeholder_forest_0</ImageString>
+      <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
           <Name>Goblins</Name>
@@ -4634,10 +4672,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Highforest</Name>
+      <Name>ME 40</Name>
       <Level>40</Level>
       <ID>12</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_forest_0</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4657,10 +4695,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>The Prophet's Desert</Name>
+      <Name>DE 20</Name>
       <Level>20</Level>
       <ID>13</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4676,10 +4714,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Scorched Hills</Name>
+      <Name>DE 30</Name>
       <Level>30</Level>
       <ID>14</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4699,10 +4737,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Scorched Desert</Name>
+      <Name>DE 40</Name>
       <Level>40</Level>
       <ID>15</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4713,6 +4751,82 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>Sunset Steppe</Name>
+      <Level>5</Level>
+      <ID>16</ID>
+      <ImageString>location_plain_0</ImageString>
+      <Category>Atlantea</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Scorpions</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Fantasy Barbarian Kingdom</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>Fields of Arcadia</Name>
+      <Level>7</Level>
+      <ID>17</ID>
+      <ImageString>_location_placeholder_plains_0</ImageString>
+      <Category>Discussia</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Birds</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Ancient Greece</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>FBK 40</Name>
+      <Level>40</Level>
+      <ID>18</ID>
+      <ImageString>location_plain_0</ImageString>
+      <Category>Atlantea</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Scorpions</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Fantasy Barbarian Kingdom</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>DS 40</Name>
+      <Level>40</Level>
+      <ID>19</ID>
+      <ImageString>_location_placeholder_plains_0</ImageString>
+      <Category>Discussia</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Birds</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Ancient Greece</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </ItemsList>
@@ -5285,6 +5399,240 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ShieldTypeID>
       <OffHandTypeID />
       <JewelerTypeID />
+      <LoreTypeID />
+    </ItemsLists>
+    <ItemsLists>
+      <Name>Ancient Greece</Name>
+      <Weight>
+        <int>120</int>
+        <int>100</int>
+        <int>60</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>100</int>
+        <int>30</int>
+        <int>0</int>
+        <int>10</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>100</int>
+        <int>20</int>
+        <int>20</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </Weight>
+      <WeaponTypeID>
+        <GenerationWeight>
+          <ID>16</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>10</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>19</ID>
+          <Weight>10</Weight>
+        </GenerationWeight>
+      </WeaponTypeID>
+      <ArmorTypeID>
+        <GenerationWeight>
+          <ID>37</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>10</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>1</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>44</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>24</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>25</ID>
+          <Weight>10</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>48</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>56</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+      </ArmorTypeID>
+      <ShieldTypeID />
+      <OffHandTypeID />
+      <JewelerTypeID>
+        <GenerationWeight>
+          <ID>3</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>0</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+      </JewelerTypeID>
+      <LoreTypeID />
+    </ItemsLists>
+    <ItemsLists>
+      <Name>Fantasy Barbarian Kingdom</Name>
+      <Weight>
+        <int>100</int>
+        <int>100</int>
+        <int>100</int>
+        <int>100</int>
+        <int>100</int>
+        <int>0</int>
+        <int>0</int>
+        <int>100</int>
+        <int>100</int>
+        <int>100</int>
+        <int>100</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>100</int>
+        <int>100</int>
+        <int>0</int>
+        <int>100</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </Weight>
+      <WeaponTypeID>
+        <GenerationWeight>
+          <ID>14</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>21</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>30</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>16</ID>
+          <Weight>40</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+      </WeaponTypeID>
+      <ArmorTypeID>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>44</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>24</ID>
+          <Weight>30</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>25</ID>
+          <Weight>30</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>39</ID>
+          <Weight>10</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>33</ID>
+          <Weight>60</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>32</ID>
+          <Weight>40</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>48</ID>
+          <Weight>70</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>47</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>56</ID>
+          <Weight>20</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>58</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+      </ArmorTypeID>
+      <ShieldTypeID />
+      <OffHandTypeID />
+      <JewelerTypeID>
+        <GenerationWeight>
+          <ID>3</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>4</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>0</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
+      </JewelerTypeID>
       <LoreTypeID />
     </ItemsLists>
   </ItemsLists>
