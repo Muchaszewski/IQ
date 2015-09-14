@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
-using UnityEditor;
 
 public class DebugOptions : MonoBehaviour
 {
@@ -43,7 +42,7 @@ public class DebugOptions : MonoBehaviour
         GUILayout.Label("Items count: " + player.Inventory.Items.Count);
         GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
-        _rarity = (EnumItemRarity)EditorGUILayout.EnumPopup(_rarity);
+        //_rarity = (EnumItemRarity)GUILayout.EnumPopup(_rarity);
         _equipmentSlider = (int)GUILayout.HorizontalSlider(_equipmentSlider, 1, 100);
         GUILayout.Label(_equipmentSlider.ToString());
         GUILayout.EndHorizontal();

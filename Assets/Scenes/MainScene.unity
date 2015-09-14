@@ -305,7 +305,7 @@ GameObject:
   - 222: {fileID: 12730490}
   - 114: {fileID: 12730489}
   - 114: {fileID: 12730488}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: __TEST_SAVE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4847,7 +4847,7 @@ GameObject:
   - 222: {fileID: 428749228}
   - 114: {fileID: 428749227}
   - 114: {fileID: 428749226}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: __TEST_LOAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7715,7 +7715,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
   m_Value: 0
-  m_Size: .999130726
+  m_Size: .999130845
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13528,7 +13528,7 @@ GameObject:
   - 224: {fileID: 1351541914}
   - 222: {fileID: 1351541916}
   - 114: {fileID: 1351541915}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14105,7 +14105,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1, y: .500030518}
+  m_AnchoredPosition: {x: 1, y: .5}
   m_SizeDelta: {x: 552.5, y: 575.200012}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1414563736
@@ -15787,7 +15787,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -276, y: -209.850006}
+  m_AnchoredPosition: {x: -276, y: -209.850098}
   m_SizeDelta: {x: 532, y: 419.700012}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1589742651
@@ -17256,7 +17256,7 @@ GameObject:
   - 224: {fileID: 1719809140}
   - 222: {fileID: 1719809142}
   - 114: {fileID: 1719809141}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

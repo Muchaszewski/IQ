@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor.AnimatedValues;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 

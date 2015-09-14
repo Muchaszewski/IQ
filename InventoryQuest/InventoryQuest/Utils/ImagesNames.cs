@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 namespace InventoryQuest.Utils
@@ -29,7 +30,19 @@ namespace InventoryQuest.Utils
         static ImagesNames()
         {
             Init();
+#if CREATOR
             ItemsImageNames = GetAllImagesNames();
+#endif
+            if (Application.isEditor)
+            {
+                ItemsImageNames = GetAllImagesNames();
+                FileList.Instance.ItemsImageNames = ItemsImageNames;
+                FileList.Save();
+            }
+            else
+            {
+                ItemsImageNames = FileList.Instance.ItemsImageNames;
+            }
         }
 
         /// <summary>
@@ -111,6 +124,15 @@ namespace InventoryQuest.Utils
                 }
                 ItemsImageNames.Add(nameList);
             }
+#if !CREATOR
+            foreach (var imageName in ItemsImageNames)
+            {
+                for (int i = 0; i < imageName.FullNameList.Count; i++)
+                {
+                    imageName.FullNameList[i] = FileUtility.AssetsRelativePath(imageName.FullNameList[i]);
+                }
+            }
+#endif
             return ItemsImageNames;
         }
 
@@ -147,9 +169,6 @@ namespace InventoryQuest.Utils
         {
 #if CREATOR
             string[] fullPath = { PathRoot };
-#else
-            var fullPath = FileUtility.GetResourcesDirectories();
-#endif
             var files = new List<string>();
             if (searchFiles)
             {
@@ -170,10 +189,64 @@ namespace InventoryQuest.Utils
                     files.AddRange(str);
                 }
             }
-#if CREATOR
             files.RemoveAll(x => x.EndsWith("meta"));
-#endif
             return files.ToArray();
+
+#else
+            var fullPath = FileUtility.GetResourcesDirectories();
+            var files = new List<string>();
+            if (searchFiles)
+            {
+                foreach (var localpath in fullPath)
+                {
+                    files.AddRange(Directory.GetFiles(localpath + path));
+                }
+            }
+            else
+            {
+                foreach (var localpath in fullPath)
+                {
+                    string[] str = Directory.GetDirectories(localpath + path);
+                    for (var i = 0; i < str.Count(); i++)
+                    {
+                        str[i] = new DirectoryInfo(str[i]).Name;
+                    }
+                    files.AddRange(str);
+                }
+            }
+            return files.ToArray();
+#endif
+        }
+
+        [Serializable]
+        public class FileList
+        {
+            public static FileList Instance { get; private set; }
+
+            static FileList()
+            {
+                if (!Application.isEditor)
+                {
+                    var data = Load();
+                    Instance = data;
+                }
+                else
+                {
+                    Instance = new FileList();
+                }
+            }
+
+            public List<NamedList<string>> ItemsImageNames;
+
+            public static void Save()
+            {
+                BinaryFilesOperations.Save(Instance, "Assets/StreamingAssets/resources.fl");
+            }
+
+            static FileList Load()
+            {
+                return BinaryFilesOperations.Load<FileList>("InventoryQuest_Data/StreamingAssets/resources.fl");
+            }
         }
 
         [Serializable]
