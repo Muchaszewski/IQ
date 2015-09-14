@@ -4526,7 +4526,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Iron Plain</Name>
       <Level>6</Level>
       <ID>5</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4545,7 +4545,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Western Road</Name>
       <Level>8</Level>
       <ID>6</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4564,7 +4564,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>The Broken Bridge</Name>
       <Level>11</Level>
       <ID>7</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_1</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4580,7 +4580,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>Shining Sans Desert</Name>
+      <Name>Shining Sands Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
@@ -4629,7 +4629,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>ME 20</Name>
       <Level>20</Level>
       <ID>10</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_forest_0</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4656,7 +4656,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>ME 30</Name>
       <Level>30</Level>
       <ID>11</ID>
-      <ImageString>location_placeholder_desertTown_0</ImageString>
+      <ImageString>_location_placeholder_forest_0</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4675,7 +4675,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>ME 40</Name>
       <Level>40</Level>
       <ID>12</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_forest_0</ImageString>
       <Category>Crusader Kingdom</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4698,7 +4698,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>DE 20</Name>
       <Level>20</Level>
       <ID>13</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4717,7 +4717,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>DE 30</Name>
       <Level>30</Level>
       <ID>14</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4740,7 +4740,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>DE 40</Name>
       <Level>40</Level>
       <ID>15</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_mountains_0</ImageString>
       <Category>Desert</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4778,7 +4778,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Fields of Arcadia</Name>
       <Level>7</Level>
       <ID>17</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_0</ImageString>
       <Category>Discussia</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4797,6 +4797,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>FBK 40</Name>
       <Level>40</Level>
       <ID>18</ID>
+      <ImageString>location_plain_0</ImageString>
       <Category>Atlantea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -4815,7 +4816,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>DS 40</Name>
       <Level>40</Level>
       <ID>19</ID>
-      <ImageString>location_placeholder_valley_0</ImageString>
+      <ImageString>_location_placeholder_plains_0</ImageString>
       <Category>Discussia</Category>
       <EntitiesList>
         <GenerationWeightLists>
