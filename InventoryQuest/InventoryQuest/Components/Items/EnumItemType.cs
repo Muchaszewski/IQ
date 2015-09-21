@@ -6,69 +6,71 @@ namespace InventoryQuest.Components.Items
 {
     public enum EnumItemType
     {
+        [TypeToSlot(EnumItemSlot.Head)]
         Helmet, //0
+        [TypeToSlot(EnumItemSlot.Chest)]
         Chest,
+        [TypeToSlot(EnumItemSlot.Waist)]
         Belt,
+        [TypeToSlot(EnumItemSlot.Legs)]
         Leggins,
+        [TypeToSlot(EnumItemSlot.Feet)]
         Boots,
-        Arms,
+        [TypeToSlot(EnumItemSlot.Shoulders)]
         Shoulders,
+        [TypeToSlot(EnumItemSlot.Hands)]
         Gloves,
+        [TypeToSlot(EnumItemSlot.Back)]
         Cloak, //8
+        [TypeToSlot(EnumItemSlot.Neck)]
         Amulet, //9
+        [TypeToSlot(EnumItemSlot.Finger)]
         Ring, //10
 
+        [TypeToSlot(EnumItemSlot.OffHand)]
         Shield, //11
 
+        [TypeToSlot(EnumItemSlot.OffHand)]
         OffHand, //12
         Unarmed, //13
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Dagger, //14
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Sword,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Axe,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Mace,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Flail,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Polearm,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Staff,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Wand,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Bow,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Crossbow,
+        [TypeToSlot(EnumItemSlot.Weapon)]
         Thrown, //24
+        [TypeToSlot(EnumItemSlot.Unknown)]
         Lore,
+        [TypeToSlot(EnumItemSlot.Unknown)]
         Bestiary,
     }
 
-    //[AttributeUsage(AttributeTargets.All)]
-    //public class DropChance : Attribute
-    //{
-    //    private static List<DropChance> _Items = new List<DropChance>();
+    [AttributeUsage(AttributeTargets.All)]
+    public class TypeToSlot : Attribute
+    {
+        public EnumItemSlot Slot { get; set; }
 
-    //    static DropChance()
-    //    {
-    //        MemberInfo[] mem = typeof (EnumItemType).GetMembers();
-    //        foreach (MemberInfo item in mem)
-    //        {
-    //            if (item.DeclaringType == typeof(EnumItemType) && item.GetCustomAttributes(typeof(EnumItemType), false).Length != 0)
-    //            {
-    //                var attrib = (DropChance) item.GetCustomAttributes(typeof (DropChance), false)[0];
-    //                Items.Add(attrib);
-    //                MaxChances += Items[Items.Count - 1].Chance;
-    //            }
-    //        }
-    //    }
+        private TypeToSlot() {}
 
-    //    public DropChance(int chance)
-    //    {
-    //        Chance = chance;
-    //    }
-
-    //    public static int MaxChances { get; private set; }
-
-    //    public static List<DropChance> Items
-    //    {
-    //        get { return _Items; }
-    //        private set { _Items = value; }
-    //    }
-
-    //    public int Chance { get; set; }
-    //}
+        public TypeToSlot(EnumItemSlot slot)
+        {
+            Slot = slot;
+        }
+    }
 }
