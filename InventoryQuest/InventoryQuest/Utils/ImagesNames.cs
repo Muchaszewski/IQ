@@ -32,7 +32,7 @@ namespace InventoryQuest.Utils
             Init();
 #if CREATOR
             ItemsImageNames = GetAllImagesNames();
-#endif
+#else
             if (Application.isEditor)
             {
                 ItemsImageNames = GetAllImagesNames();
@@ -43,6 +43,7 @@ namespace InventoryQuest.Utils
             {
                 ItemsImageNames = FileList.Instance.ItemsImageNames;
             }
+#endif
         }
 
         /// <summary>

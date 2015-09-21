@@ -36,7 +36,16 @@ namespace Creator
 
         public void LoadAll()
         {
-            PopulateItems();
+            try
+            {
+                PopulateItems();
+            }
+            catch (TypeInitializationException)
+            {
+                MessageBox.Show("Missing Storage.xml file");
+                System.Diagnostics.Process.GetCurrentProcess().Close();
+                return;
+            }
             PopulateItemsList();
             PopulateMonster();
             PopulateMonsterLists();
@@ -406,28 +415,29 @@ namespace Creator
         {
             var item = new ItemType();
             var enumItemType = ComboBoxItemsType.SelectedIndex;
-            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 item = new ArmorType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Armors.Count;
                 GenerationStorage.Instance.Armors.Add((ArmorType)item);
             }
-            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
                 item = new JeweleryType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Jewelery.Count;
                 GenerationStorage.Instance.Jewelery.Add((JeweleryType)item);
             }
-            else if (enumItemType == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 item = new ShieldType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Shields.Count;
                 GenerationStorage.Instance.Shields.Add((ShieldType)item);
             }
-            else if (enumItemType == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 item = new OffHandType();
                 item.Type = (EnumItemType)enumItemType;
@@ -435,14 +445,14 @@ namespace Creator
                 GenerationStorage.Instance.OffHands.Add((OffHandType)item);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 item = new WeaponType();
                 item.Type = (EnumItemType)enumItemType;
                 item.ID = GenerationStorage.Instance.Weapons.Count;
                 GenerationStorage.Instance.Weapons.Add((WeaponType)item);
             }
-            else if (enumItemType >= 25 && enumItemType <= 26) //Lore and Bestiary
+            else if (groupType == EnumItemGroupType.Lore) //Lore and Bestiary
             {
                 item = new LoreType();
                 item.Type = (EnumItemType)enumItemType;
@@ -470,22 +480,23 @@ namespace Creator
             PopulateDataGridItemsAll();
             ItemsHideAllTabs();
             var enumItemType = ComboBoxItemsType.SelectedIndex;
-            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 ItemsTabArmor.Visibility = Visibility.Visible;
             }
-            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
             }
-            else if (enumItemType == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 ItemsTabShield.Visibility = Visibility.Visible;
             }
-            else if (enumItemType == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 ItemsTabWeapon.Visibility = Visibility.Visible;
             }
@@ -524,36 +535,36 @@ namespace Creator
                 var imageList = new List<Image>();
                 // "Try" bracket added for program not to crash when an image of certain index does not exist.
                 PairTypeItem pp = null;
-                try
+
+                foreach (var pair in item.ImageID)
                 {
-                    foreach (var pair in item.ImageID)
+                    try
                     {
                         pp = pair;
                         var id = ResolveImage(pair.Type, pair.Item);
                         imageList.Add(_imagesList[id.ImageIDType][id.ImageIDItem]);
                     }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Given image doesnot exist. Please ensure that this image in in sprite folder\r\n" + pp + "\r\n" + e.Message);
+                    }
                 }
-                catch
-                {
-                    MessageBox.Show("Given image doesnot exist. Please ensure that this image in in sprite folder\r\n" + pp);
-                    // Do nothing, temporary fix
-                    // Do nothing, temporary fix
-                    // Just not crashing is enough
-                }
+
                 ListBoxImages.ItemsSource = imageList;
 
                 var enumItemType = ComboBoxItemsType.SelectedIndex;
-                if (enumItemType >= 0 && enumItemType <= 8) //Armors
+                var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+                if (groupType == EnumItemGroupType.Armor)
                 {
                     var armor = (ArmorType)DataGridItemsAll.SelectedItem;
                     if (armor.Armor == null) return;
                     ButtonItemsArmor.Content = armor.Armor.ToString();
                 }
-                else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+                else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
                 {
                     var jewelery = (JeweleryType)DataGridItemsAll.SelectedItem;
                 }
-                else if (enumItemType == 11) //Shields
+                else if (groupType == EnumItemGroupType.Shield) //Shields
                 {
                     var shield = (ShieldType)DataGridItemsAll.SelectedItem;
                     try
@@ -563,12 +574,12 @@ namespace Creator
                     }
                     catch { }
                 }
-                else if (enumItemType == 12) //Offhand
+                else if (groupType == EnumItemGroupType.OffHand)  //Offhand
                 {
                     var offhand = (OffHandType)DataGridItemsAll.SelectedItem;
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+                else if (groupType == EnumItemGroupType.Weapon) //Weapons
                 {
                     var weapon = (WeaponType)DataGridItemsAll.SelectedItem;
                     try
@@ -584,7 +595,7 @@ namespace Creator
                     }
                     catch { }
                 }
-                else if (enumItemType >= 25 && enumItemType <= 26) //Weapons
+                else if (groupType == EnumItemGroupType.Lore) //Weapons
                 {
                     var lore = (LoreType)DataGridItemsAll.SelectedItem;
                 }
@@ -927,28 +938,29 @@ namespace Creator
         private IEnumerable<ItemType> SelectItemsOfType(int enumItemType)
         {
             IEnumerable<ItemType> itemTypes = null;
-            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 itemTypes = GenerationStorage.Instance.Armors.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
-            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
                 itemTypes = GenerationStorage.Instance.Jewelery.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
-            else if (enumItemType == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 itemTypes = GenerationStorage.Instance.Shields.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
-            else if (enumItemType == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 itemTypes = GenerationStorage.Instance.OffHands.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 itemTypes = GenerationStorage.Instance.Weapons.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
-            else if (enumItemType >= 25 && enumItemType <= 26) //Weapons
+            else if (groupType == EnumItemGroupType.Lore) //Weapons
             {
                 itemTypes = GenerationStorage.Instance.Lore.FindAll(x => x.Type == (EnumItemType)enumItemType);
             }
@@ -958,7 +970,8 @@ namespace Creator
         private IEnumerable<DisplayNameWeightList> SelectCategoryItemsOfType(int enumItemType)
         {
             var itemTypes = new List<DisplayNameWeightList>();
-            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID
@@ -971,7 +984,7 @@ namespace Creator
                         Weight = item.Weight
                     });
             }
-            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
                 try
                 {
@@ -988,7 +1001,7 @@ namespace Creator
                 }
                 catch { }
             }
-            else if (enumItemType == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID
@@ -1001,7 +1014,7 @@ namespace Creator
                         Weight = item.Weight
                     });
             }
-            else if (enumItemType == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID
@@ -1015,7 +1028,7 @@ namespace Creator
                     });
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
@@ -1028,7 +1041,7 @@ namespace Creator
                         Weight = item.Weight
                     });
             }
-            else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+            else if (groupType == EnumItemGroupType.Lore) //Lore
             {
                 itemTypes.AddRange(
                     from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
@@ -1180,7 +1193,8 @@ namespace Creator
             IEnumerable<ItemType> items = DataGridItemsListsAll.SelectedItems.Cast<ItemType>();
             foreach (ItemType item in items)
             {
-                if (enumItemType >= 0 && enumItemType <= 8) //Armors
+                var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+                if (groupType == EnumItemGroupType.Armor)
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID
@@ -1194,7 +1208,7 @@ namespace Creator
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
                     });
                 }
-                else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+                else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID
@@ -1208,7 +1222,7 @@ namespace Creator
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
                     });
                 }
-                else if (enumItemType == 11) //Shields
+                else if (groupType == EnumItemGroupType.Shield) //Shields
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID
@@ -1222,7 +1236,7 @@ namespace Creator
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
                     });
                 }
-                else if (enumItemType == 12) //Offhand
+                else if (groupType == EnumItemGroupType.OffHand)  //Offhand
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID
@@ -1237,7 +1251,7 @@ namespace Creator
                     });
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+                else if (groupType == EnumItemGroupType.Weapon) //Weapons
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
@@ -1251,7 +1265,7 @@ namespace Creator
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
                     });
                 }
-                else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+                else if (groupType == EnumItemGroupType.Lore) //Lore
                 {
                     if (
                         GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
@@ -1274,33 +1288,34 @@ namespace Creator
             var enumItemType = DataGridItemsCategoryList.SelectedIndex;
             var item = DataGridItemsListsItems.SelectedItem as DisplayNameWeightList;
 
-            if (enumItemType >= 0 && enumItemType <= 8) //Armors
+            var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
-            else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
-            else if (enumItemType == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
-            else if (enumItemType == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             //13 is Unarmed
-            else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
-            else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+            else if (groupType == EnumItemGroupType.Lore) //Lore
             {
                 GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID.RemoveAll(
                     x => x.ID == item.ID);
@@ -2099,39 +2114,40 @@ namespace Creator
             var enumItemType = DataGridItemsCategoryList.SelectedIndex;
             if (DataGridItemsCategoryList.SelectedIndex != -1 && item != null)
             {
-                if (enumItemType >= 0 && enumItemType <= 8) //Armors
+                var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
+                if (groupType == EnumItemGroupType.Armor)
                 {
                     var v = GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .ArmorTypeID.Find(x => x.ID == item.ID);
                     v.Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
-                else if (enumItemType == 9 || enumItemType == 10) //Amu and Rings
+                else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .JewelerTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
-                else if (enumItemType == 11) //Shields
+                else if (groupType == EnumItemGroupType.Shield) //Shields
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .ShieldTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
-                else if (enumItemType == 12) //Offhand
+                else if (groupType == EnumItemGroupType.OffHand) //Offhand
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .OffHandTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 //13 is Unarmed
-                else if (enumItemType >= 14 && enumItemType <= 24) //Weapons
+                else if (groupType == EnumItemGroupType.Weapon) //Weapons
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .WeaponTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
-                else if (enumItemType >= 25 && enumItemType <= 26) //Lore
+                else if (groupType == EnumItemGroupType.Lore) //Lore
                 {
                     GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
                         .LoreTypeID.Find(x => x.ID == item.ID).Weight =

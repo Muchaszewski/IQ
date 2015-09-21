@@ -95,6 +95,7 @@
     <Compile Include="InventoryQuest\Components\ItemsLists.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemClassSkill.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemDisplayedType.cs" />
+    <Compile Include="InventoryQuest\Components\Items\EnumItemGroupType.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemHands.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemModificator.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemRarity.cs" />

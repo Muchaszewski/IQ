@@ -10,7 +10,6 @@
         Belt,
         Leggins,
         Boots,
-        Arms,
         Shoulders,
         Gloves,
         Cloak,
