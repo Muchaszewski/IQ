@@ -21,7 +21,7 @@ namespace InventoryQuest.Game.Fight
         private float _oneSecondTimer;
 
         /// <summary>
-        ///     Constructor for new fight </para>
+        ///     Constructor for new fight
         ///     Fight not begin yet
         /// </summary>
         /// <param name="player">Player</param>

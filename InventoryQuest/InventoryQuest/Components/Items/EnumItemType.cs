@@ -37,38 +37,38 @@ namespace InventoryQuest.Components.Items
         Bestiary,
     }
 
-    [AttributeUsage(AttributeTargets.All)]
-    public class DropChance : Attribute
-    {
-        private static List<DropChance> _Items = new List<DropChance>();
+    //[AttributeUsage(AttributeTargets.All)]
+    //public class DropChance : Attribute
+    //{
+    //    private static List<DropChance> _Items = new List<DropChance>();
 
-        static DropChance()
-        {
-            MemberInfo[] mem = typeof (EnumItemType).GetMembers();
-            foreach (MemberInfo item in mem)
-            {
-                if (item.DeclaringType == typeof(EnumItemType) && item.GetCustomAttributes(typeof(EnumItemType), false).Length != 0)
-                {
-                    var attrib = (DropChance) item.GetCustomAttributes(typeof (DropChance), false)[0];
-                    Items.Add(attrib);
-                    MaxChances += Items[Items.Count - 1].Chance;
-                }
-            }
-        }
+    //    static DropChance()
+    //    {
+    //        MemberInfo[] mem = typeof (EnumItemType).GetMembers();
+    //        foreach (MemberInfo item in mem)
+    //        {
+    //            if (item.DeclaringType == typeof(EnumItemType) && item.GetCustomAttributes(typeof(EnumItemType), false).Length != 0)
+    //            {
+    //                var attrib = (DropChance) item.GetCustomAttributes(typeof (DropChance), false)[0];
+    //                Items.Add(attrib);
+    //                MaxChances += Items[Items.Count - 1].Chance;
+    //            }
+    //        }
+    //    }
 
-        public DropChance(int chance)
-        {
-            Chance = chance;
-        }
+    //    public DropChance(int chance)
+    //    {
+    //        Chance = chance;
+    //    }
 
-        public static int MaxChances { get; private set; }
+    //    public static int MaxChances { get; private set; }
 
-        public static List<DropChance> Items
-        {
-            get { return _Items; }
-            private set { _Items = value; }
-        }
+    //    public static List<DropChance> Items
+    //    {
+    //        get { return _Items; }
+    //        private set { _Items = value; }
+    //    }
 
-        public int Chance { get; set; }
-    }
+    //    public int Chance { get; set; }
+    //}
 }
