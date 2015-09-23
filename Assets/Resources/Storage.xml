@@ -3574,6 +3574,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Plate Leggings</Name>
       <ID>42</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Heavy</Skill>
@@ -4109,6 +4110,37 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <Max>12</Max>
         <MinMaxLevel>830</MinMaxLevel>
         <MaxMaxLevel>853</MaxMaxLevel>
+      </Armor>
+    </ArmorType>
+    <ArmorType>
+      <Name>Scale Leggings</Name>
+      <ID>59</ID>
+      <ExtraName>Leggings of Hammerfall</ExtraName>
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <Durability>
+        <Min>14</Min>
+        <Max>15</Max>
+        <MinMaxLevel>135</MinMaxLevel>
+        <MaxMaxLevel>140</MaxMaxLevel>
+      </Durability>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>unique_hammerfall_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <FlavorText />
+      <Rarity>Mythical</Rarity>
+      <RequiredLevel>33</RequiredLevel>
+      <DropLevel>33</DropLevel>
+      <RequiredStats />
+      <Armor>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>430</MinMaxLevel>
+        <MaxMaxLevel>455</MaxMaxLevel>
       </Armor>
     </ArmorType>
   </Armors>
