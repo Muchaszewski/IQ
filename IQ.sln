@@ -1,24 +1,46 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQ.CSharp", "IQ.CSharp.csproj", "{C81601C7-89DE-D3DF-0195-09B3A0253F14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQ.CSharp.Editor", "IQ.CSharp.Editor.csproj", "{F5576AC5-7501-DD1F-BE27-4806655EA8F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryQuest", "InventoryQuest\InventoryQuest.csproj", "{625F005A-8E91-44F2-A97E-CEEB4433D6D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Creator|Any CPU = Creator|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Unity|Any CPU = Unity|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Creator|Any CPU.ActiveCfg = Release|Any CPU
+		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Creator|Any CPU.Build.0 = Release|Any CPU
 		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Unity|Any CPU.ActiveCfg = Release|Any CPU
+		{C81601C7-89DE-D3DF-0195-09B3A0253F14}.Unity|Any CPU.Build.0 = Release|Any CPU
+		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Creator|Any CPU.ActiveCfg = Release|Any CPU
+		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Creator|Any CPU.Build.0 = Release|Any CPU
 		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Unity|Any CPU.ActiveCfg = Release|Any CPU
+		{F5576AC5-7501-DD1F-BE27-4806655EA8F4}.Unity|Any CPU.Build.0 = Release|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Creator|Any CPU.ActiveCfg = Creator|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Creator|Any CPU.Build.0 = Creator|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Unity|Any CPU.ActiveCfg = Unity|Any CPU
+		{625F005A-8E91-44F2-A97E-CEEB4433D6D8}.Unity|Any CPU.Build.0 = Unity|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

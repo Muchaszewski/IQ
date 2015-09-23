@@ -21049,6 +21049,7 @@ MonoBehaviour:
   - {fileID: 513019897}
   - {fileID: 1487530469}
   - {fileID: 851701381}
+  ApplyStatisticsButton: {fileID: 0}
 --- !u!224 &2013007901 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22410838, guid: c0643fbfaffed594da8e6007beb091e9,
@@ -21721,11 +21722,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 236
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -775
+      value: -765
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_SizeDelta.x

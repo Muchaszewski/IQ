@@ -32,6 +32,7 @@ namespace InventoryQuest.Components.Items
 
         [TypeToSlot(EnumItemSlot.OffHand, EnumItemGroupType.OffHand)]
         OffHand, //12
+        [TypeToSlot(EnumItemSlot.Unknown, EnumItemGroupType.Weapon)]
         Unarmed, //13
         [TypeToSlot(EnumItemSlot.Weapon, EnumItemGroupType.Weapon)]
         Dagger, //14
