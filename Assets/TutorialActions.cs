@@ -151,5 +151,6 @@ public class TutorialActions : MonoBehaviour
         MessageBox.RectTransform.anchoredPosition = new Vector2(-630, 230);
         MessageBox.TitleText.text = "ありがとうございます";
         MessageBox.MessageText.text = "おわいだ！がんばろう";
+        MessageBox.NextButton.gameObject.SetActive(true);
     }
 }
