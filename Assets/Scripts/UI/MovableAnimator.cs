@@ -74,13 +74,6 @@ public class MovableContainer
             _panelOutMove = _panels[0];
             _panelOutMove.RectTransform.anchoredPosition = MoveToPoint;
         }
-        else
-        {
-            foreach (var panel in _panels)
-            {
-                panel.RectTransform.anchoredPosition = MoveInPoint;
-            }
-        }
     }
 
     public void StartAnimation(int panelID)
