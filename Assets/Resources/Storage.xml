@@ -2,7 +2,7 @@
 <GenerationStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Entities>
     <EntityType>
-      <Name>Scavanger</Name>
+      <Name>Mulltrod Scavanger</Name>
       <ID>0</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
@@ -147,7 +147,7 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Giant Scorpion</Name>
+      <Name>Mulltrod Looter</Name>
       <ID>1</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
@@ -278,7 +278,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
-      <ItemsLists />
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
       <Range>
         <Min>1</Min>
         <Max>1</Max>
@@ -287,7 +292,7 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Rabid Crow</Name>
+      <Name>Mulltrod Watcher</Name>
       <ID>2</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
@@ -418,7 +423,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
-      <ItemsLists />
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
       <Range>
         <Min>1</Min>
         <Max>1</Max>
@@ -427,11 +437,11 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Goblin Scout</Name>
+      <Name>Mulltrod Bully</Name>
       <ID>3</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
-      <Sex>Male</Sex>
+      <Sex>None</Sex>
       <Accuracy>
         <Min>18</Min>
         <Max>22</Max>
@@ -558,7 +568,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
-      <ItemsLists />
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
       <Range>
         <Min>1</Min>
         <Max>1</Max>
@@ -567,7 +582,7 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Vile Scorpion</Name>
+      <Name>Mulltrod Enforcer</Name>
       <ID>4</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
@@ -698,7 +713,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
-      <ItemsLists />
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
       <Range>
         <Min>1</Min>
         <Max>1</Max>
@@ -707,11 +727,11 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Goblin Warrior</Name>
+      <Name>Mulltrod Skirmisher</Name>
       <ID>5</ID>
       <Level>0</Level>
       <Type>Unknown</Type>
-      <Sex>Male</Sex>
+      <Sex>None</Sex>
       <Accuracy>
         <Min>18</Min>
         <Max>22</Max>
@@ -838,6 +858,296 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Mulltrod Bodyguard</Name>
+      <ID>6</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Crumbling Zombie</Name>
+      <ID>7</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Zombie</Name>
+      <ID>8</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Fat Zombie</Name>
+      <ID>9</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Zombie Bloater</Name>
+      <ID>10</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Massive Zombie</Name>
+      <ID>11</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Undying Zombie</Name>
+      <ID>12</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Armored Zombie</Name>
+      <ID>13</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Decayed Skeleton</Name>
+      <ID>14</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton</Name>
+      <ID>15</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Warrior</Name>
+      <ID>16</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Man-at-Arms</Name>
+      <ID>17</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Archer</Name>
+      <ID>18</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Crossbowman</Name>
+      <ID>19</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Knight</Name>
+      <ID>20</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Scorpion</Name>
+      <ID>21</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Giant Scorpion</Name>
+      <ID>22</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Vile Scorpion</Name>
+      <ID>23</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Rabid Crow</Name>
+      <ID>24</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Monstrous Crow</Name>
+      <ID>25</ID>
+      <Level>0</Level>
+      <Type>Unknown</Type>
+      <Sex>None</Sex>
       <ItemsLists />
       <Range>
         <Min>1</Min>
@@ -4116,6 +4426,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Scale Leggings</Name>
       <ID>59</ID>
       <ExtraName>Leggings of Hammerfall</ExtraName>
+      <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Heavy</Skill>
       <Durability>
@@ -4443,7 +4754,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4462,12 +4773,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>40</Weight>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4483,13 +4794,25 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Sailor's Beach</Name>
-      <Level>4</Level>
+      <Level>6</Level>
       <ID>2</ID>
       <ImageString>location_coast_0</ImageString>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Crows, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4510,18 +4833,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Jagged Cliffs</Name>
-      <Level>4</Level>
+      <Level>6</Level>
       <ID>3</ID>
       <ImageString>location_coast_0</ImageString>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
-          <Weight>20</Weight>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4537,13 +4868,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Scorpion Desert</Name>
-      <Level>6</Level>
+      <Level>7</Level>
       <ID>4</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4556,13 +4887,21 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Iron Plain</Name>
-      <Level>6</Level>
+      <Level>10</Level>
       <ID>5</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4578,10 +4917,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>6</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4597,10 +4940,18 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>11</Level>
       <ID>7</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4616,15 +4967,19 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>20</Weight>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4639,15 +4994,15 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>12</Level>
       <ID>9</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>60</Weight>
+          <Name>Skeletons, Soldiers</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4658,18 +5013,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 20</Name>
+      <Name>Medieval Lvl 20</Name>
       <Level>20</Level>
       <ID>10</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Skeletons, Knights</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4685,14 +5044,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 30</Name>
+      <Name>Medieval Lvl 30</Name>
       <Level>30</Level>
       <ID>11</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Skeletons, Knights</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4704,18 +5071,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 40</Name>
+      <Name>Medieval Lvl 40</Name>
       <Level>40</Level>
       <ID>12</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Skeletons, Knights</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Soldiers</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4727,14 +5098,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 20</Name>
+      <Name>Desert Lvl 20</Name>
       <Level>20</Level>
       <ID>13</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4746,18 +5117,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 30</Name>
+      <Name>Desert Lvl 30</Name>
       <Level>30</Level>
       <ID>14</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>100</Weight>
-        </GenerationWeightLists>
-        <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4769,14 +5136,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 40</Name>
+      <Name>Desert Lvl 40</Name>
       <Level>40</Level>
       <ID>15</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4789,13 +5156,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Sunset Steppe</Name>
-      <Level>5</Level>
+      <Level>8</Level>
       <ID>16</ID>
       <ImageString>location_plain_0</ImageString>
       <Category>Atlantea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4808,13 +5175,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Fields of Arcadia</Name>
-      <Level>7</Level>
+      <Level>8</Level>
       <ID>17</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
       <Category>Discussia</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4826,14 +5193,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>FBK 40</Name>
+      <Name>Barbarian Lvl 40</Name>
       <Level>40</Level>
       <ID>18</ID>
       <ImageString>location_plain_0</ImageString>
-      <Category>Atlantea</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4845,14 +5212,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DS 40</Name>
+      <Name>Ancient Lvl 40</Name>
       <Level>40</Level>
       <ID>19</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
-      <Category>Discussia</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4860,6 +5227,40 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Ancient Greece</Name>
           <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>Flooded Battlefield</Name>
+      <Level>5</Level>
+      <ID>20</ID>
+      <Category>The Inner Sea</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Elite</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Medieval Europe</Name>
+          <Weight>10</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Medieval Middle-East</Name>
+          <Weight>10</Weight>
         </GenerationWeightLists>
       </ItemsList>
     </Spot>
@@ -5640,6 +6041,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <ID>58</ID>
           <Weight>100</Weight>
         </GenerationWeight>
+        <GenerationWeight>
+          <ID>59</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
       </ArmorTypeID>
       <ShieldTypeID />
       <OffHandTypeID />
@@ -5670,10 +6075,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
   </ItemsLists>
   <EntityLists>
     <EntityLists>
-      <Name>Scavangers</Name>
+      <Name>Mulltrod, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
           <ID>0</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>3</ID>
           <Weight>0</Weight>
         </GenerationWeight>
       </EntityTypeNormalID>
@@ -5682,26 +6099,166 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <EntityTypeUniqueID />
     </EntityLists>
     <EntityLists>
-      <Name>Goblins</Name>
+      <Name>Zombies, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
-          <ID>3</ID>
+          <ID>7</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>8</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>9</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Zombies, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>8</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>10</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>11</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>12</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>13</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Normal</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>14</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>15</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Soldiers</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>16</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>18</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>19</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Knights</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>20</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>19</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Scorpions, Normal</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>21</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>22</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Scorpions, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>22</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>23</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>21</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Mulltrod, Elite</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>6</ID>
           <Weight>0</Weight>
         </GenerationWeight>
         <GenerationWeight>
           <ID>5</ID>
           <Weight>0</Weight>
         </GenerationWeight>
-      </EntityTypeNormalID>
-      <EntityTypeUncommonID />
-      <EntityTypeRareID />
-      <EntityTypeUniqueID />
-    </EntityLists>
-    <EntityLists>
-      <Name>Scorpions</Name>
-      <EntityTypeNormalID>
         <GenerationWeight>
           <ID>4</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>3</ID>
           <Weight>0</Weight>
         </GenerationWeight>
         <GenerationWeight>
@@ -5714,10 +6271,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <EntityTypeUniqueID />
     </EntityLists>
     <EntityLists>
-      <Name>Birds</Name>
+      <Name>Crows, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
-          <ID>2</ID>
+          <ID>24</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Crows, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>24</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>25</ID>
           <Weight>0</Weight>
         </GenerationWeight>
       </EntityTypeNormalID>
