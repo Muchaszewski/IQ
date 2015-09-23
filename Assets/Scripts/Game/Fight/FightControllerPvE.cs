@@ -121,6 +121,7 @@ namespace InventoryQuest.Game.Fight
 
             if (winner == Player)
             {
+                InvokeEvent_onVicotry(new FightControllerEventArgs(this, Player, null));
                 // Experience
                 foreach (Entity enemy in Enemy)
                 {
@@ -128,18 +129,18 @@ namespace InventoryQuest.Game.Fight
                     double experienceModifer = 0;
                     if (levelDelta < 0)
                     {
-                        experienceModifer = Math.Max(1 - 0.005 * Math.Pow(levelDelta, 2), 0.05);
+                        experienceModifer = Math.Max(1 - 0.005*Math.Pow(levelDelta, 2), 0.05);
                     }
                     else if (levelDelta > 0)
                     {
-                        experienceModifer = 1 + 0.005 * Math.Pow(levelDelta, 2);
+                        experienceModifer = 1 + 0.005*Math.Pow(levelDelta, 2);
                     }
                     else
                     {
                         // roznica_poziomu == 0
                         experienceModifer = 1;
                     }
-                    var experience = 50 * experienceModifer;
+                    var experience = 50*experienceModifer;
                     BattleLog.AppendLine("Gained " + experience + " experience");
                     Player.Experience += experience;
                 }
@@ -155,21 +156,26 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (RandomNumberGenerator.NextRandom(100) <= dropChance)
                     {
-                            Item item = RandomItemFactory.CreateItem(
-                                CurrentGame.Instance.Spot,
-                                (EnumItemRarity)RandomNumberGenerator.NextRandom(6));
-                            if (item != null)
-                            {
-                                Player.Inventory.AddItem(item);
-                                BattleLog.AppendLine("You have found: " + item.Name);
-                            }
-                            else
-                            {
-                                BattleLog.AppendLine("Error: Item was null!");
-                            }
+                        Item item = RandomItemFactory.CreateItem(
+                            CurrentGame.Instance.Spot,
+                            (EnumItemRarity) RandomNumberGenerator.NextRandom(6));
+                        if (item != null)
+                        {
+                            Player.Inventory.AddItem(item);
+                            BattleLog.AppendLine("You have found: " + item.Name);
+                        }
+                        else
+                        {
+                            BattleLog.AppendLine("Error: Item was null!");
+                        }
                     }
                 }
             }
+            else
+            {
+                InvokeEvent_onDefeat(new FightControllerEventArgs(this, Player, null));
+            }
+
         }
 
         /// <summary>
@@ -366,6 +372,7 @@ namespace InventoryQuest.Game.Fight
         /// <param name="target">Target entity</param>
         public override string Attack(Entity me, Entity target)
         {
+            InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target));
             string returnMessage = "";
             BattleLog.Append(me.Name + " attacked... ");
 
