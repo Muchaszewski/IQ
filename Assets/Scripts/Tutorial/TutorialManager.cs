@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using InventoryQuest.Game;
 using System.Linq;
+// ReSharper disable All
 
 public class TutorialManager : MonoBehaviour
 {
@@ -19,8 +20,6 @@ public class TutorialManager : MonoBehaviour
 
     public GameObject HeadAndNameApplyButton;
 
-
-
     public GameObject GroupCharacterCreation;
     public GameObject GroupStatistics;
     public Sprite StatiscicsPanel;
@@ -32,7 +31,6 @@ public class TutorialManager : MonoBehaviour
 
     private int[] _rolledStats = { 0, 0, 0, 0, 0, 0 };
     private int[] _savedStats = { 6, 6, 6, 6, 6, 6 };
-
 
     void Start()
     {
@@ -60,6 +58,7 @@ public class TutorialManager : MonoBehaviour
             GroupCombat.SetActive(true);
             GroupHeadCreation.SetActive(false);
         }
+        TutorialActions.Instance.TutorialIntroduction();
     }
 
     /// <summary>
