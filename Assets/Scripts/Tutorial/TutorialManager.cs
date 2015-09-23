@@ -142,6 +142,8 @@ public class TutorialManager : MonoBehaviour
         GroupStatistics.transform.parent.GetComponent<Image>().sprite = StatiscicsPanel;
         GroupStatistics.SetActive(true);
         GroupCharacterCreation.SetActive(false);
+        TutorialActions.Instance.TutorialEquipmentOpen();
+
     }
 
 }
