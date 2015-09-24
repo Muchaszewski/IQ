@@ -1360,7 +1360,7 @@ namespace Creator
                 }
                 catch
                 {
-                    // ignored
+                    //Ignore
                 }
             }
         }
