@@ -6089,10 +6089,6 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <ID>2</ID>
           <Weight>0</Weight>
         </GenerationWeight>
-        <GenerationWeight>
-          <ID>3</ID>
-          <Weight>0</Weight>
-        </GenerationWeight>
       </EntityTypeNormalID>
       <EntityTypeUncommonID />
       <EntityTypeRareID />

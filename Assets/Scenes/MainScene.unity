@@ -2387,6 +2387,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195779733}
+--- !u!114 &198392384 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11451580, guid: 19d02f48fa8b9f34f9749b64b2323ec7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1088563461}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &221540389
 GameObject:
   m_ObjectHideFlags: 0
@@ -8152,8 +8158,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138219475}
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
-  m_Value: 0
-  m_Size: .999130845
+  m_Value: 6.10351562e-05
+  m_Size: .999130726
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21049,7 +21055,48 @@ MonoBehaviour:
   - {fileID: 513019897}
   - {fileID: 1487530469}
   - {fileID: 851701381}
-  ApplyStatisticsButton: {fileID: 0}
+  ApplyStatisticsButton: {fileID: 198392384}
+  introductionMessage:
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Welcome to InventoryQuest! The game that is all about getting loot!
+  automaticCombatMessage:
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Since we don't want you to stop getting loot, we made the combat happen
+      automatically.
+  manualCombatMessage:
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: However, should you feel a strong urge to get new items quickly, there is
+      an option to speed things up by fighting manually. Click on your enemies in
+      order to attack them!
+  rollStatsMessage:
+    position: {x: 1270, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Now is the time for you to decide who you'll want to be. Roll your stats
+      until you're happy with the results.
+  equipItemsMessage:
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Punching your enemies while being naked just won't do. Get some items by
+      killing enemies and equip them. Get at least 3 different pieces of gear.
+  statsPanelMessage:
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: There's more than just clicking though. First, let's take a look at your
+      character.
+  itemsPanelMessage:
+    position: {x: 1270, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Good. Now, let's get to the interesting bit - items! Open the items panel!
 --- !u!224 &2013007901 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22410838, guid: c0643fbfaffed594da8e6007beb091e9,
@@ -21722,43 +21769,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 105
+      value: 815
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -765
+      value: -1155
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 434
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 272
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchorMin.y
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_AnchorMax.y
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22417274, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 133152, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_Name
@@ -21766,7 +21813,103 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11490486, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
       propertyPath: m_Text
-      value: Message title here
+      value: TITLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464120, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464120, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464120, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.3000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464120, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -124.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450488, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451344, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451344, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451344, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.38418579e-07
+      objectReference: {fileID: 0}
+    - target: {fileID: 22451344, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490486, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490486, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490486, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450488, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Text
+      value: TUTORIAL_MESSAGE
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450488, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450488, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 22438188, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451394, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Color.r
+      value: .188235298
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451394, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Color.g
+      value: .188235298
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451394, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}
+      propertyPath: m_Color.b
+      value: .188235298
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f183ac2bd3d714344b97a13c6d36ce10, type: 2}

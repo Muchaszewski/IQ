@@ -10,6 +10,16 @@ using UnityEngine.UI;
 
 public class TutorialActions : MonoBehaviour
 {
+    [System.Serializable]
+    public class TutorialMessage
+    {
+        public Vector2 position;
+        public Vector2 size = new Vector2(500,300);
+        public string title;
+        public string text;
+    }
+
+    // Editor variables
     public static TutorialActions Instance { get; set; }
 
     public MessageBox MessageBox;
@@ -17,7 +27,18 @@ public class TutorialActions : MonoBehaviour
     public Button[] MenuButtons;
     public Button ApplyStatisticsButton;
 
+    public TutorialMessage introductionMessage;
+    public TutorialMessage automaticCombatMessage;
+    public TutorialMessage manualCombatMessage;
+    public TutorialMessage rollStatsMessage;
+    public TutorialMessage equipItemsMessage;
+    public TutorialMessage statsPanelMessage;
+    public TutorialMessage itemsPanelMessage;
+
+    // Private variables
     private int _attackCount = 0;
+
+
 
     // Use this for initialization
     void Start()
@@ -37,18 +58,22 @@ public class TutorialActions : MonoBehaviour
     //TODO Change methods name for proper actions @MaciejLitwin
     public void TutorialIntroduction()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(-200, 214);
-        MessageBox.TitleText.text = "おはよ！";
-        MessageBox.MessageText.text = "よおこそ！自転車さま。げんきですか？この世界すばらしですね？";
+        MessageBox.RectTransform.anchoredPosition = introductionMessage.position;
+        MessageBox.RectTransform.sizeDelta = introductionMessage.size;
+
+        MessageBox.TitleText.text = introductionMessage.title;
+        MessageBox.MessageText.text = introductionMessage.text;
         MessageBox.NextButton.onClick.RemoveAllListeners();
         MessageBox.NextButton.onClick.AddListener(TutorialAutoKill);
     }
 
     public void TutorialAutoKill()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(200, 214);
-        MessageBox.TitleText.text = "モンスタ！";
-        MessageBox.MessageText.text = "あなたはたたかうモンスタ自動的に、1戦いに勝ちます";
+        MessageBox.RectTransform.anchoredPosition = automaticCombatMessage.position;
+        MessageBox.RectTransform.sizeDelta = automaticCombatMessage.size;
+
+        MessageBox.TitleText.text = automaticCombatMessage.title;
+        MessageBox.MessageText.text = automaticCombatMessage.text;
         MessageBox.NextButton.onClick.RemoveAllListeners();
         MessageBox.NextButton.gameObject.SetActive(false);
         FightController.onVicotry += FightController_onVicotry;
@@ -63,9 +88,11 @@ public class TutorialActions : MonoBehaviour
 
     public void TutorialKillMonsters()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(10, 214);
-        MessageBox.TitleText.text = "モンスタ";
-        MessageBox.MessageText.text = "攻撃25回！";
+        MessageBox.RectTransform.anchoredPosition = manualCombatMessage.position;
+        MessageBox.RectTransform.sizeDelta = manualCombatMessage.size;
+
+        MessageBox.TitleText.text = manualCombatMessage.title;
+        MessageBox.MessageText.text = manualCombatMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
         FightController.onAttack += FightController_onAttack;
         MessageBox.NextButton.onClick.RemoveAllListeners();
@@ -84,12 +111,15 @@ public class TutorialActions : MonoBehaviour
 
     private void TutorialOpenStats()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(10, 214);
-        MessageBox.TitleText.text = "統計";
-        MessageBox.MessageText.text = "オープン統計";
+        MessageBox.RectTransform.anchoredPosition = statsPanelMessage.position;
+        MessageBox.RectTransform.sizeDelta = statsPanelMessage.size;
+
+        MessageBox.TitleText.text = statsPanelMessage.title;
+        MessageBox.MessageText.text = statsPanelMessage.text;
         MessageBox.NextButton.onClick.RemoveAllListeners();
         MessageBox.NextButton.onClick.AddListener(TutorialAutoKill);
         MessageBox.NextButton.gameObject.SetActive(false);
+
         MenuButtons[0].gameObject.SetActive(true);
         MenuButtons[0].onClick.AddListener(TutorialSetCharacter);
     }
@@ -97,9 +127,12 @@ public class TutorialActions : MonoBehaviour
     private void TutorialSetCharacter()
     {
         MenuButtons[0].onClick.RemoveListener(TutorialSetCharacter);
-        MessageBox.RectTransform.anchoredPosition = new Vector2(-617, -314);
-        MessageBox.TitleText.text = "統計";
-        MessageBox.MessageText.text = "統計を取得します";
+
+        MessageBox.RectTransform.anchoredPosition = rollStatsMessage.position;
+        MessageBox.RectTransform.sizeDelta = rollStatsMessage.size;
+
+        MessageBox.TitleText.text = rollStatsMessage.title;
+        MessageBox.MessageText.text = rollStatsMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
     }
 
@@ -107,9 +140,12 @@ public class TutorialActions : MonoBehaviour
     {
         MenuButtons[4].gameObject.SetActive(true);
         MenuButtons[4].onClick.AddListener(TutorialEquipItems);
-        MessageBox.RectTransform.anchoredPosition = new Vector2(10, 214);
-        MessageBox.TitleText.text = "機器";
-        MessageBox.MessageText.text = "オープン施設";
+
+        MessageBox.RectTransform.anchoredPosition = itemsPanelMessage.position;
+        MessageBox.RectTransform.sizeDelta = itemsPanelMessage.size;
+
+        MessageBox.TitleText.text = itemsPanelMessage.title;
+        MessageBox.MessageText.text = itemsPanelMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
     }
 
@@ -117,11 +153,15 @@ public class TutorialActions : MonoBehaviour
     private void TutorialEquipItems()
     {
         MenuButtons[4].onClick.RemoveListener(TutorialEquipItems);
+
         CurrentGame.Instance.Player.Inventory.Items = new SortedList<int, Item>();
         InventoryPanel.Instance.PopulateInventory();
-        MessageBox.RectTransform.anchoredPosition = new Vector2(-630, 230);
-        MessageBox.TitleText.text = "機器";
-        MessageBox.MessageText.text = "3項目ドレス";
+
+        MessageBox.RectTransform.anchoredPosition = equipItemsMessage.position;
+        MessageBox.RectTransform.sizeDelta = equipItemsMessage.size;
+
+        MessageBox.TitleText.text = equipItemsMessage.title;
+        MessageBox.MessageText.text = equipItemsMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
         Inventory.EventItemSwaped += Inventory_EventItemSwaped;
     }
@@ -148,7 +188,7 @@ public class TutorialActions : MonoBehaviour
 
     private void TutorialFinish()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(-630, 230);
+        MessageBox.RectTransform.anchoredPosition = new Vector2(0, 0);
         MessageBox.TitleText.text = "ありがとうございます";
         MessageBox.MessageText.text = "おわいだ！がんばろう";
         MessageBox.NextButton.gameObject.SetActive(true);
