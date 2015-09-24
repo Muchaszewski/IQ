@@ -48,6 +48,7 @@ public class TutorialActions : MonoBehaviour
         {
             MenuButtons[i].gameObject.SetActive(false);
         }
+        MessageBox.SkipButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -55,9 +56,9 @@ public class TutorialActions : MonoBehaviour
 
     }
 
-    //TODO Change methods name for proper actions @MaciejLitwin
     public void TutorialIntroduction()
     {
+        CurrentGame.Instance.FightController.Resume();
         MessageBox.RectTransform.anchoredPosition = introductionMessage.position;
         MessageBox.RectTransform.sizeDelta = introductionMessage.size;
 
@@ -134,10 +135,13 @@ public class TutorialActions : MonoBehaviour
         MessageBox.TitleText.text = rollStatsMessage.title;
         MessageBox.MessageText.text = rollStatsMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
+
     }
 
     public void TutorialEquipmentOpen()
     {
+        MessageBox.SkipButton.gameObject.SetActive(true);
+        MessageBox.SkipButton.onClick.AddListener(() => { MessageBox.gameObject.SetActive(false); });
         MenuButtons[4].gameObject.SetActive(true);
         MenuButtons[4].onClick.AddListener(TutorialEquipItems);
 

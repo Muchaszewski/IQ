@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using InventoryQuest.Components.Entities;
 using InventoryQuest.Game;
+using InventoryQuest.Game.Fight;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPointerClickHandler
@@ -31,7 +32,9 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     {
         _entityData = CurrentGame.Instance.FightController.Enemy[EntityID];
         _rectTransform = GetComponent<RectTransform>();
+        FightController.onAttack += FightController_onAttack;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -47,7 +50,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         float position = 0;
 
         // Update position
-        position = _progress + ( _progress < 0 ? -MinCombatPosition : MinCombatPosition);
+        position = _progress + (_progress < 0 ? -MinCombatPosition : MinCombatPosition);
         // Enemey out of bounds
         if (Mathf.Abs(position) > MaxCombatPosition)
         {
@@ -58,12 +61,27 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         _rectTransform.anchoredPosition = new Vector2(position, 0);
 
     }
+    public void OnDestroy()
+    {
+        FightController.onAttack -= FightController_onAttack;
+    }
+
+    private void FightController_onAttack(object sender, FightControllerEventArgs e)
+    {
+        if (e.Target.Equals(EntityData))
+        {
+            CreateFloatingText(e.Message);
+        }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         CurrentGame.Instance.FightController.Target = EntityData;
-        string message = CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
+        CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
+    }
 
+    public void CreateFloatingText(string message)
+    {
         var text = Instantiate(FloatingText).GetComponent<Text>();
         var splitted = message.Split('@');
         float number;
@@ -130,6 +148,9 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
 
         text.transform.SetParent(transform.parent.parent);
         //text.transform.position = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 30f;
-        text.transform.position = transform.position + floatingTextPosition;
+        var pos = transform.position + floatingTextPosition;
+        if (Single.IsNaN(pos.x)) { pos = Vector3.zero; }
+        text.transform.position = pos;
     }
+
 }

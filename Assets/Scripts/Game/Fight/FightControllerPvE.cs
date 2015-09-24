@@ -372,7 +372,6 @@ namespace InventoryQuest.Game.Fight
         /// <param name="target">Target entity</param>
         public override string Attack(Entity me, Entity target)
         {
-            InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target));
             string returnMessage = "";
             BattleLog.Append(me.Name + " attacked... ");
 
@@ -413,6 +412,7 @@ namespace InventoryQuest.Game.Fight
                 if (RandomNumberGenerator.BoolRandom(evasion))
                 {
                     BattleLog.AppendLine("but missed.");
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/m" + "missed"));
                     return "/m" + "missed";
                 }
 
@@ -432,6 +432,7 @@ namespace InventoryQuest.Game.Fight
                 if (RandomNumberGenerator.BoolRandom(deflection))
                 {
                     BattleLog.AppendLine("but " + target.Name + " parried.");
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/p" + "parried"));
                     return "/p" + "parried";
                 }
 
@@ -452,6 +453,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     blockAmount = target.Stats.BlockAmount.Extend;
                     BattleLog.AppendLine(target.Name + " blocked " + block + " damage, ");
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/b" + "blocked" + "@"));
                     returnMessage += "/b" + "blocked" + "@";
                 }
             }
@@ -506,6 +508,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     target.Stats.HealthPoints.Current -= finalDamage;
                 }
+                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, returnMessage + "/c" + critical + "@" + finalDamage));
                 return returnMessage + "/c" + critical + "@" + finalDamage;
             }
             else
@@ -513,6 +516,7 @@ namespace InventoryQuest.Game.Fight
                 BattleLog.AppendLine("dealt no damage." +
                                      (absorbedDamage > 0 ? " (armor soaked " + absorbedDamage + ")" : ""));
                 returnMessage += "/a" + "@";
+                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, returnMessage + "0"));
                 return returnMessage + "0";
             }
         }

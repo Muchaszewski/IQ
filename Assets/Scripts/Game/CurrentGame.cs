@@ -49,6 +49,7 @@ namespace InventoryQuest.Game
             var Enemy = new List<Entity> { RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal) };
             Idle = new Idle();
             FightController = new FightControllerPvE(Player, Enemy).Begin();
+            FightController.Pause();
         }
 
         private void Update()
