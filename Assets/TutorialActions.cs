@@ -192,5 +192,6 @@ public class TutorialActions : MonoBehaviour
         MessageBox.TitleText.text = "ありがとうございます";
         MessageBox.MessageText.text = "おわいだ！がんばろう";
         MessageBox.NextButton.gameObject.SetActive(true);
+        MessageBox.NextButton.onClick.AddListener(() => { MessageBox.gameObject.SetActive(false); });
     }
 }

@@ -7,33 +7,33 @@ namespace InventoryQuest.Components.Entities.Generation.Types
     [Serializable]
     public class EntityType
     {
-        private MinMaxStat _Accuracy;
-        private MinMaxStat _Armor;
-        private MinMaxStat _ArmorPenetration;
-        private MinMaxStat _AttackSpeed;
-        private MinMaxStat _BlockAmount;
-        private MinMaxStat _BlockChance;
-        private MinMaxStat _CriticalChance;
-        private MinMaxStat _CriticalDamage;
-        private MinMaxStat _Deflection;
-        private MinMaxStat _Evasion;
-        private MinMaxStat _HealthPoints;
-        private MinMaxStat _HealthRegen;
+        private MinMaxStat _Accuracy = new MinMaxStat();
+        private MinMaxStat _Armor = new MinMaxStat();
+        private MinMaxStat _ArmorPenetration = new MinMaxStat();
+        private MinMaxStat _AttackSpeed = new MinMaxStat();
+        private MinMaxStat _BlockAmount = new MinMaxStat();
+        private MinMaxStat _BlockChance = new MinMaxStat();
+        private MinMaxStat _CriticalChance = new MinMaxStat();
+        private MinMaxStat _CriticalDamage = new MinMaxStat();
+        private MinMaxStat _Deflection = new MinMaxStat();
+        private MinMaxStat _Evasion = new MinMaxStat();
+        private MinMaxStat _HealthPoints = new MinMaxStat();
+        private MinMaxStat _HealthRegen = new MinMaxStat();
         private int _ID;
         private List<GenerationWeightLists> _itemsLists = new List<GenerationWeightLists>();
-        private MinMaxStat _ManaPoints;
-        private MinMaxStat _ManaRegen;
-        private MinMaxStat _MaxDamage;
-        private MinMaxStat _MinDamage;
-        private MinMaxStat _MovmentSpeed;
+        private MinMaxStat _ManaPoints = new MinMaxStat();
+        private MinMaxStat _ManaRegen = new MinMaxStat();
+        private MinMaxStat _MaxDamage = new MinMaxStat();
+        private MinMaxStat _MinDamage = new MinMaxStat();
+        private MinMaxStat _MovmentSpeed = new MinMaxStat();
         private MinMaxStat _Range = new MinMaxStat(1, 1);
-        private string _Name;
+        private string _Name = "";
         private EnumSex _Sex = EnumSex.None;
-        private MinMaxStat _ShieldPoints;
-        private MinMaxStat _ShieldRegen;
-        private MinMaxStat _StaminaPoints;
-        private MinMaxStat _StaminaRegen;
-        private EnumEntityType _Type;
+        private MinMaxStat _ShieldPoints = new MinMaxStat();
+        private MinMaxStat _ShieldRegen = new MinMaxStat();
+        private MinMaxStat _StaminaPoints = new MinMaxStat();
+        private MinMaxStat _StaminaRegen = new MinMaxStat();
+        private EnumEntityType _Type = EnumEntityType.Unknown;
 
         /// <summary>
         ///     Create new entity </para>
