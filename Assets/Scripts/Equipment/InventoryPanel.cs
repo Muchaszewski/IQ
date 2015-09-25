@@ -419,6 +419,32 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    public void SellAllItemsInInvenotry()
+    {
+        var items = CurrentGame.Instance.Player.Inventory.Items;
+        //Restrict sorting to inventory only (extract equipment)
+        var equipment = items.Where(x => x.Key < 0).ToList();
+        //Remote equipment from list
+        foreach (var item in equipment)
+        {
+            items.Remove(item.Key);
+        }
+        //Pass current item list for easier manipulations
+        var list = items.Values.ToList();
+        var inventoryValue = 0;
+        foreach (var item in list)
+        {
+            inventoryValue += item.Price.Current;
+        }
+        CurrentGame.Instance.Player.Wallet.AddMoney(inventoryValue);
+        CurrentGame.Instance.Player.Inventory.Items.Clear();
+        foreach (var item in equipment)
+        {
+            items.Add(item.Key, item.Value);
+        }
+        PopulateInventory();
+    }
+
     /// <summary>
     /// Sort inventory with given comparer
     /// </summary>
