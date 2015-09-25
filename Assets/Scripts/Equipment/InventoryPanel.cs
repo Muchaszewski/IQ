@@ -443,6 +443,7 @@ public class InventoryPanel : MonoBehaviour
             items.Add(item.Key, item.Value);
         }
         PopulateInventory();
+        ResizeInventoryPanel();
     }
 
     /// <summary>
