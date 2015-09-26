@@ -9,26 +9,12 @@
 
         Player,
 
-        Beasts,
-        Bugs,
-        Constellations,
-        Constructs,
-        Demons,
-        Dudes,
-        Elementals,
-        Elves,
-        Fish,
-        Goblins,
-        Hippies,
-        Hobos,
-        Humanoids,
-        Horrors,
-        Orcs,
-        Penguins,
-        Pirates,
-        Plants,
-        Slimes,
-        Weird,
-        Undead
+        Humanoid,
+        Beast,
+        Undead,
+        Demon,
+        Animated,
+        Abberation,
+        Incorporeal
     }
 }

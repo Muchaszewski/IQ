@@ -2,10 +2,300 @@
 <GenerationStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Entities>
     <EntityType>
-      <Name>Scavanger</Name>
+      <Name>Mulltrod Scavanger</Name>
       <ID>0</ID>
       <Level>0</Level>
-      <Type>Unknown</Type>
+      <Type>Humanoid</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>18</Min>
+        <Max>22</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0.78</Min>
+        <Max>0.82</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>250</Min>
+        <Max>250</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>135</MinMaxLevel>
+        <MaxMaxLevel>145</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>1</Min>
+        <Max>3</Max>
+        <MinMaxLevel>155</MinMaxLevel>
+        <MaxMaxLevel>165</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>8</Max>
+        <MinMaxLevel>100</MinMaxLevel>
+        <MaxMaxLevel>400</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>3</Min>
+        <Max>5</Max>
+        <MinMaxLevel>260</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>2</Min>
+        <Max>4</Max>
+        <MinMaxLevel>800</MinMaxLevel>
+        <MaxMaxLevel>900</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>50</Min>
+        <Max>60</Max>
+        <MinMaxLevel>100</MinMaxLevel>
+        <MaxMaxLevel>120</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>7</Min>
+        <Max>8</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Mulltrod Looter</Name>
+      <ID>1</ID>
+      <Level>0</Level>
+      <Type>Humanoid</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>15</Min>
+        <Max>20</Max>
+        <MinMaxLevel>550</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0.78</Min>
+        <Max>0.82</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>200</Min>
+        <Max>200</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>145</MinMaxLevel>
+        <MaxMaxLevel>155</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>2</Min>
+        <Max>3</Max>
+        <MinMaxLevel>160</MinMaxLevel>
+        <MaxMaxLevel>170</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>2</Min>
+        <Max>8</Max>
+        <MinMaxLevel>200</MinMaxLevel>
+        <MaxMaxLevel>450</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>180</MinMaxLevel>
+        <MaxMaxLevel>200</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>3</Min>
+        <Max>5</Max>
+        <MinMaxLevel>820</MinMaxLevel>
+        <MaxMaxLevel>910</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>40</Min>
+        <Max>50</Max>
+        <MinMaxLevel>80</MinMaxLevel>
+        <MaxMaxLevel>90</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Mulltrod Watcher</Name>
+      <ID>2</ID>
+      <Level>0</Level>
+      <Type>Humanoid</Type>
       <Sex>None</Sex>
       <Accuracy>
         <Min>18</Min>
@@ -74,10 +364,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Evasion>
       <HealthPoints>
-        <Min>4</Min>
-        <Max>8</Max>
-        <MinMaxLevel>400</MinMaxLevel>
-        <MaxMaxLevel>500</MaxMaxLevel>
+        <Min>2</Min>
+        <Max>4</Max>
+        <MinMaxLevel>600</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
       </HealthPoints>
       <HealthRegen>
         <Min>0</Min>
@@ -104,10 +394,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Deflection>
       <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
+        <Min>100</Min>
+        <Max>120</Max>
+        <MinMaxLevel>320</MinMaxLevel>
+        <MaxMaxLevel>350</MaxMaxLevel>
       </StaminaPoints>
       <StaminaRegen>
         <Min>0</Min>
@@ -117,7 +407,152 @@
       </StaminaRegen>
       <ShieldPoints>
         <Min>0</Min>
-        <Max>30</Max>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>12</Min>
+        <Max>12</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Mulltrod Bully</Name>
+      <ID>3</ID>
+      <Level>0</Level>
+      <Type>Humanoid</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>18</Min>
+        <Max>22</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>3</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0.78</Min>
+        <Max>0.82</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>150</Min>
+        <Max>250</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>200</MinMaxLevel>
+        <MaxMaxLevel>220</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>1</Min>
+        <Max>3</Max>
+        <MinMaxLevel>240</MinMaxLevel>
+        <MaxMaxLevel>260</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>8</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>200</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>1200</MinMaxLevel>
+        <MaxMaxLevel>1300</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>80</Min>
+        <Max>95</Max>
+        <MinMaxLevel>160</MinMaxLevel>
+        <MaxMaxLevel>170</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ShieldPoints>
@@ -147,430 +582,10 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Giant Scorpion</Name>
-      <ID>1</ID>
-      <Level>0</Level>
-      <Type>Unknown</Type>
-      <Sex>None</Sex>
-      <Accuracy>
-        <Min>18</Min>
-        <Max>22</Max>
-        <MinMaxLevel>650</MinMaxLevel>
-        <MaxMaxLevel>700</MaxMaxLevel>
-      </Accuracy>
-      <ArmorPenetration>
-        <Min>0</Min>
-        <Max>3</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ArmorPenetration>
-      <AttackSpeed>
-        <Min>0.78</Min>
-        <Max>0.82</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </AttackSpeed>
-      <BlockAmount>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockAmount>
-      <BlockChance>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockChance>
-      <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalChance>
-      <CriticalDamage>
-        <Min>150</Min>
-        <Max>250</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalDamage>
-      <MinDamage>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>200</MinMaxLevel>
-        <MaxMaxLevel>220</MaxMaxLevel>
-      </MinDamage>
-      <MaxDamage>
-        <Min>1</Min>
-        <Max>3</Max>
-        <MinMaxLevel>240</MinMaxLevel>
-        <MaxMaxLevel>260</MaxMaxLevel>
-      </MaxDamage>
-      <Armor>
-        <Min>0</Min>
-        <Max>8</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>200</MaxMaxLevel>
-      </Armor>
-      <Evasion>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Evasion>
-      <HealthPoints>
-        <Min>12</Min>
-        <Max>15</Max>
-        <MinMaxLevel>600</MinMaxLevel>
-        <MaxMaxLevel>800</MaxMaxLevel>
-      </HealthPoints>
-      <HealthRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </HealthRegen>
-      <ManaPoints>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaPoints>
-      <ManaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaRegen>
-      <Deflection>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Deflection>
-      <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
-      </StaminaPoints>
-      <StaminaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </StaminaRegen>
-      <ShieldPoints>
-        <Min>0</Min>
-        <Max>30</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldPoints>
-      <ShieldRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldRegen>
-      <MovmentSpeed>
-        <Min>6</Min>
-        <Max>7</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </MovmentSpeed>
-      <ItemsLists />
-      <Range>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Range>
-    </EntityType>
-    <EntityType>
-      <Name>Rabid Crow</Name>
-      <ID>2</ID>
-      <Level>0</Level>
-      <Type>Unknown</Type>
-      <Sex>None</Sex>
-      <Accuracy>
-        <Min>18</Min>
-        <Max>22</Max>
-        <MinMaxLevel>650</MinMaxLevel>
-        <MaxMaxLevel>700</MaxMaxLevel>
-      </Accuracy>
-      <ArmorPenetration>
-        <Min>0</Min>
-        <Max>3</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ArmorPenetration>
-      <AttackSpeed>
-        <Min>0.78</Min>
-        <Max>0.82</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </AttackSpeed>
-      <BlockAmount>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockAmount>
-      <BlockChance>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockChance>
-      <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalChance>
-      <CriticalDamage>
-        <Min>150</Min>
-        <Max>250</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalDamage>
-      <MinDamage>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>200</MinMaxLevel>
-        <MaxMaxLevel>220</MaxMaxLevel>
-      </MinDamage>
-      <MaxDamage>
-        <Min>1</Min>
-        <Max>3</Max>
-        <MinMaxLevel>240</MinMaxLevel>
-        <MaxMaxLevel>260</MaxMaxLevel>
-      </MaxDamage>
-      <Armor>
-        <Min>0</Min>
-        <Max>8</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>200</MaxMaxLevel>
-      </Armor>
-      <Evasion>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Evasion>
-      <HealthPoints>
-        <Min>4</Min>
-        <Max>8</Max>
-        <MinMaxLevel>400</MinMaxLevel>
-        <MaxMaxLevel>500</MaxMaxLevel>
-      </HealthPoints>
-      <HealthRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </HealthRegen>
-      <ManaPoints>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaPoints>
-      <ManaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaRegen>
-      <Deflection>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Deflection>
-      <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
-      </StaminaPoints>
-      <StaminaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </StaminaRegen>
-      <ShieldPoints>
-        <Min>0</Min>
-        <Max>30</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldPoints>
-      <ShieldRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldRegen>
-      <MovmentSpeed>
-        <Min>6</Min>
-        <Max>7</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </MovmentSpeed>
-      <ItemsLists />
-      <Range>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Range>
-    </EntityType>
-    <EntityType>
-      <Name>Goblin Scout</Name>
-      <ID>3</ID>
-      <Level>0</Level>
-      <Type>Unknown</Type>
-      <Sex>Male</Sex>
-      <Accuracy>
-        <Min>18</Min>
-        <Max>22</Max>
-        <MinMaxLevel>650</MinMaxLevel>
-        <MaxMaxLevel>700</MaxMaxLevel>
-      </Accuracy>
-      <ArmorPenetration>
-        <Min>0</Min>
-        <Max>3</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ArmorPenetration>
-      <AttackSpeed>
-        <Min>0.78</Min>
-        <Max>0.82</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </AttackSpeed>
-      <BlockAmount>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockAmount>
-      <BlockChance>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </BlockChance>
-      <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalChance>
-      <CriticalDamage>
-        <Min>150</Min>
-        <Max>250</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </CriticalDamage>
-      <MinDamage>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>200</MinMaxLevel>
-        <MaxMaxLevel>220</MaxMaxLevel>
-      </MinDamage>
-      <MaxDamage>
-        <Min>1</Min>
-        <Max>3</Max>
-        <MinMaxLevel>240</MinMaxLevel>
-        <MaxMaxLevel>260</MaxMaxLevel>
-      </MaxDamage>
-      <Armor>
-        <Min>0</Min>
-        <Max>8</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>200</MaxMaxLevel>
-      </Armor>
-      <Evasion>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Evasion>
-      <HealthPoints>
-        <Min>4</Min>
-        <Max>8</Max>
-        <MinMaxLevel>400</MinMaxLevel>
-        <MaxMaxLevel>500</MaxMaxLevel>
-      </HealthPoints>
-      <HealthRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </HealthRegen>
-      <ManaPoints>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaPoints>
-      <ManaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ManaRegen>
-      <Deflection>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Deflection>
-      <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
-      </StaminaPoints>
-      <StaminaRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </StaminaRegen>
-      <ShieldPoints>
-        <Min>0</Min>
-        <Max>30</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldPoints>
-      <ShieldRegen>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </ShieldRegen>
-      <MovmentSpeed>
-        <Min>6</Min>
-        <Max>7</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </MovmentSpeed>
-      <ItemsLists />
-      <Range>
-        <Min>1</Min>
-        <Max>1</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
-      </Range>
-    </EntityType>
-    <EntityType>
-      <Name>Vile Scorpion</Name>
+      <Name>Mulltrod Enforcer</Name>
       <ID>4</ID>
       <Level>0</Level>
-      <Type>Unknown</Type>
+      <Type>Humanoid</Type>
       <Sex>None</Sex>
       <Accuracy>
         <Min>18</Min>
@@ -639,10 +654,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Evasion>
       <HealthPoints>
-        <Min>4</Min>
+        <Min>6</Min>
         <Max>8</Max>
-        <MinMaxLevel>400</MinMaxLevel>
-        <MaxMaxLevel>500</MaxMaxLevel>
+        <MinMaxLevel>1400</MinMaxLevel>
+        <MaxMaxLevel>1500</MaxMaxLevel>
       </HealthPoints>
       <HealthRegen>
         <Min>0</Min>
@@ -669,10 +684,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Deflection>
       <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
+        <Min>80</Min>
+        <Max>90</Max>
+        <MinMaxLevel>160</MinMaxLevel>
+        <MaxMaxLevel>180</MaxMaxLevel>
       </StaminaPoints>
       <StaminaRegen>
         <Min>0</Min>
@@ -682,7 +697,7 @@
       </StaminaRegen>
       <ShieldPoints>
         <Min>0</Min>
-        <Max>30</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ShieldPoints>
@@ -698,7 +713,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </MovmentSpeed>
-      <ItemsLists />
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
       <Range>
         <Min>1</Min>
         <Max>1</Max>
@@ -707,11 +727,11 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Goblin Warrior</Name>
+      <Name>Mulltrod Skirmisher</Name>
       <ID>5</ID>
       <Level>0</Level>
-      <Type>Unknown</Type>
-      <Sex>Male</Sex>
+      <Type>Humanoid</Type>
+      <Sex>None</Sex>
       <Accuracy>
         <Min>18</Min>
         <Max>22</Max>
@@ -779,9 +799,2679 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Evasion>
       <HealthPoints>
-        <Min>4</Min>
+        <Min>5</Min>
+        <Max>7</Max>
+        <MinMaxLevel>900</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>80</Min>
+        <Max>100</Max>
+        <MinMaxLevel>200</MinMaxLevel>
+        <MaxMaxLevel>220</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>7</Min>
+        <Max>9</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>10</Min>
+        <Max>10</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Mulltrod Bodyguard</Name>
+      <ID>6</ID>
+      <Level>0</Level>
+      <Type>Humanoid</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>7</Min>
+        <Max>9</Max>
+        <MinMaxLevel>1500</MinMaxLevel>
+        <MaxMaxLevel>1600</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>90</Min>
+        <Max>100</Max>
+        <MinMaxLevel>210</MinMaxLevel>
+        <MaxMaxLevel>230</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
         <Max>8</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsLists>
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Crumbling Zombie</Name>
+      <ID>7</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>6</Min>
+        <Max>8</Max>
+        <MinMaxLevel>1400</MinMaxLevel>
+        <MaxMaxLevel>1500</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>500</Min>
+        <Max>500</Max>
+        <MinMaxLevel>600</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>2</Min>
+        <Max>2</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Zombie</Name>
+      <ID>8</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>1</Min>
+        <Max>3</Max>
+        <MinMaxLevel>70</MinMaxLevel>
+        <MaxMaxLevel>100</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>1850</MinMaxLevel>
+        <MaxMaxLevel>2000</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>550</Min>
+        <Max>550</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Fat Zombie</Name>
+      <ID>9</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>12</Min>
+        <Max>15</Max>
+        <MinMaxLevel>2500</MinMaxLevel>
+        <MaxMaxLevel>2800</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>500</Min>
+        <Max>500</Max>
+        <MinMaxLevel>600</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>2</Min>
+        <Max>2</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Zombie Bloater</Name>
+      <ID>10</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>8</Min>
+        <Max>9</Max>
+        <MinMaxLevel>1700</MinMaxLevel>
+        <MaxMaxLevel>1800</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>550</Min>
+        <Max>550</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Massive Zombie</Name>
+      <ID>11</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>14</Min>
+        <Max>18</Max>
+        <MinMaxLevel>3200</MinMaxLevel>
+        <MaxMaxLevel>3500</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>500</Min>
+        <Max>500</Max>
+        <MinMaxLevel>600</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>4</Min>
+        <Max>4</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Undying Zombie</Name>
+      <ID>12</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>2</Min>
+        <Max>3</Max>
+        <MinMaxLevel>180</MinMaxLevel>
+        <MaxMaxLevel>200</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>19</Min>
+        <Max>22</Max>
+        <MinMaxLevel>4200</MinMaxLevel>
+        <MaxMaxLevel>4400</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>600</Min>
+        <Max>600</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Armored Zombie</Name>
+      <ID>13</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>15</Min>
+        <Max>20</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1200</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>2</Min>
+        <Max>3</Max>
+        <MinMaxLevel>40</MinMaxLevel>
+        <MaxMaxLevel>50</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>2200</MinMaxLevel>
+        <MaxMaxLevel>2400</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>550</Min>
+        <Max>550</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Decayed Skeleton</Name>
+      <ID>14</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>2</Min>
+        <Max>2</Max>
+        <MinMaxLevel>90</MinMaxLevel>
+        <MaxMaxLevel>100</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>9</Min>
+        <Max>10</Max>
+        <MinMaxLevel>900</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton</Name>
+      <ID>15</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>8</Min>
+        <Max>10</Max>
+        <MinMaxLevel>320</MinMaxLevel>
+        <MaxMaxLevel>350</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>9</Min>
+        <Max>11</Max>
+        <MinMaxLevel>1900</MinMaxLevel>
+        <MaxMaxLevel>2100</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Warrior</Name>
+      <ID>16</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>9</Min>
+        <Max>11</Max>
+        <MinMaxLevel>500</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>6</Min>
+        <Max>8</Max>
+        <MinMaxLevel>280</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>12</Min>
+        <Max>14</Max>
+        <MinMaxLevel>2500</MinMaxLevel>
+        <MaxMaxLevel>2600</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Man-at-Arms</Name>
+      <ID>17</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>21</Min>
+        <Max>23</Max>
+        <MinMaxLevel>1900</MinMaxLevel>
+        <MaxMaxLevel>2000</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>5</Min>
+        <Max>7</Max>
+        <MinMaxLevel>180</MinMaxLevel>
+        <MaxMaxLevel>200</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>12</Min>
+        <Max>13</Max>
+        <MinMaxLevel>2400</MinMaxLevel>
+        <MaxMaxLevel>2500</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Archer</Name>
+      <ID>18</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>1</Min>
+        <Max>2</Max>
+        <MinMaxLevel>80</MinMaxLevel>
+        <MaxMaxLevel>100</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>360</MinMaxLevel>
+        <MaxMaxLevel>370</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>8</Min>
+        <Max>9</Max>
+        <MinMaxLevel>1700</MinMaxLevel>
+        <MaxMaxLevel>1800</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Crossbowman</Name>
+      <ID>19</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>5</Min>
+        <Max>7</Max>
+        <MinMaxLevel>280</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>7</Min>
+        <Max>9</Max>
+        <MinMaxLevel>260</MinMaxLevel>
+        <MaxMaxLevel>280</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>8</Min>
+        <Max>9</Max>
+        <MinMaxLevel>1700</MinMaxLevel>
+        <MaxMaxLevel>1800</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Skeleton Knight</Name>
+      <ID>20</ID>
+      <Level>0</Level>
+      <Type>Undead</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>4</Min>
+        <Max>5</Max>
+        <MinMaxLevel>350</MinMaxLevel>
+        <MaxMaxLevel>400</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>12</Min>
+        <Max>13</Max>
+        <MinMaxLevel>550</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>22</Min>
+        <Max>25</Max>
+        <MinMaxLevel>2000</MinMaxLevel>
+        <MaxMaxLevel>2200</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>170</MinMaxLevel>
+        <MaxMaxLevel>180</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>12</Min>
+        <Max>14</Max>
+        <MinMaxLevel>2300</MinMaxLevel>
+        <MaxMaxLevel>2400</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>1000</Min>
+        <Max>1000</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Scorpion</Name>
+      <ID>21</ID>
+      <Level>0</Level>
+      <Type>Beast</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>8</Min>
+        <Max>10</Max>
         <MinMaxLevel>400</MinMaxLevel>
+        <MaxMaxLevel>500</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>330</MinMaxLevel>
+        <MaxMaxLevel>350</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>3</Min>
+        <Max>4</Max>
+        <MinMaxLevel>730</MinMaxLevel>
+        <MaxMaxLevel>760</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>90</Min>
+        <Max>100</Max>
+        <MinMaxLevel>270</MinMaxLevel>
+        <MaxMaxLevel>290</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>4</Min>
+        <Max>4</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Giant Scorpion</Name>
+      <ID>22</ID>
+      <Level>0</Level>
+      <Type>Beast</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>500</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>7</Min>
+        <Max>8</Max>
+        <MinMaxLevel>220</MinMaxLevel>
+        <MaxMaxLevel>250</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>1190</MinMaxLevel>
+        <MaxMaxLevel>1230</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>80</Min>
+        <Max>90</Max>
+        <MinMaxLevel>240</MinMaxLevel>
+        <MaxMaxLevel>260</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Vile Scorpion</Name>
+      <ID>23</ID>
+      <Level>0</Level>
+      <Type>Beast</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>7</Min>
+        <Max>9</Max>
+        <MinMaxLevel>400</MinMaxLevel>
+        <MaxMaxLevel>500</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>8</Min>
+        <Max>9</Max>
+        <MinMaxLevel>300</MinMaxLevel>
+        <MaxMaxLevel>310</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>4</Min>
+        <Max>5</Max>
+        <MinMaxLevel>980</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>100</Min>
+        <Max>110</Max>
+        <MinMaxLevel>290</MinMaxLevel>
+        <MaxMaxLevel>310</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MovmentSpeed>
+      <ItemsLists />
+      <Range>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Range>
+    </EntityType>
+    <EntityType>
+      <Name>Rabid Crow</Name>
+      <ID>24</ID>
+      <Level>0</Level>
+      <Type>Beast</Type>
+      <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>20</Min>
+        <Max>22</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>1</Min>
+        <Max>2</Max>
+        <MinMaxLevel>480</MinMaxLevel>
         <MaxMaxLevel>500</MaxMaxLevel>
       </HealthPoints>
       <HealthRegen>
@@ -809,10 +3499,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </Deflection>
       <StaminaPoints>
-        <Min>50</Min>
-        <Max>60</Max>
-        <MinMaxLevel>100</MinMaxLevel>
-        <MaxMaxLevel>120</MaxMaxLevel>
+        <Min>100</Min>
+        <Max>100</Max>
+        <MinMaxLevel>320</MinMaxLevel>
+        <MaxMaxLevel>330</MaxMaxLevel>
       </StaminaPoints>
       <StaminaRegen>
         <Min>0</Min>
@@ -822,7 +3512,7 @@
       </StaminaRegen>
       <ShieldPoints>
         <Min>0</Min>
-        <Max>30</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ShieldPoints>
@@ -833,10 +3523,10 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ShieldRegen>
       <MovmentSpeed>
-        <Min>6</Min>
-        <Max>7</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>13</Max>
+        <MinMaxLevel>14</MinMaxLevel>
+        <MaxMaxLevel>15</MaxMaxLevel>
       </MovmentSpeed>
       <ItemsLists />
       <Range>
@@ -847,11 +3537,137 @@
       </Range>
     </EntityType>
     <EntityType>
-      <Name>Something</Name>
-      <ID>6</ID>
+      <Name>Monstrous Crow</Name>
+      <ID>25</ID>
       <Level>0</Level>
-      <Type>Unknown</Type>
+      <Type>Beast</Type>
       <Sex>None</Sex>
+      <Accuracy>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Accuracy>
+      <ArmorPenetration>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ArmorPenetration>
+      <AttackSpeed>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </AttackSpeed>
+      <BlockAmount>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockAmount>
+      <BlockChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </BlockChance>
+      <CriticalChance>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalChance>
+      <CriticalDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </CriticalDamage>
+      <MinDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MinDamage>
+      <MaxDamage>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </MaxDamage>
+      <Armor>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Armor>
+      <Evasion>
+        <Min>18</Min>
+        <Max>20</Max>
+        <MinMaxLevel>580</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </Evasion>
+      <HealthPoints>
+        <Min>2</Min>
+        <Max>3</Max>
+        <MinMaxLevel>570</MinMaxLevel>
+        <MaxMaxLevel>600</MaxMaxLevel>
+      </HealthPoints>
+      <HealthRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </HealthRegen>
+      <ManaPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaPoints>
+      <ManaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ManaRegen>
+      <Deflection>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Deflection>
+      <StaminaPoints>
+        <Min>85</Min>
+        <Max>90</Max>
+        <MinMaxLevel>290</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
+      </StaminaPoints>
+      <StaminaRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </StaminaRegen>
+      <ShieldPoints>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldPoints>
+      <ShieldRegen>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </ShieldRegen>
+      <MovmentSpeed>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>13</MinMaxLevel>
+        <MaxMaxLevel>14</MaxMaxLevel>
+      </MovmentSpeed>
       <ItemsLists />
       <Range>
         <Min>1</Min>
@@ -3588,6 +6404,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Plate Leggings</Name>
       <ID>42</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Leggins</Type>
       <Skill>Heavy</Skill>
@@ -4125,6 +6942,38 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <MaxMaxLevel>853</MaxMaxLevel>
       </Armor>
     </ArmorType>
+    <ArmorType>
+      <Name>Scale Leggings</Name>
+      <ID>59</ID>
+      <ExtraName>Leggings of Hammerfall</ExtraName>
+      <BaseStatsAllowed />
+      <Type>Leggins</Type>
+      <Skill>Heavy</Skill>
+      <Durability>
+        <Min>14</Min>
+        <Max>15</Max>
+        <MinMaxLevel>135</MinMaxLevel>
+        <MaxMaxLevel>140</MaxMaxLevel>
+      </Durability>
+      <ImageID>
+        <PairTypeItem>
+          <Type>legs</Type>
+          <Item>unique_hammerfall_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <FlavorText />
+      <Rarity>Mythical</Rarity>
+      <RequiredLevel>33</RequiredLevel>
+      <DropLevel>33</DropLevel>
+      <RequiredStats />
+      <Armor>
+        <Min>5</Min>
+        <Max>6</Max>
+        <MinMaxLevel>430</MinMaxLevel>
+        <MaxMaxLevel>455</MaxMaxLevel>
+      </Armor>
+    </ArmorType>
   </Armors>
   <Shields>
     <ShieldType>
@@ -4425,7 +7274,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4444,12 +7293,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>40</Weight>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4465,13 +7314,25 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Sailor's Beach</Name>
-      <Level>4</Level>
+      <Level>6</Level>
       <ID>2</ID>
       <ImageString>location_coast_0</ImageString>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Crows, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4492,18 +7353,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Jagged Cliffs</Name>
-      <Level>4</Level>
+      <Level>6</Level>
       <ID>3</ID>
       <ImageString>location_coast_0</ImageString>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
-          <Weight>20</Weight>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4519,13 +7388,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Scorpion Desert</Name>
-      <Level>6</Level>
+      <Level>7</Level>
       <ID>4</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4538,13 +7407,21 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Iron Plain</Name>
-      <Level>6</Level>
+      <Level>10</Level>
       <ID>5</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4560,10 +7437,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>6</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4579,10 +7460,18 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>11</Level>
       <ID>7</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Zombies, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4598,15 +7487,19 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>20</Weight>
+          <Name>Skeletons, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4621,15 +7514,15 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>12</Level>
       <ID>9</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>60</Weight>
+          <Name>Skeletons, Soldiers</Name>
+          <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
@@ -4640,18 +7533,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 20</Name>
+      <Name>Medieval Lvl 20</Name>
       <Level>20</Level>
       <ID>10</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Scavangers</Name>
+          <Name>Skeletons, Knights</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4667,14 +7564,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 30</Name>
+      <Name>Medieval Lvl 30</Name>
       <Level>30</Level>
       <ID>11</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Skeletons, Knights</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Strong</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4686,18 +7591,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>ME 40</Name>
+      <Name>Medieval Lvl 40</Name>
       <Level>40</Level>
       <ID>12</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <Category>Crusader Kingdom</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Goblins</Name>
+          <Name>Skeletons, Knights</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Soldiers</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4709,14 +7618,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 20</Name>
+      <Name>Desert Lvl 20</Name>
       <Level>20</Level>
       <ID>13</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4728,18 +7637,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 30</Name>
+      <Name>Desert Lvl 30</Name>
       <Level>30</Level>
       <ID>14</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
-          <Weight>100</Weight>
-        </GenerationWeightLists>
-        <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4751,14 +7656,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DE 40</Name>
+      <Name>Desert Lvl 40</Name>
       <Level>40</Level>
       <ID>15</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <Category>Desert</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4771,13 +7676,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Sunset Steppe</Name>
-      <Level>5</Level>
+      <Level>8</Level>
       <ID>16</ID>
       <ImageString>location_plain_0</ImageString>
       <Category>Atlantea</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4790,13 +7695,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     </Spot>
     <Spot>
       <Name>Fields of Arcadia</Name>
-      <Level>7</Level>
+      <Level>8</Level>
       <ID>17</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
       <Category>Discussia</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4808,14 +7713,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>FBK 40</Name>
+      <Name>Barbarian Lvl 40</Name>
       <Level>40</Level>
       <ID>18</ID>
       <ImageString>location_plain_0</ImageString>
-      <Category>Atlantea</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Scorpions</Name>
+          <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4827,14 +7732,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
     </Spot>
     <Spot>
-      <Name>DS 40</Name>
+      <Name>Ancient Lvl 40</Name>
       <Level>40</Level>
       <ID>19</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
-      <Category>Discussia</Category>
+      <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
-          <Name>Birds</Name>
+          <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
         </GenerationWeightLists>
       </EntitiesList>
@@ -4842,6 +7747,40 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Ancient Greece</Name>
           <Weight>100</Weight>
+        </GenerationWeightLists>
+      </ItemsList>
+    </Spot>
+    <Spot>
+      <Name>Flooded Battlefield</Name>
+      <Level>5</Level>
+      <ID>20</ID>
+      <Category>The Inner Sea</Category>
+      <EntitiesList>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Mulltrod, Elite</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Crows, Normal</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+      </EntitiesList>
+      <ItemsList>
+        <GenerationWeightLists>
+          <Name>Junk</Name>
+          <Weight>100</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Medieval Europe</Name>
+          <Weight>10</Weight>
+        </GenerationWeightLists>
+        <GenerationWeightLists>
+          <Name>Medieval Middle-East</Name>
+          <Weight>10</Weight>
         </GenerationWeightLists>
       </ItemsList>
     </Spot>
@@ -5622,6 +8561,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <ID>58</ID>
           <Weight>100</Weight>
         </GenerationWeight>
+        <GenerationWeight>
+          <ID>59</ID>
+          <Weight>100</Weight>
+        </GenerationWeight>
       </ArmorTypeID>
       <ShieldTypeID />
       <OffHandTypeID />
@@ -5652,10 +8595,18 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
   </ItemsLists>
   <EntityLists>
     <EntityLists>
-      <Name>Scavangers</Name>
+      <Name>Mulltrod, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
           <ID>0</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>1</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>2</ID>
           <Weight>0</Weight>
         </GenerationWeight>
       </EntityTypeNormalID>
@@ -5664,26 +8615,166 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <EntityTypeUniqueID />
     </EntityLists>
     <EntityLists>
-      <Name>Goblins</Name>
+      <Name>Zombies, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
-          <ID>3</ID>
+          <ID>7</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>8</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>9</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Zombies, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>8</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>10</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>11</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>12</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>13</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Normal</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>14</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>15</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Soldiers</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>16</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>18</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>19</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Skeletons, Knights</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>20</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>19</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>17</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Scorpions, Normal</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>21</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>22</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Scorpions, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>22</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>23</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>21</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Mulltrod, Elite</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>6</ID>
           <Weight>0</Weight>
         </GenerationWeight>
         <GenerationWeight>
           <ID>5</ID>
           <Weight>0</Weight>
         </GenerationWeight>
-      </EntityTypeNormalID>
-      <EntityTypeUncommonID />
-      <EntityTypeRareID />
-      <EntityTypeUniqueID />
-    </EntityLists>
-    <EntityLists>
-      <Name>Scorpions</Name>
-      <EntityTypeNormalID>
         <GenerationWeight>
           <ID>4</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>3</ID>
           <Weight>0</Weight>
         </GenerationWeight>
         <GenerationWeight>
@@ -5696,10 +8787,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <EntityTypeUniqueID />
     </EntityLists>
     <EntityLists>
-      <Name>Birds</Name>
+      <Name>Crows, Normal</Name>
       <EntityTypeNormalID>
         <GenerationWeight>
-          <ID>2</ID>
+          <ID>24</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+      </EntityTypeNormalID>
+      <EntityTypeUncommonID />
+      <EntityTypeRareID />
+      <EntityTypeUniqueID />
+    </EntityLists>
+    <EntityLists>
+      <Name>Crows, Strong</Name>
+      <EntityTypeNormalID>
+        <GenerationWeight>
+          <ID>24</ID>
+          <Weight>0</Weight>
+        </GenerationWeight>
+        <GenerationWeight>
+          <ID>25</ID>
           <Weight>0</Weight>
         </GenerationWeight>
       </EntityTypeNormalID>
