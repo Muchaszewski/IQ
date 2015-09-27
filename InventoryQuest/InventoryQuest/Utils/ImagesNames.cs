@@ -11,6 +11,8 @@ namespace InventoryQuest.Utils
     public static class ImagesNames
     {
         public static List<NamedList<string>> ItemsImageNames;
+        public static List<NamedList<string>> MonstersImageNames;
+
 
         /// <summary>
         ///     List of all supported gfx files extensions.
@@ -32,6 +34,7 @@ namespace InventoryQuest.Utils
             Init();
 #if CREATOR
             ItemsImageNames = GetAllImagesNames();
+            MonstersImageNames = GetAllMonstersNames();
 #else
             if (Application.isEditor)
             {
@@ -137,7 +140,34 @@ namespace InventoryQuest.Utils
             return ItemsImageNames;
         }
 
-        public static ImageIDPair ResolveImage(string type, string item)
+        public static List<NamedList<string>> GetAllMonstersNames()
+        {
+            var ImageNames = new List<NamedList<string>>();
+            List<string> names = GetAllFiles("/Sprites/portraits", false).ToList();
+            for (var i = 0; i < names.Count; i++)
+            {
+                var nameList = new NamedList<string>(names[i]);
+                var images = GetAllFiles("/Sprites/portraits/" + names[i]);
+                foreach (var item in images)
+                {
+                    nameList.List.Add(Path.GetFileNameWithoutExtension(item));
+                    nameList.FullNameList.Add(Path.GetDirectoryName(item) + "/" + Path.GetFileNameWithoutExtension(item));
+                }
+                ImageNames.Add(nameList);
+            }
+#if !CREATOR
+            foreach (var imageName in ImageNames)
+            {
+                for (int i = 0; i < imageName.FullNameList.Count; i++)
+                {
+                    imageName.FullNameList[i] = FileUtility.AssetsRelativePath(imageName.FullNameList[i]);
+                }
+            }
+#endif
+            return ImageNames;
+        }
+
+        public static ImageIDPair ResolveItemsImage(string type, string item)
         {
             if (ItemsImageNames.Count != 0)
             {
@@ -147,6 +177,23 @@ namespace InventoryQuest.Utils
                 if (ItemsImageNames[image.ImageIDType].List.Count != 0)
                 {
                     image.ImageIDItem = ItemsImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+                    return image;
+                }
+                return new ImageIDPair(image.ImageIDType, -1);
+            }
+            return new ImageIDPair(-1, -1);
+        }
+
+        public static ImageIDPair ResolveMonstersImage(string type, string item)
+        {
+            if (MonstersImageNames.Count != 0)
+            {
+                var image = new ImageIDPair();
+                image.ImageIDType = MonstersImageNames.FindIndex(x => x.Name == type);
+
+                if (MonstersImageNames[image.ImageIDType].List.Count != 0)
+                {
+                    image.ImageIDItem = MonstersImageNames[image.ImageIDType].List.FindIndex(x => x == item);
                     return image;
                 }
                 return new ImageIDPair(image.ImageIDType, -1);

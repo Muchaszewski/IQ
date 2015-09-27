@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using InventoryQuest.Utils;
 
 namespace InventoryQuest.Components.Entities.Generation.Types
 {
@@ -34,6 +35,8 @@ namespace InventoryQuest.Components.Entities.Generation.Types
         private MinMaxStat _StaminaPoints = new MinMaxStat();
         private MinMaxStat _StaminaRegen = new MinMaxStat();
         private EnumEntityType _Type = EnumEntityType.Unknown;
+        private List<PairTypeItem> _ImageID = new List<PairTypeItem>();
+
 
         /// <summary>
         ///     Create new entity </para>
@@ -237,6 +240,12 @@ namespace InventoryQuest.Components.Entities.Generation.Types
         {
             get { return _Range; }
             set { _Range = value; }
+        }
+
+        public List<PairTypeItem> ImageID
+        {
+            get { return _ImageID; }
+            set { _ImageID = value; }
         }
     }
 }
