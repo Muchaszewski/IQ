@@ -448,7 +448,7 @@ namespace InventoryQuest.Components.Generation.Items
             PairTypeItem typeImage = type.ImageID[RandomNumberGenerator.NextRandom(type.ImageID.Count)];
             try
             {
-                item.ImageID = ImagesNames.ResolveImage(typeImage.Type, typeImage.Item);
+                item.ImageID = ImagesNames.ResolveItemsImage(typeImage.Type, typeImage.Item);
                 //Nie można odnaleźć określonej ścieżki
             }
             catch

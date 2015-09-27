@@ -22,7 +22,7 @@ namespace Creator
     /// <summary>
     /// Interaction logic for ImageWindow.xaml
     /// </summary>
-    public partial class ImageWindow : Window
+    public partial class ImageMonstersWindow : Window
     {
         private List<PairTypeItem> _ImagesID = new List<PairTypeItem>();
 
@@ -32,14 +32,14 @@ namespace Creator
             set { _ImagesID = value; }
         }
 
-        public ImageWindow()
+        public ImageMonstersWindow()
         {
             InitializeComponent();
             PopulateListBoxTypes();
             PopulateListBoxImageIDs();
         }
 
-        public ImageWindow(List<PairTypeItem> imagesID)
+        public ImageMonstersWindow(List<PairTypeItem> imagesID)
             : this()
         {
             ImagesID = imagesID;
@@ -48,9 +48,7 @@ namespace Creator
 
         public void PopulateListBoxTypes()
         {
-            List<string> images = ResourcesManager.GetAllFiles("", false).ToList();
-            images.RemoveAt(images.Count - 1); //remove weapon
-            images.AddRange(ResourcesManager.GetAllFiles("weapon", false));
+            List<string> images = ResourcesManager.GetAllFiles("../portraits", false).ToList();
             ListBoxTypes.ItemsSource = images;
         }
 
@@ -63,28 +61,14 @@ namespace Creator
         public void PopulateImagesGrid()
         {
             List<Image> images = new List<Image>();
-            var names = ResourcesManager.GetAllFiles("", false).ToList();
-            names.RemoveAt(names.Count - 1);
+            var names = ResourcesManager.GetAllFiles("../portraits", false).ToList();
             var index = ListBoxTypes.SelectedIndex;
-            if (index >= names.Count)
+            foreach (var item in ResourcesManager.GetAllFiles(System.IO.Path.Combine("../portraits", names[index])))
             {
-                var weaponNames = ResourcesManager.GetAllFiles("weapon", false);
-                foreach (var item in ResourcesManager.GetAllFiles(@"weapon/" + weaponNames[index - names.Count]))
-                {
-                    var bi = new BitmapImage(new Uri(item, UriKind.Absolute));
-                    images.Add(new Image() { Source = bi, Stretch = Stretch.Fill, Width = 64, Height = 118 });
-                }
-                ListBoxImages.ItemsSource = images;
+                var bi = new BitmapImage(new Uri(item, UriKind.Absolute));
+                images.Add(new Image() { Source = bi, Stretch = Stretch.Fill, Width = 113, Height = 113 });
             }
-            else if (index >= 0)
-            {
-                foreach (var item in ResourcesManager.GetAllFiles(names[index]))
-                {
-                    var bi = new BitmapImage(new Uri(item, UriKind.Absolute));
-                    images.Add(new Image() { Source = bi, Stretch = Stretch.Fill, Width = 64, Height = 118 });
-                }
-                ListBoxImages.ItemsSource = images;
-            }
+            ListBoxImages.ItemsSource = images;
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -110,8 +94,8 @@ namespace Creator
             var image = ListBoxImages.SelectedIndex;
             var item = new PairTypeItem()
             {
-                Type = ImagesNames.ItemsImageNames[type].Name,
-                Item = ImagesNames.ItemsImageNames[type].List[image]
+                Type = ImagesNames.MonstersImageNames[type].Name,
+                Item = ImagesNames.MonstersImageNames[type].List[image]
             };
             if (
                 ImagesID.FirstOrDefault(
@@ -120,7 +104,7 @@ namespace Creator
                 ImagesID.Add(item);
             }
             ImagesID.Sort(
-                delegate(PairTypeItem p1, PairTypeItem p2)
+                delegate (PairTypeItem p1, PairTypeItem p2)
                 {
                     int toReturn = p1.Type.CompareTo(p2.Type);
                     if (toReturn == 0) toReturn = p1.Item.CompareTo(p2.Item);
@@ -132,7 +116,7 @@ namespace Creator
         private void ListBoxIDs_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var item = (PairTypeItem)ListBoxIDs.SelectedItem;
-            var image = ImagesNames.ResolveItemsImage(item.Type, item.Item);
+            var image = ImagesNames.ResolveMonstersImage(item.Type, item.Item);
             ListBoxTypes.SelectedIndex = image.ImageIDType;
             ListBoxImages.SelectedIndex = image.ImageIDItem;
         }

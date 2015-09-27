@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,12 +25,15 @@ namespace Creator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<List<Image>> _imagesList;
+        private List<List<Image>> _imagesItemsList;
+        private List<List<Image>> _imagesMonstersList;
+
 
         public MainWindow()
         {
             InitializeComponent();
-            _imagesList = LoadAllImages();
+            _imagesItemsList = LoadAllItemsImages();
+            _imagesMonstersList = LoadAllMonstersImages();
             LoadAll();
             DataGridMonsterAllItems.SelectedIndex = 0;
         }
@@ -69,7 +73,7 @@ namespace Creator
             return null;
         }
 
-        private static List<List<Image>> LoadAllImages()
+        private static List<List<Image>> LoadAllItemsImages()
         {
             List<List<Image>> images = new List<List<Image>>();
             List<string> names = ResourcesManager.GetAllFiles("", false).ToList();
@@ -93,6 +97,23 @@ namespace Creator
                 {
                     var bi = new BitmapImage(new Uri(item, UriKind.Absolute));
                     images[i + names.Count].Add(new Image() { Source = bi, Stretch = Stretch.Fill, Width = 64, Height = 118 });
+                }
+            }
+            return images;
+        }
+
+        private static List<List<Image>> LoadAllMonstersImages()
+        {
+            List<List<Image>> images = new List<List<Image>>();
+            List<string> names = ResourcesManager.GetAllFiles("../portraits", false).ToList();
+            for (int i = 0; i < names.Count; i++)
+            {
+                string name = names[i];
+                images.Add(new List<Image>());
+                foreach (var item in ResourcesManager.GetAllFiles(Path.Combine("../portraits", name)))
+                {
+                    var bi = new BitmapImage(new Uri(item, UriKind.Absolute));
+                    images[i].Add(new Image() { Source = bi, Stretch = Stretch.Fill, Width = 113, Height = 113 });
                 }
             }
             return images;
@@ -502,11 +523,19 @@ namespace Creator
             }
         }
 
-        private static ImageIDPair ResolveImage(string type, string item)
+        private static ImageIDPair ResolveItemImage(string type, string item)
         {
             var image = new ImageIDPair();
             image.ImageIDType = ImagesNames.ItemsImageNames.FindIndex(x => x.Name == type);
             image.ImageIDItem = ImagesNames.ItemsImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+            return image;
+        }
+
+        private static ImageIDPair ResolveMonsterImage(string type, string item)
+        {
+            var image = new ImageIDPair();
+            image.ImageIDType = ImagesNames.MonstersImageNames.FindIndex(x => x.Name == type);
+            image.ImageIDItem = ImagesNames.MonstersImageNames[image.ImageIDType].List.FindIndex(x => x == item);
             return image;
         }
 
@@ -541,8 +570,8 @@ namespace Creator
                     try
                     {
                         pp = pair;
-                        var id = ResolveImage(pair.Type, pair.Item);
-                        imageList.Add(_imagesList[id.ImageIDType][id.ImageIDItem]);
+                        var id = ResolveItemImage(pair.Type, pair.Item);
+                        imageList.Add(_imagesItemsList[id.ImageIDType][id.ImageIDItem]);
                     }
                     catch (Exception e)
                     {
@@ -1377,6 +1406,7 @@ namespace Creator
                 ComboBoxMonsterSex.SelectedIndex = (int)entity.Sex;
                 ComboBoxMonsterType.SelectedIndex = (int)entity.Type;
 
+
                 ButtonMonstersHealth.Content = entity.HealthPoints.ToString();
                 ButtonMonstersHealthReg.Content = entity.HealthRegen.ToString();
                 ButtonMonstersMana.Content = entity.ManaPoints.ToString();
@@ -1406,6 +1436,26 @@ namespace Creator
                 DataGridMonstersItems.ItemsSource = null;
                 DataGridMonstersItems.ItemsSource = entity.ItemsLists;
 
+                var item = (EntityType)DataGridMonsterAllItems.SelectedItem;
+                var imageList = new List<Image>();
+                PairTypeItem pp = null;
+                foreach (var pair in item.ImageID)
+                {
+                    try
+                    {
+                        pp = pair;
+                        var id = ResolveMonsterImage(pair.Type, pair.Item);
+                        imageList.Add(_imagesMonstersList[id.ImageIDType][id.ImageIDItem]);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(
+                            "Given image doesnot exist. Please ensure that this image in in sprite folder\r\n" + pp +
+                            "\r\n" + e.Message);
+                    }
+                }
+
+                ListBoxMonsterImages.ItemsSource = imageList;
 
                 if (DataGridMonstersItemsList.SelectedItem != null &&
                     DataGridMonstersItemsList.SelectedItem.GetType().Name != "NamedObject")
@@ -1888,6 +1938,18 @@ namespace Creator
         private void TextBoxMonsterItemsLists_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextUtils.IsNumeric(ref e, true);
+        }
+
+        private void ListBoxMonsterImages_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DataGridMonsterAllItems.SelectedItem != null && DataGridMonsterAllItems.SelectedItem.GetType().Name != "NamedObject")
+            {
+                var item = DataGridMonsterAllItems.SelectedItem as EntityType;
+                var window = new ImageMonstersWindow(item.ImageID);
+                window.Owner = this;
+                window.ShowDialog();
+                RefreshAllMonstersControls();
+            }
         }
 
         ////Buttons
