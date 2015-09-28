@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using Assets.Scripts.Utils;
 using InventoryQuest.Components.Entities;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
+using InventoryQuest.Utils;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPointerClickHandler
@@ -33,8 +35,23 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         _entityData = CurrentGame.Instance.FightController.Enemy[EntityID];
         _rectTransform = GetComponent<RectTransform>();
         FightController.onAttack += FightController_onAttack;
+        SetIcon();
     }
 
+    void SetIcon()
+    {
+        if (EntityData.ImageID != null)
+        {
+            var path =
+                ImagesNames.MonstersImageNames[EntityData.ImageID.ImageIDType].FullNameList[
+                    EntityData.ImageID.ImageIDItem];
+            transform.GetChild(1).GetComponent<Image>().sprite = ResourceManager.Get(path);
+        }
+        else
+        {
+            Debug.LogWarning("Entity "+EntityData.Name+" has no image. Displaying Default");
+        }
+    }
 
     // Update is called once per frame
     void Update()

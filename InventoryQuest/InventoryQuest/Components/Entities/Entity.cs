@@ -57,6 +57,11 @@ namespace InventoryQuest.Components.Entities
         public int Level { get; set; }
 
         /// <summary>
+        ///     ID image of this entity
+        /// </summary>
+        public ImageIDPair ImageID { get; set; }
+
+        /// <summary>
         ///     Time left to next atack
         /// </summary>
         public float NextTurn { get; set; }
