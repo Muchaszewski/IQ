@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using InventoryQuest.Components.Entities.Generation.Types;
 using InventoryQuest.Components.Statistics;
+using InventoryQuest.Utils;
+using Random = UnityEngine.Random;
 
 namespace InventoryQuest.Components.Entities.Generation
 {
@@ -188,7 +190,21 @@ namespace InventoryQuest.Components.Entities.Generation
             //Setting up type
             EnumEntityType enemyType = type.Type;
 
-            return new Entity(name, level, stats, enemyType);
+            var entity = new Entity(name, level, stats, enemyType);
+            if (type.ImageID.Count > 0)
+            {
+                PairTypeItem typeImage = type.ImageID[RandomNumberGenerator.NextRandom(type.ImageID.Count)];
+                try
+                {
+                    entity.ImageID = ImagesNames.ResolveMonstersImage(typeImage.Type, typeImage.Item);
+                }
+                catch
+                {
+                    //Nie można odnaleźć określonej ścieżki
+                    entity.ImageID = null;
+                }
+            }
+            return entity;
         }
 
         /// <summary>
@@ -201,27 +217,27 @@ namespace InventoryQuest.Components.Entities.Generation
         {
             // ReSharper disable once UseObjectOrCollectionInitializer
             var stats = new Stats();
-            stats.Accuracy.Base = (int) (type.Accuracy.GetRandomForLevel(level)*_accuracyModifier);
-            stats.ArmorPenetration.Base = (int) type.ArmorPenetration.GetRandomForLevel(level);
-            stats.AttackSpeed.Base = (float) type.AttackSpeed.GetRandomForLevel(level);
-            stats.BlockAmount.Base = (int) (type.BlockAmount.GetRandomForLevel(level)*_defenceModifier);
-            stats.BlockChance.Base = (int) type.BlockChance.GetRandomForLevel(level);
-            stats.CriticalDamage.Base = (int) type.CriticalDamage.GetRandomForLevel(level);
-            stats.CriticalChance.Base = (int) type.CriticalChance.GetRandomForLevel(level);
-            stats.MinDamage.Base = (int) (type.MinDamage.GetRandomForLevel(level)*_damageModifier);
-            stats.MaxDamage.Base = (int) (type.MaxDamage.GetRandomForLevel(level)*_damageModifier);
-            stats.Armor.Base = (int) (type.Armor.GetRandomForLevel(level)*_armorModifier);
-            stats.Evasion.Base = (int) type.Evasion.GetRandomForLevel(level);
-            stats.HealthPoints.Base = (float) type.HealthPoints.GetRandomForLevel(level)*_healthModifier;
-            stats.HealthRegen.Base = (float) type.HealthRegen.GetRandomForLevel(level)*_regenModifier;
-            stats.ManaPoints.Base = (float) type.ManaPoints.GetRandomForLevel(level)*_manaModifier;
-            stats.ManaRegen.Base = (float) type.ManaRegen.GetRandomForLevel(level)*_regenModifier;
-            stats.Deflection.Base = (int) (type.Deflection.GetRandomForLevel(level)*_defenceModifier);
-            stats.StaminaPoints.Base = (float) type.StaminaPoints.GetRandomForLevel(level)*_staminaModifier;
-            stats.StaminaRegen.Base = (float) type.StaminaRegen.GetRandomForLevel(level)*_regenModifier;
-            stats.ShieldPoints.Base = (float) type.ShieldPoints.GetRandomForLevel(level)*_shieldModifier;
-            stats.ShieldRegen.Base = (float) type.ShieldRegen.GetRandomForLevel(level)*_regenModifier;
-            stats.MovmentSpeed.Base = (float) type.MovmentSpeed.GetRandomForLevel(level)*_movementSpeedModifier;
+            stats.Accuracy.Base = (int)(type.Accuracy.GetRandomForLevel(level) * _accuracyModifier);
+            stats.ArmorPenetration.Base = (int)type.ArmorPenetration.GetRandomForLevel(level);
+            stats.AttackSpeed.Base = (float)type.AttackSpeed.GetRandomForLevel(level);
+            stats.BlockAmount.Base = (int)(type.BlockAmount.GetRandomForLevel(level) * _defenceModifier);
+            stats.BlockChance.Base = (int)type.BlockChance.GetRandomForLevel(level);
+            stats.CriticalDamage.Base = (int)type.CriticalDamage.GetRandomForLevel(level);
+            stats.CriticalChance.Base = (int)type.CriticalChance.GetRandomForLevel(level);
+            stats.MinDamage.Base = (int)(type.MinDamage.GetRandomForLevel(level) * _damageModifier);
+            stats.MaxDamage.Base = (int)(type.MaxDamage.GetRandomForLevel(level) * _damageModifier);
+            stats.Armor.Base = (int)(type.Armor.GetRandomForLevel(level) * _armorModifier);
+            stats.Evasion.Base = (int)type.Evasion.GetRandomForLevel(level);
+            stats.HealthPoints.Base = (float)type.HealthPoints.GetRandomForLevel(level) * _healthModifier;
+            stats.HealthRegen.Base = (float)type.HealthRegen.GetRandomForLevel(level) * _regenModifier;
+            stats.ManaPoints.Base = (float)type.ManaPoints.GetRandomForLevel(level) * _manaModifier;
+            stats.ManaRegen.Base = (float)type.ManaRegen.GetRandomForLevel(level) * _regenModifier;
+            stats.Deflection.Base = (int)(type.Deflection.GetRandomForLevel(level) * _defenceModifier);
+            stats.StaminaPoints.Base = (float)type.StaminaPoints.GetRandomForLevel(level) * _staminaModifier;
+            stats.StaminaRegen.Base = (float)type.StaminaRegen.GetRandomForLevel(level) * _regenModifier;
+            stats.ShieldPoints.Base = (float)type.ShieldPoints.GetRandomForLevel(level) * _shieldModifier;
+            stats.ShieldRegen.Base = (float)type.ShieldRegen.GetRandomForLevel(level) * _regenModifier;
+            stats.MovmentSpeed.Base = (float)type.MovmentSpeed.GetRandomForLevel(level) * _movementSpeedModifier;
             return stats;
         }
 
