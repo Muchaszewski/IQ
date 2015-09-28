@@ -275,6 +275,7 @@ public class ToolTipManager : UILabelManager
                 AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Durability:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
                 AddLabel(new Vector2(valueLeftMargin, topMargin), item.Durability.Current.ToString() + "/" + item.Durability.Base.ToString(), normalFontSize, Color.white, TextAnchor.UpperLeft);
                 topMargin += normalFontSize + smallGap;
+
                 break;
 
             // Armor
@@ -294,6 +295,26 @@ public class ToolTipManager : UILabelManager
                 AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Armor:", bigFontSize, Color.gray, TextAnchor.UpperLeft);
                 AddLabel(new Vector2(valueLeftMargin, topMargin), item.Stats.Armor.ToString(), bigFontSize, Color.white, TextAnchor.UpperLeft);
                 topMargin += bigFontSize + largeGap;
+
+                AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Durability:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
+                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Durability.Current.ToString() + "/" + item.Durability.Base.ToString(), normalFontSize, Color.grey, TextAnchor.UpperLeft);
+                topMargin += normalFontSize + smallGap;
+
+                break;
+
+            // Shield
+            case InventoryQuest.Components.Items.EnumItemSlot.OffHand:
+
+                AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Type:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
+                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Skill.ToString(), normalFontSize, Color.white, TextAnchor.UpperLeft);
+                topMargin += normalFontSize + smallGap;
+
+                AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Block:", bigFontSize, Color.gray, TextAnchor.UpperLeft);
+                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Stats.BlockAmount.ToString(), bigFontSize, Color.white, TextAnchor.UpperLeft);
+                topMargin += bigFontSize + smallGap;
+                AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Bl. chance:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
+                AddLabel(new Vector2(valueLeftMargin, topMargin), item.Stats.BlockChance.ToString() + "%", normalFontSize, Color.white, TextAnchor.UpperLeft);
+                topMargin += normalFontSize + largeGap;
 
                 AddLabel(new Vector2(descriptionLeftMargin, topMargin), "Durability:", normalFontSize, Color.gray, TextAnchor.UpperLeft);
                 AddLabel(new Vector2(valueLeftMargin, topMargin), item.Durability.Current.ToString() + "/" + item.Durability.Base.ToString(), normalFontSize, Color.grey, TextAnchor.UpperLeft);
