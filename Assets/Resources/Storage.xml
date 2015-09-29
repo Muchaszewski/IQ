@@ -38,14 +38,14 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
+        <Min>1</Min>
+        <Max>1</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>250</Min>
-        <Max>250</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
@@ -145,6 +145,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Looter</Name>
@@ -183,8 +184,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
+        <Min>2</Min>
+        <Max>2</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
@@ -290,6 +291,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Watcher</Name>
@@ -305,13 +307,13 @@
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
-        <Max>3</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0.78</Min>
-        <Max>0.82</Max>
+        <Min>0.85</Min>
+        <Max>0.86</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -328,14 +330,14 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
+        <Min>3</Min>
+        <Max>3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>150</Min>
-        <Max>250</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
@@ -435,6 +437,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Bully</Name>
@@ -450,13 +453,13 @@
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
-        <Max>3</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0.78</Min>
-        <Max>0.82</Max>
+        <Min>0.7</Min>
+        <Max>0.7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -473,14 +476,14 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
+        <Min>2</Min>
+        <Max>2</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
         <Min>150</Min>
-        <Max>250</Max>
+        <Max>150</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
@@ -580,6 +583,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Enforcer</Name>
@@ -595,7 +599,7 @@
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
-        <Max>3</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
@@ -618,14 +622,14 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>5</Max>
+        <Min>3</Min>
+        <Max>3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
         <Min>150</Min>
-        <Max>250</Max>
+        <Max>150</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
@@ -725,6 +729,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Skirmisher</Name>
@@ -740,7 +745,7 @@
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
-        <Max>3</Max>
+        <Max>0</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
@@ -763,13 +768,13 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
+        <Min>5</Min>
         <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>150</Min>
+        <Min>250</Min>
         <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
@@ -870,6 +875,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Mulltrod Bodyguard</Name>
@@ -878,10 +884,10 @@
       <Type>Humanoid</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>18</Min>
+        <Max>22</Max>
+        <MinMaxLevel>700</MinMaxLevel>
+        <MaxMaxLevel>800</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -890,8 +896,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.7</Min>
+        <Max>0.7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -908,28 +914,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>3</Min>
+        <Max>3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>150</Min>
+        <Max>150</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>2</Min>
-        <Max>3</Max>
-        <MinMaxLevel>370</MinMaxLevel>
-        <MaxMaxLevel>390</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>4</Max>
+        <MinMaxLevel>240</MinMaxLevel>
+        <MaxMaxLevel>240</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
         <Min>6</Min>
         <Max>7</Max>
-        <MinMaxLevel>580</MinMaxLevel>
-        <MaxMaxLevel>610</MaxMaxLevel>
+        <MinMaxLevel>270</MinMaxLevel>
+        <MaxMaxLevel>270</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -1015,6 +1021,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Crumbling Zombie</Name>
@@ -1023,10 +1030,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>8</Min>
+        <Max>12</Max>
+        <MinMaxLevel>330</MinMaxLevel>
+        <MaxMaxLevel>350</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1035,8 +1042,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.2</Min>
+        <Max>0.2</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1053,28 +1060,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>1</Min>
+        <Max>1</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>180</MinMaxLevel>
+        <MaxMaxLevel>180</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>190</MinMaxLevel>
+        <MaxMaxLevel>190</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -1155,6 +1162,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Zombie</Name>
@@ -1163,10 +1171,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>12</Max>
+        <MinMaxLevel>380</MinMaxLevel>
+        <MaxMaxLevel>400</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1175,8 +1183,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.4</Min>
+        <Max>0.4</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1193,28 +1201,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>3</Min>
+        <Max>3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>4</Min>
+        <Max>4</Max>
+        <MinMaxLevel>380</MinMaxLevel>
+        <MaxMaxLevel>380</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>400</MinMaxLevel>
+        <MaxMaxLevel>400</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>1</Min>
@@ -1295,6 +1303,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Fat Zombie</Name>
@@ -1303,10 +1312,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>9</Min>
+        <Max>11</Max>
+        <MinMaxLevel>370</MinMaxLevel>
+        <MaxMaxLevel>380</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1315,8 +1324,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.3</Min>
+        <Max>0.3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1333,28 +1342,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>2</Min>
+        <Max>2</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>670</MinMaxLevel>
+        <MaxMaxLevel>670</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>8</Min>
+        <Max>8</Max>
+        <MinMaxLevel>700</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -1435,6 +1444,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Zombie Bloater</Name>
@@ -1443,10 +1453,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>8</Min>
+        <Max>10</Max>
+        <MinMaxLevel>350</MinMaxLevel>
+        <MaxMaxLevel>370</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1455,8 +1465,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.4</Min>
+        <Max>0.4</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1473,28 +1483,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>4</Min>
+        <Max>4</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>350</MinMaxLevel>
+        <MaxMaxLevel>350</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>375</MinMaxLevel>
+        <MaxMaxLevel>375</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -1575,6 +1585,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Massive Zombie</Name>
@@ -1583,10 +1594,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>15</Min>
+        <Max>18</Max>
+        <MinMaxLevel>630</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1595,8 +1606,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.45</Min>
+        <Max>0.45</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1613,28 +1624,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>9</Min>
+        <Max>9</Max>
+        <MinMaxLevel>900</MinMaxLevel>
+        <MaxMaxLevel>900</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>12</Max>
+        <MinMaxLevel>1200</MinMaxLevel>
+        <MaxMaxLevel>1200</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -1715,6 +1726,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Undying Zombie</Name>
@@ -1723,10 +1735,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>11</Max>
+        <MinMaxLevel>390</MinMaxLevel>
+        <MaxMaxLevel>410</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1735,8 +1747,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.4</Min>
+        <Max>0.4</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1753,28 +1765,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>400</MinMaxLevel>
+        <MaxMaxLevel>400</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>420</MinMaxLevel>
+        <MaxMaxLevel>420</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>2</Min>
@@ -1855,6 +1867,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Armored Zombie</Name>
@@ -1863,10 +1876,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>17</Min>
+        <Max>19</Max>
+        <MinMaxLevel>540</MinMaxLevel>
+        <MaxMaxLevel>550</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -1875,8 +1888,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.45</Min>
+        <Max>0.45</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -1893,28 +1906,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>800</MinMaxLevel>
+        <MaxMaxLevel>800</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>9</Min>
+        <Max>9</Max>
+        <MinMaxLevel>900</MinMaxLevel>
+        <MaxMaxLevel>900</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>15</Min>
@@ -1995,6 +2008,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Decayed Skeleton</Name>
@@ -2003,10 +2017,10 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>17</Min>
+        <Max>20</Max>
+        <MinMaxLevel>680</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
         <Min>0</Min>
@@ -2015,8 +2029,8 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.6</Min>
+        <Max>0.6</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2033,28 +2047,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>7</Min>
+        <Max>7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>8</Min>
+        <Max>8</Max>
+        <MinMaxLevel>280</MinMaxLevel>
+        <MaxMaxLevel>280</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>10</Max>
+        <MinMaxLevel>300</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -2135,6 +2149,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton</Name>
@@ -2143,20 +2158,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>22</Min>
+        <Max>24</Max>
+        <MinMaxLevel>720</MinMaxLevel>
+        <MaxMaxLevel>750</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.6</Min>
+        <Max>0.6</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2173,28 +2188,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>7</Min>
+        <Max>7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>10</Max>
+        <MinMaxLevel>480</MinMaxLevel>
+        <MaxMaxLevel>480</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>12</Max>
+        <MinMaxLevel>500</MinMaxLevel>
+        <MaxMaxLevel>500</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -2275,6 +2290,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton Warrior</Name>
@@ -2283,20 +2299,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>24</Min>
+        <Max>26</Max>
+        <MinMaxLevel>780</MinMaxLevel>
+        <MaxMaxLevel>800</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.6</Min>
+        <Max>0.6</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2313,28 +2329,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>7</Min>
+        <Max>7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>10</Max>
+        <MinMaxLevel>660</MinMaxLevel>
+        <MaxMaxLevel>660</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>13</Min>
+        <Max>13</Max>
+        <MinMaxLevel>700</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>9</Min>
@@ -2415,6 +2431,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton Man-at-Arms</Name>
@@ -2423,20 +2440,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>21</Min>
+        <Max>24</Max>
+        <MinMaxLevel>770</MinMaxLevel>
+        <MaxMaxLevel>780</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.6</Min>
+        <Max>0.6</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2453,28 +2470,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>7</Min>
+        <Max>7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>11</Min>
+        <Max>11</Max>
+        <MinMaxLevel>650</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>15</Min>
+        <Max>15</Max>
+        <MinMaxLevel>710</MinMaxLevel>
+        <MaxMaxLevel>710</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>21</Min>
@@ -2555,6 +2572,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton Archer</Name>
@@ -2563,20 +2581,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>20</Max>
+        <MinMaxLevel>500</MinMaxLevel>
+        <MaxMaxLevel>700</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>-20</Min>
+        <Max>-20</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.3</Min>
+        <Max>0.3</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2593,28 +2611,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>9</Min>
+        <Max>9</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>250</Min>
+        <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>280</MinMaxLevel>
+        <MaxMaxLevel>280</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>300</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>1</Min>
@@ -2695,6 +2713,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton Crossbowman</Name>
@@ -2703,20 +2722,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>14</Min>
+        <Max>19</Max>
+        <MinMaxLevel>400</MinMaxLevel>
+        <MaxMaxLevel>650</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>50</Min>
+        <Max>50</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.15</Min>
+        <Max>0.15</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2733,28 +2752,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>9</Min>
+        <Max>9</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>250</Min>
+        <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>7</Min>
+        <Max>7</Max>
+        <MinMaxLevel>475</MinMaxLevel>
+        <MaxMaxLevel>475</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>14</Min>
+        <Max>14</Max>
+        <MinMaxLevel>500</MinMaxLevel>
+        <MaxMaxLevel>500</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>5</Min>
@@ -2835,6 +2854,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Skeleton Knight</Name>
@@ -2843,20 +2863,20 @@
       <Type>Undead</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>20</Min>
+        <Max>25</Max>
+        <MinMaxLevel>750</MinMaxLevel>
+        <MaxMaxLevel>800</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.6</Min>
+        <Max>0.6</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -2873,28 +2893,28 @@
         <MaxMaxLevel>600</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>7</Min>
+        <Max>7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>200</Min>
+        <Max>200</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>10</Min>
+        <Max>10</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>14</Min>
+        <Max>14</Max>
+        <MinMaxLevel>1200</MinMaxLevel>
+        <MaxMaxLevel>1200</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>22</Min>
@@ -2975,6 +2995,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Scorpion</Name>
@@ -2983,20 +3004,20 @@
       <Type>Beast</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>14</Max>
+        <MinMaxLevel>490</MinMaxLevel>
+        <MaxMaxLevel>510</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>-40</Min>
+        <Max>-40</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.7</Min>
+        <Max>0.7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -3013,28 +3034,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>250</Min>
+        <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>180</MinMaxLevel>
+        <MaxMaxLevel>180</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>6</Min>
+        <Max>6</Max>
+        <MinMaxLevel>200</MinMaxLevel>
+        <MaxMaxLevel>200</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>8</Min>
@@ -3115,6 +3136,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Giant Scorpion</Name>
@@ -3123,20 +3145,20 @@
       <Type>Beast</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>12</Min>
+        <Max>15</Max>
+        <MinMaxLevel>490</MinMaxLevel>
+        <MaxMaxLevel>520</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>-40</Min>
+        <Max>-40</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.7</Min>
+        <Max>0.7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -3153,28 +3175,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>250</Min>
+        <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>4</Min>
+        <Max>4</Max>
+        <MinMaxLevel>220</MinMaxLevel>
+        <MaxMaxLevel>220</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>7</Min>
+        <Max>7</Max>
+        <MinMaxLevel>240</MinMaxLevel>
+        <MaxMaxLevel>240</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>10</Min>
@@ -3255,6 +3277,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Vile Scorpion</Name>
@@ -3263,20 +3286,20 @@
       <Type>Beast</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>13</Min>
+        <Max>16</Max>
+        <MinMaxLevel>520</MinMaxLevel>
+        <MaxMaxLevel>540</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>-40</Min>
+        <Max>-40</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>0.7</Min>
+        <Max>0.7</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -3293,28 +3316,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>250</Min>
+        <Max>250</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>5</Min>
+        <Max>5</Max>
+        <MinMaxLevel>280</MinMaxLevel>
+        <MaxMaxLevel>280</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>8</Min>
+        <Max>8</Max>
+        <MinMaxLevel>300</MinMaxLevel>
+        <MaxMaxLevel>300</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>7</Min>
@@ -3395,6 +3418,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Rabid Crow</Name>
@@ -3403,20 +3427,20 @@
       <Type>Beast</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>25</Min>
+        <Max>30</Max>
+        <MinMaxLevel>1000</MinMaxLevel>
+        <MaxMaxLevel>1100</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>1</Min>
+        <Max>1</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -3433,28 +3457,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>150</Min>
+        <Max>150</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>1</Min>
+        <Max>1</Max>
+        <MinMaxLevel>90</MinMaxLevel>
+        <MaxMaxLevel>90</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>3</Min>
+        <Max>3</Max>
+        <MinMaxLevel>100</MinMaxLevel>
+        <MaxMaxLevel>100</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -3535,6 +3559,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
     <EntityType>
       <Name>Monstrous Crow</Name>
@@ -3543,20 +3568,20 @@
       <Type>Beast</Type>
       <Sex>None</Sex>
       <Accuracy>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>25</Min>
+        <Max>30</Max>
+        <MinMaxLevel>900</MinMaxLevel>
+        <MaxMaxLevel>1000</MaxMaxLevel>
       </Accuracy>
       <ArmorPenetration>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>10</Min>
+        <Max>10</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </ArmorPenetration>
       <AttackSpeed>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>1</Min>
+        <Max>1</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </AttackSpeed>
@@ -3573,28 +3598,28 @@
         <MaxMaxLevel>0</MaxMaxLevel>
       </BlockChance>
       <CriticalChance>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>5</Min>
+        <Max>5</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalChance>
       <CriticalDamage>
-        <Min>0</Min>
-        <Max>0</Max>
+        <Min>150</Min>
+        <Max>150</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </CriticalDamage>
       <MinDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>2</Min>
+        <Max>2</Max>
+        <MinMaxLevel>110</MinMaxLevel>
+        <MaxMaxLevel>110</MaxMaxLevel>
       </MinDamage>
       <MaxDamage>
-        <Min>0</Min>
-        <Max>0</Max>
-        <MinMaxLevel>0</MinMaxLevel>
-        <MaxMaxLevel>0</MaxMaxLevel>
+        <Min>4</Min>
+        <Max>4</Max>
+        <MinMaxLevel>130</MinMaxLevel>
+        <MaxMaxLevel>130</MaxMaxLevel>
       </MaxDamage>
       <Armor>
         <Min>0</Min>
@@ -3675,6 +3700,7 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
+      <ImageID />
     </EntityType>
   </Entities>
   <Weapons>
