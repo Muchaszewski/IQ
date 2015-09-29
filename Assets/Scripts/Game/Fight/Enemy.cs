@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            Debug.LogWarning("Entity "+EntityData.Name+" has no image. Displaying Default");
+            Debug.LogWarning("Entity " + EntityData.Name + " has no image. Displaying Default");
         }
     }
 

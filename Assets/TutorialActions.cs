@@ -48,7 +48,8 @@ public class TutorialActions : MonoBehaviour
         {
             MenuButtons[i].gameObject.SetActive(false);
         }
-        MessageBox.SkipButton.gameObject.SetActive(false);
+        MessageBox.SkipButton.onClick.AddListener(FinishTutorial);
+        //MessageBox.SkipButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -140,8 +141,7 @@ public class TutorialActions : MonoBehaviour
 
     public void TutorialEquipmentOpen()
     {
-        MessageBox.SkipButton.gameObject.SetActive(true);
-        MessageBox.SkipButton.onClick.AddListener(() => { MessageBox.gameObject.SetActive(false); });
+        //MessageBox.SkipButton.gameObject.SetActive(true);
         MenuButtons[4].gameObject.SetActive(true);
         MenuButtons[4].onClick.AddListener(TutorialEquipItems);
 
@@ -157,9 +157,6 @@ public class TutorialActions : MonoBehaviour
     private void TutorialEquipItems()
     {
         MenuButtons[4].onClick.RemoveListener(TutorialEquipItems);
-
-        CurrentGame.Instance.Player.Inventory.Items = new SortedList<int, Item>();
-        InventoryPanel.Instance.PopulateInventory();
 
         MessageBox.RectTransform.anchoredPosition = equipItemsMessage.position;
         MessageBox.RectTransform.sizeDelta = equipItemsMessage.size;
@@ -196,6 +193,18 @@ public class TutorialActions : MonoBehaviour
         MessageBox.TitleText.text = "ありがとうございます";
         MessageBox.MessageText.text = "おわいだ！がんばろう";
         MessageBox.NextButton.gameObject.SetActive(true);
-        MessageBox.NextButton.onClick.AddListener(() => { MessageBox.gameObject.SetActive(false); });
+        MessageBox.NextButton.onClick.AddListener(FinishTutorial);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void FinishTutorial()
+    {
+        MessageBox.gameObject.SetActive(false);
+        for (int i = 0; i < MenuButtons.Length - 1; i++)
+        {
+            MenuButtons[i].gameObject.SetActive(true);
+        }
     }
 }

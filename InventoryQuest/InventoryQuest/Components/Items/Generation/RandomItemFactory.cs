@@ -229,24 +229,24 @@ namespace InventoryQuest.Components.Generation.Items
         private static Item ResolveItemType(int level, ItemsLists itemList, int typeID,
             EnumItemRarity rarity = EnumItemRarity.Poor)
         {
-            if (typeID >= 0 && typeID <= 8) //Armors
+            var groupType = ((EnumItemType)typeID).GetAttributeOfType<TypeToSlot>().GroupType;
+            if (groupType == EnumItemGroupType.Armor)
             {
                 return CreateArmorItem(level, itemList, rarity, (EnumItemType)typeID);
             }
-            else if (typeID == 9 || typeID == 10) //Amu and Rings
+            else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
                 return null;
             }
-            else if (typeID == 11) //Shields
+            else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 return CreateShieldItem(level, itemList, rarity, (EnumItemType)typeID);
             }
-            else if (typeID == 12) //Offhand
+            else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 return CreateOffHandItem(level, itemList, rarity, (EnumItemType)typeID);
             }
-            //13 is Unarmed
-            else if (typeID >= 14 && typeID <= 27) //Weapons
+            else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 return CreateWeaponItem(level, itemList, rarity, (EnumItemType)typeID);
             }

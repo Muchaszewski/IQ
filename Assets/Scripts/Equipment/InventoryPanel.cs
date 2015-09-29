@@ -43,11 +43,6 @@ public class InventoryPanel : MonoBehaviour
 
         Inventory.EventItemAdded += Inventory_EventItemAdded;
         Inventory.EventItemDeleted += Inventory_EventItemDeleted;
-
-        for (int i = 0; i < 20; i++)
-        {
-            CurrentGame.Instance.Player.Inventory.AddItem(RandomItemFactory.CreateItem(CurrentGame.Instance.Spot, EnumItemRarity.Mythical));
-        }
     }
 
     void Update()
