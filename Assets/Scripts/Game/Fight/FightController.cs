@@ -223,7 +223,7 @@ namespace InventoryQuest.Game.Fight
         public virtual void ResetBattle()
         {
             Enemy = new List<Entity>();
-            Enemy.Add(RandomEnemyFactory.CreateEnemy(CurrentGame.Instance.Spot, Player.Level, EnumEntityRarity.Normal));
+            Enemy.Add(RandomEnemyFactory.CreateEnemy(CurrentGame.Instance.Spot, EnumEntityRarity.Normal));
             IsEnded = false;
             IsFight = true;
         }
