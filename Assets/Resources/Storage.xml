@@ -7780,6 +7780,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Flooded Battlefield</Name>
       <Level>5</Level>
       <ID>20</ID>
+      <ImageString>location_coast_0</ImageString>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>

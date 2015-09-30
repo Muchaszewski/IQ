@@ -285,11 +285,11 @@ namespace InventoryQuest.Components.Entities.Player
             Stats.ShieldRegen.Base = Stats.ShieldPoints.Base / 10;
 
             Stats.StaminaPoints.Base = 60 + (Stats.Vitality.Base * 3) + (Level * (1 + Stats.Vitality.Base / 25));
-            Stats.StaminaRegen.Base = Stats.StaminaPoints.Base / 5;
+            Stats.StaminaRegen.Base = Stats.StaminaPoints.Base / 50;
 
             Stats.ManaPoints.Base = 0 + (Stats.Intelligence.Base * 2) + (Stats.Wisdom.Base * 1) +
                                     (Level * (Stats.Intelligence.Base * 2 + Stats.Wisdom.Base) / 50);
-            Stats.ManaRegen.Base = Stats.ManaPoints.Base / 60;
+            Stats.ManaRegen.Base = Stats.ManaPoints.Base / 10;
 
             Stats.Evasion.Base = (Stats.Dexterity.Base + Stats.Perception.Base) * 2 + Level * 5;
         }
