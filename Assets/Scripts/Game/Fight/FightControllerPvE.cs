@@ -539,7 +539,7 @@ namespace InventoryQuest.Game.Fight
             }
             else
             {
-                Enemy.AddRange(RandomEnemyFactory.CreateNumberOfEnemies(CurrentGame.Instance.Spot, CurrentGame.Instance.Player.Level, Random.Range(1, 4), EnumEntityRarity.Normal));
+                Enemy.AddRange(RandomEnemyFactory.CreateNumberOfEnemies(CurrentGame.Instance.Spot, Random.Range(1, 4), EnumEntityRarity.Normal));
             }
 
             foreach (var entity in Enemy)

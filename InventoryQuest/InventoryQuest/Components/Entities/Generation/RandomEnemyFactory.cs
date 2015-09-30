@@ -62,13 +62,15 @@ namespace InventoryQuest.Components.Entities.Generation
         /// <param name="maxLevel">Maximum Level of created enemy</param>
         /// <param name="numberOfEnemies">Number of enemies (Number larger then 2 may cause instant death while in fight)</param>
         /// <returns></returns>
-        public static List<Entity> CreateNumberOfEnemies(Spot Spot, int maxLevel, int numberOfEnemies,
+        public static List<Entity> CreateNumberOfEnemies(Spot Spot, int numberOfEnemies,
             EnumEntityRarity rarity)
         {
             var enemies = new List<Entity>();
             for (var i = 0; i < numberOfEnemies; i++)
             {
-                Entity enemy = CreateEnemy(Spot, maxLevel - i, rarity);
+                Entity enemy = CreateEnemy(Spot,
+                    RandomNumberGenerator.NextRandom(Spot.Level - 3, Spot.Level + 1),
+                    rarity);
                 if (enemy != null)
                 {
                     enemies.Add(enemy);
@@ -93,7 +95,7 @@ namespace InventoryQuest.Components.Entities.Generation
         /// </param>
         /// <param name="level">Level of created enemy</param>
         /// <returns></returns>
-        public static Entity CreateEnemy(Spot Spot, int level, EnumEntityRarity rarity)
+        private static Entity CreateEnemy(Spot Spot, int level, EnumEntityRarity rarity)
         {
             EntityType type;
             //Choosing random enemy
