@@ -12,9 +12,9 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour, IPointerClickHandler
 {
 
-    public const float MaxCombatPosition = 241f;
     public const float MinCombatPosition = 94f;
 
+    public float MaxCombatPosition = 241f;
     public bool IsRightSide = true;
     public int EntityID;
     public GameObject FloatingText;
@@ -67,13 +67,14 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         float position = 0;
 
         // Update position
-        position = _progress + (_progress < 0 ? -MinCombatPosition : MinCombatPosition);
+        position = (float)Math.Tanh(_progress);
+        position = position + (_progress < 0 ? -MinCombatPosition : MinCombatPosition);
         // Enemey out of bounds
         if (Mathf.Abs(position) > MaxCombatPosition)
         {
             position = _progress < 0 ? -MaxCombatPosition : MaxCombatPosition;
         }
-
+        position = Mathf.Clamp(position, -MaxCombatPosition, MaxCombatPosition);
         // Apply position
         _rectTransform.anchoredPosition = new Vector2(position, 0);
 
