@@ -49,7 +49,9 @@ public class TutorialActions : MonoBehaviour
             MenuButtons[i].gameObject.SetActive(false);
         }
         MessageBox.SkipButton.onClick.AddListener(FinishTutorial);
-        //MessageBox.SkipButton.gameObject.SetActive(false);
+#if !UNITY_EDITOR
+        MessageBox.SkipButton.gameObject.SetActive(false);
+#endif
     }
 
     void Update()
@@ -141,7 +143,7 @@ public class TutorialActions : MonoBehaviour
 
     public void TutorialEquipmentOpen()
     {
-        //MessageBox.SkipButton.gameObject.SetActive(true);
+        MessageBox.SkipButton.gameObject.SetActive(true);
         MenuButtons[4].gameObject.SetActive(true);
         MenuButtons[4].onClick.AddListener(TutorialEquipItems);
 
@@ -165,6 +167,8 @@ public class TutorialActions : MonoBehaviour
         MessageBox.MessageText.text = equipItemsMessage.text;
         MessageBox.NextButton.gameObject.SetActive(false);
         Inventory.EventItemSwaped += Inventory_EventItemSwaped;
+        Inventory.EventItemAdded += Inventory_EventItemSwaped;
+        Inventory.EventItemDeleted += Inventory_EventItemSwaped;
     }
 
     private void Inventory_EventItemSwaped(object sender, System.EventArgs e)
@@ -184,6 +188,9 @@ public class TutorialActions : MonoBehaviour
         if (count == 3)
         {
             TutorialFinish();
+            Inventory.EventItemSwaped -= Inventory_EventItemSwaped;
+            Inventory.EventItemAdded -= Inventory_EventItemSwaped;
+            Inventory.EventItemDeleted -= Inventory_EventItemSwaped;
         }
     }
 
