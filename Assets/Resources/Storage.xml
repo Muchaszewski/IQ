@@ -2708,8 +2708,8 @@
       </MovmentSpeed>
       <ItemsLists />
       <Range>
-        <Min>1</Min>
-        <Max>1</Max>
+        <Min>30</Min>
+        <Max>30</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
@@ -2849,8 +2849,8 @@
       </MovmentSpeed>
       <ItemsLists />
       <Range>
-        <Min>1</Min>
-        <Max>1</Max>
+        <Min>25</Min>
+        <Max>25</Max>
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
