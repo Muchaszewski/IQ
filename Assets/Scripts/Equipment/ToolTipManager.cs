@@ -119,7 +119,7 @@ public class ToolTipManager : UILabelManager
 
     void SetIcon()
     {
-        var u = ImagesNames.ItemsImageNames[_item.ItemData.ImageID.ImageIDType].FullNameList[_item.ItemData.ImageID.ImageIDItem];
+        var u = ResourcesNames.ItemsImageNames[_item.ItemData.ImageID.ImageIDType].FullNameList[_item.ItemData.ImageID.ImageIDItem];
         var sprite = ResourceManager.Get(u);
         TooltipImage.sprite = sprite;
     }

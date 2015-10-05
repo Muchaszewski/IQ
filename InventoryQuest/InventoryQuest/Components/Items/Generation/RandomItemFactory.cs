@@ -456,6 +456,19 @@ namespace InventoryQuest.Components.Generation.Items
                 item.ImageID = null;
             }
 
+            try
+            {
+                //Set sound
+                PairTypeItem soundItem = type.SoundID[RandomNumberGenerator.NextRandom(type.SoundID.Count)];
+
+                item.SoundID = ResourcesNames.ResolveItemsSound(soundItem.Type, soundItem.Item);
+                //Nie można odnaleźć określonej ścieżki
+            }
+            catch
+            {
+                item.ImageID = null;
+            }
+
             //Setting durability
             item.Durability.ChangeValues(RandomDurability(type, level));
         }

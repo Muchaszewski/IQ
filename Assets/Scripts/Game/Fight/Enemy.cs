@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         if (EntityData.ImageID != null)
         {
             var path =
-                ImagesNames.MonstersImageNames[EntityData.ImageID.ImageIDType].FullNameList[
+                ResourcesNames.MonstersImageNames[EntityData.ImageID.ImageIDType].FullNameList[
                     EntityData.ImageID.ImageIDItem];
             transform.GetChild(1).GetComponent<Image>().sprite = ResourceManager.Get(path);
         }

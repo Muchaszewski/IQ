@@ -14,6 +14,7 @@ namespace InventoryQuest.Components.Items
         private string _ExtraName = String.Empty;
         private string _FlavorText;
         private ImageIDPair _ImageID;
+        private ImageIDPair _SoundID;
         private int _ItemLevel;
         private string _Name;
         private StatValueInt _Price = new StatValueInt(EnumTypeStat.Sell);
@@ -177,6 +178,15 @@ namespace InventoryQuest.Components.Items
         {
             get { return _ImageID; }
             set { _ImageID = value; }
+        }
+
+        /// <summary>
+        ///     ID image of this item
+        /// </summary>
+        public ImageIDPair SoundID
+        {
+            get { return _SoundID; }
+            set { _SoundID = value; }
         }
 
         /// <summary>

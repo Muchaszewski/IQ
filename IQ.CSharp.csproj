@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
     <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />
+    <Compile Include="Assets\SoundManager.cs" />
     <Compile Include="Assets\TutorialActions.cs" />
     <Compile Include="Assets\UIMoney.cs" />
   </ItemGroup>

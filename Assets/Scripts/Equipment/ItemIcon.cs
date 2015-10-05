@@ -86,7 +86,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     /// </summary>
     void SetIcon()
     {
-        var path = ImagesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
+        var path = ResourcesNames.ItemsImageNames[ItemData.ImageID.ImageIDType].FullNameList[ItemData.ImageID.ImageIDItem];
         transform.GetChild(1).GetComponent<Image>().sprite = ResourceManager.Get(path);
     }
 
