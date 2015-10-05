@@ -8,16 +8,11 @@ using Debug = UnityEngine.Debug;
 
 namespace InventoryQuest.Utils
 {
-    public static class ImagesNames
+    public static class ResourcesNames
     {
         public static List<NamedList<string>> ItemsImageNames;
+        public static List<NamedList<string>> ItemsSoundsNames;
         public static List<NamedList<string>> MonstersImageNames;
-
-
-        /// <summary>
-        ///     List of all supported gfx files extensions.
-        /// </summary>
-        public static readonly string[] GFX_EXTENSIONS = { "png", "jpg" };
 
         /// <summary>
         ///     List of all possible root path to look in.
@@ -29,12 +24,13 @@ namespace InventoryQuest.Utils
         private static string _PathGfxGUI = "gui";
         private static string _PathGfxItems = "items";
 
-        static ImagesNames()
+        static ResourcesNames()
         {
             Init();
 #if CREATOR
             ItemsImageNames = GetAllImagesNames();
             MonstersImageNames = GetAllMonstersNames();
+            ItemsSoundsNames = GetAllItemsSoundNames();
 #else
             if (Application.isEditor)
             {
@@ -167,6 +163,33 @@ namespace InventoryQuest.Utils
             return ImageNames;
         }
 
+        public static List<NamedList<string>> GetAllItemsSoundNames()
+        {
+            var ImageNames = new List<NamedList<string>>();
+            List<string> names = GetAllFiles("/Sounds", false).ToList();
+            for (var i = 0; i < names.Count; i++)
+            {
+                var nameList = new NamedList<string>(names[i]);
+                var images = GetAllFiles("/Sounds/" + names[i]);
+                foreach (var item in images)
+                {
+                    nameList.List.Add(Path.GetFileNameWithoutExtension(item));
+                    nameList.FullNameList.Add(Path.GetDirectoryName(item) + "/" + Path.GetFileNameWithoutExtension(item));
+                }
+                ImageNames.Add(nameList);
+            }
+#if !CREATOR
+            foreach (var imageName in ImageNames)
+            {
+                for (int i = 0; i < imageName.FullNameList.Count; i++)
+                {
+                    imageName.FullNameList[i] = FileUtility.AssetsRelativePath(imageName.FullNameList[i]);
+                }
+            }
+#endif
+            return ImageNames;
+        }
+
         public static ImageIDPair ResolveItemsImage(string type, string item)
         {
             if (ItemsImageNames.Count != 0)
@@ -194,6 +217,23 @@ namespace InventoryQuest.Utils
                 if (MonstersImageNames[image.ImageIDType].List.Count != 0)
                 {
                     image.ImageIDItem = MonstersImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+                    return image;
+                }
+                return new ImageIDPair(image.ImageIDType, -1);
+            }
+            return new ImageIDPair(-1, -1);
+        }
+
+        public static ImageIDPair ResolveItemsSound(string type, string item)
+        {
+            if (ItemsSoundsNames.Count != 0)
+            {
+                var image = new ImageIDPair();
+                image.ImageIDType = ItemsSoundsNames.FindIndex(x => x.Name == type);
+
+                if (ItemsSoundsNames[image.ImageIDType].List.Count != 0)
+                {
+                    image.ImageIDItem = ItemsSoundsNames[image.ImageIDType].List.FindIndex(x => x == item);
                     return image;
                 }
                 return new ImageIDPair(image.ImageIDType, -1);

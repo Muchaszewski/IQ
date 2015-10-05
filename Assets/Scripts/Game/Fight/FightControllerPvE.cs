@@ -545,7 +545,7 @@ namespace InventoryQuest.Game.Fight
             foreach (var entity in Enemy)
             {
                 var max = Mathf.Max(entity.Stats.Range.Extend, Player.Stats.Range.Extend);
-                max = Random.Range(-50, 50);
+                max = 150;
                 entity.Position = max;
             }
 

@@ -89,6 +89,9 @@
     <Compile Include="Creator\ImageMonstersWindow.xaml.cs">
       <DependentUpon>ImageMonstersWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Creator\SoundWindow.xaml.cs">
+      <DependentUpon>SoundWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Creator\ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
     </Compile>
@@ -99,9 +102,6 @@
       <DependentUpon>MinMaxStatTypeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Creator\ResourcesManager.cs" />
-    <Compile Include="Creator\SoundsWindow.xaml.cs">
-      <DependentUpon>SoundsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Creator\StatAllowedWindow.xaml.cs">
       <DependentUpon>StatAllowedWindow.xaml</DependentUpon>
     </Compile>
@@ -115,6 +115,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Creator\ImageMonstersWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Creator\SoundWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -153,10 +157,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Creator\MinMaxStatWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Creator\SoundsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

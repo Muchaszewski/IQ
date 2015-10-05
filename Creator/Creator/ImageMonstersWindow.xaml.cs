@@ -94,8 +94,8 @@ namespace Creator
             var image = ListBoxImages.SelectedIndex;
             var item = new PairTypeItem()
             {
-                Type = ImagesNames.MonstersImageNames[type].Name,
-                Item = ImagesNames.MonstersImageNames[type].List[image]
+                Type = ResourcesNames.MonstersImageNames[type].Name,
+                Item = ResourcesNames.MonstersImageNames[type].List[image]
             };
             if (
                 ImagesID.FirstOrDefault(
@@ -116,7 +116,7 @@ namespace Creator
         private void ListBoxIDs_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var item = (PairTypeItem)ListBoxIDs.SelectedItem;
-            var image = ImagesNames.ResolveMonstersImage(item.Type, item.Item);
+            var image = ResourcesNames.ResolveMonstersImage(item.Type, item.Item);
             ListBoxTypes.SelectedIndex = image.ImageIDType;
             ListBoxImages.SelectedIndex = image.ImageIDItem;
         }

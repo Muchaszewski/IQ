@@ -526,16 +526,24 @@ namespace Creator
         private static ImageIDPair ResolveItemImage(string type, string item)
         {
             var image = new ImageIDPair();
-            image.ImageIDType = ImagesNames.ItemsImageNames.FindIndex(x => x.Name == type);
-            image.ImageIDItem = ImagesNames.ItemsImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+            image.ImageIDType = ResourcesNames.ItemsImageNames.FindIndex(x => x.Name == type);
+            image.ImageIDItem = ResourcesNames.ItemsImageNames[image.ImageIDType].List.FindIndex(x => x == item);
             return image;
         }
 
         private static ImageIDPair ResolveMonsterImage(string type, string item)
         {
             var image = new ImageIDPair();
-            image.ImageIDType = ImagesNames.MonstersImageNames.FindIndex(x => x.Name == type);
-            image.ImageIDItem = ImagesNames.MonstersImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+            image.ImageIDType = ResourcesNames.MonstersImageNames.FindIndex(x => x.Name == type);
+            image.ImageIDItem = ResourcesNames.MonstersImageNames[image.ImageIDType].List.FindIndex(x => x == item);
+            return image;
+        }
+
+        private static ImageIDPair ResolveItemsSound(string type, string item)
+        {
+            var image = new ImageIDPair();
+            image.ImageIDType = ResourcesNames.ItemsSoundsNames.FindIndex(x => x.Name == type);
+            image.ImageIDItem = ResourcesNames.ItemsSoundsNames[image.ImageIDType].List.FindIndex(x => x == item);
             return image;
         }
 
@@ -580,6 +588,25 @@ namespace Creator
                 }
 
                 ListBoxImages.ItemsSource = imageList;
+
+                var soundList = new List<Image>();
+                pp = null;
+
+                foreach (var pair in item.SoundID)
+                {
+                    try
+                    {
+                        pp = pair;
+                        var id = ResolveItemsSound(pair.Type, pair.Item);
+                        imageList.Add(_imagesItemsList[id.ImageIDType][id.ImageIDItem]);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Given sound doesnot exist. Please ensure that this sound in in sounds folder\r\n" + pp + "\r\n" + e.Message);
+                    }
+                }
+
+                ListBoxSounds.ItemsSource = soundList;
 
                 var enumItemType = ComboBoxItemsType.SelectedIndex;
                 var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
@@ -2230,17 +2257,17 @@ namespace Creator
             isToggledButton = !isToggledButton;
         }
 
-        private void ButtonOpenSounds_Click(object sender, RoutedEventArgs e)
+
+        private void ListBoxSounds_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (DataGridItemsAll.SelectedItem != null && DataGridItemsAll.SelectedItem.GetType().Name != "NamedObject")
             {
                 var item = DataGridItemsAll.SelectedItem as ItemType;
-                var window = new SoundsWindow(item.SoundID);
+                var window = new SoundWindow(item.SoundID);
                 window.Owner = this;
                 window.ShowDialog();
                 RefreshItems();
             }
-
         }
 
 

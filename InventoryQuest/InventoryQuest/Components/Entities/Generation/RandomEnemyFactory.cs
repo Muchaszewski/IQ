@@ -198,7 +198,7 @@ namespace InventoryQuest.Components.Entities.Generation
                 PairTypeItem typeImage = type.ImageID[RandomNumberGenerator.NextRandom(type.ImageID.Count)];
                 try
                 {
-                    entity.ImageID = ImagesNames.ResolveMonstersImage(typeImage.Type, typeImage.Item);
+                    entity.ImageID = ResourcesNames.ResolveMonstersImage(typeImage.Type, typeImage.Item);
                 }
                 catch
                 {

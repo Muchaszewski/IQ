@@ -134,7 +134,7 @@
     <Compile Include="InventoryQuest\Utils\Extensions\StringExtensions.cs" />
     <Compile Include="InventoryQuest\Utils\FileUtility.cs" />
     <Compile Include="InventoryQuest\Utils\ImageIDPair.cs" />
-    <Compile Include="InventoryQuest\Utils\ImagesNames.cs" />
+    <Compile Include="InventoryQuest\Utils\ResourcesNames.cs" />
     <Compile Include="InventoryQuest\Utils\Logger.cs" />
     <Compile Include="InventoryQuest\Utils\MinMaxStat.cs" />
     <Compile Include="InventoryQuest\Utils\MinMaxStatType.cs" />
