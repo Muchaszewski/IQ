@@ -11,10 +11,6 @@
         </ListBox>
         <ListBox x:Name="ListBoxTypes" Margin="412,10,90,324" SelectionChanged="ListBoxTypes_SelectionChanged"/>
         <ComboBox x:Name="ComboBoxSoundType" HorizontalAlignment="Left" Margin="412,146,0,0" VerticalAlignment="Top" Width="196">
-            <ComboBoxItem Content="Pick Sound" HorizontalAlignment="Left" Width="194"/>
-            <ComboBoxItem Content="Drop Sound" HorizontalAlignment="Left" Width="194"/>
-            <ComboBoxItem Content="Equip Sound" HorizontalAlignment="Left" Width="194"/>
-            <ComboBoxItem Content="Any future sound?" HorizontalAlignment="Left" Width="194"/>
         </ComboBox>
 
     </Grid>

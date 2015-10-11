@@ -38,6 +38,7 @@ namespace Creator
             InitializeComponent();
             PopulateListBoxTypes();
             PopulateListBoxImageIDs();
+            ComboBoxSoundType.ItemsSource = Enum.GetNames(typeof(EnumItemSoundType));
             ComboBoxSoundType.SelectedIndex = 0;
         }
 

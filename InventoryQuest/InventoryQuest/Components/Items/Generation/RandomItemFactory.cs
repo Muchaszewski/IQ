@@ -459,9 +459,12 @@ namespace InventoryQuest.Components.Generation.Items
             try
             {
                 //Set sound
-                PairTypeItem soundItem = type.SoundID[RandomNumberGenerator.NextRandom(type.SoundID.Count)];
+                foreach (var sound in type.SoundID)
+                {
+                    PairTypeItem soundItem = sound;
+                    item.SoundID.Add(ResourcesNames.ResolveItemsSound(soundItem.Type, soundItem.Item));
+                }
 
-                item.SoundID = ResourcesNames.ResolveItemsSound(soundItem.Type, soundItem.Item);
                 //Nie można odnaleźć określonej ścieżki
             }
             catch

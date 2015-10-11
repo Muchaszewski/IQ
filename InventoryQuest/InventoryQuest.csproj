@@ -102,6 +102,7 @@
     <Compile Include="InventoryQuest\Components\Items\EnumItemSlot.cs" />
     <Compile Include="InventoryQuest\Components\Items\EnumItemType.cs" />
     <Compile Include="InventoryQuest\Components\Items\EventItemArgs.cs" />
+    <Compile Include="InventoryQuest\Components\Items\Generation\EnumItemSoundType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\RandomItemFactory.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\ArmorType.cs" />
     <Compile Include="InventoryQuest\Components\Items\Generation\Types\IItemType.cs" />

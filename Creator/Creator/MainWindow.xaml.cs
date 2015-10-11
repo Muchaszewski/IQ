@@ -610,23 +610,24 @@ namespace Creator
 
                 var soundList = new List<string>();
                 pp = null;
-
-                foreach (var pair in item.SoundID)
+                for (int index = 0; index < item.SoundID.Count; index++)
                 {
+                    var pair = item.SoundID[index];
                     if (pair == null)
                     {
-                        soundList.Add("no sound");
+                        soundList.Add(Enum.GetNames(typeof(EnumItemSoundType))[index] + " no sound");
                         continue;
                     }
                     try
                     {
                         pp = pair;
-                        var id = ResolveItemsSound(pair.Type, pair.Item);
-                        soundList.Add(pair.Type + pair.Item);
+                        soundList.Add($"{Enum.GetNames(typeof (EnumItemSoundType))[index]} {pair.Type} {pair.Item}");
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("Given sound doesnot exist. Please ensure that this sound in in sounds folder\r\n" + pp + "\r\n" + e.Message);
+                        MessageBox.Show(
+                            "Given sound doesnot exist. Please ensure that this sound in in sounds folder\r\n" + pp +
+                            "\r\n" + e.Message);
                     }
                 }
 
