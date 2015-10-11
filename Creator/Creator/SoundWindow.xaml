@@ -6,15 +6,16 @@
     <Grid>
         <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" IsCancel="True" Click="ButtonCancel_Click"/>
         <Button x:Name="ButtonChoose" Content="Choose" HorizontalAlignment="Right" Margin="0,0,10,37" VerticalAlignment="Bottom" Width="75" IsDefault="True" Click="ButtonChoose_Click"/>
-        <ListBox x:Name="ListBoxIDs" Margin="412,146,90,10" PreviewMouseDoubleClick="ListBoxIDs_PreviewMouseDoubleClick" KeyUp="ListBoxIDs_KeyUp"/>
+        <ListBox x:Name="ListBoxIDs" Margin="412,173,90,10" PreviewMouseDoubleClick="ListBoxIDs_PreviewMouseDoubleClick" KeyUp="ListBoxIDs_KeyUp"/>
         <ListBox x:Name="ListBoxImages" Margin="10,10,291,10" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseDoubleClick="ListBoxImages_PreviewMouseDoubleClick">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" Width="391"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
         </ListBox>
         <ListBox x:Name="ListBoxTypes" Margin="412,10,90,324" SelectionChanged="ListBoxTypes_SelectionChanged"/>
+        <ComboBox x:Name="ComboBoxSoundType" HorizontalAlignment="Left" Margin="412,146,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem Content="Pick Sound" HorizontalAlignment="Left" Width="194"/>
+            <ComboBoxItem Content="Drop Sound" HorizontalAlignment="Left" Width="194"/>
+            <ComboBoxItem Content="Equip Sound" HorizontalAlignment="Left" Width="194"/>
+            <ComboBoxItem Content="Any future sound?" HorizontalAlignment="Left" Width="194"/>
+        </ComboBox>
 
     </Grid>
 </Window>

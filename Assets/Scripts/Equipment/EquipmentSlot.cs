@@ -101,8 +101,8 @@ public class EquipmentSlot : MonoBehaviour
             (
             transform.position.x,
             transform.position.y,
-            RectTransform.sizeDelta.x * GameObject.FindGameObjectWithTag("Canvas").transform.localScale.x,
-            RectTransform.sizeDelta.y * GameObject.FindGameObjectWithTag("Canvas").transform.localScale.y
+            RectTransform.sizeDelta.x * canvas.transform.localScale.x,
+            RectTransform.sizeDelta.y * canvas.transform.localScale.y
             );
     }
 

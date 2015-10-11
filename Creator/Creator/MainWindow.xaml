@@ -146,11 +146,6 @@
                         <TabItem Header="Sounds">
                             <Grid Background="#FFE5E5E5">
                                 <ListBox x:Name="ListBoxSounds" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseDoubleClick="ListBoxSounds_PreviewMouseDoubleClick" >
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <WrapPanel IsItemsHost="True"/>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
                                 </ListBox>
                             </Grid>
                         </TabItem>

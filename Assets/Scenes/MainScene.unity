@@ -500,7 +500,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 662675487}
   m_Direction: 2
   m_Value: 1
-  m_Size: .99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8325,8 +8325,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138219475}
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
-  m_Value: 6.10351562e-05
-  m_Size: .999130726
+  m_Value: 0
+  m_Size: .999130607
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21331,6 +21331,21 @@ MonoBehaviour:
     size: {x: 600, y: 500}
     title: 
     text: Good. Now, let's get to the interesting bit - items! Open the items panel!
+  travellingMessage:
+    position: {x: 0, y: 0}
+    size: {x: 500, y: 300}
+    title: "\u305F\u3089\u30F4\u3047\u3043\u3093\u3050"
+    text: Now lets try to travel! Press traveling button
+  travellingUseMessage:
+    position: {x: 0, y: 0}
+    size: {x: 500, y: 300}
+    title: 
+    text: "Lets now use \u4ED6\u30E9\u30F4\u30A7\u30EB desu!"
+  tutorialFinishMessage:
+    position: {x: 0, y: 0}
+    size: {x: 500, y: 300}
+    title: 
+    text: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059"
 --- !u!224 &2013007901 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22410838, guid: c0643fbfaffed594da8e6007beb091e9,

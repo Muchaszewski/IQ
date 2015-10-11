@@ -12,14 +12,14 @@ public class EquipmentSlotEditor : Editor
     private EquipmentSlot script;
 
     private SerializedProperty itemPositionProperty;
-    private SerializedProperty itemScaleProperty;
+    //private SerializedProperty itemScaleProperty;
     private SerializedProperty isScaleChangedProperty;
 
     void OnEnable()
     {
         script = (EquipmentSlot)target;
         itemPositionProperty = serializedObject.FindProperty("ItemPosition");
-        itemScaleProperty = serializedObject.FindProperty("ItemScale");
+        //itemScaleProperty = serializedObject.FindProperty("ItemScale");
         isScaleChangedProperty = serializedObject.FindProperty("ItemScale");
 
     }

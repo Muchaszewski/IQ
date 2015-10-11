@@ -135,8 +135,6 @@ public class TutorialManager : MonoBehaviour
 
     public void ApplyCharacter()
     {
-        var stats = CurrentGame.Instance.Player.Stats;
-
         ApplyStats(_rolledStats);
 
         GroupStatistics.transform.parent.GetComponent<Image>().sprite = StatiscicsPanel;

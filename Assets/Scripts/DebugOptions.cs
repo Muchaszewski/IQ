@@ -10,10 +10,10 @@ public class DebugOptions : MonoBehaviour
 {
     private int _equipmentSlider = 1;
     private EnumItemRarity _rarity = EnumItemRarity.Mythical;
-    private EnumItemRarity _matchRarity = EnumItemRarity.Poor;
-    private EnumItemType _enumItemType;
-    private string _name = "Put item name here";
-    private int _level = 1;
+    //private EnumItemRarity _matchRarity = EnumItemRarity.Poor;
+    //private EnumItemType _enumItemType;
+    //private string _name = "Put item name here";
+    //private int _level = 1;
 
     public void OnGUI()
     {

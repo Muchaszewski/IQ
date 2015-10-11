@@ -9,24 +9,12 @@ using UnityEditor;
 [DisallowMultipleComponent]
 public class StatisticsHandlerEditor : Editor
 {
-
-    private SerializedProperty skillProperty;
-    private SerializedProperty statProperty;
-    private SerializedProperty valueProperty;
-
-
     private StatisticHandler script;
     void OnEnable()
     {
         script = (StatisticHandler)target;
     }
 
-    void FindProperties()
-    {
-        skillProperty = serializedObject.FindProperty("skill");
-        statProperty = serializedObject.FindProperty("stat");
-        valueProperty = serializedObject.FindProperty("value");
-    }
 
     public override void OnInspectorGUI()
     {

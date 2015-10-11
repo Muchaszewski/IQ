@@ -27,6 +27,7 @@ namespace Creator
     {
         private List<List<Image>> _imagesItemsList;
         private List<List<Image>> _imagesMonstersList;
+        private List<List<string>> _soundsItemsList;
 
 
         public MainWindow()
@@ -34,6 +35,8 @@ namespace Creator
             InitializeComponent();
             _imagesItemsList = LoadAllItemsImages();
             _imagesMonstersList = LoadAllMonstersImages();
+            _soundsItemsList = LoadAllItemsSounds();
+
             LoadAll();
             DataGridMonsterAllItems.SelectedIndex = 0;
         }
@@ -117,6 +120,22 @@ namespace Creator
                 }
             }
             return images;
+        }
+
+        private static List<List<string>> LoadAllItemsSounds()
+        {
+            List<List<string>> sounds = new List<List<string>>();
+            List<string> names = ResourcesManager.GetAllFiles("../", false, false).ToList();
+            for (int i = 0; i < names.Count; i++)
+            {
+                string name = names[i];
+                sounds.Add(new List<string>());
+                foreach (var item in ResourcesManager.GetAllFiles(Path.Combine("../", name), true, false))
+                {
+                    sounds[i].Add(item);
+                }
+            }
+            return sounds;
         }
 
         private void ValidateItems()
@@ -589,16 +608,21 @@ namespace Creator
 
                 ListBoxImages.ItemsSource = imageList;
 
-                var soundList = new List<Image>();
+                var soundList = new List<string>();
                 pp = null;
 
                 foreach (var pair in item.SoundID)
                 {
+                    if (pair == null)
+                    {
+                        soundList.Add("no sound");
+                        continue;
+                    }
                     try
                     {
                         pp = pair;
                         var id = ResolveItemsSound(pair.Type, pair.Item);
-                        imageList.Add(_imagesItemsList[id.ImageIDType][id.ImageIDItem]);
+                        soundList.Add(pair.Type + pair.Item);
                     }
                     catch (Exception e)
                     {

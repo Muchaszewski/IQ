@@ -15,9 +15,6 @@ namespace InventoryQuest.Game
     [Serializable]
     public class CurrentGame : MonoBehaviour
     {
-        private static event EventHandler Loaded = delegate { };
-        private static event EventHandler Saved = delegate { };
-
         public static event EventHandler TravelingFinished = delegate { };
 
         private int _travelToSpot = -1;

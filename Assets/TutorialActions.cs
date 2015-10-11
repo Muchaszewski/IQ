@@ -14,7 +14,7 @@ public class TutorialActions : MonoBehaviour
     public class TutorialMessage
     {
         public Vector2 position;
-        public Vector2 size = new Vector2(500,300);
+        public Vector2 size = new Vector2(500, 300);
         public string title;
         public string text;
     }
@@ -34,6 +34,9 @@ public class TutorialActions : MonoBehaviour
     public TutorialMessage equipItemsMessage;
     public TutorialMessage statsPanelMessage;
     public TutorialMessage itemsPanelMessage;
+    public TutorialMessage travellingMessage;
+    public TutorialMessage travellingUseMessage;
+    public TutorialMessage tutorialFinishMessage;
 
     // Private variables
     private int _attackCount = 0;
@@ -105,8 +108,11 @@ public class TutorialActions : MonoBehaviour
 
     private void FightController_onAttack(object sender, FightControllerEventArgs e)
     {
-        _attackCount++;
-        if (_attackCount == 25 && e.Invoker == e.FightController.Player)
+        if (e.Invoker == e.FightController.Player)
+        {
+            _attackCount++;
+        }
+        if (_attackCount == 25)
         {
             MessageBox.NextButton.gameObject.SetActive(true);
             FightController.onAttack -= FightController_onAttack;
@@ -182,23 +188,52 @@ public class TutorialActions : MonoBehaviour
             }
             else
             {
-                break;                
+                break;
             }
         }
         if (count == 3)
         {
-            TutorialFinish();
+            TutorialTraveling();
             Inventory.EventItemSwaped -= Inventory_EventItemSwaped;
             Inventory.EventItemAdded -= Inventory_EventItemSwaped;
             Inventory.EventItemDeleted -= Inventory_EventItemSwaped;
         }
     }
 
+    private void TutorialTraveling()
+    {
+        MessageBox.RectTransform.anchoredPosition = travellingMessage.position;
+        MessageBox.TitleText.text = travellingMessage.title;
+        MessageBox.MessageText.text = travellingMessage.text;
+        MessageBox.RectTransform.sizeDelta = travellingMessage.size;
+        MessageBox.NextButton.gameObject.SetActive(false);
+        MenuButtons[3].gameObject.SetActive(true);
+        MenuButtons[3].onClick.AddListener(TutorialUseTraveling);
+    }
+
+    private void TutorialUseTraveling()
+    {
+        MessageBox.RectTransform.anchoredPosition = travellingUseMessage.position;
+        MessageBox.TitleText.text = travellingUseMessage.title;
+        MessageBox.MessageText.text = travellingUseMessage.text;
+        MessageBox.RectTransform.sizeDelta = travellingUseMessage.size;
+        MessageBox.NextButton.gameObject.SetActive(false);
+        MenuButtons[3].onClick.RemoveListener(TutorialUseTraveling);
+        CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
+    }
+
+    private void CurrentGame_TravelingFinished(object sender, System.EventArgs e)
+    {
+        CurrentGame.TravelingFinished -= CurrentGame_TravelingFinished;
+        TutorialFinish();
+    }
+
     private void TutorialFinish()
     {
-        MessageBox.RectTransform.anchoredPosition = new Vector2(0, 0);
-        MessageBox.TitleText.text = "ありがとうございます";
-        MessageBox.MessageText.text = "おわいだ！がんばろう";
+        MessageBox.RectTransform.anchoredPosition = tutorialFinishMessage.position;
+        MessageBox.TitleText.text = tutorialFinishMessage.title;
+        MessageBox.MessageText.text = tutorialFinishMessage.text;
+        MessageBox.RectTransform.sizeDelta = tutorialFinishMessage.size;
         MessageBox.NextButton.gameObject.SetActive(true);
         MessageBox.NextButton.onClick.AddListener(FinishTutorial);
     }

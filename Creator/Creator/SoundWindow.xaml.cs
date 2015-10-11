@@ -38,11 +38,16 @@ namespace Creator
             InitializeComponent();
             PopulateListBoxTypes();
             PopulateListBoxImageIDs();
+            ComboBoxSoundType.SelectedIndex = 0;
         }
 
         public SoundWindow(List<PairTypeItem> imagesID)
             : this()
         {
+            while (imagesID.Count < ComboBoxSoundType.Items.Count)
+            {
+                imagesID.Add(null);
+            }
             ImagesID = imagesID;
             PopulateListBoxImageIDs();
         }
@@ -56,7 +61,10 @@ namespace Creator
         public void PopulateListBoxImageIDs()
         {
             ListBoxIDs.ItemsSource = null;
-            ListBoxIDs.ItemsSource = ImagesID;
+            if (ComboBoxSoundType.SelectedIndex != -1)
+            {
+                ListBoxIDs.ItemsSource = new List<PairTypeItem> { ImagesID[ComboBoxSoundType.SelectedIndex] };
+            }
         }
 
         public void PopulateImagesGrid()
@@ -97,19 +105,7 @@ namespace Creator
                 Type = ResourcesNames.ItemsSoundsNames[type].Name,
                 Item = ResourcesNames.ItemsSoundsNames[type].List[image]
             };
-            if (
-                ImagesID.FirstOrDefault(
-                    x => x.Item == item.Item && x.Type == item.Type) == null)
-            {
-                ImagesID.Add(item);
-            }
-            ImagesID.Sort(
-                delegate (PairTypeItem p1, PairTypeItem p2)
-                {
-                    int toReturn = p1.Type.CompareTo(p2.Type);
-                    if (toReturn == 0) toReturn = p1.Item.CompareTo(p2.Item);
-                    return toReturn;
-                });
+            ImagesID[ComboBoxSoundType.SelectedIndex] = item;
             PopulateListBoxImageIDs();
         }
 
@@ -127,7 +123,7 @@ namespace Creator
             {
                 if (ListBoxIDs.SelectedIndex != -1)
                 {
-                    ImagesID.RemoveAt(ListBoxIDs.SelectedIndex);
+                    ImagesID.RemoveAt(ComboBoxSoundType.SelectedIndex);
                     PopulateListBoxImageIDs();
                 }
             }
