@@ -621,7 +621,7 @@ namespace Creator
                     try
                     {
                         pp = pair;
-                        soundList.Add($"{Enum.GetNames(typeof (EnumItemSoundType))[index]} {pair.Type} {pair.Item}");
+                        soundList.Add(Enum.GetNames(typeof (EnumItemSoundType))[index] + " " + pair.Type+ " " + pair.Item);
                     }
                     catch (Exception e)
                     {
