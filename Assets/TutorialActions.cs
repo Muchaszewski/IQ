@@ -6,6 +6,7 @@ using InventoryQuest.Components.Entities.Player.Inventory;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TutorialActions : MonoBehaviour
@@ -26,6 +27,7 @@ public class TutorialActions : MonoBehaviour
 
     public Button[] MenuButtons;
     public Button ApplyStatisticsButton;
+    public Image TutorialButtonHighlight;
 
     public TutorialMessage introductionMessage;
     public TutorialMessage automaticCombatMessage;
@@ -65,26 +67,13 @@ public class TutorialActions : MonoBehaviour
     public void TutorialIntroduction()
     {
         CurrentGame.Instance.FightController.Resume();
-        MessageBox.RectTransform.anchoredPosition = introductionMessage.position;
-        MessageBox.RectTransform.sizeDelta = introductionMessage.size;
-
-        MessageBox.TitleText.text = introductionMessage.title;
-        MessageBox.MessageText.text = introductionMessage.text;
-        MessageBox.NextButton.onClick.RemoveAllListeners();
-        MessageBox.NextButton.onClick.AddListener(TutorialAutoKill);
+        SetTutorialMessage(introductionMessage, true, TutorialAutoKill);
     }
 
     public void TutorialAutoKill()
     {
-        MessageBox.RectTransform.anchoredPosition = automaticCombatMessage.position;
-        MessageBox.RectTransform.sizeDelta = automaticCombatMessage.size;
-
-        MessageBox.TitleText.text = automaticCombatMessage.title;
-        MessageBox.MessageText.text = automaticCombatMessage.text;
-        MessageBox.NextButton.onClick.RemoveAllListeners();
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(automaticCombatMessage, false, TutorialKillMonsters);
         FightController.onVicotry += FightController_onVicotry;
-        MessageBox.NextButton.onClick.AddListener(TutorialKillMonsters);
     }
 
     private void FightController_onVicotry(object sender, FightControllerEventArgs e)
@@ -95,15 +84,8 @@ public class TutorialActions : MonoBehaviour
 
     public void TutorialKillMonsters()
     {
-        MessageBox.RectTransform.anchoredPosition = manualCombatMessage.position;
-        MessageBox.RectTransform.sizeDelta = manualCombatMessage.size;
-
-        MessageBox.TitleText.text = manualCombatMessage.title;
-        MessageBox.MessageText.text = manualCombatMessage.text;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(manualCombatMessage, false, TutorialOpenStats);
         FightController.onAttack += FightController_onAttack;
-        MessageBox.NextButton.onClick.RemoveAllListeners();
-        MessageBox.NextButton.onClick.AddListener(TutorialOpenStats);
     }
 
     private void FightController_onAttack(object sender, FightControllerEventArgs e)
@@ -121,15 +103,8 @@ public class TutorialActions : MonoBehaviour
 
     private void TutorialOpenStats()
     {
-        MessageBox.RectTransform.anchoredPosition = statsPanelMessage.position;
-        MessageBox.RectTransform.sizeDelta = statsPanelMessage.size;
-
-        MessageBox.TitleText.text = statsPanelMessage.title;
-        MessageBox.MessageText.text = statsPanelMessage.text;
-        MessageBox.NextButton.onClick.RemoveAllListeners();
-        MessageBox.NextButton.onClick.AddListener(TutorialAutoKill);
-        MessageBox.NextButton.gameObject.SetActive(false);
-
+        SetTutorialMessage(statsPanelMessage, false, TutorialAutoKill);
+        SetButtonHighlight(MenuButtons[0]);
         MenuButtons[0].gameObject.SetActive(true);
         MenuButtons[0].onClick.AddListener(TutorialSetCharacter);
     }
@@ -137,41 +112,29 @@ public class TutorialActions : MonoBehaviour
     private void TutorialSetCharacter()
     {
         MenuButtons[0].onClick.RemoveListener(TutorialSetCharacter);
+        DisableButtonHighlight();
 
-        MessageBox.RectTransform.anchoredPosition = rollStatsMessage.position;
-        MessageBox.RectTransform.sizeDelta = rollStatsMessage.size;
-
-        MessageBox.TitleText.text = rollStatsMessage.title;
-        MessageBox.MessageText.text = rollStatsMessage.text;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(rollStatsMessage);
 
     }
 
     public void TutorialEquipmentOpen()
     {
         MessageBox.SkipButton.gameObject.SetActive(true);
+        SetButtonHighlight(MenuButtons[4]);
         MenuButtons[4].gameObject.SetActive(true);
         MenuButtons[4].onClick.AddListener(TutorialEquipItems);
 
-        MessageBox.RectTransform.anchoredPosition = itemsPanelMessage.position;
-        MessageBox.RectTransform.sizeDelta = itemsPanelMessage.size;
-
-        MessageBox.TitleText.text = itemsPanelMessage.title;
-        MessageBox.MessageText.text = itemsPanelMessage.text;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(itemsPanelMessage);
     }
 
 
     private void TutorialEquipItems()
     {
         MenuButtons[4].onClick.RemoveListener(TutorialEquipItems);
+        DisableButtonHighlight();
 
-        MessageBox.RectTransform.anchoredPosition = equipItemsMessage.position;
-        MessageBox.RectTransform.sizeDelta = equipItemsMessage.size;
-
-        MessageBox.TitleText.text = equipItemsMessage.title;
-        MessageBox.MessageText.text = equipItemsMessage.text;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(equipItemsMessage);
         Inventory.EventItemSwaped += Inventory_EventItemSwaped;
         Inventory.EventItemAdded += Inventory_EventItemSwaped;
         Inventory.EventItemDeleted += Inventory_EventItemSwaped;
@@ -202,23 +165,17 @@ public class TutorialActions : MonoBehaviour
 
     private void TutorialTraveling()
     {
-        MessageBox.RectTransform.anchoredPosition = travellingMessage.position;
-        MessageBox.TitleText.text = travellingMessage.title;
-        MessageBox.MessageText.text = travellingMessage.text;
-        MessageBox.RectTransform.sizeDelta = travellingMessage.size;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(travellingMessage);
         MenuButtons[3].gameObject.SetActive(true);
         MenuButtons[3].onClick.AddListener(TutorialUseTraveling);
+        SetButtonHighlight(MenuButtons[3]);
     }
 
     private void TutorialUseTraveling()
     {
-        MessageBox.RectTransform.anchoredPosition = travellingUseMessage.position;
-        MessageBox.TitleText.text = travellingUseMessage.title;
-        MessageBox.MessageText.text = travellingUseMessage.text;
-        MessageBox.RectTransform.sizeDelta = travellingUseMessage.size;
-        MessageBox.NextButton.gameObject.SetActive(false);
+        SetTutorialMessage(travellingUseMessage);
         MenuButtons[3].onClick.RemoveListener(TutorialUseTraveling);
+        DisableButtonHighlight();
         CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
     }
 
@@ -230,12 +187,7 @@ public class TutorialActions : MonoBehaviour
 
     private void TutorialFinish()
     {
-        MessageBox.RectTransform.anchoredPosition = tutorialFinishMessage.position;
-        MessageBox.TitleText.text = tutorialFinishMessage.title;
-        MessageBox.MessageText.text = tutorialFinishMessage.text;
-        MessageBox.RectTransform.sizeDelta = tutorialFinishMessage.size;
-        MessageBox.NextButton.gameObject.SetActive(true);
-        MessageBox.NextButton.onClick.AddListener(FinishTutorial);
+        SetTutorialMessage(tutorialFinishMessage, true, FinishTutorial);
     }
 
     /// <summary>
@@ -248,5 +200,28 @@ public class TutorialActions : MonoBehaviour
         {
             MenuButtons[i].gameObject.SetActive(true);
         }
+    }
+
+    void SetTutorialMessage(TutorialMessage message, bool isNextActive = false, UnityAction action = null)
+    {
+        MessageBox.RectTransform.sizeDelta = message.size;
+        MessageBox.RectTransform.anchoredPosition = message.position;
+        MessageBox.TitleText.text = message.title;
+        MessageBox.MessageText.text = message.text;
+        MessageBox.RectTransform.sizeDelta = message.size;
+        MessageBox.NextButton.gameObject.SetActive(isNextActive);
+        MessageBox.NextButton.onClick.RemoveAllListeners();
+        MessageBox.NextButton.onClick.AddListener(action);
+    }
+
+    void SetButtonHighlight(Button buttonToHighlight)
+    {
+        TutorialButtonHighlight.gameObject.SetActive(true);
+        TutorialButtonHighlight.transform.position = buttonToHighlight.transform.position;
+    }
+
+    void DisableButtonHighlight()
+    {
+        TutorialButtonHighlight.gameObject.SetActive(false);
     }
 }
