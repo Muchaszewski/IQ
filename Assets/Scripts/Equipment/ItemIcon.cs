@@ -124,7 +124,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
             var inventory = Inventory.GetComponent<InventoryPanel>();
             this.transform.position = Input.mousePosition;
             inventory.RemoveFromPanelAndResize(this);
-            SoundManager.Instance.Play(ItemData.SoundID[(int)EnumItemSoundType.Drag]);
+            SoundManager.Instance.Play(ItemData, EnumItemSoundType.Drag);
         }
     }
 
@@ -147,11 +147,11 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
         }
         if (positionKey >= 0)
         {
-            SoundManager.Instance.Play(ItemData.SoundID[(int)EnumItemSoundType.Drop]);
+            SoundManager.Instance.Play(ItemData, EnumItemSoundType.Drop);
         }
         else
         {
-            SoundManager.Instance.Play(ItemData.SoundID[(int)EnumItemSoundType.Equip]);
+            SoundManager.Instance.Play(ItemData, EnumItemSoundType.Equip);
         }
         Inventory.SwapItemsOnPanel(this, positionKey);
     }

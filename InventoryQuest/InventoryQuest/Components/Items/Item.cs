@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using InventoryQuest.Components.Statistics;
 
 namespace InventoryQuest.Components.Items
@@ -14,7 +15,7 @@ namespace InventoryQuest.Components.Items
         private string _ExtraName = String.Empty;
         private string _FlavorText;
         private ImageIDPair _ImageID;
-        private List<ImageIDPair> _SoundID;
+        private List<ImageIDPair> _SoundID = new List<ImageIDPair>();
         private int _ItemLevel;
         private string _Name;
         private StatValueInt _Price = new StatValueInt(EnumTypeStat.Sell);
@@ -34,13 +35,18 @@ namespace InventoryQuest.Components.Items
         /// </summary>
         public Item()
         {
+            for (var i = 0; i < Enum.GetNames(typeof(EnumItemSoundType)).Length; i++)
+            {
+                _SoundID.Add(null);
+            }
         }
 
         /// <summary>
         ///     Constructor for basic item
         ///     TODO; Unit tests for this class
         /// </summary>
-        public Item(string name, EnumItemSlot slot, Stats stats)
+        public Item(string name, EnumItemSlot slot, Stats stats) 
+            : this()
         {
             Name = name;
             _ValidSlot = slot;
@@ -214,14 +220,14 @@ namespace InventoryQuest.Components.Items
         {
             get
             {
-                float avgDmg = ((Stats.MinDamage.Current + Stats.MaxDamage.Current)/2);
-                float avgCrit = (Stats.CriticalChance.Current*Stats.CriticalDamage.Current)/(2*100*100);
+                float avgDmg = ((Stats.MinDamage.Current + Stats.MaxDamage.Current) / 2);
+                float avgCrit = (Stats.CriticalChance.Current * Stats.CriticalDamage.Current) / (2 * 100 * 100);
                 var speed = Stats.AttackSpeed.Current;
                 if (avgCrit == 0)
                 {
                     avgCrit = 1;
                 }
-                return avgDmg*avgCrit*speed;
+                return avgDmg * avgCrit * speed;
             }
         }
 

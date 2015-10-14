@@ -73,7 +73,7 @@ namespace Creator
             List<Label> itemsSource = new List<Label>();
             var names = ResourcesManager.GetAllFiles("../", false, false).ToList();
             var index = ListBoxTypes.SelectedIndex;
-            foreach (var item in ResourcesManager.GetAllFiles(System.IO.Path.Combine("../", names[index]), true, false))
+            foreach (var item in ResourcesManager.GetAllFiles(System.IO.Path.Combine("../", names[index]), true, false).OrderBy((x) => x))
             {
                 itemsSource.Add(new Label() { Content = Path.GetFileName(item) });
             }

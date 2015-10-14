@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using InventoryQuest;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Utils;
 
 public class SoundManager : MonoBehaviour
@@ -10,14 +12,19 @@ public class SoundManager : MonoBehaviour
     private AudioSource _audioSource;
     private AudioClip _clip;
 
-    void OnAwake()
+    void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         Instance = this;
     }
 
-    public void Play(ImageIDPair soundItem)
+    public void Play(Item itemData, EnumItemSoundType soundType)
     {
+        if (itemData.SoundID == null || itemData.SoundID.Count < Enum.GetNames(typeof(EnumItemSoundType)).Length)
+        {
+            Debug.LogWarning("Sound is not connected to item " + itemData.Name + " at " + soundType);
+        }
+        var soundItem = itemData.SoundID[(int)soundType];
         if (soundItem != null)
         {
             var path =
@@ -29,10 +36,14 @@ public class SoundManager : MonoBehaviour
                 _audioSource.clip = _clip;
                 _audioSource.Play();
             }
+            else
+            {
+                Debug.LogWarning("Sound " + soundItem.ImageIDType + " " + soundItem.ImageIDItem + " does not exists");
+            }
         }
         else
         {
-            Debug.LogWarning("Sound " + soundItem.ImageIDType + " "  + soundItem.ImageIDItem + " does not exists");
+            Debug.LogWarning("Sound is not connected to item " + itemData.Name + " at " + soundType);
         }
     }
 }
