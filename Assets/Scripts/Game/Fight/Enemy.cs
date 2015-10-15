@@ -62,12 +62,11 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         {
             Destroy(this.gameObject);
         }
-
         _progress = EntityData.Position;
         float position = 0;
-
         // Update position
-        position = (float)Math.Tanh(_progress);
+        position = Mathf.Sqrt(_progress) * 9;
+        Debug.Log(_progress.ToString("0.##")  +  " " + position.ToString("0.##"));
         position = position + (_progress < 0 ? -MinCombatPosition : MinCombatPosition);
         // Enemey out of bounds
         if (Mathf.Abs(position) > MaxCombatPosition)

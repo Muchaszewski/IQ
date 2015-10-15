@@ -129,18 +129,18 @@ namespace InventoryQuest.Game.Fight
                     double experienceModifer = 0;
                     if (levelDelta < 0)
                     {
-                        experienceModifer = Math.Max(1 - 0.005*Math.Pow(levelDelta, 2), 0.05);
+                        experienceModifer = Math.Max(1 - 0.005 * Math.Pow(levelDelta, 2), 0.05);
                     }
                     else if (levelDelta > 0)
                     {
-                        experienceModifer = 1 + 0.005*Math.Pow(levelDelta, 2);
+                        experienceModifer = 1 + 0.005 * Math.Pow(levelDelta, 2);
                     }
                     else
                     {
                         // roznica_poziomu == 0
                         experienceModifer = 1;
                     }
-                    var experience = 50*experienceModifer;
+                    var experience = 50 * experienceModifer;
                     BattleLog.AppendLine("Gained " + experience + " experience");
                     Player.Experience += experience;
                 }
@@ -158,7 +158,7 @@ namespace InventoryQuest.Game.Fight
                     {
                         Item item = RandomItemFactory.CreateItem(
                             CurrentGame.Instance.Spot,
-                            (EnumItemRarity) RandomNumberGenerator.NextRandom(6));
+                            (EnumItemRarity)RandomNumberGenerator.NextRandom(6));
                         if (item != null)
                         {
                             Player.Inventory.AddItem(item);
@@ -544,8 +544,8 @@ namespace InventoryQuest.Game.Fight
 
             foreach (var entity in Enemy)
             {
-                var max = Mathf.Max(entity.Stats.Range.Extend, Player.Stats.Range.Extend);
-                max = 150;
+                var maxRandom = Random.Range(0, 25);
+                var max = Mathf.Max(entity.Stats.Range.Extend + maxRandom, Player.Stats.Range.Extend + maxRandom);
                 entity.Position = max;
             }
 
