@@ -469,7 +469,7 @@ namespace InventoryQuest.Components.Generation.Items
             }
             catch
             {
-                item.ImageID = null;
+                item.SoundID = null;
             }
 
             //Setting durability
