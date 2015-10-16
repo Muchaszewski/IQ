@@ -7,6 +7,7 @@ using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Items.Generation.Types;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Utils;
+using Debug = UnityEngine.Debug;
 
 namespace InventoryQuest.Components.Generation.Items
 {
@@ -467,8 +468,9 @@ namespace InventoryQuest.Components.Generation.Items
 
                 //Nie można odnaleźć określonej ścieżki
             }
-            catch
+            catch (Exception e)
             {
+                Debug.LogError(e.Message);
                 item.SoundID = null;
             }
 

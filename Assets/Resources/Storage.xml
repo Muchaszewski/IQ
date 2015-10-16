@@ -5117,8 +5117,14 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Type>items</Type>
           <Item>cloth_pickUp_0</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
@@ -7834,7 +7840,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <int>10</int>
         <int>20</int>
         <int>100</int>
-        <int>100</int>
+        <int>0</int>
         <int>0</int>
         <int>100</int>
         <int>150</int>

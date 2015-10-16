@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
         if (itemData.SoundID == null || itemData.SoundID.Count < Enum.GetNames(typeof(EnumItemSoundType)).Length)
         {
             Debug.LogWarning("Sound is not connected to item " + itemData.Name + " at " + soundType);
+            return;
         }
         var soundItem = itemData.SoundID[(int)soundType];
         if (soundItem != null)
@@ -30,6 +31,7 @@ public class SoundManager : MonoBehaviour
             var path =
                 ResourcesNames.ItemsSoundsNames[soundItem.ImageIDType].FullNameList[
                     soundItem.ImageIDItem];
+            Debug.Log(path);
             _clip = (AudioClip)Resources.Load(path);
             if (_clip != null)
             {
@@ -43,7 +45,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Sound is not connected to item " + itemData.Name + " at " + soundType);
+            Debug.LogWarning("(L)Sound is not connected to item " + itemData.Name + " at " + soundType);
         }
     }
 }
