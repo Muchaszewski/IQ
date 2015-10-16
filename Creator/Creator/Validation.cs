@@ -28,12 +28,12 @@ namespace Creator
                 if (!CheckProperty(item.Item, item.Item.Durability.Max, "Durability.Max", false, 0)) return item.Item;
                 if (!CheckProperty(item.Item, item.Item.ImageID.Count, "ImageID.Count", false, 0)) return item.Item;
                 if (!CheckProperty(item.Item, item.Item.ID, "Item.ID", true, item.Storage.ElementAt(item.Index).ID)) return item.Item;
-                if (item.Item.GetType().Name == "WeaponType")
-                {
-                    var weapon = (WeaponType)item.Item;
-                    var damage = Math.Max(weapon.MinDamage.Min - weapon.MaxDamage.Max - 1, -1);
-                    if (!CheckProperty(weapon, damage, "Min > Max", true, -1)) return item.Item;
-                }
+                //if (item.Item.GetType().Name == "WeaponType")
+                //{
+                //    var weapon = (WeaponType)item.Item;
+                //    var damage = Math.Max(weapon.MinDamage.Min - weapon.MaxDamage.Max - 1, -1);
+                //    if (!CheckProperty(weapon, damage, "Min > Max", true, -1)) return item.Item;
+                //}
             }
             return null;
         }
