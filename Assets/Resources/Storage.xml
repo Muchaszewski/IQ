@@ -145,7 +145,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Looter</Name>
@@ -291,7 +296,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Watcher</Name>
@@ -437,7 +447,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Bully</Name>
@@ -583,7 +598,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Enforcer</Name>
@@ -729,7 +749,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Skirmisher</Name>
@@ -875,7 +900,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Mulltrod Bodyguard</Name>
@@ -1021,7 +1051,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>mulltrod_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Crumbling Zombie</Name>
@@ -1162,7 +1197,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Zombie</Name>
@@ -1303,7 +1343,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Fat Zombie</Name>
@@ -1444,7 +1489,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Zombie Bloater</Name>
@@ -1585,7 +1635,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Massive Zombie</Name>
@@ -1726,7 +1781,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Undying Zombie</Name>
@@ -1867,7 +1927,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Armored Zombie</Name>
@@ -2008,7 +2073,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>zombie_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Decayed Skeleton</Name>
@@ -2149,7 +2219,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton</Name>
@@ -2290,7 +2365,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton Warrior</Name>
@@ -2431,7 +2511,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton Man-at-Arms</Name>
@@ -2572,7 +2657,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_2</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton Archer</Name>
@@ -2713,7 +2803,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton Crossbowman</Name>
@@ -2854,7 +2949,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_1</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Skeleton Knight</Name>
@@ -2995,7 +3095,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>skeleton_2</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Scorpion</Name>
@@ -3136,7 +3241,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>scorpion_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Giant Scorpion</Name>
@@ -3277,7 +3387,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>scorpion_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Vile Scorpion</Name>
@@ -3418,7 +3533,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>scorpion_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Rabid Crow</Name>
@@ -3559,7 +3679,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>crow_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
     <EntityType>
       <Name>Monstrous Crow</Name>
@@ -3700,7 +3825,12 @@
         <MinMaxLevel>0</MinMaxLevel>
         <MaxMaxLevel>0</MaxMaxLevel>
       </Range>
-      <ImageID />
+      <ImageID>
+        <PairTypeItem>
+          <Type>monster</Type>
+          <Item>crow_0</Item>
+        </PairTypeItem>
+      </ImageID>
     </EntityType>
   </Entities>
   <Weapons>
@@ -5112,20 +5242,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>hood_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID>
-        <PairTypeItem>
-          <Type>items</Type>
-          <Item>cloth_pickUp_0</Item>
-        </PairTypeItem>
-        <PairTypeItem>
-          <Type>items</Type>
-          <Item>chainmail_pickUp_0</Item>
-        </PairTypeItem>
-        <PairTypeItem>
-          <Type>items</Type>
-          <Item>lightBlade_putDown_0</Item>
-        </PairTypeItem>
-      </SoundID>
+      <SoundID />
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -7840,7 +7957,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <int>10</int>
         <int>20</int>
         <int>100</int>
-        <int>0</int>
+        <int>100</int>
         <int>0</int>
         <int>100</int>
         <int>150</int>
