@@ -8437,7 +8437,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
   m_Value: 0
-  m_Size: .999130607
+  m_Size: .999130845
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21474,7 +21474,7 @@ MonoBehaviour:
     position: {x: 50, y: -150}
     size: {x: 600, y: 500}
     title: 
-    text: Welcome to InventoryQuest! The game that is all about getting loot!
+    text: Welcome to Inventory Quest! The game that is all about getting loot!
   automaticCombatMessage:
     position: {x: 50, y: -150}
     size: {x: 600, y: 500}
@@ -21486,7 +21486,7 @@ MonoBehaviour:
     size: {x: 600, y: 500}
     title: 
     text: However, should you feel a strong urge to get new items quickly, there is
-      an option to speed things up by fighting manually. Click on your enemies in
+      an option to speed things up by fighting manually.  Click on your enemies in
       order to attack them!
   rollStatsMessage:
     position: {x: 1270, y: -150}
@@ -21512,20 +21512,22 @@ MonoBehaviour:
     title: 
     text: Good. Now, let's get to the interesting bit - items! Open the items panel!
   travellingMessage:
-    position: {x: 0, y: 0}
-    size: {x: 500, y: 300}
-    title: "\u305F\u3089\u30F4\u3047\u3043\u3093\u3050"
-    text: Now lets try to travel! Press traveling button
+    position: {x: 1270, y: -150}
+    size: {x: 600, y: 500}
+    title: 
+    text: Now you are ready to go! Open the Map panel.
   travellingUseMessage:
-    position: {x: 0, y: 0}
-    size: {x: 500, y: 300}
+    position: {x: 1270, y: -150}
+    size: {x: 600, y: 500}
     title: 
-    text: "Lets now use \u4ED6\u30E9\u30F4\u30A7\u30EB desu!"
+    text: Travel to the next area by clicking on it on the list. You will go there
+      once the current combat is finished. It will also take w hile.
   tutorialFinishMessage:
-    position: {x: 0, y: 0}
-    size: {x: 500, y: 300}
+    position: {x: 50, y: -150}
+    size: {x: 600, y: 500}
     title: 
-    text: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059"
+    text: Great! You know know the basics of Inventory Quest. No go and get some epic
+      loot!
 --- !u!224 &2013007901 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22410838, guid: c0643fbfaffed594da8e6007beb091e9,
