@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using InventoryQuest.Components.Entities.Generation.Types;
 using InventoryQuest.Components.Statistics;
 using InventoryQuest.Utils;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace InventoryQuest.Components.Entities.Generation
@@ -200,9 +201,10 @@ namespace InventoryQuest.Components.Entities.Generation
                 {
                     entity.ImageID = ResourcesNames.ResolveMonstersImage(typeImage.Type, typeImage.Item);
                 }
-                catch
+                catch (Exception e)
                 {
                     //Nie można odnaleźć określonej ścieżki
+                    Debug.LogError(e.Message);
                     entity.ImageID = null;
                 }
             }

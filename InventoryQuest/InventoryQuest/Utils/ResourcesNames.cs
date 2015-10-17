@@ -35,12 +35,19 @@ namespace InventoryQuest.Utils
             if (Application.isEditor)
             {
                 ItemsImageNames = GetAllImagesNames();
+                MonstersImageNames = GetAllMonstersNames();
+                ItemsSoundsNames = GetAllItemsSoundNames();
                 FileList.Instance.ItemsImageNames = ItemsImageNames;
+                FileList.Instance.MonstersImageNames = MonstersImageNames;
+                FileList.Instance.ItemsSoundsNames = ItemsSoundsNames;
                 FileList.Save();
             }
             else
             {
                 ItemsImageNames = FileList.Instance.ItemsImageNames;
+                MonstersImageNames = FileList.Instance.MonstersImageNames;
+                ItemsSoundsNames = FileList.Instance.ItemsSoundsNames;
+
             }
 #endif
         }
@@ -325,6 +332,9 @@ namespace InventoryQuest.Utils
             }
 
             public List<NamedList<string>> ItemsImageNames;
+            public List<NamedList<string>> ItemsSoundsNames;
+            public List<NamedList<string>> MonstersImageNames;
+
 
             public static void Save()
             {
