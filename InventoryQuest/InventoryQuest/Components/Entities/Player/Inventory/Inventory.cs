@@ -40,6 +40,9 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
         [field: NonSerialized]
         public static event EventHandler<EventArgs> EventItemSwaped = delegate { };
 
+        [field: NonSerialized]
+        public static event EventHandler<EventArgs> EventItemMoved = delegate { };
+
         /// <summary>
         ///     Add new item to inventory
         /// <para>With resolved loaction</para>
@@ -88,10 +91,12 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
                 {
                     //Return on first occurance of free spot
                     index += 1;
+                    EventItemMoved.Invoke(this, EventArgs.Empty);
                     return index;
                 }
             }
             //Return if foreach is empty
+            EventItemMoved.Invoke(this, EventArgs.Empty);
             return index += 1;
         }
 
@@ -114,6 +119,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
             Items.TryGetValue(keyFrom, out itemToSawp);
             Items.Remove(keyFrom);
             Items.Add(keyWhere, itemToSawp);
+            EventItemMoved.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
