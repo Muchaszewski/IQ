@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
             var path =
                 ResourcesNames.MonstersImageNames[EntityData.ImageID.ImageIDType].FullNameList[
                     EntityData.ImageID.ImageIDItem];
-            transform.GetChild(1).GetComponent<Image>().sprite = ResourceManager.Get(path);
+            GetComponent<Image>().sprite = ResourceManager.Get(path);
         }
         else
         {
@@ -66,7 +66,6 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         float position = 0;
         // Update position
         position = Mathf.Sqrt(_progress) * 9;
-        Debug.Log(_progress.ToString("0.##")  +  " " + position.ToString("0.##"));
         position = position + (_progress < 0 ? -MinCombatPosition : MinCombatPosition);
         // Enemey out of bounds
         if (Mathf.Abs(position) > MaxCombatPosition)
