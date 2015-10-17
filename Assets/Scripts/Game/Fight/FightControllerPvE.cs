@@ -255,9 +255,9 @@ namespace InventoryQuest.Game.Fight
                         return;
                     }
                 }
-                if (Player.NextTurn <= 0)
+                if (!Move(Player, Target))
                 {
-                    if (!Move(Player, Target))
+                    if (Player.NextTurn <= 0)
                     {
                         Attack(Player, Target);
                     }
@@ -266,9 +266,9 @@ namespace InventoryQuest.Game.Fight
                 foreach (Entity enemy in Enemy)
                 {
                     enemy.NextTurn -= enemy.AttackSpeed * Time.deltaTime;
-                    if (enemy.NextTurn <= 0)
+                    if (!Move(enemy, Player))
                     {
-                        if (!Move(enemy, Player))
+                        if (enemy.NextTurn <= 0)
                         {
                             Attack(enemy, Player);
                         }
@@ -286,7 +286,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (target.Position > entity.Stats.Range.Extend)
                     {
-                        target.Position -= target.Stats.MovmentSpeed.Current;
+                        target.Position -= target.Stats.MovmentSpeed.Current * Time.deltaTime;
                         if (target.Position < 0)
                         {
                             target.Position = 0;
@@ -298,7 +298,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (target.Position < -entity.Stats.Range.Extend)
                     {
-                        target.Position += target.Stats.MovmentSpeed.Current;
+                        target.Position += target.Stats.MovmentSpeed.Current * Time.deltaTime;
                         if (target.Position > 0)
                         {
                             target.Position = -1f;
@@ -313,7 +313,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (entity.Position > entity.Stats.Range.Extend)
                     {
-                        entity.Position -= entity.Stats.MovmentSpeed.Current;
+                        entity.Position -= entity.Stats.MovmentSpeed.Current * Time.deltaTime;
                         if (entity.Position < 0)
                         {
                             entity.Position = 0;
@@ -325,7 +325,7 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (entity.Position < -entity.Stats.Range.Extend)
                     {
-                        entity.Position += entity.Stats.MovmentSpeed.Current;
+                        entity.Position += entity.Stats.MovmentSpeed.Current * Time.deltaTime;
                         if (target.Position > 0)
                         {
                             target.Position = -1f;
