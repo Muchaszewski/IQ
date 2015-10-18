@@ -257,22 +257,24 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (!Move(Player, Target))
                 {
+                    Debug.Log("Player " + Player.NextTurn);
                     if (Player.NextTurn <= 0)
                     {
                         Attack(Player, Target);
+                        Player.NextTurn = TURN_TIME + Player.NextTurn;
                     }
-                    Player.NextTurn = TURN_TIME + Player.NextTurn;
                 }
                 foreach (Entity enemy in Enemy)
                 {
                     enemy.NextTurn -= enemy.AttackSpeed * Time.deltaTime;
                     if (!Move(enemy, Player))
                     {
+                        Debug.Log("Enemy " + enemy.NextTurn);
                         if (enemy.NextTurn <= 0)
                         {
                             Attack(enemy, Player);
+                            enemy.NextTurn = TURN_TIME + enemy.NextTurn;
                         }
-                        enemy.NextTurn = TURN_TIME + enemy.NextTurn;
                     }
                 }
             }

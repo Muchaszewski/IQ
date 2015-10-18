@@ -5242,7 +5242,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>hood_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>blade_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>placeholder_generic_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -5482,7 +5495,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>chain_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>potion_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>blade_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
