@@ -257,7 +257,7 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (!Move(Player, Target))
                 {
-                    Debug.Log("Player " + Player.NextTurn);
+                    //Debug.Log("Player " + Player.NextTurn);
                     if (Player.NextTurn <= 0)
                     {
                         Attack(Player, Target);
@@ -269,7 +269,7 @@ namespace InventoryQuest.Game.Fight
                     enemy.NextTurn -= enemy.AttackSpeed * Time.deltaTime;
                     if (!Move(enemy, Player))
                     {
-                        Debug.Log("Enemy " + enemy.NextTurn);
+                        //Debug.Log("Enemy " + enemy.NextTurn);
                         if (enemy.NextTurn <= 0)
                         {
                             Attack(enemy, Player);
@@ -546,8 +546,11 @@ namespace InventoryQuest.Game.Fight
 
             foreach (var entity in Enemy)
             {
-                var maxRandom = Random.Range(0, 25);
-                var max = Mathf.Max(entity.Stats.Range.Extend + maxRandom, Player.Stats.Range.Extend + maxRandom);
+                var maxRandom = Random.Range(-100, 100);
+                if (Math.Abs(maxRandom) < 25)
+                    maxRandom = maxRandom >= 0 ? 25 : -25;
+                //var max = Mathf.Max(entity.Stats.Range.Extend + maxRandom, Player.Stats.Range.Extend + maxRandom);
+                var max = maxRandom;
                 entity.Position = max;
             }
 
