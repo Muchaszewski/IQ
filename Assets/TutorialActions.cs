@@ -138,10 +138,12 @@ public class TutorialActions : MonoBehaviour
         Inventory.EventItemSwaped += Inventory_EventItemSwaped;
         Inventory.EventItemAdded += Inventory_EventItemSwaped;
         Inventory.EventItemDeleted += Inventory_EventItemSwaped;
+        Inventory.EventItemMoved += Inventory_EventItemSwaped;
     }
 
     private void Inventory_EventItemSwaped(object sender, System.EventArgs e)
     {
+        Debug.Log("Count");
         var count = 0;
         foreach (var item in CurrentGame.Instance.Player.Inventory.Items)
         {
@@ -160,6 +162,7 @@ public class TutorialActions : MonoBehaviour
             Inventory.EventItemSwaped -= Inventory_EventItemSwaped;
             Inventory.EventItemAdded -= Inventory_EventItemSwaped;
             Inventory.EventItemDeleted -= Inventory_EventItemSwaped;
+            Inventory.EventItemMoved -= Inventory_EventItemSwaped;
         }
     }
 
@@ -195,6 +198,7 @@ public class TutorialActions : MonoBehaviour
     /// </summary>
     void FinishTutorial()
     {
+        DisableButtonHighlight();
         MessageBox.gameObject.SetActive(false);
         for (int i = 0; i < MenuButtons.Length - 1; i++)
         {

@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
 
     public void Play(Item itemData, EnumItemSoundType soundType)
     {
+        Debug.Log(itemData);
         if (itemData.SoundID == null || itemData.SoundID.Count < Enum.GetNames(typeof(EnumItemSoundType)).Length)
         {
             Debug.LogWarning("Sound is not connected to item " + itemData.Name + " at " + soundType);
