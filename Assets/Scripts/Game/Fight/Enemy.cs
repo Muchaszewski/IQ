@@ -70,15 +70,17 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         // Update position
         position = Mathf.Sqrt(Math.Abs(_progress)) * 9; // Math.Sqrt returns a NaN for negative numbers
 
+        //Debug.Log("Pos: " + Math.Round(position) + ", Min: " + MinCombatPosition);
         if (_progress >= 0)
         {
             position = position + MinCombatPosition;
         }
-        else
+        else if (_progress < 0)
         {
             position = -position - MinCombatPosition;
         }
-        
+
+
         // Enemey out of bounds
         position = Mathf.Clamp(position, -MaxCombatPosition, MaxCombatPosition);
 

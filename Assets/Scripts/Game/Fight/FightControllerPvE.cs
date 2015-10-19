@@ -311,14 +311,20 @@ namespace InventoryQuest.Game.Fight
             }
             else
             {
+
+                var distanceToMove = entity.Stats.MovmentSpeed.Current * Time.deltaTime;
+                //var MinDistance = Math.Max( entity.Stats.Range.Extend, 0.1f); // Enemies do appear on the left, but the auto-attack does not target them
+                var MinDistance = Math.Max(entity.Stats.Range.Extend, 0);
+
                 if (entity.Position > 0)
                 {
                     if (entity.Position > entity.Stats.Range.Extend)
                     {
-                        entity.Position -= entity.Stats.MovmentSpeed.Current * Time.deltaTime;
-                        if (entity.Position < 0)
+                        if (entity.Position - distanceToMove > MinDistance)
                         {
-                            entity.Position = 0;
+                            entity.Position -= distanceToMove;
+                        } else {
+                            entity.Position = MinDistance;
                         }
                         return true;
                     }
@@ -327,14 +333,16 @@ namespace InventoryQuest.Game.Fight
                 {
                     if (entity.Position < -entity.Stats.Range.Extend)
                     {
-                        entity.Position += entity.Stats.MovmentSpeed.Current * Time.deltaTime;
-                        if (target.Position > 0)
+                        if (target.Position + distanceToMove < -MinDistance)
                         {
-                            target.Position = -1f;
+                            entity.Position += distanceToMove;
+                        } else {
+                            entity.Position = -MinDistance;
                         }
                         return true;
                     }
                 }
+
             }
 
             return false;
