@@ -7572,7 +7572,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Scorpion Desert</Name>
       <Level>7</Level>
       <ID>4</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7668,7 +7668,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Shining Sands Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7695,7 +7695,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>The Vesir's Desert</Name>
       <Level>12</Level>
       <ID>9</ID>
-      <ImageString>location_placeholder_desert_0</ImageString>
+      <ImageString>_location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7983,7 +7983,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <int>10</int>
         <int>20</int>
         <int>100</int>
-        <int>100</int>
+        <int>0</int>
         <int>0</int>
         <int>100</int>
         <int>150</int>
