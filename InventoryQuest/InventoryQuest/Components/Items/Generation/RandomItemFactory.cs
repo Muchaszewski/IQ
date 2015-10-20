@@ -459,6 +459,7 @@ namespace InventoryQuest.Components.Generation.Items
 
             try
             {
+                item.SoundID = new List<ImageIDPair>();
                 //Set sound
                 foreach (var sound in type.SoundID)
                 {

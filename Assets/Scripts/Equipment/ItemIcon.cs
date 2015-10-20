@@ -42,6 +42,9 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     public static InventoryPanel Inventory;
     public static Canvas Canvas;
 
+    private bool _hasBeenPlayed = false;
+
+
     // Use this for initialization
     void Start()
     {
@@ -124,12 +127,17 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
             var inventory = Inventory.GetComponent<InventoryPanel>();
             this.transform.position = Input.mousePosition;
             inventory.RemoveFromPanelAndResize(this);
-            SoundManager.Instance.Play(ItemData, EnumItemSoundType.Drag);
+            if (!_hasBeenPlayed)
+            {
+                SoundManager.Instance.Play(ItemData, EnumItemSoundType.Drag);
+                _hasBeenPlayed = true;
+            }
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        _hasBeenPlayed = false;
         int? positionKey = Inventory.ResolvePosition(this);
         if (positionKey == null)
         {

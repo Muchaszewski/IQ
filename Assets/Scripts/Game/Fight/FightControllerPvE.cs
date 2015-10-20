@@ -257,7 +257,6 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (!Move(Player, Target))
                 {
-                    Debug.Log("Player " + Player.NextTurn);
                     if (Player.NextTurn <= 0)
                     {
                         Attack(Player, Target);
@@ -269,7 +268,6 @@ namespace InventoryQuest.Game.Fight
                     enemy.NextTurn -= enemy.AttackSpeed * Time.deltaTime;
                     if (!Move(enemy, Player))
                     {
-                        Debug.Log("Enemy " + enemy.NextTurn);
                         if (enemy.NextTurn <= 0)
                         {
                             Attack(enemy, Player);
