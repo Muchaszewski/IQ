@@ -171,6 +171,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
             ;
             int key = Inventory.GetEquipment(this);
             Inventory.SwapItemsOnPanel(this, key);
+            SoundManager.Instance.Play(ItemData, EnumItemSoundType.Equip);
         }
     }
 }

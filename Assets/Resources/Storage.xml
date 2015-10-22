@@ -3852,7 +3852,11 @@
           <Item>broad_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
@@ -4802,7 +4806,20 @@ Here, the screams electrified.</FlavorText>
           <Item>shiv_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -4864,7 +4881,20 @@ Here, the screams electrified.</FlavorText>
           <Item>dagger_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
       <DropLevel>3</DropLevel>
@@ -4926,7 +4956,20 @@ Here, the screams electrified.</FlavorText>
           <Item>dagger_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>lightBlade_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
       <DropLevel>9</DropLevel>
@@ -5249,11 +5292,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         </PairTypeItem>
         <PairTypeItem>
           <Type>items</Type>
-          <Item>blade_pickUp_0</Item>
+          <Item>cloth_pickUp_1</Item>
         </PairTypeItem>
         <PairTypeItem>
           <Type>items</Type>
-          <Item>placeholder_generic_putDown_0</Item>
+          <Item>cloth_pickUp_1</Item>
         </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
@@ -5285,7 +5328,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>hood_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_1</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_1</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>10</RequiredLevel>
       <DropLevel>10</DropLevel>
@@ -5315,7 +5371,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>circlet_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>7</RequiredLevel>
       <DropLevel>7</DropLevel>
@@ -5345,7 +5414,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>chain_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>20</RequiredLevel>
       <DropLevel>20</DropLevel>
@@ -5375,7 +5457,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>25</RequiredLevel>
       <DropLevel>25</DropLevel>
@@ -5405,7 +5500,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>30</RequiredLevel>
       <DropLevel>30</DropLevel>
@@ -5435,7 +5543,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>35</RequiredLevel>
       <DropLevel>35</DropLevel>
@@ -5465,7 +5586,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>pot_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -5498,15 +5632,15 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <SoundID>
         <PairTypeItem>
           <Type>items</Type>
-          <Item>lightBlade_putDown_0</Item>
+          <Item>chainmail_pickUp_0</Item>
         </PairTypeItem>
         <PairTypeItem>
           <Type>items</Type>
-          <Item>potion_pickUp_0</Item>
+          <Item>chainmail_putDown_0</Item>
         </PairTypeItem>
         <PairTypeItem>
           <Type>items</Type>
-          <Item>blade_putDown_0</Item>
+          <Item>chainmail_putDown_0</Item>
         </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
@@ -5538,7 +5672,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>hood_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -5569,7 +5716,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -5599,7 +5759,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -5629,7 +5802,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -5675,7 +5861,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_1_lightYellow</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
       <DropLevel>3</DropLevel>
@@ -5705,7 +5904,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -5735,7 +5947,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>4</RequiredLevel>
       <DropLevel>4</DropLevel>
@@ -5765,7 +5990,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>10</RequiredLevel>
       <DropLevel>10</DropLevel>
@@ -5816,7 +6054,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>chain_0_yellowAndCrimson</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>15</RequiredLevel>
@@ -5859,7 +6110,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>chain_2_poland</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>12</RequiredLevel>
       <DropLevel>12</DropLevel>
@@ -5889,7 +6153,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>chain_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>13</RequiredLevel>
       <DropLevel>13</DropLevel>
@@ -5919,7 +6196,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>22</RequiredLevel>
       <DropLevel>22</DropLevel>
@@ -5949,7 +6239,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>30</RequiredLevel>
       <DropLevel>30</DropLevel>
@@ -5979,7 +6282,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>robe_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>7</RequiredLevel>
       <DropLevel>7</DropLevel>
@@ -6009,7 +6325,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>robe_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
       <DropLevel>9</DropLevel>
@@ -6024,6 +6353,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Sash</Name>
       <ID>24</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Belt</Type>
       <Skill>Cloth</Skill>
@@ -6039,7 +6369,21 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
       <DropLevel>3</DropLevel>
@@ -6069,7 +6413,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>6</RequiredLevel>
       <DropLevel>6</DropLevel>
@@ -6099,7 +6456,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -6129,7 +6499,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>10</RequiredLevel>
       <DropLevel>10</DropLevel>
@@ -6159,7 +6542,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>rope_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6174,6 +6570,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ArmorType>
       <Name>Feet Bandages</Name>
       <ID>29</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Boots</Type>
       <Skill>Cloth</Skill>
@@ -6189,7 +6586,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6219,7 +6629,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6249,7 +6672,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6279,7 +6715,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
       <DropLevel>3</DropLevel>
@@ -6309,7 +6758,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -6339,7 +6801,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>15</RequiredLevel>
       <DropLevel>15</DropLevel>
@@ -6369,7 +6844,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>30</RequiredLevel>
       <DropLevel>30</DropLevel>
@@ -6399,7 +6887,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_2</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
       <DropLevel>9</DropLevel>
@@ -6450,7 +6951,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>classical_0_royalIronAndRed</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>22</RequiredLevel>
@@ -6481,7 +6995,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6511,7 +7038,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloth_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>6</RequiredLevel>
       <DropLevel>6</DropLevel>
@@ -6541,7 +7081,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
       <DropLevel>3</DropLevel>
@@ -6571,7 +7124,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>21</RequiredLevel>
       <DropLevel>21</DropLevel>
@@ -6602,7 +7168,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>27</RequiredLevel>
       <DropLevel>27</DropLevel>
@@ -6644,7 +7223,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cap_0_red</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>4</RequiredLevel>
       <DropLevel>4</DropLevel>
@@ -6675,7 +7267,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>bare_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>2</RequiredLevel>
@@ -6706,7 +7311,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>gloves_leather_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6736,7 +7354,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>gloves_plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
       <DropLevel>1</DropLevel>
@@ -6766,7 +7397,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>gloves_leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -6796,7 +7440,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>braces_leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>4</RequiredLevel>
       <DropLevel>4</DropLevel>
@@ -6826,7 +7483,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>gloves_chain_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>11</RequiredLevel>
       <DropLevel>11</DropLevel>
@@ -6856,7 +7526,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>gloves_plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>21</RequiredLevel>
       <DropLevel>21</DropLevel>
@@ -6886,7 +7569,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
       <DropLevel>5</DropLevel>
@@ -6916,7 +7612,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>leather_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>leather_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>10</RequiredLevel>
       <DropLevel>10</DropLevel>
@@ -6946,7 +7655,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>22</RequiredLevel>
       <DropLevel>22</DropLevel>
@@ -6976,7 +7698,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plate_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>27</RequiredLevel>
       <DropLevel>27</DropLevel>
@@ -7007,7 +7742,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloak_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>8</RequiredLevel>
@@ -7038,7 +7786,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloak_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>12</RequiredLevel>
       <DropLevel>12</DropLevel>
@@ -7080,7 +7841,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>cloak_2_white</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>cloth_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>16</RequiredLevel>
       <DropLevel>16</DropLevel>
@@ -7111,7 +7885,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>unique_hammerfall_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>plate_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText>TODO</FlavorText>
       <Rarity>Mythical</Rarity>
       <RequiredLevel>34</RequiredLevel>
@@ -7143,7 +7930,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>unique_hammerfall_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>chainmail_putDown_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <FlavorText />
       <Rarity>Mythical</Rarity>
       <RequiredLevel>33</RequiredLevel>
@@ -7415,7 +8215,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plain_1</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
@@ -7439,7 +8252,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Item>plain_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>beads_pickUp_0</Item>
+        </PairTypeItem>
+      </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>0</RequiredLevel>
       <DropLevel>0</DropLevel>
