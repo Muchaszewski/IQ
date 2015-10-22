@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(ItemIcon))]
 [RequireComponent(typeof(RectTransform))]
-public class ShowTooltip : MonoBehaviour
+public class ShowTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ToolTipManager ToolTipManager { get; private set; }
     private RectTransform _rectTransofrm;
     private Rect ItemPosition;
     private ItemIcon ItemData;
+    private bool _isHoover;
 
     // Use this for initialization
     void Start()
@@ -34,11 +35,21 @@ public class ShowTooltip : MonoBehaviour
     {
         UpdatePosition();
 
-        if (ItemPosition.Contains(Input.mousePosition))
+        if (_isHoover)
         {
             ToolTipManager.Show = true;
             ToolTipManager.SetTooltip(ItemData);
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _isHoover = true;
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _isHoover = false;
+    }
 }

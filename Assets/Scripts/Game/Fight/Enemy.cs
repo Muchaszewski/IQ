@@ -17,8 +17,6 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public float MaxCombatPosition = 241f;
     public bool IsRightSide = true;
     public int EntityID;
-    public GameObject FloatingText;
-    public Vector3 floatingTextPosition;
 
     public float ShrinkedScale = 0.8f;
     public float ShrinkStep = 1f;
@@ -79,11 +77,11 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         position = Mathf.Sqrt(Math.Abs(_progress)) * 9; // Math.Sqrt returns a NaN for negative numbers
 
         //Debug.Log("Pos: " + Math.Round(position) + ", Min: " + MinCombatPosition);
-        if (_progress >= 0)
+        if (EntityData.IsRightSide)
         {
             position = position + MinCombatPosition;
         }
-        else if (_progress < 0)
+        else
         {
             position = -position - MinCombatPosition;
         }
@@ -159,7 +157,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     {
         if (e.Target.Equals(EntityData))
         {
-            CreateFloatingText(e.Message);
+            GetComponent<FloatingText>().CreateFloatingText(e.Message);
         }
     }
 
@@ -180,70 +178,6 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     {
         _isUpSacling = false;
         _isHoovering = false;
-    }
-
-    public void CreateFloatingText(AttackMessage message)
-    {
-        var text = Instantiate(FloatingText).GetComponent<Text>();
-        for (int i = 0; i < message.AttackDatas.Count; i++)
-        {
-            var item = message[i];
-            /*
-            /m missed
-            /p parried
-            /b blocked
-            /e exhausted
-            /a absorb
-            /c critical
-            */
-            if (item.Message == EnumAttackMessage.Missed)
-            {
-                text.color = text.GetComponent<FloatingTextAnimation>().ColorMissed;
-            }
-            else if (item.Message == EnumAttackMessage.Critical)
-            {
-                if (item.Value == 0)
-                {
-                    text.color = text.GetComponent<FloatingTextAnimation>().ColorDamage;
-                }
-                else
-                {
-                    text.color = text.GetComponent<FloatingTextAnimation>().ColorCritical;
-
-                }
-            }
-            else if (item.Message == EnumAttackMessage.Parried)
-            {
-                text.color = text.GetComponent<FloatingTextAnimation>().ColorParried;
-            }
-            else if (item.Message == EnumAttackMessage.Blocked)
-            {
-                text.color = text.GetComponent<FloatingTextAnimation>().ColorBlocked;
-            }
-            else if (item.Message == EnumAttackMessage.Exhausted)
-            {
-                text.color = text.GetComponent<FloatingTextAnimation>().ColorExhausted;
-            }
-            else if (item.Message == EnumAttackMessage.Absorb)
-            {
-                text.color = text.GetComponent<FloatingTextAnimation>().ColorAbsorbed;
-            }
-            if (item.Message == EnumAttackMessage.FinalDamage)
-            {
-                //text.text = number.ToString("#.#");
-                text.text = item.Value.ToString("#");
-            }
-            else
-            {
-                text.text = item.Message.ToString();
-            }
-        }
-
-        text.transform.SetParent(transform.parent.parent);
-        //text.transform.position = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 30f;
-        var pos = transform.position + floatingTextPosition;
-        if (Single.IsNaN(pos.x)) { pos = new Vector3(-1000, -1000); }
-        text.transform.position = pos;
     }
 
 }

@@ -70,6 +70,8 @@ namespace InventoryQuest.Components.Entities
 
         public float Position { get; set; }
 
+        public bool IsRightSide { get; set; }
+
         /// <summary>
         ///     Get Damage per second
         /// </summary>

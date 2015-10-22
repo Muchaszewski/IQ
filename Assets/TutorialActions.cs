@@ -203,6 +203,11 @@ public class TutorialActions : MonoBehaviour
         {
             MenuButtons[i].gameObject.SetActive(true);
         }
+
+        Inventory.EventItemSwaped -= Inventory_EventItemSwaped;
+        Inventory.EventItemAdded -= Inventory_EventItemSwaped;
+        Inventory.EventItemDeleted -= Inventory_EventItemSwaped;
+        Inventory.EventItemMoved -= Inventory_EventItemSwaped;
     }
 
     void SetTutorialMessage(TutorialMessage message, bool isNextActive = false, UnityAction action = null)

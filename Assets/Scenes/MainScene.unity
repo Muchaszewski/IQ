@@ -6721,6 +6721,8 @@ GameObject:
   - 224: {fileID: 574880313}
   - 222: {fileID: 574880315}
   - 114: {fileID: 574880314}
+  - 114: {fileID: 574880316}
+  - 114: {fileID: 574880317}
   m_Layer: 5
   m_Name: PlayerHead
   m_TagString: Untagged
@@ -6778,6 +6780,31 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 574880312}
+--- !u!114 &574880316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 574880312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a73151c3c8b4f498b980c2da01d7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &574880317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 574880312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloatingTextGameObject: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42,
+    type: 2}
+  FloatingTextPosition: {x: 0, y: 0}
 --- !u!1 &591511807
 GameObject:
   m_ObjectHideFlags: 0

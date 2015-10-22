@@ -11,6 +11,7 @@ GameObject:
   - 222: {fileID: 22285044}
   - 114: {fileID: 11401772}
   - 114: {fileID: 11444866}
+  - 114: {fileID: 11436212}
   m_Layer: 8
   m_Name: EnemyHead
   m_TagString: Untagged
@@ -45,6 +46,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11436212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloatingTextGameObject: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42,
+    type: 2}
+  FloatingTextPosition: {x: 0, y: 0}
 --- !u!114 &11444866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -59,8 +74,6 @@ MonoBehaviour:
   MaxCombatPosition: 241
   IsRightSide: 1
   EntityID: 0
-  FloatingText: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
-  floatingTextPosition: {x: 0, y: 30, z: 0}
   ShrinkedScale: .800000012
   ShrinkStep: 10
   GrowScale: 1.10000002
@@ -116,6 +129,10 @@ Prefab:
       propertyPath: GrowStep
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: FloatingTextGameObject
+      value: 
+      objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130808}

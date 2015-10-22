@@ -284,10 +284,9 @@ namespace InventoryQuest.Game.Fight
             {
 
                 var distanceToMove = entity.Stats.MovmentSpeed.Current * Time.deltaTime;
-                //var MinDistance = Math.Max( entity.Stats.Range.Extend, 0.1f); // Enemies do appear on the left, but the auto-attack does not target them
                 var MinDistance = Math.Max(entity.Stats.Range.Extend, 0);
 
-                if (entity.Position > 0)
+                if (entity.IsRightSide)
                 {
                     if (entity.Position > entity.Stats.Range.Extend)
                     {
@@ -302,11 +301,11 @@ namespace InventoryQuest.Game.Fight
                         return true;
                     }
                 }
-                else if (entity.Position < 0)
+                else
                 {
                     if (entity.Position < -entity.Stats.Range.Extend)
                     {
-                        if (target.Position + distanceToMove < -MinDistance)
+                        if (entity.Position + distanceToMove < -MinDistance)
                         {
                             entity.Position += distanceToMove;
                         }
@@ -523,10 +522,15 @@ namespace InventoryQuest.Game.Fight
             foreach (var entity in Enemy)
             {
                 var maxRandom = Random.Range(-100, 100);
-                if (Math.Abs(maxRandom) < 25)
-                    maxRandom = maxRandom >= 0 ? 25 : -25;
-                //var max = Mathf.Max(entity.Stats.Range.Extend + maxRandom, Player.Stats.Range.Extend + maxRandom);
-                var max = maxRandom;
+                var max = Mathf.Max(entity.Stats.Range.Extend + maxRandom, Player.Stats.Range.Extend + maxRandom);
+                if (max < 0)
+                {
+                    entity.IsRightSide = false;
+                }
+                else
+                {
+                    entity.IsRightSide = true;
+                }
                 entity.Position = max;
             }
 
