@@ -143,7 +143,6 @@ public class TutorialActions : MonoBehaviour
 
     private void Inventory_EventItemSwaped(object sender, System.EventArgs e)
     {
-        Debug.Log("Count");
         var count = 0;
         foreach (var item in CurrentGame.Instance.Player.Inventory.Items)
         {

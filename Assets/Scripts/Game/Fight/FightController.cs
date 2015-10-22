@@ -51,10 +51,6 @@ namespace InventoryQuest.Game.Fight
         public abstract Entity Target { get; set; }
 
         /// <summary>
-        /// </summary>
-        public abstract StringBuilder BattleLog { get; set; }
-
-        /// <summary>
         ///     Event on Attack
         /// </summary>
         public static event EventHandler<FightControllerEventArgs> onAttack = delegate { };
@@ -228,6 +224,6 @@ namespace InventoryQuest.Game.Fight
             IsFight = true;
         }
 
-        public abstract string Attack(Entity me, Entity target);
+        public abstract void Attack(Entity me, Entity target);
     }
 }

@@ -61,6 +61,10 @@ MonoBehaviour:
   EntityID: 0
   FloatingText: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
   floatingTextPosition: {x: 0, y: 30, z: 0}
+  ShrinkedScale: .800000012
+  ShrinkStep: 10
+  GrowScale: 1.10000002
+  GrowStep: 5
 --- !u!222 &22285044
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -104,6 +108,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: b2a015828abd8b74e87adadeb2c364a2,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: ShrinkStep
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GrowStep
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130808}

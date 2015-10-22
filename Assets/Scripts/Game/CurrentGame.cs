@@ -81,16 +81,11 @@ namespace InventoryQuest.Game
                         Traveling = 1;
                         if (TravelToSpot != -1)
                         {
-                            FightController.BattleLog.AppendLine("----------------------------------------");
-                            FightController.BattleLog.AppendLine("Traveling to: " +
-                                                                 GenerationStorage.Instance.Spots[TravelToSpot].Name);
-                            FightController.BattleLog.AppendLine("----------------------------------------");
+
                         }
                         else
                         {
-                            FightController.BattleLog.AppendLine("----------------------------------------");
-                            FightController.BattleLog.AppendLine("Looking for enemies...");
-                            FightController.BattleLog.AppendLine("----------------------------------------");
+
                         }
                     }
                 }
@@ -101,7 +96,6 @@ namespace InventoryQuest.Game
                 }
                 else if (Refiling == 0)
                 {
-                    FightController.BattleLog.AppendLine("Reffiling");
                     Refiling = 1;
                 }
             }

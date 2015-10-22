@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Equipment\ShowTooltip.cs" />
     <Compile Include="Assets\Scripts\Equipment\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
+    <Compile Include="Assets\Scripts\Game\Fight\AttackMessage.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\CombatLineManager.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\FightController.cs" />

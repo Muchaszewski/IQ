@@ -17,7 +17,6 @@ namespace InventoryQuest.Game.Fight
     public class FightControllerPvE : FightController
     {
         private readonly int TURN_TIME = 2;
-        private StringBuilder _battleLog = new StringBuilder();
         private float _oneSecondTimer;
 
         /// <summary>
@@ -33,14 +32,6 @@ namespace InventoryQuest.Game.Fight
             Enemy = enemy;
         }
 
-        /// <summary>
-        ///     Battle log generated while fight
-        /// </summary>
-        public override StringBuilder BattleLog
-        {
-            get { return _battleLog; }
-            set { _battleLog = value; }
-        }
 
         /// <summary>
         ///     Fighting player
@@ -68,7 +59,6 @@ namespace InventoryQuest.Game.Fight
             {
                 IsFight = false;
                 IsEnded = true;
-                BattleLog.AppendLine("No enemies to fight with!");
                 return this;
             }
             IsFight = true;
@@ -110,15 +100,6 @@ namespace InventoryQuest.Game.Fight
             IsFight = false;
             IsEnded = true;
 
-            if (BattleLog.Length > 1000)
-            {
-                var lines = Regex.Split(BattleLog.ToString(), "\r\n|\r|\n").Skip(20);
-                BattleLog = new StringBuilder();
-                BattleLog.Insert(0, string.Join(Environment.NewLine, lines.ToArray()));
-            }
-
-            BattleLog.AppendLine();
-
             if (winner == Player)
             {
                 InvokeEvent_onVicotry(new FightControllerEventArgs(this, Player, null));
@@ -141,11 +122,8 @@ namespace InventoryQuest.Game.Fight
                         experienceModifer = 1;
                     }
                     var experience = 50 * experienceModifer;
-                    BattleLog.AppendLine("Gained " + experience + " experience");
                     Player.Experience += experience;
                 }
-                BattleLog.AppendLine("Experience required for the next level: " +
-                                     (Player.GetToNextLevelExperience() - Player.Experience));
 
                 // Drop items
                 var dropRolls = 2;
@@ -162,11 +140,9 @@ namespace InventoryQuest.Game.Fight
                         if (item != null)
                         {
                             Player.Inventory.AddItem(item);
-                            BattleLog.AppendLine("You have found: " + item.Name);
                         }
                         else
                         {
-                            BattleLog.AppendLine("Error: Item was null!");
                         }
                     }
                 }
@@ -200,8 +176,6 @@ namespace InventoryQuest.Game.Fight
             if (PreFight(Player))
             {
                 IsPlayerWinner = false;
-                BattleLog.AppendLine("You have lost...");
-                BattleLog.AppendLine();
             }
             var areEnemiesDead = true;
             foreach (Entity enemy in Enemy)
@@ -214,9 +188,6 @@ namespace InventoryQuest.Game.Fight
             if (areEnemiesDead)
             {
                 IsPlayerWinner = true;
-                BattleLog.AppendLine("You have won!");
-
-                BattleLog.AppendLine();
             }
             //Reset regen timer
             if (_oneSecondTimer >= 1)
@@ -323,7 +294,9 @@ namespace InventoryQuest.Game.Fight
                         if (entity.Position - distanceToMove > MinDistance)
                         {
                             entity.Position -= distanceToMove;
-                        } else {
+                        }
+                        else
+                        {
                             entity.Position = MinDistance;
                         }
                         return true;
@@ -336,7 +309,9 @@ namespace InventoryQuest.Game.Fight
                         if (target.Position + distanceToMove < -MinDistance)
                         {
                             entity.Position += distanceToMove;
-                        } else {
+                        }
+                        else
+                        {
                             entity.Position = -MinDistance;
                         }
                         return true;
@@ -380,10 +355,9 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         /// <param name="me">Attacking entity</param>
         /// <param name="target">Target entity</param>
-        public override string Attack(Entity me, Entity target)
+        public override void Attack(Entity me, Entity target)
         {
-            string returnMessage = "";
-            BattleLog.Append(me.Name + " attacked... ");
+            AttackMessage message = new AttackMessage();
 
             //Use Stamina
             var weaponsRequiredStrength = 0;
@@ -421,9 +395,9 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (RandomNumberGenerator.BoolRandom(evasion))
                 {
-                    BattleLog.AppendLine("but missed.");
-                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/m" + "missed"));
-                    return "/m" + "missed";
+                    message.Add(EnumAttackMessage.Missed);
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, message));
+                    return;
                 }
 
                 //Deflection
@@ -441,9 +415,9 @@ namespace InventoryQuest.Game.Fight
                 }
                 if (RandomNumberGenerator.BoolRandom(deflection))
                 {
-                    BattleLog.AppendLine("but " + target.Name + " parried.");
-                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/p" + "parried"));
-                    return "/p" + "parried";
+                    message.Add(EnumAttackMessage.Parried);
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, message));
+                    return;
                 }
 
                 //Block
@@ -462,15 +436,13 @@ namespace InventoryQuest.Game.Fight
                 if (RandomNumberGenerator.BoolRandom(block))
                 {
                     blockAmount = target.Stats.BlockAmount.Extend;
-                    BattleLog.AppendLine(target.Name + " blocked " + block + " damage, ");
-                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, "/b" + "blocked" + "@"));
-                    returnMessage += "/b" + "blocked" + "@";
+                    message.Add(EnumAttackMessage.Blocked);
+                    InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, message));
                 }
             }
             else
             {
-                BattleLog.AppendLine(" since " + target.Name + " is exhausted you ");
-                returnMessage += "/e" + "exhausted" + "@";
+                message.Add(EnumAttackMessage.Exhausted);
             }
 
             //Attack
@@ -498,12 +470,8 @@ namespace InventoryQuest.Game.Fight
 
             if (finalDamage > 0)
             {
-                BattleLog.AppendLine(finalDamage + " damage!" +
-                                     (absorbedDamage > 0 ? " (armor soaked " + absorbedDamage + ")" : ""));
                 if (critical > 0)
                 {
-                    BattleLog.AppendLine("Additional damage form critical strike: +" + me.Stats.CriticalDamage + "%" +
-                                         " (" + critical + ")");
                 }
                 if (target.Stats.ShieldPoints.Current > 0)
                 {
@@ -518,16 +486,16 @@ namespace InventoryQuest.Game.Fight
                 {
                     target.Stats.HealthPoints.Current -= finalDamage;
                 }
-                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, returnMessage + "/c" + critical + "@" + finalDamage));
-                return returnMessage + "/c" + critical + "@" + finalDamage;
+                message.Add(EnumAttackMessage.Critical, critical);
+                message.Add(EnumAttackMessage.FinalDamage, finalDamage);
+                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, message));
+                return;
             }
             else
             {
-                BattleLog.AppendLine("dealt no damage." +
-                                     (absorbedDamage > 0 ? " (armor soaked " + absorbedDamage + ")" : ""));
-                returnMessage += "/a" + "@";
-                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, returnMessage + "0"));
-                return returnMessage + "0";
+                message.Add(EnumAttackMessage.Absorb);
+                InvokeEvent_onAttack(new FightControllerEventArgs(this, me, target, message));
+                return;
             }
         }
 

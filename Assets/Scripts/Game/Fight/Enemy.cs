@@ -9,7 +9,7 @@ using InventoryQuest.Game.Fight;
 using InventoryQuest.Utils;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour, IPointerClickHandler
+public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
     public const float MinCombatPosition = 94f;
@@ -19,6 +19,15 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     public int EntityID;
     public GameObject FloatingText;
     public Vector3 floatingTextPosition;
+
+    public float ShrinkedScale = 0.8f;
+    public float ShrinkStep = 1f;
+    public float GrowScale = 1.1f;
+    public float GrowStep = 1f;
+    private float _normalScale;
+    private bool _isDownScaling;
+    private bool _isUpSacling;
+    private bool _isHoovering;
 
     private float _progress;
     private Entity _entityData;
@@ -36,6 +45,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         _rectTransform = GetComponent<RectTransform>();
         FightController.onAttack += FightController_onAttack;
         SetIcon();
+        _normalScale = transform.localScale.x;
     }
 
     void SetIcon()
@@ -53,10 +63,8 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         // Death
         if (EntityData.Stats.HealthPoints.Current <= 0)
         {
@@ -87,7 +95,61 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
         // Apply position
         _rectTransform.anchoredPosition = new Vector2(position, 0);
 
+        UpdateScale();
     }
+
+    void UpdateScale()
+    {
+        if (_isDownScaling)
+        {
+            var shrink = ShrinkStep * Time.deltaTime;
+            transform.localScale -= new Vector3(shrink, shrink, 0);
+            if (transform.localScale.x < ShrinkedScale)
+            {
+                transform.localScale = new Vector3(ShrinkedScale, ShrinkedScale, 1);
+                _isDownScaling = false;
+                if (_isHoovering)
+                {
+                    _isUpSacling = true;
+                }
+            }
+        }
+        else if (_isUpSacling)
+        {
+            var grow = GrowStep * Time.deltaTime;
+            transform.localScale += new Vector3(grow, grow, 0);
+            if (transform.localScale.x > GrowScale)
+            {
+                transform.localScale = new Vector3(GrowScale, GrowScale, 1);
+            }
+        }
+        else
+        {
+            if (transform.localScale.x > _normalScale)
+            {
+                var normal = ShrinkStep * Time.deltaTime;
+                transform.localScale -= new Vector3(normal, normal, 0);
+                if (transform.localScale.x < _normalScale)
+                {
+                    transform.localScale = new Vector3(_normalScale, _normalScale, 1);
+                    _isDownScaling = false;
+                    _isUpSacling = false;
+                }
+            }
+            else if (transform.localScale.x < _normalScale)
+            {
+                var normal = GrowStep * Time.deltaTime;
+                transform.localScale += new Vector3(normal, normal, 0);
+                if (transform.localScale.x > _normalScale)
+                {
+                    transform.localScale = new Vector3(_normalScale, _normalScale, 1);
+                    _isDownScaling = false;
+                    _isUpSacling = false;
+                }
+            }
+        }
+    }
+
     public void OnDestroy()
     {
         FightController.onAttack -= FightController_onAttack;
@@ -105,16 +167,27 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     {
         CurrentGame.Instance.FightController.Target = EntityData;
         CurrentGame.Instance.FightController.Attack(CurrentGame.Instance.Player, EntityData);
+        _isDownScaling = true;
+        _isUpSacling = false;
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _isUpSacling = true;
+        _isHoovering = true;
     }
 
-    public void CreateFloatingText(string message)
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _isUpSacling = false;
+        _isHoovering = false;
+    }
+
+    public void CreateFloatingText(AttackMessage message)
     {
         var text = Instantiate(FloatingText).GetComponent<Text>();
-        var splitted = message.Split('@');
-        float number;
-        for (int i = 0; i < splitted.Length; i++)
+        for (int i = 0; i < message.AttackDatas.Count; i++)
         {
-            var item = splitted[i];
+            var item = message[i];
             /*
             /m missed
             /p parried
@@ -123,16 +196,13 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
             /a absorb
             /c critical
             */
-            if (item.Contains("/m"))
+            if (item.Message == EnumAttackMessage.Missed)
             {
-                splitted[i] = item.Replace("/m", "");
                 text.color = text.GetComponent<FloatingTextAnimation>().ColorMissed;
             }
-            else if (item.Contains("/c"))
+            else if (item.Message == EnumAttackMessage.Critical)
             {
-                splitted[i] = item.Replace("/c", "");
-                float.TryParse(splitted[i], out number);
-                if (number == 0)
+                if (item.Value == 0)
                 {
                     text.color = text.GetComponent<FloatingTextAnimation>().ColorDamage;
                 }
@@ -142,41 +212,37 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
 
                 }
             }
-            else if (item.Contains("/p"))
+            else if (item.Message == EnumAttackMessage.Parried)
             {
-                splitted[i] = item.Replace("/p", "");
                 text.color = text.GetComponent<FloatingTextAnimation>().ColorParried;
             }
-            else if (item.Contains("/b"))
+            else if (item.Message == EnumAttackMessage.Blocked)
             {
-                splitted[i] = item.Replace("/b", "");
                 text.color = text.GetComponent<FloatingTextAnimation>().ColorBlocked;
             }
-            else if (item.Contains("/e"))
+            else if (item.Message == EnumAttackMessage.Exhausted)
             {
-                splitted[i] = item.Replace("/e", "");
                 text.color = text.GetComponent<FloatingTextAnimation>().ColorExhausted;
             }
-            else if (item.Contains("/a"))
+            else if (item.Message == EnumAttackMessage.Absorb)
             {
-                splitted[i] = item.Replace("/a", "");
                 text.color = text.GetComponent<FloatingTextAnimation>().ColorAbsorbed;
             }
-        }
-        if (float.TryParse(splitted[splitted.Length - 1], out number))
-        {
-            //text.text = number.ToString("#.#");
-            text.text = number.ToString("#");
-        }
-        else
-        {
-            text.text = splitted[splitted.Length - 1];
+            if (item.Message == EnumAttackMessage.FinalDamage)
+            {
+                //text.text = number.ToString("#.#");
+                text.text = item.Value.ToString("#");
+            }
+            else
+            {
+                text.text = item.Message.ToString();
+            }
         }
 
         text.transform.SetParent(transform.parent.parent);
         //text.transform.position = transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 30f;
         var pos = transform.position + floatingTextPosition;
-        if (Single.IsNaN(pos.x)) { pos = Vector3.zero; }
+        if (Single.IsNaN(pos.x)) { pos = new Vector3(-1000, -1000); }
         text.transform.position = pos;
     }
 
