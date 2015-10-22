@@ -43,9 +43,9 @@ namespace InventoryQuest.Game
             var stats = new Stats();
             stats.Strength.Base = UnityEngine.Random.Range(0, 20);
             Player = new Player("Unnamed", 1, stats);
-            var Enemy = new List<Entity> { RandomEnemyFactory.CreateEnemy(Spot, EnumEntityRarity.Normal) };
+            Player.IsAlive = true;
             Idle = new Idle();
-            FightController = new FightControllerPvE(Player, Enemy).Begin();
+            FightController = new FightControllerPvE(Player).Begin();
             FightController.Pause();
         }
 

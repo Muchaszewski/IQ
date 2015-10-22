@@ -2805,7 +2805,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22477320, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22477320, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2945,7 +2945,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11489064, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11480656, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
       propertyPath: m_Sprite
@@ -2958,6 +2958,35 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &234425954 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 124934, guid: 71c775feb6a5e854e992ce3a152618d2, type: 2}
+  m_PrefabInternal: {fileID: 234425953}
+--- !u!114 &234425955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 234425954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationPrefab: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+  InstantianePosition: {x: -30, y: 0}
+  Direction: -90
+--- !u!114 &234425959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 234425954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e77725538e2794f873ae46a1dc7c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253018251
 GameObject:
   m_ObjectHideFlags: 0
@@ -6802,9 +6831,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextGameObject: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42,
-    type: 2}
-  FloatingTextPosition: {x: 0, y: 0}
+  AnimationPrefab: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+  InstantianePosition: {x: 0, y: 0}
+  Direction: 0
 --- !u!1 &591511807
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,7 +13955,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1302697329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

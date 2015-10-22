@@ -57,9 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextGameObject: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42,
-    type: 2}
-  FloatingTextPosition: {x: 0, y: 0}
+  AnimationPrefab: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+  InstantianePosition: {x: 0, y: 0}
+  Direction: 0
 --- !u!114 &11444866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +131,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FloatingTextGameObject
+      value: 
+      objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+    - target: {fileID: 0}
+      propertyPath: AnimationPrefab
       value: 
       objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
     m_RemovedComponents: []

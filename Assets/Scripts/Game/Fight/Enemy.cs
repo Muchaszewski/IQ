@@ -172,6 +172,7 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     {
         _isUpSacling = true;
         _isHoovering = true;
+        transform.SetAsLastSibling();
     }
 
     public void OnPointerExit(PointerEventData eventData)

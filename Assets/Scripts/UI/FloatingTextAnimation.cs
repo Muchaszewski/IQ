@@ -11,6 +11,8 @@ public class FloatingTextAnimation : MonoBehaviour
     public float AnimationMaxWidth = 70;
     public float AnimationMinWidth = 50;
     public bool IsRandomizingSide = true;
+    [Tooltip("Starting direciton of movement (can be used from floating text class)")]
+    public float Direction = 0;
 
     public Color ColorDamage;
     public Color ColorMissed;
@@ -19,6 +21,7 @@ public class FloatingTextAnimation : MonoBehaviour
     public Color ColorBlocked;
     public Color ColorAbsorbed;
     public Color ColorExhausted;
+    public Color ColorExperience;
 
     //[Tooltip("If enemy is on the left side, floating text will float to the left, and vice versa. Middle will only float upwards")]
     //public bool IsDependOnEntitySize = true;
@@ -67,15 +70,15 @@ public class FloatingTextAnimation : MonoBehaviour
         }
 
         // Move vertically
-        transform.AddY(AnimationHeight / (TimeForAnimation * 100f));
+        var vector2 = new Vector2(0, AnimationHeight / (TimeForAnimation * 100f));
         // Move sideways
         if (TimeForTurn <= _currentAnimationTime)
         {
             var mod = (_currentWidthMod / (TimeForAnimation - TimeForTurn == 0 ? 1 : TimeForAnimation - TimeForTurn)) * Time.deltaTime;
             mod = IsRandomizingSide ? mod : TransformUtils.RandomBool() ? mod : -mod;
-            transform.AddX(mod);
+            vector2.x = mod;
         }
-
+        transform.position = transform.position + Quaternion.Euler(0, 0, Direction) * vector2;
 
 
         // Reduce Alpha

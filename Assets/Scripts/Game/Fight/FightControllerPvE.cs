@@ -25,11 +25,11 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         /// <param name="player">Player</param>
         /// <param name="enemy">Enemy</param>
-        public FightControllerPvE(Entity player, List<Entity> enemy)
+        public FightControllerPvE(Entity player)
         {
             FightsInCurrentSpot = 0;
             Player = (Player)player;
-            Enemy = enemy;
+            ResetBattle();
         }
 
 
@@ -103,27 +103,6 @@ namespace InventoryQuest.Game.Fight
             if (winner == Player)
             {
                 InvokeEvent_onVicotry(new FightControllerEventArgs(this, Player, null));
-                // Experience
-                foreach (Entity enemy in Enemy)
-                {
-                    double levelDelta = enemy.Level - Player.Level;
-                    double experienceModifer = 0;
-                    if (levelDelta < 0)
-                    {
-                        experienceModifer = Math.Max(1 - 0.005 * Math.Pow(levelDelta, 2), 0.05);
-                    }
-                    else if (levelDelta > 0)
-                    {
-                        experienceModifer = 1 + 0.005 * Math.Pow(levelDelta, 2);
-                    }
-                    else
-                    {
-                        // roznica_poziomu == 0
-                        experienceModifer = 1;
-                    }
-                    var experience = 50 * experienceModifer;
-                    Player.Experience += experience;
-                }
 
                 // Drop items
                 var dropRolls = 2;
@@ -327,12 +306,37 @@ namespace InventoryQuest.Game.Fight
         /// </summary>
         private bool PreFight(Entity entity)
         {
-            if (entity.Stats.StaminaPoints.Current <= -1000 * entity.Stats.StaminaPoints.Extend)
+            if (!entity.IsAlive)
             {
-                return entity.Stats.HealthPoints.Current <= 0;
+                return true;
             }
-            if (entity.Stats.HealthPoints.Current <= 0)
+
+            var message = new FloatingMessage();
+            if (entity.Stats.StaminaPoints.Current <= -1000 * entity.Stats.StaminaPoints.Extend || entity.Stats.HealthPoints.Current <= 0)
             {
+                if (entity.Type != EnumEntityType.Player)
+                {
+                    float levelDelta = entity.Level - Player.Level;
+                    float experienceModifer = 0;
+                    if (levelDelta < 0)
+                    {
+                        experienceModifer = (float)Math.Max(1 - 0.005 * Math.Pow(levelDelta, 2), 0.05);
+                    }
+                    else if (levelDelta > 0)
+                    {
+                        experienceModifer = 1 + 0.005f * (float)Math.Pow(levelDelta, 2);
+                    }
+                    else
+                    {
+                        // roznica_poziomu == 0
+                        experienceModifer = 1;
+                    }
+                    var experience = 50f * experienceModifer;
+                    Player.Experience += experience;
+                    message.Add(EnumAttackMessage.Experience, experience);
+                    InvokeEvent_onKill(new FightControllerEventArgs(this, entity, null, message));
+                    entity.IsAlive = false;
+                }
                 return entity.Stats.HealthPoints.Current <= 0;
             }
             //If not dead
@@ -356,7 +360,7 @@ namespace InventoryQuest.Game.Fight
         /// <param name="target">Target entity</param>
         public override void Attack(Entity me, Entity target)
         {
-            AttackMessage message = new AttackMessage();
+            FloatingMessage message = new FloatingMessage();
 
             //Use Stamina
             var weaponsRequiredStrength = 0;
@@ -532,6 +536,7 @@ namespace InventoryQuest.Game.Fight
                     entity.IsRightSide = true;
                 }
                 entity.Position = max;
+                entity.IsAlive = true;
             }
 
             IsEnded = false;
