@@ -44,6 +44,10 @@ public class TutorialManager : MonoBehaviour
         GroupCharacterCreation.SetActive(true);
         GroupCombat.SetActive(false);
         GroupHeadCreation.SetActive(true);
+
+#if UNITY_EDITOR
+        InputNameField.text = "TEST";
+#endif
     }
 
     public void ChooseHead()

@@ -5,7 +5,7 @@ namespace InventoryQuest.Game.Fight
 {
     public class FightControllerEventArgs : EventArgs
     {
-        public FightControllerEventArgs(FightController fightController, Entity invoker, Entity target, AttackMessage message)
+        public FightControllerEventArgs(FightController fightController, Entity invoker, Entity target, FloatingMessage message)
         {
             FightController = fightController;
             Invoker = invoker;
@@ -13,7 +13,7 @@ namespace InventoryQuest.Game.Fight
             Message = message;
         }
         public FightControllerEventArgs(FightController fightController, Entity invoker, Entity target) :
-            this(fightController, invoker, target, new AttackMessage())
+            this(fightController, invoker, target, new FloatingMessage())
         {
         }
 
@@ -25,6 +25,6 @@ namespace InventoryQuest.Game.Fight
         public FightController FightController { get; set; }
         public Entity Invoker { get; set; }
         public Entity Target { get; set; }
-        public AttackMessage Message { get; set; }
+        public FloatingMessage Message { get; set; }
     }
 }

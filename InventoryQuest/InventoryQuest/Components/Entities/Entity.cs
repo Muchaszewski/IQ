@@ -24,6 +24,7 @@ namespace InventoryQuest.Components.Entities
             Level = level;
             Stats = stats;
             Type = type;
+            IsAlive = true;
         }
 
         /// <summary>
@@ -66,11 +67,22 @@ namespace InventoryQuest.Components.Entities
         /// </summary>
         public float NextTurn { get; set; }
 
+        /// <summary>
+        ///     Total time without reciving damage
+        /// </summary>
         public float NoDamageTime { get; set; }
 
         public float Position { get; set; }
 
+        /// <summary>
+        ///     Is displayed on right side
+        /// </summary>
         public bool IsRightSide { get; set; }
+
+        /// <summary>
+        ///     Returns alive status
+        /// </summary>
+        public bool IsAlive { get; set; }
 
         /// <summary>
         ///     Get Damage per second

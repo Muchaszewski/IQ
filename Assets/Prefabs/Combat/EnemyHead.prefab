@@ -57,9 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dcc6268274a334d80e1cb1e838d846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatingTextGameObject: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42,
-    type: 2}
-  FloatingTextPosition: {x: 0, y: 0}
+  AnimationPrefab: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+  InstantianePosition: {x: 0, y: 0}
+  Direction: 0
 --- !u!114 &11444866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,10 +74,10 @@ MonoBehaviour:
   MaxCombatPosition: 241
   IsRightSide: 1
   EntityID: 0
-  ShrinkedScale: .899999976
+  ShrinkedScale: .800000012
   ShrinkStep: 10
-  GrowScale: 1.14999998
-  GrowStep: 10
+  GrowScale: 1.10000002
+  GrowStep: 5
 --- !u!222 &22285044
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -127,20 +127,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: GrowStep
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FloatingTextGameObject
       value: 
       objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
     - target: {fileID: 0}
-      propertyPath: ShrinkedScale
-      value: .899999976
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: GrowScale
-      value: 1.14999998
-      objectReference: {fileID: 0}
+      propertyPath: AnimationPrefab
+      value: 
+      objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130808}

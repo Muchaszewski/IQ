@@ -97,6 +97,8 @@ namespace InventoryQuest.Game.Fight
 
         public static event EventHandler<FightControllerEventArgs> onCreatingEnemies = delegate { };
 
+        public static event EventHandler<FightControllerEventArgs> onKill = delegate { };
+
         /// <summary>
         ///     Raise Event on Attack
         /// </summary>
@@ -174,6 +176,11 @@ namespace InventoryQuest.Game.Fight
         protected void InvokeEvent_onCreatingEnemies(FightControllerEventArgs fightControllerEventArgs)
         {
             onCreatingEnemies.Invoke(this, fightControllerEventArgs);
+        }
+
+        protected void InvokeEvent_onKill(FightControllerEventArgs fightControllerEventArgs)
+        {
+            onKill.Invoke(this, fightControllerEventArgs);
         }
 
         /// <summary>

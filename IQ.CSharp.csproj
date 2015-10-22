@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -74,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ExperienceBar.cs" />
     <Compile Include="Assets\MessageBox.cs" />
     <Compile Include="Assets\Scripts\DebugOptions.cs" />
     <Compile Include="Assets\Scripts\Equipment\EquipmentSlot.cs" />
@@ -83,7 +86,7 @@
     <Compile Include="Assets\Scripts\Equipment\ShowTooltip.cs" />
     <Compile Include="Assets\Scripts\Equipment\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
-    <Compile Include="Assets\Scripts\Game\Fight\AttackMessage.cs" />
+    <Compile Include="Assets\Scripts\Game\Fight\FloatingMessage.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\CombatLineManager.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\FightController.cs" />

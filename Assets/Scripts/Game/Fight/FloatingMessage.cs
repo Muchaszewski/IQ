@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System;
 
 [Serializable]
-public class AttackMessage
+public class FloatingMessage
 {
 
-    public List<AttackMessageData> AttackDatas = new List<AttackMessageData>();
+    public List<FloatingMessageData> AttackDatas = new List<FloatingMessageData>();
 
     [Serializable]
-    public class AttackMessageData
+    public class FloatingMessageData
     {
         private EnumAttackMessage _message;
         private float _value;
@@ -26,9 +26,9 @@ public class AttackMessage
             set { _value = value; }
         }
 
-        private AttackMessageData() { }
+        private FloatingMessageData() { }
 
-        public AttackMessageData(EnumAttackMessage message, float value = 0f)
+        public FloatingMessageData(EnumAttackMessage message, float value = 0f)
         {
             _message = message;
             _value = value;
@@ -37,10 +37,10 @@ public class AttackMessage
 
     public void Add(EnumAttackMessage message, float value = 0f)
     {
-        AttackDatas.Add(new AttackMessageData(message, value));
+        AttackDatas.Add(new FloatingMessageData(message, value));
     }
 
-    public AttackMessageData this[int index]
+    public FloatingMessageData this[int index]
     {
         get { return AttackDatas[index]; }
     }
@@ -55,4 +55,5 @@ public enum EnumAttackMessage
     Absorb,
     Critical,
     FinalDamage,
+    Experience,
 }

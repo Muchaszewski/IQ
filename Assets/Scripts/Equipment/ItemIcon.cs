@@ -18,7 +18,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 {
     public InventoryQuest.Components.Items.Item ItemData { get; set; }
 
-    public Image Overlay;
+    public GameObject Overlay;
 
     public RectTransform RectTransform
     {
@@ -72,6 +72,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     public void OnDestroy()
     {
         GetComponent<ShowTooltip>().ToolTipManager.RemoveTooltipReference();
+        Player.LeveledUp -= PlayerOnLeveledUp;
     }
 
     public static void SetReferences()
@@ -101,7 +102,7 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
 
     void SetOverlay(bool option)
     {
-        Overlay.enabled = option;
+        Overlay.GetComponent<Image>().enabled = option;
     }
 
     public void Sell()

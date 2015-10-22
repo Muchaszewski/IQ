@@ -58,6 +58,7 @@ MonoBehaviour:
   ColorBlocked: {r: .501960814, g: .501960814, b: .501960814, a: 1}
   ColorAbsorbed: {r: 1, g: .501960814, b: .501960814, a: 1}
   ColorExhausted: {r: .752941191, g: .752941191, b: .752941191, a: 1}
+  ColorExperience: {r: 0, g: 1, b: .83448267, a: 1}
   IsIncreasingInSize: 1
   TimeToSizeUp: .300000012
 --- !u!114 &11493176
@@ -73,6 +74,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d1e7959a8a7ef3645b19c6f1e53c6957, type: 3}
     m_FontSize: 20
@@ -247,6 +254,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Text
       value: damn
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorExperience.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorExperience.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorExperience.b
+      value: .83448267
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorExperience.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
