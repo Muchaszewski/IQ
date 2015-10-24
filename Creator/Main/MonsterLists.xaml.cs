@@ -23,7 +23,7 @@ namespace Creator.Main
     /// <summary>
     /// Interaction logic for MonsterLists.xaml
     /// </summary>
-    public partial class MonsterLists : UserControl
+    public partial class MonsterLists : UserControl, IGenericTab
     {
 
         private ComboBox _comboBoxMonsterLists;
@@ -33,12 +33,12 @@ namespace Creator.Main
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                PopulateMonsterLists();
+                PopulateControls();
             }
         }
 
 
-        private void PopulateMonsterLists()
+        public void PopulateControls()
         {
             //MonsterLists
             DataGridMonsterLists.ItemsSource = GenerationStorage.Instance.EntityLists;

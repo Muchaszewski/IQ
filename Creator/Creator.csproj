@@ -107,6 +107,7 @@
     <Compile Include="Main\Areas.xaml.cs">
       <DependentUpon>Areas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main\IGenericTab.cs" />
     <Compile Include="Main\Items.xaml.cs">
       <DependentUpon>Items.xaml</DependentUpon>
     </Compile>

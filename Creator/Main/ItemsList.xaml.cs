@@ -23,7 +23,7 @@ namespace Creator.Main
     /// <summary>
     /// Interaction logic for ItemsList.xaml
     /// </summary>
-    public partial class ItemsList : UserControl
+    public partial class ItemsList : UserControl, IGenericTab
     {
         public ItemsList()
         {
@@ -32,7 +32,7 @@ namespace Creator.Main
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                PopulateItemsList();
+                PopulateControls();
             }
         }
 
@@ -45,7 +45,7 @@ namespace Creator.Main
 
         private IEnumerable<ItemType> ItemsOfSelectedType;
 
-        private void PopulateItemsList()
+        public void PopulateControls()
         {
             DataGridItemsLists.ItemsSource = GenerationStorage.Instance.ItemsLists;
         }

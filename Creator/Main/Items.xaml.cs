@@ -25,7 +25,7 @@ namespace Creator.Main
     /// <summary>
     /// Interaction logic for Items.xaml
     /// </summary>
-    public partial class Items : UserControl
+    public partial class Items : UserControl, IGenericTab
     {
         private List<List<Image>> _imagesItemsList;
         private List<List<string>> _soundsItemsList;
@@ -43,13 +43,22 @@ namespace Creator.Main
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
                 _imagesItemsList = LoadAllItemsImages();
+ 
                 _soundsItemsList = LoadAllItemsSounds();
-
-                PopulateItems();
+                try
+                {
+                    PopulateControls();
+                }
+                catch (TypeInitializationException)
+                {
+                    MessageBox.Show("Missing Storage.xml file");
+                    System.Diagnostics.Process.GetCurrentProcess().Close();
+                    return;
+                }
             }
         }
 
-        private void PopulateItems()
+        public void PopulateControls()
         {
             ComboBoxItemsType.ItemsSource = Enum.GetNames(typeof(EnumItemType));
             ComboBoxItemsType.SelectedIndex = 0;
@@ -57,6 +66,7 @@ namespace Creator.Main
             ComboBoxItemSkill.ItemsSource = Enum.GetNames(typeof(EnumItemClassSkill));
             ComboBoxRarity.ItemsSource = Enum.GetNames(typeof(EnumItemRarity));
             ComboBoxItemRequiredHands.ItemsSource = Enum.GetNames(typeof(EnumItemHands));
+            PopulateDataGridItemsAll();
         }
 
         private static List<List<Image>> LoadAllItemsImages()

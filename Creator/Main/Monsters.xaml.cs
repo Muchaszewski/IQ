@@ -25,7 +25,7 @@ namespace Creator.Main
     /// <summary>
     /// Interaction logic for Monsters.xaml
     /// </summary>
-    public partial class Monsters : UserControl
+    public partial class Monsters : UserControl, IGenericTab
     {
         private List<List<Image>> _imagesMonstersList;
 
@@ -41,13 +41,13 @@ namespace Creator.Main
             {
                 _imagesMonstersList = LoadAllMonstersImages();
 
-                PopulateMonster();
+                PopulateControls();
             }
 
             DataGridMonsterAllItems.SelectedIndex = 0;
         }
 
-        private void PopulateMonster()
+        public void PopulateControls()
         {
             //MonsterItems
             DataGridMonsterAllItems.ItemsSource = GenerationStorage.Instance.Entities;

@@ -32,23 +32,7 @@ namespace Creator.Main
             InitializeComponent();
             _parentWindow = this;
 
-            LoadAll();
         }
-
-        public void LoadAll()
-        {
-            try
-            {
-                //PopulateItems();
-            }
-            catch (TypeInitializationException)
-            {
-                MessageBox.Show("Missing Storage.xml file");
-                System.Diagnostics.Process.GetCurrentProcess().Close();
-                return;
-            }
-        }
-
 
         private void ValidateItems()
         {
@@ -67,13 +51,6 @@ namespace Creator.Main
             {
                 //DataGridAreasAll.SelectedItem = temp;
             }
-        }
-
-        private void RefreshAll()
-        {
-            GenerationStorage.SetInstance(GenerationStorage.LoadXml());
-            //PopulateDataGridItemsAll();
-            LoadAll();
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
@@ -102,7 +79,7 @@ namespace Creator.Main
 
         private void MenuItemReload_Click(object sender, RoutedEventArgs e)
         {
-            RefreshAll();
+            RefreshWithLoad();
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
@@ -121,9 +98,19 @@ namespace Creator.Main
 
         private void Refresh()
         {
-            LoadAll();
-            //PopulateDataGridItemsAll();
+            Items.PopulateControls();
+            ItemsList.PopulateControls();
+            MonsterLists.PopulateControls();
+            Monsters.PopulateControls();
+            Areas.PopulateControls();
         }
+
+        private void RefreshWithLoad()
+        {
+            GenerationStorage.SetInstance(GenerationStorage.LoadXml());
+            Refresh();
+        }
+
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -145,7 +132,7 @@ namespace Creator.Main
             }
             if (e.Key == Key.R && isCtrlKey)
             {
-                RefreshAll();
+                RefreshWithLoad();
                 e.Handled = true;
             }
             if (e.Key == Key.F5)

@@ -21,7 +21,7 @@ namespace Creator.Main
     /// <summary>
     /// Interaction logic for Areas.xaml
     /// </summary>
-    public partial class Areas : UserControl
+    public partial class Areas : UserControl, IGenericTab
     {
         private Window _parentWindow;
 
@@ -34,11 +34,11 @@ namespace Creator.Main
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                PopulateAreas();
+                PopulateControls();
             }
         }
 
-        void PopulateAreas()
+        public void PopulateControls()
         {
             DataGridAreasAll.ItemsSource = GenerationStorage.Instance.Spots;
             DataGridAreasMonsterListAll.ItemsSource = GenerationStorage.Instance.EntityLists;

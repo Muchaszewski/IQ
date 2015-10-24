@@ -22,19 +22,19 @@
         </Menu>
         <TabControl Margin="0,22,0,0">
             <TabItem Header="Items" Width="100">
-                <main:Items></main:Items>
+                <main:Items x:Name="Items"></main:Items>
             </TabItem>
             <TabItem Header="Item lists" Width="100">
-                <main:ItemsList></main:ItemsList>
+                <main:ItemsList x:Name="ItemsList"></main:ItemsList>
             </TabItem>
             <TabItem Header="Monsters" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <main:Monsters></main:Monsters>
+                <main:Monsters x:Name="Monsters"></main:Monsters>
             </TabItem>
             <TabItem Header="Monster lists" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <main:MonsterLists></main:MonsterLists>
+                <main:MonsterLists x:Name="MonsterLists"></main:MonsterLists>
             </TabItem>
             <TabItem Header="Areas" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <main:Areas></main:Areas>
+                <main:Areas x:Name="Areas"></main:Areas>
             </TabItem>
         </TabControl>
     </Grid>
