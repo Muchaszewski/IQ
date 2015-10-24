@@ -74,10 +74,10 @@ MonoBehaviour:
   MaxCombatPosition: 241
   IsRightSide: 1
   EntityID: 0
-  ShrinkedScale: .800000012
+  ShrinkedScale: .899999976
   ShrinkStep: 10
-  GrowScale: 1.10000002
-  GrowStep: 5
+  GrowScale: 1.14999998
+  GrowStep: 10
 --- !u!222 &22285044
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: GrowStep
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FloatingTextGameObject
@@ -137,6 +137,14 @@ Prefab:
       propertyPath: AnimationPrefab
       value: 
       objectReference: {fileID: 179112, guid: 488c32529d048424889a37115e2c1b42, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ShrinkedScale
+      value: .899999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GrowScale
+      value: 1.14999998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130808}

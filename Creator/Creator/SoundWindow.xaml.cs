@@ -132,39 +132,47 @@ namespace Creator
         {
             var type = ListBoxTypes.SelectedIndex;
             var image = ListBoxImages.SelectedIndex;
-            var item = new PairTypeItem()
-            {
-                Type = ResourcesNames.ItemsSoundsNames[type].Name,
-                Item = ResourcesNames.ItemsSoundsNames[type].List[image]
-            };
-            ImagesID[(int)EnumItemSoundType.Drag] = item;
-            PopulateListBoxImageIDs();
+            if (type != -1) {
+                var item = new PairTypeItem()
+                {
+                    Type = ResourcesNames.ItemsSoundsNames[type].Name,
+                    Item = ResourcesNames.ItemsSoundsNames[type].List[image]
+                };
+                ImagesID[(int)EnumItemSoundType.Drag] = item;
+                PopulateListBoxImageIDs();
+            }
         }
 
         private void ButtonDropAdd_Click(object sender, RoutedEventArgs e)
         {
             var type = ListBoxTypes.SelectedIndex;
             var image = ListBoxImages.SelectedIndex;
-            var item = new PairTypeItem()
+            if (type != -1)
             {
-                Type = ResourcesNames.ItemsSoundsNames[type].Name,
-                Item = ResourcesNames.ItemsSoundsNames[type].List[image]
-            };
-            ImagesID[(int)EnumItemSoundType.Drop] = item;
-            PopulateListBoxImageIDs();
+                var item = new PairTypeItem()
+                {
+                    Type = ResourcesNames.ItemsSoundsNames[type].Name,
+                    Item = ResourcesNames.ItemsSoundsNames[type].List[image]
+                };
+                ImagesID[(int)EnumItemSoundType.Drop] = item;
+                PopulateListBoxImageIDs();
+            }
         }
 
         private void ButtonEquipAdd_Click(object sender, RoutedEventArgs e)
         {
             var type = ListBoxTypes.SelectedIndex;
             var image = ListBoxImages.SelectedIndex;
-            var item = new PairTypeItem()
+            if (type != -1)
             {
-                Type = ResourcesNames.ItemsSoundsNames[type].Name,
-                Item = ResourcesNames.ItemsSoundsNames[type].List[image]
-            };
-            ImagesID[(int)EnumItemSoundType.Equip] = item;
-            PopulateListBoxImageIDs();
+                var item = new PairTypeItem()
+                {
+                    Type = ResourcesNames.ItemsSoundsNames[type].Name,
+                    Item = ResourcesNames.ItemsSoundsNames[type].List[image]
+                };
+                ImagesID[(int)EnumItemSoundType.Equip] = item;
+                PopulateListBoxImageIDs();
+            }
         }
     }
 }
