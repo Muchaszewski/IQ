@@ -4,6 +4,7 @@ namespace InventoryQuest.Components
 {
     public class ItemsLists
     {
+        private EnumItemListType _enumItemListType = EnumItemListType.General;
         private List<GenerationWeight> _ArmorTypeID = new List<GenerationWeight>();
         private List<GenerationWeight> _JeweleryTypeID = new List<GenerationWeight>();
         private List<GenerationWeight> _OffHandTypeID = new List<GenerationWeight>();
@@ -63,5 +64,20 @@ namespace InventoryQuest.Components
             get { return _LoreTypeID; }
             set { _LoreTypeID = value; }
         }
+
+        public EnumItemListType ItemListType
+        {
+            get { return _enumItemListType; }
+            set { _enumItemListType = value; }
+        }
+    }
+
+    public enum EnumItemListType
+    {
+        //For items drop form casual monsters
+        General,
+        Special,
+        Lore,
+        Bestiary,
     }
 }

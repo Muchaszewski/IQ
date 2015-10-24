@@ -77,103 +77,112 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="Creator\App.xaml">
+    <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Creator\DisplayNameWeightList.cs" />
-    <Compile Include="Creator\EnumTypeID.cs" />
-    <Compile Include="Creator\ImageAreaWindow.xaml.cs">
+    <Compile Include="DisplayNameWeightList.cs" />
+    <Compile Include="EnumTypeID.cs" />
+    <Compile Include="ImageAreaWindow.xaml.cs">
       <DependentUpon>ImageAreaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\ImageMonstersWindow.xaml.cs">
+    <Compile Include="ImageMonstersWindow.xaml.cs">
       <DependentUpon>ImageMonstersWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\SoundWindow.xaml.cs">
+    <Compile Include="Main\Items.xaml.cs">
+      <DependentUpon>Items.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundWindow.xaml.cs">
       <DependentUpon>SoundWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\ListWindow.xaml.cs">
+    <Compile Include="ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\MainWindow.xaml.cs">
+    <Compile Include="Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\MinMaxStatTypeWindow.xaml.cs">
+    <Compile Include="MinMaxStatTypeWindow.xaml.cs">
       <DependentUpon>MinMaxStatTypeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\ResourcesManager.cs" />
-    <Compile Include="Creator\StatAllowedWindow.xaml.cs">
+    <Compile Include="ResourcesManager.cs" />
+    <Compile Include="StatAllowedWindow.xaml.cs">
       <DependentUpon>StatAllowedWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\TextUtils.cs" />
-    <Compile Include="Creator\Validation.cs" />
-    <Compile Include="Creator\Options.xaml.cs">
+    <Compile Include="TextUtils.cs" />
+    <Compile Include="Utils\ItemUtils.cs" />
+    <Compile Include="Utils\GenericUtils.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
     </Compile>
-    <Page Include="Creator\ImageAreaWindow.xaml">
+    <Page Include="ImageAreaWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Creator\ImageMonstersWindow.xaml">
+    <Page Include="ImageMonstersWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Creator\SoundWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Creator\ImageWindow.xaml">
+    <Page Include="Main\Items.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\ListEditor.xaml">
+    <Page Include="SoundWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\ListWindow.xaml">
+    <Page Include="ListEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Creator\App.xaml.cs">
+    <Page Include="ListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Creator\ImageWindow.xaml.cs">
+    <Compile Include="ImageWindow.xaml.cs">
       <DependentUpon>ImageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\ListEditor.xaml.cs">
+    <Compile Include="ListEditor.xaml.cs">
       <DependentUpon>ListEditor.xaml</DependentUpon>
     </Compile>
-    <Page Include="Creator\MainWindow.xaml">
+    <Page Include="Main\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\MessageBoxInput.xaml">
+    <Page Include="MessageBoxInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\MinMaxStatTypeWindow.xaml">
+    <Page Include="MinMaxStatTypeWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Creator\MinMaxStatWindow.xaml">
+    <Page Include="MinMaxStatWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\StatAllowedWindow.xaml">
+    <Page Include="StatAllowedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Creator\Options.xaml">
+    <Page Include="Options.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creator\MessageBoxInput.xaml.cs">
+    <Compile Include="MessageBoxInput.xaml.cs">
       <DependentUpon>MessageBoxInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Creator\MinMaxStatWindow.xaml.cs">
+    <Compile Include="MinMaxStatWindow.xaml.cs">
       <DependentUpon>MinMaxStatWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -199,9 +208,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Creator\App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InventoryQuest\InventoryQuest.csproj">
