@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -38,10 +39,14 @@ namespace Creator.Main
             InitializeComponent();
             _parentWindow = Window.GetWindow(this);
 
-            _imagesItemsList = LoadAllItemsImages();
-            _soundsItemsList = LoadAllItemsSounds();
+            //Do not execute this part of the code if its in edior
+            if (!DesignerProperties.GetIsInDesignMode(this))
+            {
+                _imagesItemsList = LoadAllItemsImages();
+                _soundsItemsList = LoadAllItemsSounds();
 
-            PopulateItems();
+                PopulateItems();
+            }
         }
 
         private void PopulateItems()

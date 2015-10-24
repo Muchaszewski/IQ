@@ -3,18 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:InventoryQuest.Components.Entities;assembly=InventoryQuest"
-        xmlns:mainWindow="clr-namespace:Creator.Main"
+        xmlns:main="clr-namespace:Creator.Main"
         Title="Inventory Quest Data Editor" Height="720" Width="1280" Closing="Window_Closing" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_PreviewKeyDown">
-    <Window.Resources>
-        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityType">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="local:EnumEntityType"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
 
+    <Window.Resources>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityRarity">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="local:EnumEntityRarity"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityType">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:EnumEntityType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
 
@@ -24,7 +25,7 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
-
+    
     <Grid>
         <Menu Margin="0,0,0,10">
             <MenuItem Header="File">
@@ -41,187 +42,13 @@
         </Menu>
         <TabControl Margin="0,22,0,0">
             <TabItem Header="Items" Width="100">
-                <mainWindow:Items></mainWindow:Items>
+                <main:Items></main:Items>
             </TabItem>
             <TabItem Header="Item lists" Width="100">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="DataGridItemsLists" HorizontalAlignment="Left" Margin="10,36,0,10" Width="290" AutoGenerateColumns="False" SelectionChanged="DataGridItemsLists_SelectionChanged" SelectionMode="Single" CanUserReorderColumns="False" CanUserSortColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
-                        </DataGrid.Columns>
-                        <DataGrid.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Style.Triggers>
-                                    <MultiTrigger>
-                                        <MultiTrigger.Conditions>
-                                            <Condition Property="IsReadOnly" Value="True"></Condition>
-                                            <Condition Property="IsSelected" Value="True"></Condition>
-                                        </MultiTrigger.Conditions>
-                                        <MultiTrigger.Setters>
-                                            <Setter Property="Background" Value="DarkGray"></Setter>
-                                            <Setter Property="Foreground" Value="Black"></Setter>
-                                        </MultiTrigger.Setters>
-                                    </MultiTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.CellStyle>
-                    </DataGrid>
-                    <DataGrid x:Name="DataGridItemsCategoryList"  HorizontalAlignment="Left" Margin="305,36,0,10" Width="290" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGridItemsCategoryList_SelectionChanged" CanUserAddRows="False" CanUserDeleteRows="False" PreviewTextInput="DataGridItemsCategoryList_PreviewTextInput" CellEditEnding="DataGridItemsCategoryList_CellEditEnding" CanUserReorderColumns="False" CanUserSortColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Group" IsReadOnly="True" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Count" IsReadOnly="True" Binding="{Binding Count}"/>
-                            <DataGridTextColumn Header="Weight" IsReadOnly="False" Binding="{Binding Weight}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <DataGrid x:Name="DataGridItemsListsItems" HorizontalAlignment="Left" Margin="600,36,0,10" Width="290" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridItemsListsItems_SelectionChanged" SelectionMode="Single" CellEditEnding="DataGridItemsListsItems_CellEditEnding" PreviewTextInput="DataGridItemsListsItems_PreviewTextInput" CanUserReorderColumns="False" CanUserSortColumns="False" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <DataGrid x:Name="DataGridItemsListsAll" Margin="956,36,10,10" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridItemsListsAll_SelectionChanged" CanUserReorderColumns="False" CanUserSortColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Rarity" IsReadOnly="True" Binding="{Binding Rarity}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button x:Name="ButtonItemsListsAdd" Content="Button" HorizontalAlignment="Left" Margin="908,240,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowLeft}" Height="30" IsEnabled="False" Click="ButtonItemsListsAdd_Click" />
-                    <Button x:Name="ButtonItemsListsRemove" Content="Button" HorizontalAlignment="Left" Margin="908,275,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"  IsEnabled="False" Click="ButtonItemsListsRemove_Click"/>
-                    <TextBox x:Name="TextBoxItemsListsWeight" HorizontalAlignment="Left" Height="23" Margin="902,310,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="42" ToolTip="New items default weight" PreviewTextInput="TextBoxItemsListsWeight_PreviewTextInput"/>
-                    <Label Content="Items Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="List Groups" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Group Iems" HorizontalAlignment="Left" Margin="600,10,0,0" VerticalAlignment="Top"/>
-                </Grid>
+                <main:ItemsList></main:ItemsList>
             </TabItem>
             <TabItem Header="Monsters" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="DataGridMonsterAllItems" HorizontalAlignment="Left" Margin="10,10,0,10" Width="250" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGridMonsterAllItems_SelectionChanged" AddingNewItem="DataGridMonsterAllItems_AddingNewItem" CanUserDeleteRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True" MinWidth="20"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="False" MinWidth="80"/>
-                            <DataGridComboBoxColumn Header="Group" ItemsSource="{Binding Mode=OneWay, Source={StaticResource GetEnumEntityType}}" SelectedValueBinding="{Binding Type}" IsReadOnly="True"/>
-                        </DataGrid.Columns>
-
-                    </DataGrid>
-                    <TabControl HorizontalAlignment="Left" Height="619" Margin="265,10,0,0" VerticalAlignment="Top" Width="736">
-                        <TabItem Header="General" Width="100">
-                            <Grid Background="#FFE5E5E5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Label Content="Name:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
-                                <TextBox x:Name="TextBoxMonsterName" HorizontalAlignment="Left" Height="23" Margin="120,10,0,0" TextWrapping="Wrap" Text="!!NoName!!" VerticalAlignment="Top" Width="235" TextChanged="TextBoxMonsterName_TextChanged"/>
-                                <Label Content="Sex:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="26" Width="31"/>
-                                <ComboBox x:Name="ComboBoxMonsterSex" HorizontalAlignment="Left" Margin="120,65,0,0" VerticalAlignment="Top" Width="93" ItemsSource="{Binding Source={StaticResource GetEnumSex}, Mode=OneWay}" SelectedIndex="1" SelectionChanged="ComboBoxMonsterSex_SelectionChanged" Height="22"/>
-                                <Label Content="Type:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
-                                <ComboBox x:Name="ComboBoxMonsterType" HorizontalAlignment="Left" Margin="120,38,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Source={StaticResource GetEnumEntityType}, Mode=OneWay}" SelectedIndex="0" SelectionChanged="ComboBoxMonsterType_SelectionChanged" Height="22"/>
-                                <Label Content="Health:" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="47"/>
-                                <Button x:Name="ButtonMonstersHealth" Content="putHealthHere" HorizontalAlignment="Left" Margin="120,102,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersHealth_Click" Height="20"/>
-                                <Label Content="Health Regen:" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="84"/>
-                                <Button x:Name="ButtonMonstersHealthReg" Content="putHealthRegHere" HorizontalAlignment="Left" Margin="120,127,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersHealthReg_Click" Height="20"/>
-                                <Label Content="Mana:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="42"/>
-                                <Button x:Name="ButtonMonstersMana" Content="putManaHere" HorizontalAlignment="Left" Margin="120,162,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersMana_Click" Height="20"/>
-                                <Label Content="Mana Regen:" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="79"/>
-                                <Button x:Name="ButtonMonstersManaRegen" Content="putManaRegHere" HorizontalAlignment="Left" Margin="120,187,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersManaRegen_Click" Height="20"/>
-                                <Label Content="Shield:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="45"/>
-                                <Button x:Name="ButtonMonstersShield" Content="putShieldHere" HorizontalAlignment="Left" Margin="120,222,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersShield_Click" Height="20"/>
-                                <Label Content="Shield Regen:" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="82"/>
-                                <Button x:Name="ButtonMonstersShieldRegen" Content="putShieldRegHere" HorizontalAlignment="Left" Margin="120,247,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersShieldRegen_Click" Height="20"/>
-                                <Label Content="Movment:" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="64"/>
-                                <Button x:Name="ButtonMonstersMovment" Content="putMovementHere" HorizontalAlignment="Left" Margin="120,342,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersMovment_Click" Height="20"/>
-                                <Label Content="ID:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Height="26" Grid.Column="1" Width="24"/>
-                                <TextBox x:Name="TextBoxMonsterID" HorizontalAlignment="Left" Height="23" Margin="120,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Text="0" TextChanged="TextBoxMonsterID_TextChanged" IsReadOnly="True" Background="#FFE2E2E2" Grid.Column="1"/>
-                                <Label Content="Stamina:" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="55"/>
-                                <Button x:Name="ButtonMonstersStamina" Content="putShieldHere" HorizontalAlignment="Left" Margin="120,282,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersStamina_Click" Height="20"/>
-                                <Label Content="Stamina Regen:" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="92"/>
-                                <Button x:Name="ButtonMonstersStaminaRegen" Content="putShieldRegHere" HorizontalAlignment="Left" Margin="120,307,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersStaminaRegen_Click" Height="20"/>
-                                <Label Content="Range:" HorizontalAlignment="Left" Margin="10,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115" Height="26" Width="64"/>
-                                <Button x:Name="ButtonMonstersRange" Content="putRangeHere" HorizontalAlignment="Left" Margin="120,367,0,0" VerticalAlignment="Top" Width="180" Height="20" Click="ButtonMonstersRange_Click"/>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Offense" Width="100">
-                            <Grid Background="#FFE5E5E5" Margin="0,-3,0,3">
-                                <Label Content="Pierce:" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersArmorPenetration" Content="putArmorPenetrationHere" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersArmorPenetration_Click"/>
-                                <Label Content="Critical Chance:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersCriticalChance" Content="putCriticalChanceHere" HorizontalAlignment="Left" Margin="120,70,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersCriticalChance_Click"/>
-                                <Label Content="Critical Damage:" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersCriticalDamage" Content="putCriticalDamageHere" HorizontalAlignment="Left" Margin="120,95,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersCriticalDamage_Click"/>
-                                <Label Content="Speed:" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersAttackSpeed" Content="putAttackSpeedHere" HorizontalAlignment="Left" Margin="120,130,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersAttackSpeed_Click"/>
-                                <Label Content="Min Damage:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersMinDmg" Content="putMinDamageHere" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersMinDmg_Click"/>
-                                <Label Content="Max Damage:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersMaxDmg" Content="putMaxDamageHere" HorizontalAlignment="Left" Margin="120,35,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersMaxDmg_Click"/>
-                                <Label Content="Accuracy:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersAccuracy" Content="putAccuracyHere" HorizontalAlignment="Left" Margin="120,155,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersAccuracy_Click"/>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Defense" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                            <Grid Background="#FFE5E5E5">
-                                <Label Content="Block Amount:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersBlockAmount" Content="putBlockAmountHere" HorizontalAlignment="Left" Margin="120,100,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersBlockAmount_Click"/>
-                                <Label Content="Block Chance:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersBlockChance" Content="putBlockChanceHere" HorizontalAlignment="Left" Margin="120,125,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersBlockChance_Click"/>
-                                <Label Content="Evasion:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersEvasion" Content="putEvasionRegHere" HorizontalAlignment="Left" Margin="120,49,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersEvasion_Click"/>
-                                <Label Content="Parry:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersDeflection" Content="putDeflectionHere" HorizontalAlignment="Left" Margin="120,75,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersDeflection_Click"/>
-                                <Label Content="Armor:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.115"/>
-                                <Button x:Name="ButtonMonstersDefence" Content="putArmorHere" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="180" Click="ButtonMonstersDefence_Click"/>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Item Drops" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                            <Grid Background="#FFE5E5E5">
-                                <DataGrid x:Name="DataGridMonstersItems" HorizontalAlignment="Left" Margin="88,0,0,10" Width="250" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGridMonstersItems_SelectionChanged" Height="251" VerticalAlignment="Bottom">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <DataGrid x:Name="DataGridMonstersItemsList" Margin="0,0,90,10" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridMonstersItemsList_SelectionChanged" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
-
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <Button x:Name="ButtonMonsterAdd" Content="Button" Margin="350,0,351,105" VerticalAlignment="Bottom" Template="{DynamicResource ResourceKey=ButtonArrowLeft}" Height="30" IsEnabled="False" Click="ButtonMonsterAdd_Click"/>
-                                <Button x:Name="ButtonMonstersRemove" Content="Button" Margin="350,0,351,70" VerticalAlignment="Bottom" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"  IsEnabled="False" Click="ButtonMonstersRemove_Click"/>
-                                <TextBox x:Name="TextBoxMonsterItemsLists" Margin="343,0,345,42" TextWrapping="Wrap" Text="0" ToolTip="New items default weight" PreviewTextInput="TextBoxMonsterItemsLists_PreviewTextInput" Height="23" VerticalAlignment="Bottom" />
-                                <Label Content="Drop Item Lists" HorizontalAlignment="Left" Margin="88,299,0,0" VerticalAlignment="Top"/>
-                                <Label Content="TODO:  A list with drop rolls" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                        </TabItem>
-                    </TabControl>
-                    <TabControl Margin="0,10,10,10" HorizontalAlignment="Right" Width="250">
-                        <TabItem Header="Images">
-                            <Grid Background="#FFE5E5E5">
-                                <ListBox x:Name="ListBoxMonsterImages" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.RowSpan="2" MouseDoubleClick="ListBoxMonsterImages_MouseDoubleClick">
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <WrapPanel IsItemsHost="True"/>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
-                                </ListBox>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Templates">
-                            <Grid Background="#FFE5E5E5">
-                                <Button x:Name="ButtonAddTemplate" Content="Choose Current as a new template" Margin="0,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="224" Click="ButtonAddTemplate_Click"/>
-                                <DataGrid x:Name="DataGridMonstersTemplates" Margin="10,10,10,37" CanUserAddRows="False" AutoGenerateColumns="False" SelectionMode="Single" >
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="False"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <Label Content="Work in progres. 99% will crash" HorizontalAlignment="Left" Margin="31,265,0,0" VerticalAlignment="Top" Width="180"/>
-                            </Grid>
-                        </TabItem>
-                    </TabControl>
-                </Grid>
-
+                <main:Monsters></main:Monsters>
             </TabItem>
             <TabItem Header="Monster lists" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
                 <Grid Background="#FFE5E5E5">

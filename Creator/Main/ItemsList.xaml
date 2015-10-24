@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Creator.Main.ItemsList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Creator.Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid Background="#FFE5E5E5">
+        <DataGrid x:Name="DataGridItemsLists" HorizontalAlignment="Left" Margin="10,36,0,10" Width="290" AutoGenerateColumns="False" SelectionChanged="DataGridItemsLists_SelectionChanged" SelectionMode="Single" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Style.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsReadOnly" Value="True"></Condition>
+                                <Condition Property="IsSelected" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" Value="DarkGray"></Setter>
+                                <Setter Property="Foreground" Value="Black"></Setter>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <DataGrid x:Name="DataGridItemsCategoryList"  HorizontalAlignment="Left" Margin="305,36,0,10" Width="290" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGridItemsCategoryList_SelectionChanged" CanUserAddRows="False" CanUserDeleteRows="False" PreviewTextInput="DataGridItemsCategoryList_PreviewTextInput" CellEditEnding="DataGridItemsCategoryList_CellEditEnding" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Group" IsReadOnly="True" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Count" IsReadOnly="True" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="Weight" IsReadOnly="False" Binding="{Binding Weight}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DataGridItemsListsItems" HorizontalAlignment="Left" Margin="600,36,0,10" Width="290" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridItemsListsItems_SelectionChanged" SelectionMode="Single" CellEditEnding="DataGridItemsListsItems_CellEditEnding" PreviewTextInput="DataGridItemsListsItems_PreviewTextInput" CanUserReorderColumns="False" CanUserSortColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DataGridItemsListsAll" Margin="956,36,10,10" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridItemsListsAll_SelectionChanged" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Rarity" IsReadOnly="True" Binding="{Binding Rarity}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonItemsListsAdd" Content="Button" HorizontalAlignment="Left" Margin="908,240,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowLeft}" Height="30" IsEnabled="False" Click="ButtonItemsListsAdd_Click" />
+        <Button x:Name="ButtonItemsListsRemove" Content="Button" HorizontalAlignment="Left" Margin="908,275,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"  IsEnabled="False" Click="ButtonItemsListsRemove_Click"/>
+        <TextBox x:Name="TextBoxItemsListsWeight" HorizontalAlignment="Left" Height="23" Margin="902,310,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="42" ToolTip="New items default weight" PreviewTextInput="TextBoxItemsListsWeight_PreviewTextInput"/>
+        <Label Content="Items Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="List Groups" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Group Iems" HorizontalAlignment="Left" Margin="600,10,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
