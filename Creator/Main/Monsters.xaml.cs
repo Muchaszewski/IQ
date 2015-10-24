@@ -650,7 +650,6 @@ namespace Creator.Main
                 var item = DataGridMonsterAllItems.SelectedItem as EntityType;
                 var window = new ImageMonstersWindow(item.ImageID);
                 GenericUtils.CenterWindow(_parentWindow, window);
-                window.ShowDialog();
                 RefreshAllMonstersControls();
             }
         }

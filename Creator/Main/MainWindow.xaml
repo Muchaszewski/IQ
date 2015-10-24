@@ -6,26 +6,6 @@
         xmlns:main="clr-namespace:Creator.Main"
         Title="Inventory Quest Data Editor" Height="720" Width="1280" Closing="Window_Closing" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_PreviewKeyDown">
 
-    <Window.Resources>
-        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityRarity">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="local:EnumEntityRarity"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-
-        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityType">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="local:EnumEntityType"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-
-        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumSex">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="local:EnumSex"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </Window.Resources>
-    
     <Grid>
         <Menu Margin="0,0,0,10">
             <MenuItem Header="File">
@@ -51,116 +31,10 @@
                 <main:Monsters></main:Monsters>
             </TabItem>
             <TabItem Header="Monster lists" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="DataGridMonsterLists" HorizontalAlignment="Left" Width="290" Margin="10,36,0,10"  AutoGenerateColumns="False"  SelectionMode="Single" SelectionChanged="DataGridMonsterLists_SelectionChanged">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="150"/>
-                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" MinWidth="40" IsReadOnly="True"/>
-                        </DataGrid.Columns>
-                        <DataGrid.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Style.Triggers>
-                                    <MultiTrigger>
-                                        <MultiTrigger.Conditions>
-                                            <Condition Property="IsReadOnly" Value="True"></Condition>
-                                            <Condition Property="IsSelected" Value="True"></Condition>
-                                        </MultiTrigger.Conditions>
-                                        <MultiTrigger.Setters>
-                                            <Setter Property="Background" Value="DarkGray"></Setter>
-                                            <Setter Property="Foreground" Value="Black"></Setter>
-                                        </MultiTrigger.Setters>
-                                    </MultiTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.CellStyle>
-                    </DataGrid>
-                    <DataGrid x:Name="DataGridMonsterListsItems" HorizontalAlignment="Left" Margin="305,36,0,10" Width="290" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True" Width="Auto" MinWidth="20"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="Auto"/>
-                            <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" IsReadOnly="False" Width="Auto"/>
-
-                            <DataGridTextColumn IsReadOnly="True">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <ComboBox Name="DataGridMonsterListsItemsRarity" ItemsSource="{Binding Source={StaticResource GetEnumEntityRarity}, Mode=OneWay}" SelectedIndex="0" SelectionChanged="DataGridMonsterListsItemsRarity_SelectionChanged"></ComboBox>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <DataGrid x:Name="DataGridMonsterListsAllItems" HorizontalAlignment="Left" Margin="647,36,0,10" Width="300" AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserAddRows="False" SelectionChanged="DataGridMonsterItems_SelectionChanged">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True" MinWidth="20"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" MinWidth="80"/>
-
-                            <DataGridComboBoxColumn Header="Group" ItemsSource="{Binding Source={StaticResource GetEnumEntityType}, Mode=OneWay}" SelectedValueBinding="{Binding Type}" IsReadOnly="True"/>
-
-                        </DataGrid.Columns>
-
-                    </DataGrid>
-                    <Button x:Name="ButtonMonsterListsAdd" Content="Button" HorizontalAlignment="Left" Margin="606,288,0,0" VerticalAlignment="Top" Width="30" Template="{DynamicResource ResourceKey=ButtonArrowLeft}" Height="30" Click="MonsterListsAdd_Click" IsEnabled="False"/>
-                    <Button x:Name="ButtonMonstersListsRemove" Content="Button" HorizontalAlignment="Left" Margin="606,323,0,0" VerticalAlignment="Top" Width="30" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30" Click="MonsterListsRemove_Click" IsEnabled="False"/>
-                    <TextBox x:Name="TextBoxMonsterLists" HorizontalAlignment="Left" Height="23" Margin="600,358,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="42" ToolTip="New items default weight" PreviewTextInput="TextBoxMonsterLists_PreviewTextInput"/>
-                    <Label Content="Monsters Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Monsters" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
-                </Grid>
+                <main:MonsterLists></main:MonsterLists>
             </TabItem>
             <TabItem Header="Areas" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="DataGridAreasAll" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="593" Width="300" AutoGenerateColumns="False" SelectionChanged="DataGridAreasAll_SelectionChanged" SelectionMode="Single">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Level" Binding="{Binding Level}"/>
-                            <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Label Content="Areas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <TabControl Margin="315,10,372,10">
-                        <TabItem Header="Items" Width="100">
-                            <Grid Background="#FFE5E5E5">
-                                <DataGrid x:Name="DataGridAreasItemsList" Margin="10,36,313,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasItemsList_SelectionChanged" SelectionMode="Single">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <DataGrid x:Name="DataGridAreasItemsListAll" Margin="312,36,10,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasItemsListAll_SelectionChanged" SelectionMode="Single">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <Button x:Name="ButtonAreasItemsAdd" Content="Button" Margin="271,0,272,263" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" Click="ButtonAreasItemsAdd_Click" Height="30" VerticalAlignment="Bottom"/>
-                                <Button x:Name="ButtonAreasItemsRemove" Content="Button" Margin="271,0,272,228" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False" Click="ButtonAreasItemsRemove_Click" Height="30" VerticalAlignment="Bottom"/>
-                                <TextBox x:Name="TextBoxAreasItemsWeight" Margin="265,0,266,200" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Bottom" />
-                                <Label Content="Items Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Monsters" Width="100">
-                            <Grid Background="#FFE5E5E5">
-                                <DataGrid x:Name="DataGridAreasMonsterList" Margin="10,36,313,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasMonsterList_SelectionChanged" SelectionMode="Single">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <DataGrid x:Name="DataGridAreasMonsterListAll" Margin="312,36,10,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasMonsterListAll_SelectionChanged" SelectionMode="Single">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
-                                        <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                <Button x:Name="ButtonAreasMonstersAdd" Content="Button" Margin="271,0,272,263" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" Click="ButtonAreasMonstersAdd_Click" Height="30" VerticalAlignment="Bottom"/>
-                                <Button x:Name="ButtonAreasMonstersRemove" Content="Button" Margin="271,0,272,228" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False" Click="ButtonAreasMonstersRemove_Click" Height="30" VerticalAlignment="Bottom"/>
-                                <TextBox x:Name="TextBoxAreasMonstersWeight" Margin="265,0,266,200" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasMonstersWeight_PreviewTextInput" Height="23" VerticalAlignment="Bottom" />
-                                <Label Content="Monster Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                        </TabItem>
-                    </TabControl>
-                    <Button x:Name="button" Content="Choose area image" HorizontalAlignment="Left" Margin="951,36,0,0" VerticalAlignment="Top" Width="250" Click="button_Click_1"/>
-                    <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="951,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.577" Width="250"/>
-                </Grid>
+                <main:Areas></main:Areas>
             </TabItem>
         </TabControl>
     </Grid>

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Creator.Main.Areas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Creator.Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid Background="#FFE5E5E5">
+        <DataGrid x:Name="DataGridAreasAll" HorizontalAlignment="Left" Margin="10,36,0,10" Width="300" AutoGenerateColumns="False" SelectionChanged="DataGridAreasAll_SelectionChanged" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Areas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TabControl Margin="315,10,348,10">
+            <TabItem Header="Items" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGridAreasItemsList" Margin="10,36,0,10.04" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasItemsList_SelectionChanged" SelectionMode="Single" HorizontalAlignment="Left" Width="250">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="DataGridAreasItemsListAll" Margin="0,36,10,10.04" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasItemsListAll_SelectionChanged" SelectionMode="Single" HorizontalAlignment="Right" Width="285">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="ButtonAreasItemsAdd" Content="Button" Margin="265,0,0,263.04" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" Click="ButtonAreasItemsAdd_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="42"/>
+                    <Button x:Name="ButtonAreasItemsRemove" Content="Button" Margin="265,0,0,228.04" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False" Click="ButtonAreasItemsRemove_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="42"/>
+                    <TextBox x:Name="TextBoxAreasItemsWeight" Margin="265,0,0,200.04" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="42" />
+                    <Label Content="Items Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Monsters" Width="100">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0.04">
+                    <DataGrid x:Name="DataGridAreasMonsterList" Margin="10,36,0,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasMonsterList_SelectionChanged" SelectionMode="Single" HorizontalAlignment="Left" Width="262">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="DataGridAreasMonsterListAll" Margin="0,36,10,10" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionChanged="DataGridAreasMonsterListAll_SelectionChanged" SelectionMode="Single" HorizontalAlignment="Right" Width="268">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="ButtonAreasMonstersAdd" Content="Button" Margin="0,0,283,263" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" Click="ButtonAreasMonstersAdd_Click" Height="30" VerticalAlignment="Bottom" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="47"/>
+                    <Button x:Name="ButtonAreasMonstersRemove" Content="Button" Margin="0,0,283,228" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False" Click="ButtonAreasMonstersRemove_Click" Height="30" VerticalAlignment="Bottom" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="47"/>
+                    <TextBox x:Name="TextBoxAreasMonstersWeight" Margin="277,0,0,200" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasMonstersWeight_PreviewTextInput" Height="23" VerticalAlignment="Bottom" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="47" />
+                    <Label Content="Monster Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="button" Content="Choose area image" HorizontalAlignment="Left" Margin="951,36,0,0" VerticalAlignment="Top" Width="250" Click="button_Click_1"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="951,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.577" Width="250"/>
+    </Grid>
+
+</UserControl>

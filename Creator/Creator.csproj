@@ -104,11 +104,17 @@
     <Compile Include="ImageMonstersWindow.xaml.cs">
       <DependentUpon>ImageMonstersWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main\Areas.xaml.cs">
+      <DependentUpon>Areas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Main\Items.xaml.cs">
       <DependentUpon>Items.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\ItemsList.xaml.cs">
       <DependentUpon>ItemsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MonsterLists.xaml.cs">
+      <DependentUpon>MonsterLists.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\Monsters.xaml.cs">
       <DependentUpon>Monsters.xaml</DependentUpon>
@@ -144,11 +150,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Main\Areas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Main\Items.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Main\ItemsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main\MonsterLists.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
