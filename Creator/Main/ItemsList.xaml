@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid Background="#FFE5E5E5">
-        <DataGrid x:Name="DataGridItemsLists" HorizontalAlignment="Left" Margin="10,36,0,10" Width="290" AutoGenerateColumns="False" SelectionChanged="DataGridItemsLists_SelectionChanged" SelectionMode="Single" CanUserReorderColumns="False" CanUserSortColumns="False">
+        <DataGrid x:Name="DataGridItemsLists" HorizontalAlignment="Left" Margin="10,61,0,10" Width="290" AutoGenerateColumns="False" SelectionChanged="DataGridItemsLists_SelectionChanged" SelectionMode="Single" CanUserReorderColumns="False" CanUserSortColumns="False" AddingNewItem="DataGridItemsLists_AddingNewItem" PreviewKeyDown="DataGridItemsLists_PreviewKeyDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
@@ -28,6 +28,11 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.CellStyle>
+            <DataGrid.ContextMenu>
+                <ContextMenu >
+                    <MenuItem Name="DataGridItemsListsMenu" Header="Move to tab"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
         <DataGrid x:Name="DataGridItemsCategoryList"  HorizontalAlignment="Left" Margin="305,36,0,10" Width="290" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGridItemsCategoryList_SelectionChanged" CanUserAddRows="False" CanUserDeleteRows="False" PreviewTextInput="DataGridItemsCategoryList_PreviewTextInput" CellEditEnding="DataGridItemsCategoryList_CellEditEnding" CanUserReorderColumns="False" CanUserSortColumns="False">
             <DataGrid.Columns>
@@ -54,5 +59,6 @@
         <Label Content="Items Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="List Groups" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Group Iems" HorizontalAlignment="Left" Margin="600,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxItemListType" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="290" SelectionChanged="ComboBoxItemListType_SelectionChanged" />
     </Grid>
 </UserControl>

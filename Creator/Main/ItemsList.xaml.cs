@@ -47,8 +47,27 @@ namespace Creator.Main
 
         public void PopulateControls()
         {
-            DataGridItemsLists.ItemsSource = GenerationStorage.Instance.ItemsLists;
+            var enumItemListType = Enum.GetNames(typeof(EnumItemListType));
+            ComboBoxItemListType.ItemsSource = enumItemListType;
+            ComboBoxItemListType.SelectedIndex = 0;
+            DataGridItemsListsMenu.Items.Clear();
+            for (int index = 0; index < enumItemListType.Length; index++)
+            {
+                var s = enumItemListType[index];
+                var menuItem = new MenuItem();
+                menuItem.Header = s;
+                DataGridItemsListsMenu.Items.Add(menuItem);
+                //Access to modified closure
+                var delegateIndex = index;
+                menuItem.Click += delegate
+                {
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).ItemListType = (EnumItemListType)delegateIndex;
+                    PopulateDataGridItemsLists();
+                };
+            }
+            PopulateDataGridItemsLists();
         }
+
 
         private IEnumerable<DisplayNameWeightList> SelectCategoryItemsOfType(int enumItemType)
         {
@@ -57,7 +76,7 @@ namespace Creator.Main
             if (groupType == EnumItemGroupType.Armor)
             {
                 itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID
+                    from item in ((ItemsLists)DataGridItemsLists.SelectedItem).ArmorTypeID
                     let tItem = GenerationStorage.Instance.Armors[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
@@ -72,7 +91,7 @@ namespace Creator.Main
                 try
                 {
                     itemTypes.AddRange(
-                        from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID
+                        from item in ((ItemsLists)DataGridItemsLists.SelectedItem).JewelerTypeID
                         let tItem = GenerationStorage.Instance.Jewelery[item.ID]
                         where (int)tItem.Type == enumItemType
                         select new DisplayNameWeightList
@@ -87,7 +106,7 @@ namespace Creator.Main
             else if (groupType == EnumItemGroupType.Shield) //Shields
             {
                 itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID
+                    from item in ((ItemsLists)DataGridItemsLists.SelectedItem).ShieldTypeID
                     let tItem = GenerationStorage.Instance.Shields[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
@@ -100,7 +119,7 @@ namespace Creator.Main
             else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
                 itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID
+                    from item in ((ItemsLists)DataGridItemsLists.SelectedItem).OffHandTypeID
                     let tItem = GenerationStorage.Instance.OffHands[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
@@ -114,7 +133,7 @@ namespace Creator.Main
             else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
                 itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
+                    from item in ((ItemsLists)DataGridItemsLists.SelectedItem).WeaponTypeID
                     let tItem = GenerationStorage.Instance.Weapons[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
@@ -127,7 +146,7 @@ namespace Creator.Main
             else if (groupType == EnumItemGroupType.Lore) //Lore
             {
                 itemTypes.AddRange(
-                    from item in GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
+                    from item in ((ItemsLists)DataGridItemsLists.SelectedItem).LoreTypeID
                     let tItem = GenerationStorage.Instance.Lore[item.ID]
                     where (int)tItem.Type == enumItemType
                     select new DisplayNameWeightList
@@ -140,6 +159,12 @@ namespace Creator.Main
             return itemTypes;
         }
 
+        private void PopulateDataGridItemsLists()
+        {
+            DataGridItemsLists.ItemsSource = null;
+            var list = GenerationStorage.Instance.ItemsLists.FindAll((x) => x.ItemListType == (EnumItemListType)ComboBoxItemListType.SelectedIndex);
+            DataGridItemsLists.ItemsSource = list;
+        }
 
         private void PopulateCategoryList()
         {
@@ -149,17 +174,17 @@ namespace Creator.Main
 
             for (var i = 0; i < enumNamesList.Length; i++)
             {
-                if (GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].Weight.Count <
+                if (((ItemsLists)DataGridItemsLists.SelectedItem).Weight.Count <
                     enumNamesList.Length)
                 {
                     int count = enumNamesList.Length -
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].Weight.Count;
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).Weight.Count;
                     for (int j = 0; j < count; j++)
                     {
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].Weight.Add(0);
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).Weight.Add(0);
                     }
                 }
-                int weight = GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].Weight[i];
+                int weight = ((ItemsLists)DataGridItemsLists.SelectedItem).Weight[i];
                 IEnumerable<DisplayNameWeightList> itemTypes = SelectCategoryItemsOfType(i);
                 itemsCategoryList.Add(itemTypes == null
                     ? new ItemsCategory { Name = enumNamesList[i], Count = 0, Weight = weight }
@@ -177,8 +202,7 @@ namespace Creator.Main
 
         private void DataGridItemsLists_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridItemsLists.SelectedIndex != -1 &&
-                DataGridItemsLists.SelectedIndex < GenerationStorage.Instance.ItemsLists.Count)
+            if (DataGridItemsLists.SelectedItem != null && DataGridItemsLists.SelectedItem.GetType().Name != "NamedObject")
             {
                 PopulateCategoryList();
             }
@@ -190,8 +214,7 @@ namespace Creator.Main
 
         private void PopulateItemsListsItems()
         {
-            if (DataGridItemsLists.SelectedIndex != -1 &&
-                DataGridItemsLists.SelectedIndex < GenerationStorage.Instance.ItemsLists.Count)
+            if (DataGridItemsLists.SelectedItem != null && DataGridItemsLists.SelectedItem.GetType().Name != "NamedObject")
             {
                 if (DataGridItemsCategoryList.SelectedIndex != -1)
                 {
@@ -222,8 +245,7 @@ namespace Creator.Main
 
         private void DataGridItemsListsAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridItemsLists.SelectedIndex != -1 &&
-                DataGridItemsLists.SelectedIndex < GenerationStorage.Instance.ItemsLists.Count)
+            if (DataGridItemsLists.SelectedItem != null && DataGridItemsLists.SelectedItem.GetType().Name != "NamedObject")
             {
                 if (DataGridItemsCategoryList.SelectedIndex != -1)
                 {
@@ -250,8 +272,7 @@ namespace Creator.Main
 
         private void DataGridItemsListsItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridItemsLists.SelectedIndex != -1 &&
-                DataGridItemsLists.SelectedIndex < GenerationStorage.Instance.ItemsLists.Count)
+            if (DataGridItemsLists.SelectedItem != null && DataGridItemsLists.SelectedItem.GetType().Name != "NamedObject")
             {
                 if (DataGridItemsCategoryList.SelectedIndex != -1)
                 {
@@ -280,12 +301,12 @@ namespace Creator.Main
                 if (groupType == EnumItemGroupType.Armor)
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).ArmorTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).ArmorTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -294,12 +315,12 @@ namespace Creator.Main
                 else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).JewelerTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).JewelerTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -308,12 +329,12 @@ namespace Creator.Main
                 else if (groupType == EnumItemGroupType.Shield) //Shields
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).ShieldTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).ShieldTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -322,12 +343,12 @@ namespace Creator.Main
                 else if (groupType == EnumItemGroupType.OffHand)  //Offhand
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).OffHandTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).OffHandTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -337,12 +358,12 @@ namespace Creator.Main
                 else if (groupType == EnumItemGroupType.Weapon) //Weapons
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).WeaponTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).WeaponTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -351,12 +372,12 @@ namespace Creator.Main
                 else if (groupType == EnumItemGroupType.Lore) //Lore
                 {
                     if (
-                        GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID
+                        ((ItemsLists)DataGridItemsLists.SelectedItem).LoreTypeID
                             .FirstOrDefault(x => x.ID == item.ID) != null)
                     {
                         continue;
                     }
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID.Add(new GenerationWeight
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).LoreTypeID.Add(new GenerationWeight
                     {
                         ID = item.ID,
                         Weight = Convert.ToInt32(TextBoxItemsListsWeight.Text)
@@ -374,33 +395,33 @@ namespace Creator.Main
             var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
             if (groupType == EnumItemGroupType.Armor)
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ArmorTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).ArmorTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].JewelerTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).JewelerTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             else if (groupType == EnumItemGroupType.Shield) //Shields
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].ShieldTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).ShieldTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             else if (groupType == EnumItemGroupType.OffHand)  //Offhand
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].OffHandTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).OffHandTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             //13 is Unarmed
             else if (groupType == EnumItemGroupType.Weapon) //Weapons
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].WeaponTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).WeaponTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             else if (groupType == EnumItemGroupType.Lore) //Lore
             {
-                GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].LoreTypeID.RemoveAll(
+                ((ItemsLists)DataGridItemsLists.SelectedItem).LoreTypeID.RemoveAll(
                     x => x.ID == item.ID);
             }
             PopulateItemsListsItems();
@@ -419,7 +440,7 @@ namespace Creator.Main
             {
                 if (enumNamesList[i] == item.Name)
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex].Weight[i] = Convert.ToInt32((e.EditingElement as TextBox).Text);
+                    ((ItemsLists)DataGridItemsLists.SelectedItem).Weight[i] = Convert.ToInt32((e.EditingElement as TextBox).Text);
                     break;
                 }
             }
@@ -435,39 +456,39 @@ namespace Creator.Main
                 var groupType = ((EnumItemType)enumItemType).GetAttributeOfType<TypeToSlot>().GroupType;
                 if (groupType == EnumItemGroupType.Armor)
                 {
-                    var v = GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    var v = ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .ArmorTypeID.Find(x => x.ID == item.ID);
                     v.Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 else if (groupType == EnumItemGroupType.Jewelery) //Amu and Rings
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .JewelerTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 else if (groupType == EnumItemGroupType.Shield) //Shields
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .ShieldTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 else if (groupType == EnumItemGroupType.OffHand) //Offhand
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .OffHandTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 //13 is Unarmed
                 else if (groupType == EnumItemGroupType.Weapon) //Weapons
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .WeaponTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
                 else if (groupType == EnumItemGroupType.Lore) //Lore
                 {
-                    GenerationStorage.Instance.ItemsLists[DataGridItemsLists.SelectedIndex]
+                    ((ItemsLists)DataGridItemsLists.SelectedItem)
                         .LoreTypeID.Find(x => x.ID == item.ID).Weight =
                         Convert.ToInt32((e.EditingElement as TextBox).Text);
                 }
@@ -477,6 +498,27 @@ namespace Creator.Main
         private void DataGridItemsListsItems_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextUtils.IsNumeric(ref e, true);
+        }
+
+        private void ComboBoxItemListType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PopulateDataGridItemsLists();
+        }
+
+        private void DataGridItemsLists_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            var item = new ItemsLists();
+            item.ItemListType = (EnumItemListType)ComboBoxItemListType.SelectedIndex;
+            GenerationStorage.Instance.ItemsLists.Add(item);
+            e.NewItem = item;
+        }
+
+        private void DataGridItemsLists_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (Key.Delete == e.Key)
+            {
+                GenerationStorage.Instance.ItemsLists.Remove((ItemsLists)DataGridItemsLists.SelectedItem);
+            }
         }
     }
 }
