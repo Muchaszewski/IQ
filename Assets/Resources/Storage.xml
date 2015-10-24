@@ -7446,7 +7446,32 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <RequiredStats />
     </JeweleryType>
   </Jewelery>
-  <Lore />
+  <Lore>
+    <LoreType>
+      <Name>Thank you</Name>
+      <ID>0</ID>
+      <Type>Lore</Type>
+      <Skill>Cloth</Skill>
+      <Durability>
+        <Min>0</Min>
+        <Max>0</Max>
+        <MinMaxLevel>0</MinMaxLevel>
+        <MaxMaxLevel>0</MaxMaxLevel>
+      </Durability>
+      <ImageID>
+        <PairTypeItem>
+          <Type>lore</Type>
+          <Item>letter_0</Item>
+        </PairTypeItem>
+      </ImageID>
+      <SoundID />
+      <FlavorText>Thank you for testing an Alpha version with us! We are greatfull for all of your feedback :)</FlavorText>
+      <Rarity>Lore</Rarity>
+      <RequiredLevel>0</RequiredLevel>
+      <DropLevel>0</DropLevel>
+      <RequiredStats />
+    </LoreType>
+  </Lore>
   <Spots>
     <Spot>
       <Name>Junkyard Peninsula</Name>
@@ -7572,7 +7597,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Scorpion Desert</Name>
       <Level>7</Level>
       <ID>4</ID>
-      <ImageString>_location_placeholder_desert_0</ImageString>
+      <ImageString>location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7668,7 +7693,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>Shining Sands Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
-      <ImageString>_location_placeholder_desert_0</ImageString>
+      <ImageString>location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7695,7 +7720,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Name>The Vesir's Desert</Name>
       <Level>12</Level>
       <ID>9</ID>
-      <ImageString>_location_placeholder_desert_0</ImageString>
+      <ImageString>location_placeholder_desert_0</ImageString>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7983,7 +8008,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <int>10</int>
         <int>20</int>
         <int>100</int>
-        <int>0</int>
+        <int>100</int>
         <int>0</int>
         <int>100</int>
         <int>150</int>

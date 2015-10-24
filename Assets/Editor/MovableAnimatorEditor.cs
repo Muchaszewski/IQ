@@ -9,7 +9,6 @@ public class MovableAnimatorEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        EditorGUILayout.HelpBox("Sorry but every value have to be set manualy\r\nCustom inspector is too complicated to implement", MessageType.Info);
         DrawDefaultInspector();
         DropAreaGUI();
         EditorGUILayout.LabelField(draggedPosition.ToString());
