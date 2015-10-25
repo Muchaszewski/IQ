@@ -14,7 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Creator.Utils;
+using InventoryQuest;
 using InventoryQuest.Components;
+using InventoryQuest.Components.Items;
+using InventoryQuest.Components.Items.Generation.Types;
 
 namespace Creator.Main
 {
@@ -31,6 +34,9 @@ namespace Creator.Main
 
             _parentWindow = Window.GetWindow(this);
 
+            ComboBoxAreasOnCompelte.ItemsSource = Enum.GetNames(typeof(EnumItemType));
+            ComboBoxAreasOnCompelte.SelectedIndex = 0;
+
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
@@ -43,6 +49,11 @@ namespace Creator.Main
             DataGridAreasAll.ItemsSource = GenerationStorage.Instance.Spots;
             DataGridAreasMonsterListAll.ItemsSource = GenerationStorage.Instance.EntityLists;
             DataGridAreasItemsListAll.ItemsSource = GenerationStorage.Instance.ItemsLists;
+        }
+
+        void PopulateOnComplete()
+        {
+            DataGridAreasItemsOnComplete.ItemsSource = ItemUtils.SelectItemsOfType(ComboBoxAreasOnCompelte.SelectedIndex);
         }
 
         private void DataGridAreasAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -58,6 +69,7 @@ namespace Creator.Main
                 var spot = (Spot)DataGridAreasAll.SelectedItem;
                 DataGridAreasItemsList.ItemsSource = spot.ItemsList;
                 DataGridAreasMonsterList.ItemsSource = spot.EntitiesList;
+                DataGridAreasOnComplete.ItemsSource = spot.ItemOnComplete;
                 if (DataGridAreasMonsterListAll.SelectedItem != null &&
                 DataGridAreasMonsterListAll.SelectedItem.GetType().Name != "NamedObject")
                 {
@@ -86,6 +98,8 @@ namespace Creator.Main
                 ButtonAreasMonstersRemove.IsEnabled = false;
                 ButtonAreasItemsAdd.IsEnabled = false;
                 ButtonAreasItemsRemove.IsEnabled = false;
+                ButtonAreasOnCompleteAdd.IsEnabled = false;
+                ButtonAreasOnCompleteRemove.IsEnabled = false;
             }
         }
 
@@ -223,5 +237,64 @@ namespace Creator.Main
             }
         }
 
+        private void DataGridAreasItemsOnComplete_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridAreasItemsOnComplete.SelectedItem != null &&
+                DataGridAreasItemsOnComplete.SelectedItem.GetType().Name != "NamedObject")
+            {
+                ButtonAreasOnCompleteAdd.IsEnabled = true;
+            }
+            else
+            {
+                ButtonAreasOnCompleteAdd.IsEnabled = false;
+            }
+        }
+
+        private void DataGridAreasOnComplete_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridAreasOnComplete.SelectedItem != null &&
+                DataGridAreasOnComplete.SelectedItem.GetType().Name != "NamedObject")
+            {
+                ButtonAreasOnCompleteRemove.IsEnabled = true;
+            }
+            else
+            {
+                ButtonAreasOnCompleteRemove.IsEnabled = false;
+            }
+        }
+        private void ButtonAreasOnCompleteAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var itemType = DataGridAreasItemsOnComplete.SelectedItem as ItemType;
+            var item = new GenerationWeightLists();
+            item.Name = itemType.Name;
+            item.Weight = Convert.ToInt32(TextBoxAreasItemsWeight.Text);
+            item.Category = itemType.Type.ToString();
+            item.ID = itemType.ID;
+            var spot = DataGridAreasAll.SelectedItem as Spot;
+            if (spot.ItemOnComplete == null)
+            {
+                spot.ItemOnComplete = new List<GenerationWeightLists>();
+            }
+            if (spot.ItemOnComplete.FirstOrDefault(x => x.Name == item.Name) == null)
+            {
+                spot.ItemOnComplete.Add(item);
+            }
+            DataGridAreasOnComplete.ItemsSource = null;
+            DataGridAreasOnComplete.ItemsSource = spot.ItemOnComplete;
+        }
+
+        private void ButtonAreasOnCompleteRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var spot = DataGridAreasAll.SelectedItem as Spot;
+            var entity = DataGridAreasOnComplete.SelectedItem as GenerationWeightLists;
+            spot.ItemOnComplete.Remove(spot.ItemOnComplete.Find(x => x.Name == entity.Name));
+            DataGridAreasOnComplete.ItemsSource = null;
+            DataGridAreasOnComplete.ItemsSource = spot.ItemOnComplete;
+        }
+
+        private void ComboBoxAreasOnCompelte_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PopulateOnComplete();
+        }
     }
 }

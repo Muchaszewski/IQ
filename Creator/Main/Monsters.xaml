@@ -8,7 +8,7 @@
              xmlns:entities="clr-namespace:InventoryQuest.Components.Entities;assembly=InventoryQuest"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
-    
+
     <UserControl.Resources>
         <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="GetEnumEntityType">
             <ObjectDataProvider.MethodParameters>
@@ -34,7 +34,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <TabControl HorizontalAlignment="Left" Height="619" Margin="265,10,0,0" VerticalAlignment="Top" Width="736">
+        <TabControl HorizontalAlignment="Left" Margin="265,10,0,10" Width="736">
             <TabItem Header="General" Width="100">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
@@ -111,7 +111,7 @@
                             <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <DataGrid x:Name="DataGridMonstersItemsList" Margin="0,0,90,10" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridMonstersItemsList_SelectionChanged" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250">
+                    <DataGrid x:Name="DataGridMonstersItemsList" Margin="0,0,90,10" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DataGridMonstersItemsList_SelectionChanged" HorizontalAlignment="Right" Width="250" Height="250" VerticalAlignment="Bottom">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
@@ -121,8 +121,8 @@
                     <Button x:Name="ButtonMonsterAdd" Content="Button" Margin="350,0,351,105" VerticalAlignment="Bottom" Template="{DynamicResource ResourceKey=ButtonArrowLeft}" Height="30" IsEnabled="False" Click="ButtonMonsterAdd_Click"/>
                     <Button x:Name="ButtonMonstersRemove" Content="Button" Margin="350,0,351,70" VerticalAlignment="Bottom" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"  IsEnabled="False" Click="ButtonMonstersRemove_Click"/>
                     <TextBox x:Name="TextBoxMonsterItemsLists" Margin="343,0,345,42" TextWrapping="Wrap" Text="0" ToolTip="New items default weight" PreviewTextInput="TextBoxMonsterItemsLists_PreviewTextInput" Height="23" VerticalAlignment="Bottom" />
-                    <Label Content="Drop Item Lists" HorizontalAlignment="Left" Margin="88,299,0,0" VerticalAlignment="Top"/>
-                    <Label Content="TODO:  A list with drop rolls" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Drop Item Lists" HorizontalAlignment="Left" Margin="88,0,0,266" Height="26" VerticalAlignment="Bottom"/>
+                    <ComboBox x:Name="ComboBoxItemListType" HorizontalAlignment="Left" Width="250" Margin="386,0,0,270" SelectionChanged="ComboBoxItemListType_SelectionChanged" Height="22" VerticalAlignment="Bottom"/>
                 </Grid>
             </TabItem>
         </TabControl>

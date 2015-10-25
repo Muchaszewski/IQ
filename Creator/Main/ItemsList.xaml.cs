@@ -29,6 +29,10 @@ namespace Creator.Main
         {
             InitializeComponent();
 
+            var enumItemListType = Enum.GetNames(typeof(EnumItemListType));
+            ComboBoxItemListType.ItemsSource = enumItemListType;
+            ComboBoxItemListType.SelectedIndex = 0;
+
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
@@ -47,10 +51,8 @@ namespace Creator.Main
 
         public void PopulateControls()
         {
-            var enumItemListType = Enum.GetNames(typeof(EnumItemListType));
-            ComboBoxItemListType.ItemsSource = enumItemListType;
-            ComboBoxItemListType.SelectedIndex = 0;
             DataGridItemsListsMenu.Items.Clear();
+            var enumItemListType = Enum.GetNames(typeof(EnumItemListType));
             for (int index = 0; index < enumItemListType.Length; index++)
             {
                 var s = enumItemListType[index];

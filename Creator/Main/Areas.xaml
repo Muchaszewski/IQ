@@ -56,6 +56,31 @@
                     <Label Content="Monster Lists" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Special" Width="100">
+                <Grid Background="#FFE5E5E5">
+
+                    <DataGrid x:Name="DataGridAreasOnComplete" Margin="10,36,0,0" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionMode="Single" HorizontalAlignment="Left" Width="250" SelectionChanged="DataGridAreasOnComplete_SelectionChanged" Height="131" VerticalAlignment="Top">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Category" Binding="{Binding Category}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" IsReadOnly="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="DataGridAreasItemsOnComplete" Margin="312,36,10,0" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGridAreasItemsOnComplete_SelectionChanged" Height="131" VerticalAlignment="Top">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Rarity" Binding="{Binding Rarity}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="ButtonAreasOnCompleteAdd" Content="Button" Margin="265,57,0,0" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteAdd_Click" Height="30" VerticalAlignment="Top"/>
+                    <Button x:Name="ButtonAreasOnCompleteRemove" Content="Button" Margin="265,92,0,0" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteRemove_Click"/>
+                    <TextBox x:Name="TextBoxAreasOnCompleteWeight" Margin="265,127,0,0" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" />
+                    <Label Content="On Area Complete" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="ComboBoxAreasOnCompelte" HorizontalAlignment="Left" Margin="312,10,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="ComboBoxAreasOnCompelte_SelectionChanged"/>
+                    <Label Content="Weight = % chance" HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Width="170"/>
+                </Grid>
+            </TabItem>
         </TabControl>
         <Button x:Name="button" Content="Choose area image" HorizontalAlignment="Left" Margin="951,36,0,0" VerticalAlignment="Top" Width="250" Click="button_Click_1"/>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="951,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.577" Width="250"/>

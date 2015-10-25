@@ -36,6 +36,10 @@ namespace Creator.Main
             InitializeComponent();
             _parentWindow = Window.GetWindow(this);
 
+            var enumItemListType = Enum.GetNames(typeof(EnumItemListType));
+            ComboBoxItemListType.ItemsSource = enumItemListType;
+            ComboBoxItemListType.SelectedIndex = 0;
+
             //Do not execute this part of the code if its in edior
             if (!DesignerProperties.GetIsInDesignMode(this))
             {
@@ -58,8 +62,15 @@ namespace Creator.Main
             ////MonstersTemplates
 
             //ItemsList
-            DataGridMonstersItemsList.ItemsSource = GenerationStorage.Instance.ItemsLists;
+            PopulateItemList();
             ////ItemsList
+        }
+
+        private void PopulateItemList()
+        {
+            DataGridMonstersItemsList.ItemsSource = null;
+            var list = GenerationStorage.Instance.ItemsLists.FindAll((x) => x.ItemListType == (EnumItemListType)ComboBoxItemListType.SelectedIndex);
+            DataGridMonstersItemsList.ItemsSource = list;
         }
 
         private void RefreshMonsterAllItems()
@@ -668,6 +679,11 @@ namespace Creator.Main
         {
             GenerationStorage.Instance.EntityTemplateList.Add(DataGridMonsterAllItems.SelectedItem as EntityType);
             RefreshMonstersTemplates();
+        }
+
+        private void ComboBoxItemListType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PopulateItemList();
         }
     }
 }

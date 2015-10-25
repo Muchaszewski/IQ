@@ -137,6 +137,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -288,6 +289,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -439,6 +441,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -590,6 +593,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -741,6 +745,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -892,6 +897,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -1043,6 +1049,7 @@
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsLists>
       <Range>
@@ -7484,14 +7491,24 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete>
+        <GenerationWeightLists>
+          <Name>Thank you</Name>
+          <Weight>100</Weight>
+          <Category>Lore</Category>
+          <ID>0</ID>
+        </GenerationWeightLists>
+      </ItemOnComplete>
     </Spot>
     <Spot>
       <Name>Desolate Coast</Name>
@@ -7503,22 +7520,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>10</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Sailor's Beach</Name>
@@ -7530,34 +7552,42 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Crows, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>30</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>10</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Jagged Cliffs</Name>
@@ -7569,30 +7599,37 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Zombies, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>40</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Scorpion Desert</Name>
@@ -7604,14 +7641,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Iron Plain</Name>
@@ -7623,22 +7663,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Zombies, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Western Road</Name>
@@ -7650,18 +7695,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Zombies, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>The Broken Bridge</Name>
@@ -7673,22 +7722,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Zombies, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Shining Sands Desert</Name>
@@ -7700,22 +7754,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>The Vesir's Desert</Name>
@@ -7727,18 +7786,22 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Medieval Lvl 20</Name>
@@ -7750,26 +7813,32 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Knights</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>20</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Medieval Lvl 30</Name>
@@ -7781,22 +7850,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Knights</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Medieval Lvl 40</Name>
@@ -7808,22 +7882,27 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Knights</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Zombies, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Desert Lvl 20</Name>
@@ -7835,14 +7914,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Desert Lvl 30</Name>
@@ -7854,14 +7936,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Desert Lvl 40</Name>
@@ -7873,14 +7958,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Scorpions, Strong</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Sunset Steppe</Name>
@@ -7892,14 +7980,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Fantasy Barbarian Kingdom</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Fields of Arcadia</Name>
@@ -7911,14 +8002,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Ancient Greece</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Barbarian Lvl 40</Name>
@@ -7930,14 +8024,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Fantasy Barbarian Kingdom</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Ancient Lvl 40</Name>
@@ -7949,14 +8046,17 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Skeletons, Soldiers</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Ancient Greece</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Flooded Battlefield</Name>
@@ -7968,30 +8068,37 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <GenerationWeightLists>
           <Name>Mulltrod, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Mulltrod, Elite</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Crows, Normal</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </EntitiesList>
       <ItemsList>
         <GenerationWeightLists>
           <Name>Junk</Name>
           <Weight>100</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Medieval Europe</Name>
           <Weight>10</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
         <GenerationWeightLists>
           <Name>Medieval Middle-East</Name>
           <Weight>10</Weight>
+          <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
+      <ItemOnComplete />
     </Spot>
   </Spots>
   <ItemsLists>

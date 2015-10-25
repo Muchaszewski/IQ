@@ -9,6 +9,7 @@ namespace InventoryQuest.Components
     {
         private List<GenerationWeightLists> _entitiesList = new List<GenerationWeightLists>();
         private List<GenerationWeightLists> _itemsList = new List<GenerationWeightLists>();
+        private List<GenerationWeightLists> _itemOnComplete = new List<GenerationWeightLists>();
 
         public Spot()
         {
@@ -63,5 +64,25 @@ namespace InventoryQuest.Components
                 return weight;
             }
         }
+        public List<GenerationWeightLists> ItemOnComplete
+        {
+            get { return _itemOnComplete; }
+            set { _itemOnComplete = value; }
+        }
+
+        public int ItemOnCompleteTotalWeight
+        {
+            get
+            {
+                var weight = 0;
+                foreach (GenerationWeightLists item in ItemOnComplete)
+                {
+                    weight = item.Weight;
+                }
+                return weight;
+            }
+        }
+
+
     }
 }
