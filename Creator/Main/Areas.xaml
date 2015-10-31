@@ -73,12 +73,40 @@
                             <DataGridTextColumn Header="Rarity" Binding="{Binding Rarity}" IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="ButtonAreasOnCompleteAdd" Content="Button" Margin="265,57,0,0" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteAdd_Click" Height="30" VerticalAlignment="Top"/>
-                    <Button x:Name="ButtonAreasOnCompleteRemove" Content="Button" Margin="265,92,0,0" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteRemove_Click"/>
-                    <TextBox x:Name="TextBoxAreasOnCompleteWeight" Margin="265,127,0,0" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" />
-                    <Label Content="On Area Complete" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="ComboBoxAreasOnCompelte" HorizontalAlignment="Left" Margin="312,10,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="ComboBoxAreasOnCompelte_SelectionChanged"/>
-                    <Label Content="Weight = % chance" HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Width="170"/>
+                    <Grid IsEnabled="False">
+                        <Button x:Name="ButtonAreasOnCompleteAdd" Content="Button" Margin="265,57,0,0" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteAdd_Click" Height="30" VerticalAlignment="Top"/>
+                        <Button x:Name="ButtonAreasOnCompleteRemove" Content="Button" Margin="265,92,0,0" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Click="ButtonAreasOnCompleteRemove_Click"/>
+                        <TextBox x:Name="TextBoxAreasOnCompleteWeight" Margin="265,127,0,0" TextWrapping="Wrap" Text="100" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" />
+                        <Label Content="On Area Complete" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="ComboBoxAreasOnCompelte" HorizontalAlignment="Left" Margin="312,10,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="ComboBoxAreasOnCompelte_SelectionChanged"/>
+                        <Label Content="Weight = % chance" HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Width="170"/>
+                    </Grid>
+                    <Grid Name="GridPosition" IsEnabled="False">
+                        <Label Content="Position on map" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="108"/>
+                        <TextBox x:Name="TextBoxPositionX" HorizontalAlignment="Left" Height="23" Margin="118,172,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93" PreviewTextInput="TextBoxPosition_PreviewTextInput"/>
+                        <TextBox x:Name="TextBoxPositionY" HorizontalAlignment="Left" Height="23" Margin="216,172,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93" PreviewTextInput="TextBoxPosition_PreviewTextInput"/>
+                        <TextBox x:Name="TextBoxPositionZ" HorizontalAlignment="Left" Height="23" Margin="314,172,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93" PreviewTextInput="TextBoxPosition_PreviewTextInput"/>
+                        <Button x:Name="ButtonApplyPosition" Content="Apply" HorizontalAlignment="Left" Margin="412,172,0,0" VerticalAlignment="Top" Width="75" Click="ButtonApplyPosition_Click"/>
+
+                        <Label Content="Monsters value required to complete an area" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="299"/>
+                        <TextBox x:Name="TextBoxMonsterValue" HorizontalAlignment="Left" Height="23" Margin="314,200,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput"/>
+                        <Button x:Name="ButtonApplyMonsterValue" Content="Apply" HorizontalAlignment="Left" Margin="412,200,0,0" VerticalAlignment="Top" Width="75" Click="ButtonApplyMonsterValue_Click"/>
+                        <DataGrid x:Name="DataGridTravelList" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Height="199" Width="250" CanUserDeleteRows="False" CanUserAddRows="False" SelectionChanged="DataGridTravelList_SelectionChanged" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        </DataGrid>
+                        <DataGrid x:Name="DataGridAreaList" Margin="312,236,10,0" VerticalAlignment="Top" Height="199" CanUserDeleteRows="False" CanUserAddRows="False" SelectionChanged="DataGridAreaList_SelectionChanged" AutoGenerateColumns="False" SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Level" Binding="{Binding Level}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Category" Binding="{Binding Category}" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="ButtonAreasListAdd" Content="Button" Margin="265,295,0,0" Template="{DynamicResource ResourceKey=ButtonArrowLeft}"  IsEnabled="False" HorizontalAlignment="Left" Width="42"  Height="30" VerticalAlignment="Top" Click="ButtonAreasListAdd_Click"/>
+                        <Button x:Name="ButtonAreasListRemovey" Content="Button" Margin="265,330,0,0" Template="{DynamicResource ResourceKey=ButtonArrowRight}"  IsEnabled="False"  Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Click="ButtonAreasListRemovey_Click"/>
+                        <TextBox x:Name="TextBoxAreasListDistance" Margin="265,386,0,0" TextWrapping="Wrap" Text="0" ToolTip="New items default weight" PreviewTextInput="TextBoxAreasItemsWeight_PreviewTextInput" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" />
+                        <Label Content="You add and remove two way connection. To perform one side add or remove hold shift before click."  HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="587" Padding="0,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="27"/>
+                        <Label Content="Distance" HorizontalAlignment="Left" Margin="260,357,0,0" VerticalAlignment="Top" Width="52" Padding="0,5" HorizontalContentAlignment="Center"/>
+                        <Label Content="0=default" HorizontalAlignment="Left" Margin="260,414,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.684,0.346" Width="52" Padding="0,5"/>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>

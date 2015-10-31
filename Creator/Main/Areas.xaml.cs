@@ -18,6 +18,7 @@ using InventoryQuest;
 using InventoryQuest.Components;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Components.Items.Generation.Types;
+using UnityEngine;
 
 namespace Creator.Main
 {
@@ -49,11 +50,13 @@ namespace Creator.Main
             DataGridAreasAll.ItemsSource = GenerationStorage.Instance.Spots;
             DataGridAreasMonsterListAll.ItemsSource = GenerationStorage.Instance.EntityLists;
             DataGridAreasItemsListAll.ItemsSource = GenerationStorage.Instance.ItemsLists;
+            DataGridAreaList.ItemsSource = GenerationStorage.Instance.Spots;
         }
 
         void PopulateOnComplete()
         {
-            DataGridAreasItemsOnComplete.ItemsSource = ItemUtils.SelectItemsOfType(ComboBoxAreasOnCompelte.SelectedIndex);
+            DataGridAreasItemsOnComplete.ItemsSource =
+                ItemUtils.SelectItemsOfType(ComboBoxAreasOnCompelte.SelectedIndex);
         }
 
         private void DataGridAreasAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -66,10 +69,20 @@ namespace Creator.Main
             if (DataGridAreasAll.SelectedItem != null &&
                 DataGridAreasAll.SelectedItem.GetType().Name != "NamedObject")
             {
+                DataGridAreaList.ItemsSource = GenerationStorage.Instance.Spots;
                 var spot = (Spot)DataGridAreasAll.SelectedItem;
                 DataGridAreasItemsList.ItemsSource = spot.ItemsList;
                 DataGridAreasMonsterList.ItemsSource = spot.EntitiesList;
                 DataGridAreasOnComplete.ItemsSource = spot.ItemOnComplete;
+                //Position
+                GridPosition.IsEnabled = true;
+                TextBoxPositionX.Text = spot.Position.x.ToString();
+                TextBoxPositionY.Text = spot.Position.y.ToString();
+                TextBoxPositionZ.Text = spot.Position.z.ToString();
+                //Connection List
+                DataGridTravelList.ItemsSource = null;
+                DataGridTravelList.ItemsSource = spot.ListConnections;
+                //
                 if (DataGridAreasMonsterListAll.SelectedItem != null &&
                 DataGridAreasMonsterListAll.SelectedItem.GetType().Name != "NamedObject")
                 {
@@ -100,6 +113,9 @@ namespace Creator.Main
                 ButtonAreasItemsRemove.IsEnabled = false;
                 ButtonAreasOnCompleteAdd.IsEnabled = false;
                 ButtonAreasOnCompleteRemove.IsEnabled = false;
+                GridPosition.IsEnabled = false;
+                ButtonAreasListAdd.IsEnabled = false;
+                ButtonAreasListRemovey.IsEnabled = false;
             }
         }
 
@@ -237,6 +253,7 @@ namespace Creator.Main
             }
         }
 
+
         private void DataGridAreasItemsOnComplete_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataGridAreasItemsOnComplete.SelectedItem != null &&
@@ -295,6 +312,135 @@ namespace Creator.Main
         private void ComboBoxAreasOnCompelte_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PopulateOnComplete();
+        }
+
+        private void TextBoxPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextUtils.IsNumeric(ref e, false);
+        }
+
+        private void ButtonApplyPosition_Click(object sender, RoutedEventArgs e)
+        {
+            var item = DataGridAreasAll.SelectedItem as Spot;
+            item.Position = new Vector3(
+                float.Parse(TextBoxPositionX.Text),
+                float.Parse(TextBoxPositionY.Text),
+                float.Parse(TextBoxPositionZ.Text));
+        }
+
+        private void ButtonApplyMonsterValue_Click(object sender, RoutedEventArgs e)
+        {
+            var item = DataGridAreasAll.SelectedItem as Spot;
+            item.MonsterValueToCompleteArea = int.Parse(TextBoxMonsterValue.Text);
+        }
+
+        private void ButtonAreasListAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                var next = (Spot)DataGridAreaList.SelectedItem;
+                var current = (Spot)DataGridAreasAll.SelectedItem;
+                if (current.ListConnections.FirstOrDefault(x => x.SpotString.Equals(next.Name)) == null)
+                {
+                    var currentConnection = new Spot.SpotConnection()
+                    {
+                        Distance = int.Parse(TextBoxAreasListDistance.Text),
+                        SpotString = next.Name,
+                        IsTwoWay = false,
+                    };
+                    var nextConnection = FindConnectionBySpot(next, current);
+                    if (nextConnection != null)
+                    {
+                        nextConnection.IsTwoWay = true;
+                        currentConnection.IsTwoWay = true;
+                    }
+                    current.ListConnections.Add(currentConnection);
+                }
+            }
+            else
+            {
+                var next = (Spot)DataGridAreaList.SelectedItem;
+                var current = (Spot)DataGridAreasAll.SelectedItem;
+                if (current.ListConnections.FirstOrDefault(x => x.SpotString.Equals(next.Name)) == null)
+                {
+                    current.ListConnections.Add(new Spot.SpotConnection()
+                    {
+                        Distance = int.Parse(TextBoxAreasListDistance.Text),
+                        SpotString = next.Name,
+                        IsTwoWay = true,
+                    });
+                    next.ListConnections.Add(new Spot.SpotConnection()
+                    {
+                        Distance = int.Parse(TextBoxAreasListDistance.Text),
+                        SpotString = current.Name,
+                        IsTwoWay = true,
+                    });
+                }
+            }
+            RefreshArea();
+        }
+
+        private void ButtonAreasListRemovey_Click(object sender, RoutedEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                var nextConenction = (Spot.SpotConnection)DataGridTravelList.SelectedItem;
+                var next = FindSpotByConnection(nextConenction);
+                var current = (Spot)DataGridAreasAll.SelectedItem;
+                var currentConnection = FindConnectionBySpot(next, current);
+                if (currentConnection != null)
+                {
+                    currentConnection.IsTwoWay = false;
+                }
+                current.ListConnections.Remove(nextConenction);
+            }
+            else
+            {
+                var nextConenction = (Spot.SpotConnection)DataGridTravelList.SelectedItem;
+                var next = FindSpotByConnection(nextConenction);
+                var current = (Spot)DataGridAreasAll.SelectedItem;
+                var currentConnection = FindConnectionBySpot(next, current);
+                current.ListConnections.Remove(nextConenction);
+                next.ListConnections.Remove(currentConnection);
+            }
+            RefreshArea();
+        }
+
+        Spot FindSpotByConnection(Spot.SpotConnection connection)
+        {
+            return GenerationStorage.Instance.Spots.Find(x => x.Name.Equals(connection.SpotString));
+        }
+
+        Spot.SpotConnection FindConnectionBySpot(Spot spot, Spot connected)
+        {
+            return spot.ListConnections.Find(x => x.SpotString.Equals(connected.Name));
+        }
+
+
+        private void DataGridAreaList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridAreaList.SelectedItem != null &&
+    DataGridAreaList.SelectedItem.GetType().Name != "NamedObject")
+            {
+                ButtonAreasListAdd.IsEnabled = true;
+            }
+            else
+            {
+                ButtonAreasListAdd.IsEnabled = false;
+            }
+        }
+
+        private void DataGridTravelList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridTravelList.SelectedItem != null &&
+    DataGridTravelList.SelectedItem.GetType().Name != "NamedObject")
+            {
+                ButtonAreasListRemovey.IsEnabled = true;
+            }
+            else
+            {
+                ButtonAreasListRemovey.IsEnabled = false;
+            }
         }
     }
 }

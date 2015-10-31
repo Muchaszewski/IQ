@@ -1,6 +1,7 @@
 ﻿using InventoryQuest.Utils;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace InventoryQuest.Components
 {
@@ -13,6 +14,7 @@ namespace InventoryQuest.Components
 
         public Spot()
         {
+            ListConnections = new List<SpotConnection>();
         }
 
         public Spot(string name) : base()
@@ -24,6 +26,10 @@ namespace InventoryQuest.Components
         public int Level { get; set; }
         public int ID { get; set; }
         public string ImageString { get; set; }
+        public int MonsterValueToCompleteArea { get; set; }
+        public List<SpotConnection> ListConnections { get; set; }
+
+        public Vector3 Position { get; set; }
 
         public string Category { get; set; }
 
@@ -82,7 +88,13 @@ namespace InventoryQuest.Components
                 return weight;
             }
         }
-
-
+        
+        [Serializable]
+        public class SpotConnection
+        {
+            public string SpotString { get; set; }
+            public int Distance { get; set; }
+            public bool IsTwoWay { get; set; }
+        }
     }
 }

@@ -7486,6 +7486,15 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>1</Level>
       <ID>0</ID>
       <ImageString>location_coast_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections>
+        <string>Sailor's Beach</string>
+      </ListConnections>
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7501,20 +7510,20 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <ID>0</ID>
         </GenerationWeightLists>
       </ItemsList>
-      <ItemOnComplete>
-        <GenerationWeightLists>
-          <Name>Thank you</Name>
-          <Weight>100</Weight>
-          <Category>Lore</Category>
-          <ID>0</ID>
-        </GenerationWeightLists>
-      </ItemOnComplete>
+      <ItemOnComplete />
     </Spot>
     <Spot>
       <Name>Desolate Coast</Name>
       <Level>3</Level>
       <ID>1</ID>
       <ImageString>location_coast_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7547,6 +7556,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>2</ID>
       <ImageString>location_coast_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7594,6 +7610,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>3</ID>
       <ImageString>location_coast_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7636,6 +7659,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>7</Level>
       <ID>4</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7658,6 +7688,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>10</Level>
       <ID>5</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7690,6 +7727,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>6</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7717,6 +7761,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>11</Level>
       <ID>7</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Kingdom of Arce</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7749,6 +7800,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7781,6 +7839,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>12</Level>
       <ID>9</ID>
       <ImageString>location_placeholder_desert_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Jaha Sultanate</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7808,6 +7873,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>20</Level>
       <ID>10</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7845,6 +7917,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>30</Level>
       <ID>11</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7877,6 +7956,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>40</Level>
       <ID>12</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7909,6 +7995,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>20</Level>
       <ID>13</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7931,6 +8024,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>30</Level>
       <ID>14</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7953,6 +8053,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>40</Level>
       <ID>15</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7975,6 +8082,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>16</ID>
       <ImageString>location_plain_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Atlantea</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -7997,6 +8111,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>17</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Discussia</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -8019,6 +8140,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>40</Level>
       <ID>18</ID>
       <ImageString>location_plain_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -8041,6 +8169,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>40</Level>
       <ID>19</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>Debug</Category>
       <EntitiesList>
         <GenerationWeightLists>
@@ -8063,6 +8198,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>5</Level>
       <ID>20</ID>
       <ImageString>location_coast_0</ImageString>
+      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <ListConnections />
+      <Position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </Position>
       <Category>The Inner Sea</Category>
       <EntitiesList>
         <GenerationWeightLists>

@@ -18,7 +18,7 @@ public class AreaImageController : MonoBehaviour
 
     public void ChangeBackground(string image)
     {
-        if (image == null || string.Empty == image)
+        if (string.IsNullOrEmpty(image))
         {
             _image.sprite = ResourceManager.Get("Sprites/gui/missingImage_0");
             return;
