@@ -29,6 +29,7 @@ namespace InventoryQuest.Components
         public int MonsterValueToCompleteArea { get; set; }
         public List<SpotConnection> ListConnections { get; set; }
 
+        public float Size { get; set; }
         public Vector3 Position { get; set; }
 
         public string Category { get; set; }
@@ -88,7 +89,7 @@ namespace InventoryQuest.Components
                 return weight;
             }
         }
-        
+
         [Serializable]
         public class SpotConnection
         {

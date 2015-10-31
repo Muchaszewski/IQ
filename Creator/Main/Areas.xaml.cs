@@ -181,8 +181,7 @@ namespace Creator.Main
         }
 
         private void TextBoxAreasItemsWeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            TextUtils.IsNumeric(ref e, true);
+        {            TextUtils.IsNumeric(ref e, true);
         }
 
         private void ButtonAreasMonstersAdd_Click(object sender, RoutedEventArgs e)
@@ -441,6 +440,17 @@ namespace Creator.Main
             {
                 ButtonAreasListRemovey.IsEnabled = false;
             }
+        }
+
+        private void TextBoxSize_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextUtils.IsNumeric(ref e, false);
+        }
+
+        private void ButtonApplySize_Click(object sender, RoutedEventArgs e)
+        {
+            var item = DataGridAreasAll.SelectedItem as Spot;
+            item.Size = float.Parse(TextBoxSize.Text);
         }
     }
 }

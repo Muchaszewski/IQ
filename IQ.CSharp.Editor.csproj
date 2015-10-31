@@ -128,6 +128,7 @@
     <Compile Include="Assets\Editor\ChangingObjectsNameEditor.cs" />
     <Compile Include="Assets\Editor\EquipmentSlotEditor.cs" />
     <Compile Include="Assets\Editor\MovableAnimatorEditor.cs" />
+    <Compile Include="Assets\Editor\ReadOnlyDrawer.cs" />
     <Compile Include="Assets\Editor\StatisticsHandlerEditor.cs" />
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\Element Adder Menu\ElementAdderMenuBuilder.cs" />
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\Element Adder Menu\ElementAdderMenuCommandAttribute.cs" />

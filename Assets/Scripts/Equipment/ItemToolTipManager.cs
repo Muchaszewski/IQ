@@ -12,7 +12,7 @@ using Assets.Scripts;
 using Assets.Scripts.Utils;
 using InventoryQuest.Components.Entities.Player;
 
-public class ToolTipManager : UILabelManager
+public class ItemToolTipManager : UILabelManager
 {
 
     //Show in inspector

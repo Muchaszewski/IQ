@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class ShowTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public ToolTipManager ToolTipManager { get; private set; }
+    public ItemToolTipManager ToolTipManager { get; private set; }
     private RectTransform _rectTransofrm;
     private Rect ItemPosition;
     private ItemIcon ItemData;
@@ -16,7 +16,7 @@ public class ShowTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // Use this for initialization
     void Start()
     {
-        ToolTipManager = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ToolTipManager>();
+        ToolTipManager = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<ItemToolTipManager>();
         ItemData = GetComponent<ItemIcon>();
         _rectTransofrm = GetComponent<RectTransform>();
         UpdatePosition();

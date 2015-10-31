@@ -169,7 +169,6 @@ public class ItemIcon : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerCl
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            ;
             int key = Inventory.GetEquipment(this);
             Inventory.SwapItemsOnPanel(this, key);
             SoundManager.Instance.Play(ItemData, EnumItemSoundType.Equip);

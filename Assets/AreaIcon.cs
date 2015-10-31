@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.Utils;
+using InventoryQuest.Components;
 using InventoryQuest.Game;
 using UnityEngine.UI;
 
 public class AreaIcon : MonoBehaviour
 {
-    private Image _image;
+    [ReadOnly]
+    public Vector3 Position;
+    [ReadOnly]
+    public float Size;
 
+    private Image _image;
 
     // Use this for initialization
     void Start()

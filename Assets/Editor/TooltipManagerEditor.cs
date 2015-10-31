@@ -8,13 +8,13 @@ using InventoryQuest.Game;
 using UnityEditor;
 using UnityEngine.UI;
 
-[CustomEditor(typeof(ToolTipManager))]
+[CustomEditor(typeof(ItemToolTipManager))]
 public class TooltipManagerEditor : Editor
 {
-    private ToolTipManager script;
+    private ItemToolTipManager script;
     void OnEnable()
     {
-        script = (ToolTipManager)target;
+        script = (ItemToolTipManager)target;
     }
 
     public override void OnInspectorGUI()

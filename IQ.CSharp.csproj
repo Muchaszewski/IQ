@@ -77,13 +77,14 @@
     <Compile Include="Assets\AreaIcon.cs" />
     <Compile Include="Assets\ExperienceBar.cs" />
     <Compile Include="Assets\MessageBox.cs" />
+    <Compile Include="Assets\ObjectDrag.cs" />
     <Compile Include="Assets\Scripts\DebugOptions.cs" />
     <Compile Include="Assets\Scripts\Equipment\EquipmentSlot.cs" />
     <Compile Include="Assets\Scripts\Equipment\InventoryPanel.cs" />
     <Compile Include="Assets\Scripts\Equipment\ItemBackgrounds.cs" />
     <Compile Include="Assets\Scripts\Equipment\ItemIcon.cs" />
+    <Compile Include="Assets\Scripts\Equipment\ItemToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Equipment\ShowTooltip.cs" />
-    <Compile Include="Assets\Scripts\Equipment\ToolTipManager.cs" />
     <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\CombatLineManager.cs" />
     <Compile Include="Assets\Scripts\Game\Fight\Enemy.cs" />
@@ -112,10 +113,13 @@
     <Compile Include="Assets\Scripts\UI\MovablePanel.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\Utils\Existentions.cs" />
+    <Compile Include="Assets\Scripts\Utils\ReadOnlyAttribute.cs" />
     <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
     <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />
     <Compile Include="Assets\SoundManager.cs" />
+    <Compile Include="Assets\TooltipController.cs" />
+    <Compile Include="Assets\TooltipTrigger.cs" />
     <Compile Include="Assets\TutorialActions.cs" />
     <Compile Include="Assets\UIMoney.cs" />
   </ItemGroup>
