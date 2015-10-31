@@ -14661,7 +14661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65887494790d4ae4ba3115786b1b3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Tooltip_Message_Test
+  Text: Tooltip_Message_Test/r/nhuehue
 --- !u!1 &1373949271
 GameObject:
   m_ObjectHideFlags: 0

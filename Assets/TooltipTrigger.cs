@@ -10,7 +10,10 @@ public class TooltipTrigger : MonoBehaviour, IPointerExitHandler, IPointerEnterH
     public void OnPointerEnter(PointerEventData eventData)
     {
         GameManager.Instance.TooltipShow = true;
-        GameManager.Instance.TooltipGameObject.transform.GetChild(0).GetComponent<Text>().text = Text;
+        var textComponent = GameManager.Instance.TooltipGameObject.transform.GetChild(0).GetComponent<Text>();
+        var rectTransform = GameManager.Instance.TooltipGameObject.GetComponent<RectTransform>();
+        textComponent.text = Text;
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, textComponent.preferredHeight);
     }
 
     public void OnPointerExit(PointerEventData eventData)

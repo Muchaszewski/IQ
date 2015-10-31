@@ -174,5 +174,37 @@ namespace Creator
                 PopulateListBoxImageIDs();
             }
         }
+
+        private void ButtonHitAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var type = ListBoxTypes.SelectedIndex;
+            var image = ListBoxImages.SelectedIndex;
+            if (type != -1)
+            {
+                var item = new PairTypeItem()
+                {
+                    Type = ResourcesNames.ItemsSoundsNames[type].Name,
+                    Item = ResourcesNames.ItemsSoundsNames[type].List[image]
+                };
+                ImagesID[(int)EnumItemSoundType.Hit] = item;
+                PopulateListBoxImageIDs();
+            }
+        }
+
+        private void ButtonParryAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var type = ListBoxTypes.SelectedIndex;
+            var image = ListBoxImages.SelectedIndex;
+            if (type != -1)
+            {
+                var item = new PairTypeItem()
+                {
+                    Type = ResourcesNames.ItemsSoundsNames[type].Name,
+                    Item = ResourcesNames.ItemsSoundsNames[type].List[image]
+                };
+                ImagesID[(int)EnumItemSoundType.Parry] = item;
+                PopulateListBoxImageIDs();
+            }
+        }
     }
 }

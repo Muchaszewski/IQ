@@ -10,5 +10,7 @@ namespace InventoryQuest.Components.Items
         Drag,
         Drop,
         Equip,
+        Hit,
+        Parry,
     }
 }

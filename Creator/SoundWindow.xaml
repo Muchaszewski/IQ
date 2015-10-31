@@ -16,6 +16,9 @@
         <Label Content="Drop" HorizontalAlignment="Left" Margin="412,172,0,0" VerticalAlignment="Top" Width="47" HorizontalContentAlignment="Center"/>
         <Button x:Name="ButtonEquipAdd" Content="Button" HorizontalAlignment="Left" Margin="421,269,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30" Click="ButtonEquipAdd_Click"/>
         <Label Content="Equip" HorizontalAlignment="Left" Margin="412,238,0,0" VerticalAlignment="Top" Width="47" HorizontalContentAlignment="Center"/>
-
+        <Button x:Name="ButtonHitAdd" Content="Button" HorizontalAlignment="Left" Margin="421,331,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"/>
+        <Label Content="Hit" HorizontalAlignment="Left" Margin="412,300,0,0" VerticalAlignment="Top" Width="47" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ButtonParryAdd" Content="Button" HorizontalAlignment="Left" Margin="421,397,0,0" VerticalAlignment="Top" Width="29" Template="{DynamicResource ResourceKey=ButtonArrowRight}" Height="30"/>
+        <Label Content="Parry" HorizontalAlignment="Left" Margin="412,366,0,0" VerticalAlignment="Top" Width="47" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>
