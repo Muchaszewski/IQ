@@ -666,7 +666,6 @@ namespace Creator.Main
                 var item = DataGridItemsAll.SelectedItem as ItemType;
                 var window = new SoundWindow(item.SoundID);
                 Utils.GenericUtils.CenterWindow(_parentWindow, window);
-                window.ShowDialog();
                 RefreshItems();
             }
         }
