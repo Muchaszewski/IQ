@@ -34,7 +34,7 @@ public class AreaButtonController : MonoBehaviour
 
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
-        GetComponent<Button>().onClick.AddListener(() => ChangeSpot());
+        GetComponent<Button>().onClick.AddListener(ChangeSpot);
         CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
     }
 
@@ -48,7 +48,7 @@ public class AreaButtonController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void ChangeSpot()
+    public void ChangeSpot()
     {
         CurrentGame.Instance.TravelToSpot = Spot.ID;
         isChangeingSpot = true;

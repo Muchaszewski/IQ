@@ -10,6 +10,7 @@ public class SpotManager : MonoBehaviour
 {
     public GameObject AreaButton;
     public GameObject AreaButtonCategory;
+    public MapManager MapManager;
     // -1 90
 
     // Use this for initialization
@@ -39,6 +40,8 @@ public class SpotManager : MonoBehaviour
             area.transform.SetParent(transform);
             area.transform.localScale = Vector3.one;
             area.RectTransform.anchoredPosition = new Vector2(0, -20 - 40 * (i + categoryCount));
+
+            MapManager.CreateMapIcon(item, area);
         }
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(552.5f, (count + categoryCount) * 40);
     }
