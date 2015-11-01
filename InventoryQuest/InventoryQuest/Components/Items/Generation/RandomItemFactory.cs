@@ -463,6 +463,12 @@ namespace InventoryQuest.Components.Generation.Items
                 //Set sound
                 foreach (var sound in type.SoundID)
                 {
+                    if (sound == null)
+                    {
+                        item.SoundID.Add(null);
+                        continue;
+                    }
+
                     PairTypeItem soundItem = sound;
                     item.SoundID.Add(ResourcesNames.ResolveItemsSound(soundItem.Type, soundItem.Item));
                 }
