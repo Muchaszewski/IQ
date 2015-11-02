@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using InventoryQuest.Components.Entities;
@@ -18,6 +19,9 @@ public class ProgressBar : MonoBehaviour
 
     public EnumTypeStat ValueName;
     public EnumCurrentEntity CurrentEntityType;
+    public int Special;
+
+    private List<Action> _actions = new List<Action>();
 
     private StatValueFloat statValueFloat;
 
@@ -34,6 +38,7 @@ public class ProgressBar : MonoBehaviour
         UpdateTarget();
         GetComponent<Image>().color = BackgroundColor;
         ProgressBarImage.color = BarColor;
+        SetActions();
     }
 
     // Update is called once per frame
@@ -41,7 +46,7 @@ public class ProgressBar : MonoBehaviour
     {
         if (CurrentEntityType == EnumCurrentEntity.Special)
         {
-            ProgressBarImage.transform.localScale = new Vector3((float)CurrentGame.Instance.Player.Experience / (float)CurrentGame.Instance.Player.GetToNextLevelExperience(), 1, 1);
+            _actions[Special].Invoke();
             return;
         }
         if (CurrentEntityType == EnumCurrentEntity.Enemy)
@@ -93,6 +98,32 @@ public class ProgressBar : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    void SetActions()
+    {
+        _actions.Add(null);
+        _actions[0] = (delegate
+        {
+            //Experience
+            ProgressBarImage.transform.localScale =
+                new Vector3((float)CurrentGame.Instance.Player.Experience /
+                (float)CurrentGame.Instance.Player.GetToNextLevelExperience(), 1, 1);
+        });
+
+        _actions.Add(null);
+        _actions[1] = (delegate
+        {
+            //AreaProgress
+            if (CurrentGame.Instance.Spot.MonsterValueToCompleteArea == 0)
+            {
+                ProgressBarImage.transform.localScale = new Vector3(1, 1, 1);
+                return;
+            }
+            ProgressBarImage.transform.localScale =
+                new Vector3((float)CurrentGame.Instance.AreaProgress /
+                (float)CurrentGame.Instance.Spot.MonsterValueToCompleteArea, 1, 1);
+        });
     }
 
 }

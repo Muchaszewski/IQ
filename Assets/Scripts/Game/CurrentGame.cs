@@ -31,6 +31,7 @@ namespace InventoryQuest.Game
         }
 
         public Spot Spot { get; set; }
+        public int AreaProgress { get; set; }
 
         /// <summary>
         ///     Waiting for CurrentGame Instance to create
@@ -74,6 +75,7 @@ namespace InventoryQuest.Game
                         FightController.ResetBattle();
                         ResetIdle();
                         TravelingFinished.Invoke(this, EventArgs.Empty);
+                        AreaProgress++;
                         return;
                     }
                     if (Traveling == 0)
