@@ -8,9 +8,13 @@ namespace InventoryQuest.Components
     [Serializable]
     public class Spot
     {
+        [field: NonSerialized]
+        public static event EventHandler onNewAreaUnlocked = delegate { };
+
         private List<GenerationWeightLists> _entitiesList = new List<GenerationWeightLists>();
         private List<GenerationWeightLists> _itemsList = new List<GenerationWeightLists>();
         private List<GenerationWeightLists> _itemOnComplete = new List<GenerationWeightLists>();
+        private int _progress;
 
         public Spot()
         {
@@ -28,6 +32,7 @@ namespace InventoryQuest.Components
         public string ImageString { get; set; }
         public int MonsterValueToCompleteArea { get; set; }
         public List<SpotConnection> ListConnections { get; set; }
+        public bool IsUnlocked { get; set; }
 
         public float Size { get; set; }
         public Vector3 Position { get; set; }
@@ -90,12 +95,44 @@ namespace InventoryQuest.Components
             }
         }
 
+        public int Progress
+        {
+            get { return _progress; }
+            set
+            {
+                if (_progress >= MonsterValueToCompleteArea)
+                {
+                    UnlockConnections();
+                }
+                _progress = value;
+            }
+        }
+
         [Serializable]
         public class SpotConnection
         {
             public string SpotString { get; set; }
             public int Distance { get; set; }
             public bool IsTwoWay { get; set; }
+        }
+
+        public void UnlockConnections()
+        {
+            foreach (var connection in ListConnections)
+            {
+                FindSpotByConnection(connection).IsUnlocked = true;
+            }
+            onNewAreaUnlocked.Invoke(this, EventArgs.Empty);
+        }
+
+        public static Spot FindSpotByConnection(Spot.SpotConnection connection)
+        {
+            return GenerationStorage.Instance.Spots.Find(x => x.Name.Equals(connection.SpotString));
+        }
+
+        public static Spot.SpotConnection FindConnectionBySpot(Spot spot, Spot connected)
+        {
+            return spot.ListConnections.Find(x => x.SpotString.Equals(connected.Name));
         }
     }
 }

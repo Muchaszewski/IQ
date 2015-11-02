@@ -347,7 +347,7 @@ namespace Creator.Main
                         SpotString = next.Name,
                         IsTwoWay = false,
                     };
-                    var nextConnection = FindConnectionBySpot(next, current);
+                    var nextConnection = Spot.FindConnectionBySpot(next, current);
                     if (nextConnection != null)
                     {
                         nextConnection.IsTwoWay = true;
@@ -384,9 +384,9 @@ namespace Creator.Main
             if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
             {
                 var nextConenction = (Spot.SpotConnection)DataGridTravelList.SelectedItem;
-                var next = FindSpotByConnection(nextConenction);
+                var next = Spot.FindSpotByConnection(nextConenction);
                 var current = (Spot)DataGridAreasAll.SelectedItem;
-                var currentConnection = FindConnectionBySpot(next, current);
+                var currentConnection = Spot.FindConnectionBySpot(next, current);
                 if (currentConnection != null)
                 {
                     currentConnection.IsTwoWay = false;
@@ -396,23 +396,13 @@ namespace Creator.Main
             else
             {
                 var nextConenction = (Spot.SpotConnection)DataGridTravelList.SelectedItem;
-                var next = FindSpotByConnection(nextConenction);
+                var next = Spot.FindSpotByConnection(nextConenction);
                 var current = (Spot)DataGridAreasAll.SelectedItem;
-                var currentConnection = FindConnectionBySpot(next, current);
+                var currentConnection = Spot.FindConnectionBySpot(next, current);
                 current.ListConnections.Remove(nextConenction);
                 next.ListConnections.Remove(currentConnection);
             }
             RefreshArea();
-        }
-
-        Spot FindSpotByConnection(Spot.SpotConnection connection)
-        {
-            return GenerationStorage.Instance.Spots.Find(x => x.Name.Equals(connection.SpotString));
-        }
-
-        Spot.SpotConnection FindConnectionBySpot(Spot spot, Spot connected)
-        {
-            return spot.ListConnections.Find(x => x.SpotString.Equals(connected.Name));
         }
 
 

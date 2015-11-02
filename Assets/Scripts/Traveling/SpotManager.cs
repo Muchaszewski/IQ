@@ -16,13 +16,27 @@ public class SpotManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        var count = GenerationStorage.Instance.Spots.Count;
+        CreateSpotOnList();
+        Spot.onNewAreaUnlocked += Spot_onNewAreaUnlocked;
+    }
+
+    public void OnDestroy()
+    {
+        Spot.onNewAreaUnlocked -= Spot_onNewAreaUnlocked;
+    }
+
+    void CreateSpotOnList()
+    {
+        RemoveAllChilds();
+        var count = 0;
         var spotListSorted = GenerationStorage.Instance.Spots.OrderByDescending(x => x.Category).ThenBy(x => x.Level).ToList();
         string currentCategory = "";
         int categoryCount = 0;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < GenerationStorage.Instance.Spots.Count; i++)
         {
             var item = spotListSorted[i];
+            if (item.IsUnlocked == false) continue;
+            count++;
 
             if (currentCategory != item.Category)
             {
@@ -44,5 +58,22 @@ public class SpotManager : MonoBehaviour
             MapManager.CreateMapIcon(item, area);
         }
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(552.5f, (count + categoryCount) * 40);
+    }
+
+    void RemoveAllChilds()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in MapManager.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
+    private void Spot_onNewAreaUnlocked(object sender, System.EventArgs e)
+    {
+        CreateSpotOnList();
     }
 }

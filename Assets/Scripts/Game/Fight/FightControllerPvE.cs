@@ -336,6 +336,8 @@ namespace InventoryQuest.Game.Fight
                     message.Add(EnumAttackMessage.Experience, experience);
                     InvokeEvent_onKill(new FightControllerEventArgs(this, entity, null, message));
                     entity.IsAlive = false;
+                    CurrentGame.Instance.Spot.Progress++;
+
                 }
                 return entity.Stats.HealthPoints.Current <= 0;
             }

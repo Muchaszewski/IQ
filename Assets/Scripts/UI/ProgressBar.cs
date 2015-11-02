@@ -121,7 +121,7 @@ public class ProgressBar : MonoBehaviour
                 return;
             }
             ProgressBarImage.transform.localScale =
-                new Vector3((float)CurrentGame.Instance.AreaProgress /
+                new Vector3((float)CurrentGame.Instance.Spot.Progress /
                 (float)CurrentGame.Instance.Spot.MonsterValueToCompleteArea, 1, 1);
         });
     }

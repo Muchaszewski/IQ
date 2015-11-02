@@ -31,7 +31,6 @@ namespace InventoryQuest.Game
         }
 
         public Spot Spot { get; set; }
-        public int AreaProgress { get; set; }
 
         /// <summary>
         ///     Waiting for CurrentGame Instance to create
@@ -40,6 +39,7 @@ namespace InventoryQuest.Game
         {
             instance = this;
             Spot = GenerationStorage.Instance.Spots[0];
+            Spot.IsUnlocked = true;
 
             var stats = new Stats();
             stats.Strength.Base = UnityEngine.Random.Range(0, 20);
@@ -75,7 +75,6 @@ namespace InventoryQuest.Game
                         FightController.ResetBattle();
                         ResetIdle();
                         TravelingFinished.Invoke(this, EventArgs.Empty);
-                        AreaProgress++;
                         return;
                     }
                     if (Traveling == 0)

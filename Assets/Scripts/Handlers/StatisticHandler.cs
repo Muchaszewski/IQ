@@ -136,7 +136,7 @@ public class StatisticHandler : MonoBehaviour
         }
         else if (statName == "AP") //Area progress
         {
-            TextComponent.text = "Area progress "+CurrentGame.Instance.AreaProgress.ToString();
+            TextComponent.text = "Area progress "+CurrentGame.Instance.Spot.Progress.ToString();
         }
     }
 }
