@@ -1,6 +1,7 @@
 ﻿using InventoryQuest.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace InventoryQuest.Components
@@ -14,11 +15,11 @@ namespace InventoryQuest.Components
         private List<GenerationWeightLists> _entitiesList = new List<GenerationWeightLists>();
         private List<GenerationWeightLists> _itemsList = new List<GenerationWeightLists>();
         private List<GenerationWeightLists> _itemOnComplete = new List<GenerationWeightLists>();
+        private List<SpotConnection> _listConnections = new List<SpotConnection>();
         private int _progress;
 
         public Spot()
         {
-            ListConnections = new List<SpotConnection>();
         }
 
         public Spot(string name) : base()
@@ -31,7 +32,6 @@ namespace InventoryQuest.Components
         public int ID { get; set; }
         public string ImageString { get; set; }
         public int MonsterValueToCompleteArea { get; set; }
-        public List<SpotConnection> ListConnections { get; set; }
         public bool IsUnlocked { get; set; }
 
         public float Size { get; set; }
@@ -108,6 +108,12 @@ namespace InventoryQuest.Components
             }
         }
 
+        public List<SpotConnection> ListConnections
+        {
+            get { return _listConnections; }
+            set { _listConnections = value; }
+        }
+
         [Serializable]
         public class SpotConnection
         {
@@ -120,19 +126,28 @@ namespace InventoryQuest.Components
         {
             foreach (var connection in ListConnections)
             {
-                FindSpotByConnection(connection).IsUnlocked = true;
+                var spot = FindSpotByConnection(connection);
+                if (spot != null)
+                {
+                    spot.IsUnlocked = true;
+                }
+                else
+                {
+                    Debug.LogError("Connection list was not empty but connection name was not found");
+                    return;
+                }
             }
             onNewAreaUnlocked.Invoke(this, EventArgs.Empty);
         }
 
         public static Spot FindSpotByConnection(Spot.SpotConnection connection)
         {
-            return GenerationStorage.Instance.Spots.Find(x => x.Name.Equals(connection.SpotString));
+            return GenerationStorage.Instance.Spots.FirstOrDefault(x => x.Name.Equals(connection.SpotString));
         }
 
         public static Spot.SpotConnection FindConnectionBySpot(Spot spot, Spot connected)
         {
-            return spot.ListConnections.Find(x => x.SpotString.Equals(connected.Name));
+            return spot.ListConnections.FirstOrDefault(x => x.SpotString.Equals(connected.Name));
         }
     }
 }

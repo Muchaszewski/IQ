@@ -34,20 +34,14 @@ namespace InventoryQuest.Components
 
         static GenerationStorage()
         {
-            if (_Instance == null)
+            _Instance = LoadXml("");
+            for (int i = 0; i < Instance.Spots.Count; i++)
             {
-                _Instance = LoadXml("");
-                for (int i = 0; i < Instance.Spots.Count; i++)
-                {
-                    Instance.Spots[i].ID = i;
-                }
+                Instance.Spots[i].ID = i;
             }
         }
 
-        public static GenerationStorage Instance
-        {
-            get { return _Instance; }
-        }
+        public static GenerationStorage Instance => _Instance;
 
         public List<EntityType> Entities
         {
@@ -141,7 +135,15 @@ namespace InventoryQuest.Components
             if (file != null)
             {
                 var gs = new GenerationStorage();
-                gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
+                try
+                {
+                    gs = (GenerationStorage)serializer.Deserialize(new StringReader(file.text));
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("XML File get corrupted! Please try fix by reverting changes or look for missing brakets");
+                    Debug.Break();
+                }
                 return gs;
             }
 #endif
