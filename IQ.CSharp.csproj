@@ -51,9 +51,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -78,6 +75,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AreaIcon.cs" />
+    <Compile Include="Assets\Extensions\Scripts\Android\Vibration.cs" />
+    <Compile Include="Assets\Extensions\Scripts\ExtendedRandom.cs" />
+    <Compile Include="Assets\Extensions\Scripts\Extensions.cs" />
+    <Compile Include="Assets\Extensions\Scripts\ReadOnlyAttribute.cs" />
+    <Compile Include="Assets\Extensions\Scripts\SingletonBehaviour.cs" />
+    <Compile Include="Assets\Extensions\Scripts\UI\ExtendedButton.cs" />
+    <Compile Include="Assets\Extensions\Scripts\Utils\OperationUtils.cs" />
     <Compile Include="Assets\MapManager.cs" />
     <Compile Include="Assets\MessageBox.cs" />
     <Compile Include="Assets\ObjectDrag.cs" />
@@ -116,7 +120,6 @@
     <Compile Include="Assets\Scripts\UI\MovablePanel.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\Utils\Existentions.cs" />
-    <Compile Include="Assets\Scripts\Utils\ReadOnlyAttribute.cs" />
     <Compile Include="Assets\Scripts\Utils\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
     <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Extensions;
 using InventoryQuest.Components.Entities.Player.Inventory;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
@@ -25,8 +26,8 @@ public class TutorialActions : MonoBehaviour
 
     public MessageBox MessageBox;
 
-    public Button[] MenuButtons;
-    public Button ApplyStatisticsButton;
+    public ExtendedButton[] MenuButtons;
+    public ExtendedButton ApplyStatisticsButton;
     public Image TutorialButtonHighlight;
 
     public TutorialMessage introductionMessage;
@@ -222,7 +223,7 @@ public class TutorialActions : MonoBehaviour
         MessageBox.NextButton.onClick.AddListener(action);
     }
 
-    void SetButtonHighlight(Button buttonToHighlight)
+    void SetButtonHighlight(ExtendedButton buttonToHighlight)
     {
         TutorialButtonHighlight.gameObject.SetActive(true);
         TutorialButtonHighlight.transform.position = buttonToHighlight.transform.position;

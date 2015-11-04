@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using InventoryQuest.Game;
 using System.Linq;
+using Extensions;
+
 // ReSharper disable All
 
 public class TutorialManager : MonoBehaviour
@@ -127,12 +129,12 @@ public class TutorialManager : MonoBehaviour
         // Only allow apllying the portrait and the name if the name is not empty
         if (InputNameField.text.Length > 0)
         {
-            Button buttonComponent = HeadAndNameApplyButton.GetComponent<Button>();
+            ExtendedButton buttonComponent = HeadAndNameApplyButton.GetComponent<ExtendedButton>();
             buttonComponent.interactable = true;
         }
         else
         {
-            Button buttonComponent = HeadAndNameApplyButton.GetComponent<Button>();
+            ExtendedButton buttonComponent = HeadAndNameApplyButton.GetComponent<ExtendedButton>();
             buttonComponent.interactable = false;
         }
     }

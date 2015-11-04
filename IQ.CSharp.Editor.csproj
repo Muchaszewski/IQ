@@ -54,9 +54,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -131,7 +128,6 @@
     <Compile Include="Assets\Editor\ChangingObjectsNameEditor.cs" />
     <Compile Include="Assets\Editor\EquipmentSlotEditor.cs" />
     <Compile Include="Assets\Editor\MovableAnimatorEditor.cs" />
-    <Compile Include="Assets\Editor\ReadOnlyDrawer.cs" />
     <Compile Include="Assets\Editor\StatisticsHandlerEditor.cs" />
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\Element Adder Menu\ElementAdderMenuBuilder.cs" />
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\Element Adder Menu\ElementAdderMenuCommandAttribute.cs" />
@@ -154,6 +150,10 @@
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\ReorderableListStyles.cs" />
     <Compile Include="Assets\Editor\ThirdParty\Rotoz\SerializedPropertyAdaptor.cs" />
     <Compile Include="Assets\Editor\TooltipManagerEditor.cs" />
+    <Compile Include="Assets\Extensions\Editor\ReadOnlyDrawer.cs" />
+    <Compile Include="Assets\Extensions\Editor\UI\ExtendedButtonEditor.cs" />
+    <Compile Include="Assets\Extensions\Editor\UI\ExtendedGUI.cs" />
+    <Compile Include="Assets\Extensions\Editor\Windows\ExtendedWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Storage.xml" />
