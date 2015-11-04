@@ -79,6 +79,8 @@ namespace Creator.Main
                 TextBoxPositionX.Text = spot.Position.x.ToString();
                 TextBoxPositionY.Text = spot.Position.y.ToString();
                 TextBoxPositionZ.Text = spot.Position.z.ToString();
+                TextBoxMonsterValue.Text = spot.MonsterValueToCompleteArea.ToString();
+                TextBoxAreasListDistance.Text = spot.Progress.ToString();
                 //Connection List
                 DataGridTravelList.ItemsSource = null;
                 DataGridTravelList.ItemsSource = spot.ListConnections;
