@@ -24,7 +24,7 @@ namespace Creator
             }
             else
             {
-                if (!char.IsDigit(e.Text, e.Text.Length - 1) && e.Text[e.Text.Length - 1] != ',')
+                if (!char.IsDigit(e.Text, e.Text.Length - 1) && e.Text[e.Text.Length - 1] != ',' && e.Text[0] != '-')
                 {
                     e.Handled = true;
                 }
