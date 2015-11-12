@@ -142,7 +142,7 @@ public class StatisticHandler : MonoBehaviour
             }
             else
             {
-                TextComponent.text = "Area progress " + CurrentGame.Instance.Spot.Progress.ToString();
+                TextComponent.text = "Remaining Monsters" + (CurrentGame.Instance.Spot.MonsterValueToCompleteArea - CurrentGame.Instance.Spot.Progress);
             }
         }
     }
