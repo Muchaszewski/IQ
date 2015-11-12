@@ -4641,7 +4641,22 @@
           <Item>medieval_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_pickUp</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>14</RequiredLevel>
@@ -4784,7 +4799,22 @@
           <Item>club_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_pickUp</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
@@ -8450,6 +8480,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ShieldType>
       <Name>Round Shield</Name>
       <ID>2</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
@@ -8489,6 +8520,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <PairTypeItem xsi:nil="true" />
         <PairTypeItem xsi:nil="true" />
       </SoundID>
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
       <DropLevel>9</DropLevel>
@@ -8730,11 +8762,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>1</Level>
       <ID>0</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>54</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>30</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>1</Size>
       <Position>
-        <x>2</x>
+        <x>3</x>
         <y>0</y>
         <z>0</z>
       </Position>
@@ -8768,12 +8800,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>3</Level>
       <ID>1</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>50</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>3</x>
+        <y>1</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -8826,12 +8858,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>2</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>2</x>
+        <y>2</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -8882,6 +8914,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
+        <SpotConnection>
+          <SpotString>Scorpion Desert</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
       </ListConnections>
     </Spot>
     <Spot>
@@ -8889,12 +8926,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>3</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>4</x>
+        <y>2</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -8940,6 +8977,11 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
+        <SpotConnection>
+          <SpotString>Iron Plain</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
       </ListConnections>
     </Spot>
     <Spot>
@@ -8947,12 +8989,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>7</Level>
       <ID>4</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>2</x>
+        <y>3</y>
         <z>0</z>
       </Position>
       <Category>Jaha Sultanate</Category>
@@ -8972,19 +9014,30 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Sailor's Beach</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Shining Sands Desert</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Iron Plain</Name>
-      <Level>10</Level>
+      <Level>7</Level>
       <ID>5</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>4</x>
+        <y>3</y>
         <z>0</z>
       </Position>
       <Category>Kingdom of Arce</Category>
@@ -9014,19 +9067,30 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Jagged Cliffs</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Western Road</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Western Road</Name>
       <Level>8</Level>
       <ID>6</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>80</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>4</x>
+        <y>5</y>
         <z>0</z>
       </Position>
       <Category>Kingdom of Arce</Category>
@@ -9051,19 +9115,30 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Iron Plain</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>The Broken Bridge</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>The Broken Bridge</Name>
       <Level>11</Level>
       <ID>7</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>4</x>
+        <y>6</y>
         <z>0</z>
       </Position>
       <Category>Kingdom of Arce</Category>
@@ -9093,19 +9168,25 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Western Road</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Shining Sands Desert</Name>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>2</x>
+        <y>4</y>
         <z>0</z>
       </Position>
       <Category>Jaha Sultanate</Category>
@@ -9135,19 +9216,30 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Scorpion Desert</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>The Vesir's Desert</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>The Vesir's Desert</Name>
       <Level>12</Level>
       <ID>9</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>3</x>
+        <y>4</y>
         <z>0</z>
       </Position>
       <Category>Jaha Sultanate</Category>
@@ -9172,7 +9264,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Shining Sands Desert</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Medieval Lvl 20</Name>

@@ -4641,7 +4641,22 @@
           <Item>medieval_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_pickUp</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>metal_4_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>14</RequiredLevel>
@@ -4784,7 +4799,22 @@
           <Item>club_0</Item>
         </PairTypeItem>
       </ImageID>
-      <SoundID />
+      <SoundID>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_pickUp</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>items</Type>
+          <Item>wood_3_putDown</Item>
+        </PairTypeItem>
+        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem xsi:nil="true" />
+      </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
@@ -8450,6 +8480,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
     <ShieldType>
       <Name>Round Shield</Name>
       <ID>2</ID>
+      <ExtraName />
       <BaseStatsAllowed />
       <Type>Shield</Type>
       <Skill>Shield</Skill>
@@ -8489,6 +8520,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
         <PairTypeItem xsi:nil="true" />
         <PairTypeItem xsi:nil="true" />
       </SoundID>
+      <FlavorText />
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
       <DropLevel>9</DropLevel>
@@ -8768,7 +8800,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>3</Level>
       <ID>1</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>50</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -8826,7 +8858,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>2</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -8894,7 +8926,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>6</Level>
       <ID>3</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -8957,7 +8989,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>7</Level>
       <ID>4</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -9000,7 +9032,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>7</Level>
       <ID>5</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -9053,7 +9085,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>8</Level>
       <ID>6</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>80</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -9101,7 +9133,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>11</Level>
       <ID>7</ID>
       <ImageString>_location_placeholder_plains_1</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -9149,7 +9181,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>9</Level>
       <ID>8</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
@@ -9202,7 +9234,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>12</Level>
       <ID>9</ID>
       <ImageString>_location_placeholder_desert_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
       <Size>0</Size>
       <Position>
