@@ -6465,6 +6465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapIcon: {fileID: 146634, guid: ef1cb263f3a15f548b44544dd4f04bcf, type: 2}
+  PositionToScale: 90
 --- !u!1 &532708588
 GameObject:
   m_ObjectHideFlags: 0
