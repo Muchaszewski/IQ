@@ -104,7 +104,7 @@ public class StatisticHandler : MonoBehaviour
                 }
                 break;
             case EnumStatisticHandler.Target:
-                //Logic in StatisticsHandlerUpdater
+            //Logic in StatisticsHandlerUpdater
             case EnumStatisticHandler.Special:
                 ApplySpecial();
                 break;
@@ -136,7 +136,14 @@ public class StatisticHandler : MonoBehaviour
         }
         else if (statName == "AP") //Area progress
         {
-            TextComponent.text = "Area progress "+CurrentGame.Instance.Spot.Progress.ToString();
+            if (CurrentGame.Instance.Spot.Progress >= CurrentGame.Instance.Spot.MonsterValueToCompleteArea)
+            {
+                TextComponent.text = "Area Completed";
+            }
+            else
+            {
+                TextComponent.text = "Area progress " + CurrentGame.Instance.Spot.Progress.ToString();
+            }
         }
     }
 }
