@@ -71,6 +71,11 @@ public class DebugOptions : MonoBehaviour
         //GUILayout.EndHorizontal();
         //ADD ITEMS ADV
 
+        if (GUILayout.Button("Finish Area"))
+        {
+            CurrentGame.Instance.Spot.Progress = CurrentGame.Instance.Spot.MonsterValueToCompleteArea;
+        }
+
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Clear Inventory"))
         {

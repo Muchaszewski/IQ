@@ -15,7 +15,13 @@ namespace InventoryQuest.Game
     [Serializable]
     public class CurrentGame : MonoBehaviour
     {
+        public static event EventHandler RefilingBegin = delegate { };
+        public static event EventHandler RefilingFinieshed = delegate { };
         public static event EventHandler TravelingFinished = delegate { };
+        public static event EventHandler TravelingBegin = delegate { };
+        public static event EventHandler LookingForEnemies = delegate { };
+        public static event EventHandler EnemiesFound = delegate { };
+        public static event EventHandler WillChangeSpot = delegate { };
 
         private int _travelToSpot = -1;
         private byte Refiling;
@@ -67,14 +73,15 @@ namespace InventoryQuest.Game
                     {
                         if (TravelToSpot != -1)
                         {
+                            TravelingFinished.Invoke(this, EventArgs.Empty);
                             Spot = GenerationStorage.Instance.Spots[TravelToSpot];
                             TravelToSpot = -1;
                             ((FightControllerPvE)FightController).FightsInCurrentSpot = 0;
                         }
+                        EnemiesFound.Invoke(this, EventArgs.Empty);
                         Traveling = 2;
                         FightController.ResetBattle();
                         ResetIdle();
-                        TravelingFinished.Invoke(this, EventArgs.Empty);
                         return;
                     }
                     if (Traveling == 0)
@@ -82,11 +89,11 @@ namespace InventoryQuest.Game
                         Traveling = 1;
                         if (TravelToSpot != -1)
                         {
-
+                            TravelingBegin.Invoke(this, EventArgs.Empty);
                         }
                         else
                         {
-
+                            LookingForEnemies.Invoke(this, EventArgs.Empty);
                         }
                     }
                 }
@@ -94,9 +101,11 @@ namespace InventoryQuest.Game
                 if (Idle.Refill(true))
                 {
                     Refiling = 2;
+                    RefilingFinieshed.Invoke(this, EventArgs.Empty);
                 }
                 else if (Refiling == 0)
                 {
+                    RefilingBegin.Invoke(this, EventArgs.Empty);
                     Refiling = 1;
                 }
             }
@@ -122,6 +131,11 @@ namespace InventoryQuest.Game
         public void Save()
         {
             BinaryFilesOperations.Save(Instance.Player, "SaveFile.sav");
+        }
+
+        public void InvokeChangeSpot()
+        {
+            WillChangeSpot.Invoke(this, EventArgs.Empty);
         }
 
         #region static

@@ -51,6 +51,7 @@ public class AreaButtonController : MonoBehaviour
     public void ChangeSpot()
     {
         CurrentGame.Instance.TravelToSpot = Spot.ID;
+        CurrentGame.Instance.InvokeChangeSpot();
         isChangeingSpot = true;
     }
 
