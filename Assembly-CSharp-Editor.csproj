@@ -70,6 +70,10 @@
      <Compile Include="Assets\Editor\ThirdParty\Rotoz\ReorderableListStyles.cs" />
      <Compile Include="Assets\Editor\ThirdParty\Rotoz\SerializedPropertyAdaptor.cs" />
      <Compile Include="Assets\Editor\TooltipManagerEditor.cs" />
+     <Compile Include="Assets\Extensions\Editor\ReadOnlyDrawer.cs" />
+     <Compile Include="Assets\Extensions\Editor\UI\ExtendedButtonEditor.cs" />
+     <Compile Include="Assets\Extensions\Editor\UI\ExtendedGUI.cs" />
+     <Compile Include="Assets\Extensions\Editor\Windows\ExtendedWindow.cs" />
      <None Include="Assets\Resources\Storage.xml" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
