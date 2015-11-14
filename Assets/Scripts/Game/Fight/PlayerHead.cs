@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
 using UnityEngine.UI;

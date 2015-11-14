@@ -9,13 +9,23 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; set; }
 
-    private AudioSource _audioSource;
-    private AudioClip _clip;
+    public AudioClip BackgroundClips;
+
+    private AudioSource[] _audioSources;
 
     void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _audioSources = GetComponents<AudioSource>();
         Instance = this;
+        _audioSources[0].clip = BackgroundClips;
+        _audioSources[0].Play();
+    }
+
+    public void Play(AudioClip clip)
+    {
+        var audioSource = GetAudioSource();
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     public void Play(Item itemData, EnumItemSoundType soundType)
@@ -32,11 +42,12 @@ public class SoundManager : MonoBehaviour
             var path =
                 ResourcesNames.ItemsSoundsNames[soundItem.ImageIDType].FullNameList[
                     soundItem.ImageIDItem];
-            _clip = (AudioClip)Resources.Load(path);
-            if (_clip != null)
+            var clip = (AudioClip)Resources.Load(path);
+            if (clip != null)
             {
-                _audioSource.clip = _clip;
-                _audioSource.Play();
+                var audioSource = GetAudioSource();
+                audioSource.clip = clip;
+                audioSource.Play();
             }
             else
             {
@@ -47,5 +58,21 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning("(L)Sound is not connected to item " + itemData.Name + " at " + soundType);
         }
+    }
+
+    /// <summary>
+    /// Get not playing audio source, or if all are bussy return last one
+    /// </summary>
+    /// <returns></returns>
+    private AudioSource GetAudioSource()
+    {
+        foreach (var audioSource in _audioSources)
+        {
+            if (!audioSource.isPlaying)
+            {
+                return audioSource;
+            }
+        }
+        return _audioSources[_audioSources.Length - 1];
     }
 }

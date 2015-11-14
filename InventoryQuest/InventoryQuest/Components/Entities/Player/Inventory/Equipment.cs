@@ -119,30 +119,7 @@ namespace InventoryQuest.Components.Entities.Player.Inventory
 
         public Item GetItem(EnumItemSlot slot, int extraSlot = 0)
         {
-            switch (slot)
-            {
-                case EnumItemSlot.Head:
-                case EnumItemSlot.Chest:
-                case EnumItemSlot.Waist:
-                case EnumItemSlot.Legs:
-                case EnumItemSlot.Feet:
-                case EnumItemSlot.Shoulders:
-                case EnumItemSlot.Hands:
-                case EnumItemSlot.Back:
-                    return Armor[(int)slot - 1];
-                case EnumItemSlot.Neck:
-                    return Amulets[(int)extraSlot];
-                case EnumItemSlot.Finger:
-                    return Ring[(int)extraSlot];
-                case EnumItemSlot.OffHand:
-                    return OffHand;
-                case EnumItemSlot.Weapon:
-                    return Weapon;
-                case EnumItemSlot.Unknown:
-                    throw new ArgumentOutOfRangeException("slot", slot, null);
-                default:
-                    throw new ArgumentOutOfRangeException("slot", slot, null);
-            }
+            return Items[(int)slot];
         }
 
         void ZeroOutStatistics()

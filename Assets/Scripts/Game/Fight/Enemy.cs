@@ -2,8 +2,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Linq;
 using Assets.Scripts.Utils;
 using InventoryQuest.Components.Entities;
+using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
 using InventoryQuest.Utils;
@@ -158,6 +160,30 @@ public class Enemy : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         if (e.Target.Equals(EntityData))
         {
             GetComponent<FloatingText>().CreateFloatingText(e.Message);
+            var damage = e.Message.AttackDatas.FirstOrDefault(x => x.Message == EnumAttackMessage.FinalDamage);
+            if (damage != null && damage.Value != 0)
+            {
+                if (CurrentGame.Instance.Player.Equipment.GetItem(EnumItemSlot.Weapon) != null)
+                {
+                    SoundManager.Instance.Play(CurrentGame.Instance.Player.Equipment.GetItem(EnumItemSlot.Weapon),
+                        EnumItemSoundType.Hit);
+                }
+                else
+                {
+                    SoundManager.Instance.Play(CurrentGame.Instance.PlayerUnarmedAudioClipHit);
+                }
+            }
+            else
+            {
+                if (CurrentGame.Instance.Player.Equipment.GetItem(EnumItemSlot.Weapon) != null)
+                {
+                    SoundManager.Instance.Play(CurrentGame.Instance.Player.Equipment.GetItem(EnumItemSlot.Weapon), EnumItemSoundType.Parry);
+                }
+                else
+                {
+                    SoundManager.Instance.Play(CurrentGame.Instance.PlayerUnarmedAudioClipParry);
+                }
+            }
         }
     }
 

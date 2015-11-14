@@ -27,6 +27,9 @@ namespace InventoryQuest.Game
         private byte Refiling;
         private byte Traveling;
         public Player Player { get; set; }
+        public AudioClip PlayerUnarmedAudioClipHit;
+        public AudioClip PlayerUnarmedAudioClipParry;
+
         public FightController FightController { get; set; }
         public Idle Idle { get; set; }
 
