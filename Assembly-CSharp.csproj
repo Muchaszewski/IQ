@@ -45,15 +45,24 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ExperienceBar.cs" />
+     <Compile Include="Assets\AreaIcon.cs" />
+     <Compile Include="Assets\Extensions\Scripts\Android\Vibration.cs" />
+     <Compile Include="Assets\Extensions\Scripts\ExtendedRandom.cs" />
+     <Compile Include="Assets\Extensions\Scripts\Extensions.cs" />
+     <Compile Include="Assets\Extensions\Scripts\ReadOnlyAttribute.cs" />
+     <Compile Include="Assets\Extensions\Scripts\SingletonBehaviour.cs" />
+     <Compile Include="Assets\Extensions\Scripts\UI\ExtendedButton.cs" />
+     <Compile Include="Assets\Extensions\Scripts\Utils\OperationUtils.cs" />
+     <Compile Include="Assets\MapManager.cs" />
      <Compile Include="Assets\MessageBox.cs" />
+     <Compile Include="Assets\ObjectDrag.cs" />
      <Compile Include="Assets\Scripts\DebugOptions.cs" />
      <Compile Include="Assets\Scripts\Equipment\EquipmentSlot.cs" />
      <Compile Include="Assets\Scripts\Equipment\InventoryPanel.cs" />
      <Compile Include="Assets\Scripts\Equipment\ItemBackgrounds.cs" />
      <Compile Include="Assets\Scripts\Equipment\ItemIcon.cs" />
+     <Compile Include="Assets\Scripts\Equipment\ItemToolTipManager.cs" />
      <Compile Include="Assets\Scripts\Equipment\ShowTooltip.cs" />
-     <Compile Include="Assets\Scripts\Equipment\ToolTipManager.cs" />
      <Compile Include="Assets\Scripts\Game\CurrentGame.cs" />
      <Compile Include="Assets\Scripts\Game\Fight\CombatLineManager.cs" />
      <Compile Include="Assets\Scripts\Game\Fight\Enemy.cs" />
@@ -86,6 +95,7 @@
      <Compile Include="Assets\Scripts\Utils\UIDisplayBattlelog.cs" />
      <Compile Include="Assets\Scripts\Utils\UILabelUtilities.cs" />
      <Compile Include="Assets\SoundManager.cs" />
+     <Compile Include="Assets\TooltipTrigger.cs" />
      <Compile Include="Assets\TutorialActions.cs" />
      <Compile Include="Assets\UIMoney.cs" />
      <None Include="Assets\Resources\Storage.xml" />

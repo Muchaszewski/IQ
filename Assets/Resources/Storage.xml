@@ -3872,8 +3872,14 @@
           <Type>items</Type>
           <Item>blade_2_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -3951,8 +3957,14 @@
           <Type>items</Type>
           <Item>blade_2_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4029,8 +4041,14 @@
           <Type>items</Type>
           <Item>blade_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4107,8 +4125,14 @@
           <Type>items</Type>
           <Item>blade_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4185,8 +4209,14 @@
           <Type>items</Type>
           <Item>blade_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>7</RequiredLevel>
@@ -4262,8 +4292,14 @@
           <Type>items</Type>
           <Item>blade_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4340,8 +4376,14 @@
           <Type>items</Type>
           <Item>blade_2_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4418,8 +4460,14 @@
           <Type>items</Type>
           <Item>blade_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4497,8 +4545,14 @@
           <Type>items</Type>
           <Item>metal_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4576,8 +4630,14 @@
           <Type>items</Type>
           <Item>blade_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>16</RequiredLevel>
@@ -4654,8 +4714,14 @@
           <Type>items</Type>
           <Item>metal_4_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4733,8 +4799,14 @@
           <Type>items</Type>
           <Item>wood_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_light_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_light_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4812,8 +4884,14 @@
           <Type>items</Type>
           <Item>wood_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -4891,8 +4969,14 @@
           <Type>items</Type>
           <Item>blade_2_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_medium_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText>"He was wearing his fine white coat of mail and his helmet with gold-studded stones; by his side hung Joyeuse, and never was there a sword to match it; its colour changed thirty times a day."</FlavorText>
       <Rarity>Mythical</Rarity>
@@ -4970,8 +5054,14 @@
           <Type>items</Type>
           <Item>metal_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText>Judgement, a final sigh.
 Here, the screams electrified.</FlavorText>
@@ -5049,8 +5139,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>blade_0_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_light_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_light_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>1</RequiredLevel>
@@ -5126,8 +5222,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>blade_0_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_light_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_light_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>3</RequiredLevel>
@@ -5203,8 +5305,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>blade_0_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blade_light_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_light_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>9</RequiredLevel>
@@ -5281,8 +5389,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>metal_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_axe_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText />
       <Rarity>Poor</Rarity>
@@ -5359,8 +5473,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>metal_1_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_axe_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>5</RequiredLevel>
@@ -5436,8 +5556,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>metal_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_axe_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_medium_0</Item>
+        </PairTypeItem>
       </SoundID>
       <Rarity>Poor</Rarity>
       <RequiredLevel>14</RequiredLevel>
@@ -5514,8 +5640,14 @@ Here, the screams electrified.</FlavorText>
           <Type>items</Type>
           <Item>metal_3_putDown</Item>
         </PairTypeItem>
-        <PairTypeItem xsi:nil="true" />
-        <PairTypeItem xsi:nil="true" />
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>hit_blunt_heavy_0</Item>
+        </PairTypeItem>
+        <PairTypeItem>
+          <Type>combat</Type>
+          <Item>parry_blade_heavy_0</Item>
+        </PairTypeItem>
       </SoundID>
       <FlavorText>The Hammer of Justice is the key to the future.
 The Bringer of Sorrow is the last you'll see.</FlavorText>
