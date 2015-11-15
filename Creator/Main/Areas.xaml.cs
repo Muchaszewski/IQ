@@ -80,6 +80,7 @@ namespace Creator.Main
                 TextBoxPositionY.Text = spot.Position.y.ToString();
                 TextBoxPositionZ.Text = spot.Position.z.ToString();
                 TextBoxMonsterValue.Text = spot.MonsterValueToCompleteArea.ToString();
+                TextBoxSize.Text = spot.Size.ToString();
                 TextBoxAreasListDistance.Text = spot.Progress.ToString();
                 //Connection List
                 DataGridTravelList.ItemsSource = null;
