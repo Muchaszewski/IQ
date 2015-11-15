@@ -8896,7 +8896,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>30</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>1</Size>
+      <Size>0.5</Size>
       <Position>
         <x>3</x>
         <y>0</y>
@@ -8934,7 +8934,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>50</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>3</x>
         <y>1</y>
@@ -8992,7 +8992,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>2</x>
         <y>2</y>
@@ -9060,7 +9060,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>4</x>
         <y>2</y>
@@ -9123,7 +9123,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>2</x>
         <y>3</y>
@@ -9166,7 +9166,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>4</x>
         <y>3</y>
@@ -9219,7 +9219,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>80</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>4</x>
         <y>5</y>
@@ -9267,7 +9267,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>4</x>
         <y>6</y>
@@ -9315,7 +9315,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>2</x>
         <y>4</y>
@@ -9368,7 +9368,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.5</Size>
       <Position>
         <x>3</x>
         <y>4</y>
