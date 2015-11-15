@@ -4,6 +4,8 @@ using System.Collections;
 public class MenuPanel : MonoBehaviour
 {
 
+    public MapManager MapManager;
+
     // Left Panels
 
     public void ShowCharacter()
@@ -23,6 +25,7 @@ public class MenuPanel : MonoBehaviour
 
     public void ShowMap()
     {
+        MapManager.CenterMap();
         MovableAnimator.Instance.AddToQueue(0, 3);
     }
 

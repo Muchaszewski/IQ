@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using InventoryQuest.Components;
+using InventoryQuest.Game;
 
 public class MapManager : MonoBehaviour
 {
     public GameObject MapIcon;
     public float PositionToScale;
+
+    private List<AreaIcon> GameObjects = new List<AreaIcon>();
 
     public void CreateMapIcon(Spot spot, AreaButtonController buttonController)
     {
@@ -25,7 +29,23 @@ public class MapManager : MonoBehaviour
         areaIcon.transform.SetParent(transform);
         var rectTransform = areaIcon.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = areaIcon.Position;
-        transform.localScale = new Vector3(areaIcon.Size, areaIcon.Size);
+        transform.localScale = new Vector3(areaIcon.Size, areaIcon.Size, areaIcon.Size);
         areaIcon.GetComponent<TooltipTrigger>().Text = spot.Category + "/n" + spot.Level + " Recomended Level" + "/n" + spot.Name;
+        GameObjects.Add(areaIcon);
+    }
+
+    public void CenterMap()
+    {
+        var go = GameObjects.Find(x => x.Name.Equals(CurrentGame.Instance.Spot.Name));
+        GetComponent<RectTransform>().anchoredPosition = -1 * go.GetComponent<RectTransform>().anchoredPosition;
+    }
+
+    public void RemoveAllChilds()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+            GameObjects = new List<AreaIcon>();
+        }
     }
 }

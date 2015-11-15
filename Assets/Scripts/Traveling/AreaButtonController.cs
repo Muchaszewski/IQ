@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Extensions;
 using UnityEngine.UI;
 using InventoryQuest.Game;
 using InventoryQuest.Components;
@@ -34,7 +35,7 @@ public class AreaButtonController : MonoBehaviour
 
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
-        GetComponent<Button>().onClick.AddListener(ChangeSpot);
+        GetComponent<ExtendedButton>().onClick.AddListener(ChangeSpot);
         CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
     }
 

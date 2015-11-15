@@ -10,7 +10,7 @@ GameObject:
   - 224: {fileID: 22407404}
   - 222: {fileID: 22287180}
   - 114: {fileID: 11441438}
-  - 114: {fileID: 11451580}
+  - 114: {fileID: 11470428}
   m_Layer: 5
   m_Name: SimpleButton
   m_TagString: Untagged
@@ -48,6 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 2eb327a74f13e604885af6da29eec330, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -56,7 +62,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11451580
+--- !u!114 &11470428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 151176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: f03140f9327ec6a4386d56dc4149ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -92,6 +98,10 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 11441438}
+  _hasAudioClips: 0
+  _audioClipHoover: {fileID: 0}
+  _audioClipPress: {fileID: 0}
+  _audioClipRelase: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -110,6 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 112, g: 112, b: 112, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d1e7959a8a7ef3645b19c6f1e53c6957, type: 3}
     m_FontSize: 25
@@ -150,7 +166,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 124.400002, y: 135.300003}
+  m_AnchoredPosition: {x: -448.189392, y: -168.062073}
   m_SizeDelta: {x: 332, y: 44}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22479300

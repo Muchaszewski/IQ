@@ -66,10 +66,7 @@ public class SpotManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (Transform child in MapManager.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        MapManager.RemoveAllChilds();
     }
 
     private void Spot_onNewAreaUnlocked(object sender, System.EventArgs e)

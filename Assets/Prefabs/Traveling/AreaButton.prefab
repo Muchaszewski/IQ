@@ -27,8 +27,8 @@ GameObject:
   - 224: {fileID: 22460006}
   - 222: {fileID: 22225600}
   - 114: {fileID: 11449574}
-  - 114: {fileID: 11429800}
   - 114: {fileID: 11450320}
+  - 114: {fileID: 11441460}
   m_Layer: 0
   m_Name: AreaButton
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Area name
---- !u!114 &11429800
+--- !u!114 &11441460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 115108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: f03140f9327ec6a4386d56dc4149ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -121,6 +121,10 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 11449574}
+  _hasAudioClips: 0
+  _audioClipHoover: {fileID: 0}
+  _audioClipPress: {fileID: 0}
+  _audioClipRelase: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -264,7 +268,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: -4346.86182, y: -737.681885}
+  m_AnchoredPosition: {x: -2511.99219, y: -265.046082}
   m_SizeDelta: {x: 532.5, y: 40}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
