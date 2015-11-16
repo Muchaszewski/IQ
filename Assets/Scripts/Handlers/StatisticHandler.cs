@@ -138,11 +138,11 @@ public class StatisticHandler : MonoBehaviour
         {
             if (CurrentGame.Instance.Spot.Progress >= CurrentGame.Instance.Spot.MonsterValueToCompleteArea)
             {
-                TextComponent.text = "Area Completed";
+                TextComponent.text = "Area Cleared";
             }
             else
             {
-                TextComponent.text = "Remaining Monsters" + (CurrentGame.Instance.Spot.MonsterValueToCompleteArea - CurrentGame.Instance.Spot.Progress);
+                TextComponent.text = "Monsters Left: " + (CurrentGame.Instance.Spot.MonsterValueToCompleteArea - CurrentGame.Instance.Spot.Progress);
             }
         }
     }
