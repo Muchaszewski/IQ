@@ -23376,7 +23376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cd4fd6b71509c468ba988fae56f437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerUnarmedAudioClipHit: {fileID: 8300000, guid: 6c304c4c31180f44ab4435dd9e228892,
+  PlayerUnarmedAudioClipHit: {fileID: 8300000, guid: a415e5f1f37d0f548bb87b59d9bc5600,
     type: 3}
   PlayerUnarmedAudioClipParry: {fileID: 8300000, guid: 92d6c716a807ace45b0617d93cbed30e,
     type: 3}
