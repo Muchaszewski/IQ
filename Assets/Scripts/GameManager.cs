@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         Instance = this;
     }
 
@@ -58,4 +66,18 @@ public class GameManager : MonoBehaviour
         gameObject.transform.position = new Vector3(10000, 10000, 0);
     }
 
+    public void OnLevelWasLoaded(int level)
+    {
+        if (Application.loadedLevelName == "LoadingScene")
+        {
+            foreach (Transform item in transform)
+            {
+                foreach (var mono in item.GetComponents<MonoBehaviour>())
+                {
+                    if (mono.GetType() == typeof(GameManager)) continue;
+                    mono.enabled = false;
+                }
+            }
+        }
+    }
 }
