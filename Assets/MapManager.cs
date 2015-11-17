@@ -32,7 +32,7 @@ public class MapManager : MonoBehaviour
         areaIcon.transform.SetParent(transform);
         var rectTransform = areaIcon.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = areaIcon.Position;
-        transform.localScale = new Vector3(areaIcon.Size, areaIcon.Size, areaIcon.Size);
+        rectTransform.localScale = new Vector3(areaIcon.Size, areaIcon.Size, areaIcon.Size);
         areaIcon.GetComponent<TooltipTrigger>().Text = spot.Category + "/n" + spot.Level + " Recomended Level" + "/n" + spot.Name;
         GameObjects.Add(areaIcon);
     }
