@@ -126,7 +126,11 @@ public class ProgressBar : MonoBehaviour
             if (CurrentGame.Instance.Spot.Progress >= CurrentGame.Instance.Spot.MonsterValueToCompleteArea)
             {
                 GetComponent<Image>().enabled = false;
-                enabled = false;
+                ProgressBarImage.transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                GetComponent<Image>().enabled = true;
             }
         });
     }

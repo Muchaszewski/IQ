@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; set; }
 
+    //0 index is dedicated to background clip
     public AudioClip BackgroundClips;
 
     private AudioSource[] _audioSources;
@@ -66,8 +67,9 @@ public class SoundManager : MonoBehaviour
     /// <returns></returns>
     private AudioSource GetAudioSource()
     {
-        foreach (var audioSource in _audioSources)
+        for (int index = 1; index < _audioSources.Length; index++)
         {
+            var audioSource = _audioSources[index];
             if (!audioSource.isPlaying)
             {
                 return audioSource;

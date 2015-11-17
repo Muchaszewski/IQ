@@ -2090,7 +2090,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2160,7 +2160,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 250
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2230,7 +2230,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 240
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2300,7 +2300,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 230
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2370,7 +2370,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 210
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2440,7 +2440,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 190
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2510,7 +2510,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 170
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2580,7 +2580,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 150
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -2650,7 +2650,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 140
   DopplerLevel: 1
   MinDistance: 0
   MaxDistance: .00999999978
@@ -9761,7 +9761,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138219475}
   m_HandleRect: {fileID: 138219477}
   m_Direction: 2
-  m_Value: .000122070312
+  m_Value: 0
   m_Size: .999130726
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -16855,7 +16855,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1, y: .499938965}
+  m_AnchoredPosition: {x: 1, y: .5}
   m_SizeDelta: {x: 552.5, y: 575.200012}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1414563736
@@ -18941,7 +18941,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -276, y: -209.850037}
+  m_AnchoredPosition: {x: -276, y: -209.850098}
   m_SizeDelta: {x: 532, y: 419.700012}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1589742651
@@ -24225,6 +24225,7 @@ MonoBehaviour:
   TravellingString: Traveling
   LookingForEnemiesString: Looking For Enemies
   WillTravelString: Will Travel
+  Other: Fighting
 --- !u!114 &2114281598
 MonoBehaviour:
   m_ObjectHideFlags: 0

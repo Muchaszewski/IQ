@@ -10,6 +10,7 @@ public class SpecialTravelingText : MonoBehaviour
     public string TravellingString = "Traveling";
     public string LookingForEnemiesString = "Looking For Enemies";
     public string WillTravelString = "Will Travel";
+    public string Other = "";
 
     private Text _text;
     private int _shouldReset;
@@ -17,7 +18,7 @@ public class SpecialTravelingText : MonoBehaviour
     void Start()
     {
         _text = GetComponent<Text>();
-        _text.text = "";
+        _text.text = Other;
 
         CurrentGame.TravelingBegin += CurrentGame_TravelingBegin;
         CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
@@ -37,7 +38,7 @@ public class SpecialTravelingText : MonoBehaviour
     {
         if (_shouldReset == 2)
         {
-            _text.text = "";
+            _text.text = Other;
         }
     }
 
@@ -51,7 +52,7 @@ public class SpecialTravelingText : MonoBehaviour
     {
         if (_shouldReset == 1)
         {
-            _text.text = "";
+            _text.text = Other;
         }
     }
 
@@ -65,7 +66,7 @@ public class SpecialTravelingText : MonoBehaviour
     {
         if (_shouldReset == 3)
         {
-            _text.text = "";
+            _text.text = Other;
         }
     }
 

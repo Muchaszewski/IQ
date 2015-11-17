@@ -17,11 +17,14 @@ public class MapManager : MonoBehaviour
         var areaIcon = Instantiate(MapIcon).GetComponent<AreaIcon>();
 
         areaIcon.Position = spot.Position * PositionToScale;
-        if (Math.Abs(spot.Size) < 0.05f)
+        if (Math.Abs(spot.Size) < 0.01f)
         {
-            spot.Size = 1;
+            areaIcon.Size = 1;
         }
-        areaIcon.Size = spot.Size;
+        else
+        {
+            areaIcon.Size = spot.Size;
+        }
         areaIcon.Name = spot.Name;
         areaIcon.Category = spot.Category;
         areaIcon.AreaButtonController = buttonController;
