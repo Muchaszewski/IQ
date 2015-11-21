@@ -82,6 +82,7 @@
     <Compile Include="Assets\Extensions\Scripts\SingletonBehaviour.cs" />
     <Compile Include="Assets\Extensions\Scripts\UI\ExtendedButton.cs" />
     <Compile Include="Assets\Extensions\Scripts\Utils\OperationUtils.cs" />
+    <Compile Include="Assets\Line.cs" />
     <Compile Include="Assets\LoadingManager.cs" />
     <Compile Include="Assets\LoadingScript.cs" />
     <Compile Include="Assets\MapManager.cs" />

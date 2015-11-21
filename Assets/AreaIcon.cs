@@ -16,6 +16,8 @@ public class AreaIcon : MonoBehaviour
     [ReadOnly]
     public float Size;
 
+    public Spot Spot { get; set; }
+
     private Image _image;
     private TooltipTrigger _tooltip;
 
@@ -33,7 +35,7 @@ public class AreaIcon : MonoBehaviour
     {
         _tooltip = GetComponent<TooltipTrigger>();
         _image = GetComponent<Image>();
-        SetIcon(CurrentGame.Instance.Spot.ImageString);
+        SetIcon(Spot.ImageString);
         GetComponent<Button>().onClick.AddListener(() => AreaButtonController.ChangeSpot());
     }
 

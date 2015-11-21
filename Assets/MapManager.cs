@@ -2,15 +2,20 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using InventoryQuest.Components;
 using InventoryQuest.Game;
 
 public class MapManager : MonoBehaviour
 {
     public GameObject MapIcon;
+    public GameObject LineGameObject;
+    public GameObject EmptyGameObject;
     public float PositionToScale;
 
+    private GameObject lineContainer;
     private List<AreaIcon> GameObjects = new List<AreaIcon>();
+    private List<ConnectionPair> ConnectionPairs = new List<ConnectionPair>();
 
     public void CreateMapIcon(Spot spot, AreaButtonController buttonController)
     {
@@ -28,6 +33,7 @@ public class MapManager : MonoBehaviour
         areaIcon.Name = spot.Name;
         areaIcon.Category = spot.Category;
         areaIcon.AreaButtonController = buttonController;
+        areaIcon.Spot = spot;
 
         areaIcon.transform.SetParent(transform);
         var rectTransform = areaIcon.GetComponent<RectTransform>();
@@ -35,6 +41,23 @@ public class MapManager : MonoBehaviour
         rectTransform.localScale = new Vector3(areaIcon.Size, areaIcon.Size, areaIcon.Size);
         areaIcon.GetComponent<TooltipTrigger>().Text = spot.Category + "/n" + spot.Level + " Recomended Level" + "/n" + spot.Name;
         GameObjects.Add(areaIcon);
+        foreach (var connection in spot.ListConnections)
+        {
+            var connectedSpot = Spot.FindSpotByConnection(connection);
+            if (ConnectionPairs.FirstOrDefault((x) => x.Form == connectedSpot.ID && x.To == spot.ID) != null)
+            {
+                continue;
+            }
+            if (connectedSpot.IsUnlocked)
+            {
+                ConnectionPairs.Add(new ConnectionPair { Form = spot.ID, To = connectedSpot.ID });
+                var line = Instantiate(LineGameObject).GetComponent<Line>();
+                line.transform.SetParent(lineContainer.transform);
+                line.GetComponent<RectTransform>().anchoredPosition = rectTransform.anchoredPosition;
+                line.EndVector2 = ((connectedSpot.Position * PositionToScale) - areaIcon.Position);
+            }
+        }
+
     }
 
     public void CenterMap()
@@ -48,7 +71,18 @@ public class MapManager : MonoBehaviour
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
-            GameObjects = new List<AreaIcon>();
         }
+        ConnectionPairs = new List<ConnectionPair>();
+        GameObjects = new List<AreaIcon>();
+        lineContainer = Instantiate(EmptyGameObject);
+        lineContainer.transform.SetParent(transform);
+        lineContainer.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        lineContainer.name = "Lines";
     }
+}
+[Serializable]
+internal class ConnectionPair
+{
+    public int Form { get; set; }
+    public int To { get; set; }
 }
