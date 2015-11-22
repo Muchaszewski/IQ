@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Assets.Scripts.Utils;
 using InventoryQuest.Components;
 using InventoryQuest.Game;
+using InventoryQuest.InventoryQuest.Components.ActionEvents;
 using UnityEngine.UI;
 
 public class AreaIcon : MonoBehaviour
@@ -15,6 +17,9 @@ public class AreaIcon : MonoBehaviour
     public Vector3 Position;
     [ReadOnly]
     public float Size;
+
+    public Color SelectedColor = Color.white;
+    public Color DiscoveredColor = Color.gray;
 
     public Spot Spot { get; set; }
 
@@ -37,6 +42,17 @@ public class AreaIcon : MonoBehaviour
         _image = GetComponent<Image>();
         SetIcon(Spot.ImageString);
         GetComponent<Button>().onClick.AddListener(() => AreaButtonController.ChangeSpot());
+        ActionEventManager.Fight.OnTravelEnd += OnTravelEnd;
+    }
+
+    void OnDestroy()
+    {
+        ActionEventManager.Fight.OnTravelEnd -= OnTravelEnd;
+    }
+
+    private void OnTravelEnd(object sender, EventArgs eventArgs)
+    {
+        _image.color = CurrentGame.Instance.Spot == Spot ? SelectedColor : DiscoveredColor;
     }
 
     public void SetIcon(string icon)
@@ -47,5 +63,7 @@ public class AreaIcon : MonoBehaviour
             return;
         }
         _image.sprite = ResourceManager.Get("Sprites/landscapes/" + icon + "_icon");
+
+        _image.color = CurrentGame.Instance.Spot == Spot ? SelectedColor : DiscoveredColor;
     }
 }

@@ -73,14 +73,14 @@ namespace InventoryQuest.Game
                     {
                         if (TravelToSpot != -1)
                         {
-                            ActionEventManager.Fight.OnTravelEnd_Invoke();
                             Spot = GenerationStorage.Instance.Spots[TravelToSpot];
                             TravelToSpot = -1;
                             ((FightControllerPvE)FightController).FightsInCurrentSpot = 0;
+                            ActionEventManager.Fight.OnTravelEnd_Invoke();
                         }
-                        ActionEventManager.Fight.OnEnemiesFound_Invoke();
                         Traveling = 2;
                         FightController.ResetBattle();
+                        ActionEventManager.Fight.OnEnemiesFound_Invoke();
                         ResetIdle();
                         return;
                     }
@@ -123,20 +123,20 @@ namespace InventoryQuest.Game
 
         public void Load()
         {
-            ActionEventManager.Misc.OnLoad_Invoke();
             Player = BinaryFilesOperations.Load<Player>("SaveFile.sav");
             InventoryPanel.Instance.PopulateInventory();
             foreach (var item in FindObjectsOfType<StatisticHandler>())
             {
                 item.RecalculateStatistics();
             }
+            ActionEventManager.Misc.OnLoad_Invoke();
         }
 
 
         public void Save()
         {
-            ActionEventManager.Misc.OnSave_Invoke();
             BinaryFilesOperations.Save(Instance.Player, "SaveFile.sav");
+            ActionEventManager.Misc.OnSave_Invoke();
         }
 
         public void InvokeChangeSpot()
