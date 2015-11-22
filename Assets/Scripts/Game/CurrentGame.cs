@@ -9,20 +9,13 @@ using InventoryQuest.Utils;
 using UnityEngine;
 using System;
 using System.Collections;
+using InventoryQuest.InventoryQuest.Components.ActionEvents;
 
 namespace InventoryQuest.Game
 {
     [Serializable]
     public class CurrentGame : MonoBehaviour
     {
-        public static event EventHandler RefilingBegin = delegate { };
-        public static event EventHandler RefilingFinieshed = delegate { };
-        public static event EventHandler TravelingFinished = delegate { };
-        public static event EventHandler TravelingBegin = delegate { };
-        public static event EventHandler LookingForEnemies = delegate { };
-        public static event EventHandler EnemiesFound = delegate { };
-        public static event EventHandler WillChangeSpot = delegate { };
-
         private int _travelToSpot = -1;
         private byte Refiling;
         private byte Traveling;
@@ -46,6 +39,10 @@ namespace InventoryQuest.Game
         /// </summary>
         private void Awake()
         {
+            //Invoke new charater creation
+            //TODO move to proper menu
+            ActionEventManager.Misc.OnNewCharacter_Invoke();
+
             instance = this;
             Spot = GenerationStorage.Instance.Spots[0];
             Spot.IsUnlocked = true;
@@ -76,12 +73,12 @@ namespace InventoryQuest.Game
                     {
                         if (TravelToSpot != -1)
                         {
-                            TravelingFinished.Invoke(this, EventArgs.Empty);
+                            ActionEventManager.Fight.OnTravelEnd_Invoke();
                             Spot = GenerationStorage.Instance.Spots[TravelToSpot];
                             TravelToSpot = -1;
                             ((FightControllerPvE)FightController).FightsInCurrentSpot = 0;
                         }
-                        EnemiesFound.Invoke(this, EventArgs.Empty);
+                        ActionEventManager.Fight.OnEnemiesFound_Invoke();
                         Traveling = 2;
                         FightController.ResetBattle();
                         ResetIdle();
@@ -92,11 +89,11 @@ namespace InventoryQuest.Game
                         Traveling = 1;
                         if (TravelToSpot != -1)
                         {
-                            TravelingBegin.Invoke(this, EventArgs.Empty);
+                            ActionEventManager.Fight.OnTravelBegin_Invoke();
                         }
                         else
                         {
-                            LookingForEnemies.Invoke(this, EventArgs.Empty);
+                            ActionEventManager.Fight.OnLookingForEnemies_Invoke();
                         }
                     }
                 }
@@ -104,11 +101,15 @@ namespace InventoryQuest.Game
                 if (Idle.Refill(true))
                 {
                     Refiling = 2;
-                    RefilingFinieshed.Invoke(this, EventArgs.Empty);
+                    ActionEventManager.Regen.HealthRegen.OnEnd_Invoke();
+                    ActionEventManager.Regen.ManaRegen.OnEnd_Invoke();
+                    ActionEventManager.Regen.StaminaRegen.OnEnd_Invoke();
                 }
                 else if (Refiling == 0)
                 {
-                    RefilingBegin.Invoke(this, EventArgs.Empty);
+                    ActionEventManager.Regen.HealthRegen.OnBegin_Invoke();
+                    ActionEventManager.Regen.ManaRegen.OnBegin_Invoke();
+                    ActionEventManager.Regen.StaminaRegen.OnBegin_Invoke();
                     Refiling = 1;
                 }
             }
@@ -122,6 +123,7 @@ namespace InventoryQuest.Game
 
         public void Load()
         {
+            ActionEventManager.Misc.OnLoad_Invoke();
             Player = BinaryFilesOperations.Load<Player>("SaveFile.sav");
             InventoryPanel.Instance.PopulateInventory();
             foreach (var item in FindObjectsOfType<StatisticHandler>())
@@ -133,12 +135,13 @@ namespace InventoryQuest.Game
 
         public void Save()
         {
+            ActionEventManager.Misc.OnSave_Invoke();
             BinaryFilesOperations.Save(Instance.Player, "SaveFile.sav");
         }
 
         public void InvokeChangeSpot()
         {
-            WillChangeSpot.Invoke(this, EventArgs.Empty);
+            ActionEventManager.Fight.OnTravelPlanned_Invoke();
         }
 
         #region static

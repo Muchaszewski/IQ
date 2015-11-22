@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using InventoryQuest.Components;
 using InventoryQuest.Components.Generation.Items;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
@@ -70,12 +71,21 @@ public class DebugOptions : MonoBehaviour
         //}
         //GUILayout.EndHorizontal();
         //ADD ITEMS ADV
-
+        GUILayout.BeginHorizontal();
         if (GUILayout.Button("Finish Area"))
         {
             CurrentGame.Instance.Spot.Progress = CurrentGame.Instance.Spot.MonsterValueToCompleteArea;
+            CurrentGame.Instance.Spot.UnlockConnections();
         }
-
+        if (GUILayout.Button("Finish All Areas"))
+        {
+            foreach (var spot in GenerationStorage.Instance.Spots)
+            {
+                spot.Progress = spot.MonsterValueToCompleteArea;
+                spot.UnlockConnections();
+            }
+        }
+        GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Clear Inventory"))
         {

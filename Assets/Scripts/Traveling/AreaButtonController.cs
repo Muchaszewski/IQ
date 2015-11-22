@@ -4,6 +4,7 @@ using Extensions;
 using UnityEngine.UI;
 using InventoryQuest.Game;
 using InventoryQuest.Components;
+using InventoryQuest.InventoryQuest.Components.ActionEvents;
 
 public class AreaButtonController : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class AreaButtonController : MonoBehaviour
         _spotName.text = Spot.Name;
         _spotLevel.text = "Level " + Spot.Level.ToString();
         GetComponent<ExtendedButton>().onClick.AddListener(ChangeSpot);
-        CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
+        ActionEventManager.Fight.OnTravelEnd += CurrentGame_TravelingFinished;
     }
 
     private void CurrentGame_TravelingFinished(object sender, System.EventArgs e)

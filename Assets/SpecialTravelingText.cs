@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using InventoryQuest.Game;
+using InventoryQuest.InventoryQuest.Components.ActionEvents;
 using UnityEngine.UI;
 
 public class SpecialTravelingText : MonoBehaviour
@@ -20,13 +21,13 @@ public class SpecialTravelingText : MonoBehaviour
         _text = GetComponent<Text>();
         _text.text = Other;
 
-        CurrentGame.TravelingBegin += CurrentGame_TravelingBegin;
-        CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
-        CurrentGame.RefilingBegin += CurrentGame_RefilingBegin;
-        CurrentGame.RefilingFinieshed += CurrentGame_RefilingFinieshed;
-        CurrentGame.LookingForEnemies += CurrentGame_LookingForEnemies;
-        CurrentGame.EnemiesFound += CurrentGame_EnemiesFound;
-        CurrentGame.WillChangeSpot += CurrentGame_WillChangeSpot;
+        ActionEventManager.Fight.OnTravelBegin += CurrentGame_TravelingBegin;
+        ActionEventManager.Fight.OnTravelEnd += CurrentGame_TravelingFinished;
+        ActionEventManager.Regen.StaminaRegen.OnBegin += CurrentGame_RefilingBegin;
+        ActionEventManager.Regen.StaminaRegen.OnEnd += CurrentGame_RefilingFinieshed;
+        ActionEventManager.Fight.OnLookingForEnemies += CurrentGame_LookingForEnemies;
+        ActionEventManager.Fight.OnEnemiesFound += CurrentGame_EnemiesFound;
+        ActionEventManager.Fight.OnTravelPlanned += CurrentGame_WillChangeSpot;
     }
 
     private void CurrentGame_WillChangeSpot(object sender, System.EventArgs e)

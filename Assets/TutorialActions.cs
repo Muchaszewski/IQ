@@ -7,6 +7,7 @@ using InventoryQuest.Components.Entities.Player.Inventory;
 using InventoryQuest.Components.Items;
 using InventoryQuest.Game;
 using InventoryQuest.Game.Fight;
+using InventoryQuest.InventoryQuest.Components.ActionEvents;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -179,12 +180,12 @@ public class TutorialActions : MonoBehaviour
         SetTutorialMessage(travellingUseMessage);
         MenuButtons[3].onClick.RemoveListener(TutorialUseTraveling);
         DisableButtonHighlight();
-        CurrentGame.TravelingFinished += CurrentGame_TravelingFinished;
+        ActionEventManager.Fight.OnTravelEnd += CurrentGame_TravelingFinished;
     }
 
     private void CurrentGame_TravelingFinished(object sender, System.EventArgs e)
     {
-        CurrentGame.TravelingFinished -= CurrentGame_TravelingFinished;
+        ActionEventManager.Fight.OnTravelEnd -= CurrentGame_TravelingFinished;
         TutorialFinish();
     }
 
