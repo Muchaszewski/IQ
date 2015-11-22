@@ -16,7 +16,7 @@ public class Line : MonoBehaviour
     void SetLine()
     {
         var v3 = new Vector2(0, 0) - EndVector2;
-        var angle = Mathf.Atan2(v3.y, v3.x) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(v3.y, -v3.x) * Mathf.Rad2Deg;
         var distance = Vector2.Distance(new Vector2(0, 0), Quaternion.Euler(0, 0, angle) * EndVector2);
         var rect = GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(distance, Width);
