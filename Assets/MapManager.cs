@@ -14,6 +14,7 @@ public class MapManager : MonoBehaviour
     public float PositionToScale;
 
     private GameObject lineContainer;
+    private GameObject areaContainer;
     private List<AreaIcon> GameObjects = new List<AreaIcon>();
     private List<ConnectionPair> ConnectionPairs = new List<ConnectionPair>();
 
@@ -35,7 +36,7 @@ public class MapManager : MonoBehaviour
         areaIcon.AreaButtonController = buttonController;
         areaIcon.Spot = spot;
 
-        areaIcon.transform.SetParent(transform);
+        areaIcon.transform.SetParent(areaContainer.transform);
         var rectTransform = areaIcon.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = areaIcon.Position;
         rectTransform.localScale = new Vector3(areaIcon.Size, areaIcon.Size, areaIcon.Size);
@@ -78,6 +79,10 @@ public class MapManager : MonoBehaviour
         lineContainer.transform.SetParent(transform);
         lineContainer.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         lineContainer.name = "Lines";
+        areaContainer = Instantiate(EmptyGameObject);
+        areaContainer.transform.SetParent(transform);
+        areaContainer.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        areaContainer.name = "Areas";
     }
 }
 [Serializable]
