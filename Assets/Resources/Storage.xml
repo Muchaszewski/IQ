@@ -8894,12 +8894,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>1</Level>
       <ID>0</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>30</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>20</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>3</x>
-        <y>0</y>
+        <y>-1</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -8934,10 +8934,10 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>50</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>3</x>
-        <y>1</y>
+        <y>0</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -8974,12 +8974,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
         <SpotConnection>
-          <SpotString>Sailor's Beach</SpotString>
-          <Distance>0</Distance>
-          <IsTwoWay>true</IsTwoWay>
-        </SpotConnection>
-        <SpotConnection>
-          <SpotString>Jagged Cliffs</SpotString>
+          <SpotString>Flooded Battlefield</SpotString>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
@@ -8992,7 +8987,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>2</x>
         <y>2</y>
@@ -9042,12 +9037,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Progress>0</Progress>
       <ListConnections>
         <SpotConnection>
-          <SpotString>Desolate Coast</SpotString>
+          <SpotString>Scorpion Desert</SpotString>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
         <SpotConnection>
-          <SpotString>Scorpion Desert</SpotString>
+          <SpotString>Flooded Battlefield</SpotString>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
@@ -9060,7 +9055,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>location_coast_0</ImageString>
       <MonsterValueToCompleteArea>40</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>4</x>
         <y>2</y>
@@ -9105,12 +9100,12 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Progress>0</Progress>
       <ListConnections>
         <SpotConnection>
-          <SpotString>Desolate Coast</SpotString>
+          <SpotString>Iron Plain</SpotString>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
         <SpotConnection>
-          <SpotString>Iron Plain</SpotString>
+          <SpotString>Flooded Battlefield</SpotString>
           <Distance>0</Distance>
           <IsTwoWay>true</IsTwoWay>
         </SpotConnection>
@@ -9123,7 +9118,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>2</x>
         <y>3</y>
@@ -9166,7 +9161,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>70</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>4</x>
         <y>3</y>
@@ -9219,7 +9214,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>80</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>4</x>
         <y>5</y>
@@ -9267,7 +9262,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_plains_1</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>4</x>
         <y>6</y>
@@ -9315,7 +9310,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>0.9</Size>
       <Position>
         <x>2</x>
         <y>4</y>
@@ -9368,7 +9363,7 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <ImageString>_location_placeholder_desert_0</ImageString>
       <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0.5</Size>
+      <Size>1</Size>
       <Position>
         <x>3</x>
         <y>4</y>
@@ -9409,13 +9404,13 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       <Level>20</Level>
       <ID>10</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-5</x>
+        <y>-5</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9449,20 +9444,31 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Medieval Lvl 30</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Desert Lvl 20</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Medieval Lvl 30</Name>
       <Level>30</Level>
       <ID>11</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-4</x>
+        <y>-5</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9491,20 +9497,31 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Medieval Lvl 20</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Medieval Lvl 40</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Medieval Lvl 40</Name>
       <Level>40</Level>
       <ID>12</ID>
       <ImageString>_location_placeholder_forest_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-3</x>
+        <y>-5</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9533,20 +9550,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Medieval Lvl 30</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Desert Lvl 20</Name>
       <Level>20</Level>
       <ID>13</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-5</x>
+        <y>-4</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9565,20 +9588,36 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Medieval Lvl 20</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Desert Lvl 30</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Barbarian Lvl 40</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Desert Lvl 30</Name>
       <Level>30</Level>
       <ID>14</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-4</x>
+        <y>-4</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9597,20 +9636,31 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Desert Lvl 20</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Desert Lvl 40</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Desert Lvl 40</Name>
       <Level>40</Level>
       <ID>15</ID>
       <ImageString>_location_placeholder_mountains_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>200</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-3</x>
+        <y>-4</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9629,20 +9679,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Desert Lvl 30</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Sunset Steppe</Name>
       <Level>8</Level>
       <ID>16</ID>
       <ImageString>location_plain_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-5</x>
+        <y>-3</y>
+        <z>-5</z>
       </Position>
       <Category>Atlantea</Category>
       <EntitiesList>
@@ -9661,20 +9717,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Fields of Arcadia</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Fields of Arcadia</Name>
       <Level>8</Level>
       <ID>17</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-4</x>
+        <y>-3</y>
+        <z>-5</z>
       </Position>
       <Category>Discussia</Category>
       <EntitiesList>
@@ -9693,20 +9755,26 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Sunset Steppe</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Barbarian Lvl 40</Name>
       <Level>40</Level>
       <ID>18</ID>
       <ImageString>location_plain_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-5</x>
+        <y>-6</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9725,20 +9793,31 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Ancient Lvl 40</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Desert Lvl 20</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Ancient Lvl 40</Name>
       <Level>40</Level>
       <ID>19</ID>
       <ImageString>_location_placeholder_plains_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>100</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
-        <z>0</z>
+        <x>-4</x>
+        <y>-6</y>
+        <z>-5</z>
       </Position>
       <Category>Debug</Category>
       <EntitiesList>
@@ -9757,19 +9836,25 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Barbarian Lvl 40</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
     <Spot>
       <Name>Flooded Battlefield</Name>
       <Level>5</Level>
       <ID>20</ID>
       <ImageString>location_coast_0</ImageString>
-      <MonsterValueToCompleteArea>0</MonsterValueToCompleteArea>
+      <MonsterValueToCompleteArea>30</MonsterValueToCompleteArea>
       <IsUnlocked>false</IsUnlocked>
-      <Size>0</Size>
+      <Size>0.9</Size>
       <Position>
-        <x>0</x>
-        <y>0</y>
+        <x>3</x>
+        <y>1</y>
         <z>0</z>
       </Position>
       <Category>The Inner Sea</Category>
@@ -9809,7 +9894,23 @@ The Bringer of Sorrow is the last you'll see.</FlavorText>
       </ItemsList>
       <ItemOnComplete />
       <Progress>0</Progress>
-      <ListConnections />
+      <ListConnections>
+        <SpotConnection>
+          <SpotString>Sailor's Beach</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Jagged Cliffs</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+        <SpotConnection>
+          <SpotString>Desolate Coast</SpotString>
+          <Distance>0</Distance>
+          <IsTwoWay>true</IsTwoWay>
+        </SpotConnection>
+      </ListConnections>
     </Spot>
   </Spots>
   <ItemsLists>
