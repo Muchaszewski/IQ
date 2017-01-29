@@ -1,6 +1,10 @@
 # Inventory Quest
 
-Project of RPG, Idle, Turn based game. You are controlling your character to defeat countless monsters and acquire loot, and gain experience!
+Project of RPG, Idle game. You are controlling your character to defeat countless monsters and acquire loot, and gain experience!
+
+Poject contains of 2 parts: 
+  1. Game made on Unity3D engine: https://unity3d.com/
+  2. WPF based in game monster and items editor: https://msdn.microsoft.com/pl-pl/library/ms754130(v=vs.110).aspx
 
 Project has been discontinued and now serves purpose of portfolio.
 
